@@ -1,0 +1,22 @@
+// Insertar 10 películas mexicanas/latinoamericanas
+POST peliculas/_bulk
+{"index":{}}
+{"titulo":"Roma","sinopsis":"Historia de una trabajadora domestica en la Ciudad de Mexico durante los años 70. Una mirada intima a la familia y la sociedad mexicana.","director":"Alfonso Cuarón","genero":"Drama","anio":2018,"rating":8.7,"pais":"Mexico"}
+{"index":{}}
+{"titulo":"El laberinto del fauno","sinopsis":"Una niña descubre un mundo fantastico mientras vive con su padrastro militar en la España franquista. Mezcla fantasia oscura con la cruel realidad de la guerra.","director":"Guillermo del Toro","genero":"Fantasia","anio":2006,"rating":8.2,"pais":"Mexico"}
+{"index":{}}
+{"titulo":"Y tu mamá también","sinopsis":"Dos adolescentes y una mujer mayor emprenden un viaje por carretera por Mexico, descubriendo la amistad, el deseo y la realidad social del pais.","director":"Alfonso Cuarón","genero":"Drama","anio":2001,"rating":7.7,"pais":"Mexico"}
+{"index":{}}
+{"titulo":"Amores perros","sinopsis":"Tres historias entrelazadas sobre amor, pérdida y violencia en la Ciudad de Mexico, conectadas por un accidente automovilístico.","director":"Alejandro González Iñárritu","genero":"Drama","anio":2000,"rating":8.1,"pais":"Mexico"}
+{"index":{}}
+{"titulo":"El secreto de sus ojos","sinopsis":"Un oficial de justicia retirado escribe una novela basada en un caso de asesinato sin resolver que lo obsesiona desde hace 25 años.","director":"Juan José Campanella","genero":"Thriller","anio":2009,"rating":8.2,"pais":"Argentina"}
+{"index":{}}
+{"titulo":"Relatos salvajes","sinopsis":"Seis cortometrajes sobre personas llevadas al limite, explorando la venganza y la violencia en la sociedad argentina contemporanea.","director":"Damián Szifron","genero":"Comedia negra","anio":2014,"rating":8.1,"pais":"Argentina"}
+{"index":{}}
+{"titulo":"Una mujer fantástica","sinopsis":"Tras la muerte de su pareja, una mujer transgénero enfrenta la discriminación de la familia de él mientras lucha por su dignidad.","director":"Sebastián Lelio","genero":"Drama","anio":2017,"rating":7.2,"pais":"Chile"}
+{"index":{}}
+{"titulo":"Nosotros los nobles","sinopsis":"Un padre millonario finge la bancarrota para enseñar a sus tres hijos consentidos el valor del trabajo. Comedia familiar mexicana.","director":"Gaz Alazraki","genero":"Comedia","anio":2013,"rating":7.1,"pais":"Mexico"}
+{"index":{}}
+{"titulo":"La ley de Herodes","sinopsis":"Un político mediocre es enviado a gobernar un pueblo corrupto donde descubre que el poder corrompe absolutamente. Satira política mexicana.","director":"Luis Estrada","genero":"Comedia negra","anio":1999,"rating":7.9,"pais":"Mexico"}
+{"index":{}}
+{"titulo":"Diarios de motocicleta","sinopsis":"El joven Ernesto Guevara viaja en motocicleta por Sudamerica, descubriendo la pobreza y la injusticia que transformaran su vision del mundo.","director":"Walter Salles","genero":"Drama","anio":2004,"rating":7.8,"pais":"Argentina"}

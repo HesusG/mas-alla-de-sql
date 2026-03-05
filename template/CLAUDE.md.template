@@ -1,0 +1,36 @@
+# {{WORKSHOP_NAME}}
+
+## Overview
+{{WORKSHOP_DESCRIPTION}}
+
+## Commands
+- `npm run dev` - Start Slidev dev server (localhost:3030)
+- `npm run build` - Build static site
+- `npm run export` - Export PDF
+
+## Design System
+
+### Neobrutalist Rules
+1. **Borders**: `border-3 border-black`
+2. **Shadows**: `shadow-[4px_4px_0px_#000]`
+3. **Colors**: Flat fills, NO gradients
+4. **Border-radius**: `rounded-none` or `rounded-sm`
+5. **Typography**: Space Grotesk headings, Inter body, JetBrains Mono code
+6. **Hover**: `hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px]`
+7. **Backgrounds**: Solid color blocks
+
+### Color Palette
+| Name   | Hex       | Usage                      |
+|--------|-----------|----------------------------|
+| Banana | `#FFE156` | Primary accent             |
+| Coral  | `#FF6B6B` | Warnings, alerts           |
+| Sky    | `#4ECDC4` | Links, secondary           |
+| Grape  | `#6C5CE7` | Code, emphasis             |
+| Ink    | `#2D3436` | Text, borders              |
+| Paper  | `#FAFAFA` | Backgrounds                |
+| Cream  | `#FFF8E7` | Alt backgrounds            |
+
+## Slide Conventions
+- Layouts: neo-cover, neo-section, neo-two-cols, neo-demo
+- Components: NeoCard, PixelDivider, TimerBadge, ComparisonTable, RefFootnote
+- Content language: {{CONTENT_LANGUAGE}}

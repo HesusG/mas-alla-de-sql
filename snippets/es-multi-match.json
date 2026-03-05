@@ -1,0 +1,16 @@
+// Multi-match: buscar en VARIOS campos a la vez
+// SQL: WHERE titulo LIKE '%viaje%' OR sinopsis LIKE '%viaje%'
+
+GET peliculas/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "viaje descubrimiento",
+      "fields": ["titulo^2", "sinopsis"],
+      "type": "best_fields"
+    }
+  }
+}
+
+// titulo^2 = el título vale el DOBLE en la puntuación
+// "best_fields" = usa el campo con mejor score

@@ -1,0 +1,26 @@
+// Highlighting: resalta las palabras encontradas
+// Como cuando Google pone en negritas tus términos de búsqueda
+
+GET peliculas/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "viaje descubrimiento sociedad",
+      "fields": ["titulo", "sinopsis"]
+    }
+  },
+  "highlight": {
+    "fields": {
+      "titulo": {},
+      "sinopsis": {
+        "fragment_size": 150,
+        "number_of_fragments": 2
+      }
+    },
+    "pre_tags": ["<em>"],
+    "post_tags": ["</em>"]
+  }
+}
+
+// En el resultado verás <em>viaje</em> y <em>sociedad</em>
+// Perfecto para mostrar al usuario POR QUÉ apareció ese resultado

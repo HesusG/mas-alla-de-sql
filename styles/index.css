@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --neo-banana: #FFE156;
+  --neo-coral: #FF6B6B;
+  --neo-sky: #4ECDC4;
+  --neo-grape: #6C5CE7;
+  --neo-ink: #2D3436;
+  --neo-paper: #FAFAFA;
+  --neo-cream: #FFF8E7;
+}
+
+.slidev-layout {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.01em;
+  color: var(--neo-ink);
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.slidev-layout code,
+.slidev-layout pre {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Neobrutalist dot-grid background */
+.neo-dotgrid {
+  background-image: radial-gradient(circle, var(--neo-ink) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0;
+  opacity: 0.06;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Pixel divider */
+.pixel-divider {
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--neo-ink) 0px,
+    var(--neo-ink) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+/* Reference footnote */
+.ref-footnote {
+  position: absolute;
+  bottom: 12px;
+  left: 40px;
+  right: 40px;
+  font-size: 0.65rem;
+  color: #636e72;
+  font-family: 'Inter', sans-serif;
+  border-top: 1px solid #dfe6e9;
+  padding-top: 4px;
+}

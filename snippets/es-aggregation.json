@@ -1,0 +1,31 @@
+// Agregaciones: como GROUP BY pero más poderoso
+// SQL: SELECT genero, COUNT(*), AVG(rating) FROM peliculas GROUP BY genero
+
+GET peliculas/_search
+{
+  "size": 0,
+  "aggs": {
+    "por_genero": {
+      "terms": {
+        "field": "genero",
+        "size": 10
+      },
+      "aggs": {
+        "rating_promedio": {
+          "avg": { "field": "rating" }
+        },
+        "mejor_pelicula": {
+          "top_hits": {
+            "size": 1,
+            "sort": [{ "rating": "desc" }],
+            "_source": ["titulo", "rating"]
+          }
+        }
+      }
+    }
+  }
+}
+
+// size: 0 = no quiero documentos, solo las agregaciones
+// top_hits: sub-agregación que muestra el mejor documento de cada grupo
+// Esto en SQL requeriría un JOIN o subquery

@@ -1,0 +1,15 @@
+// Búsqueda básica: match query
+// Equivalente SQL: SELECT * FROM peliculas WHERE sinopsis LIKE '%familia%'
+// Pero MEJOR: tokeniza, analiza, y RANKEA por relevancia
+
+GET peliculas/_search
+{
+  "query": {
+    "match": {
+      "sinopsis": "comedia familiar"
+    }
+  }
+}
+
+// Observa el _score: cada resultado tiene una puntuación de relevancia
+// SQL devuelve 0 o 1. Elasticsearch RANKEA.

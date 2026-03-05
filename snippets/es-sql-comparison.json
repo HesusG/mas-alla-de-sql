@@ -1,0 +1,46 @@
+// === SQL vs Elasticsearch: lado a lado ===
+
+// --- 1. Búsqueda de texto ---
+// SQL:
+//   SELECT * FROM peliculas WHERE sinopsis LIKE '%familia%'
+// ES:
+GET peliculas/_search
+{ "query": { "match": { "sinopsis": "familia" } } }
+
+// --- 2. Filtro + Ordenar ---
+// SQL:
+//   SELECT * FROM peliculas WHERE genero = 'Drama' AND anio >= 2010 ORDER BY rating DESC
+// ES:
+GET peliculas/_search
+{
+  "query": {
+    "bool": {
+      "filter": [
+        { "term": { "genero": "Drama" } },
+        { "range": { "anio": { "gte": 2010 } } }
+      ]
+    }
+  },
+  "sort": [{ "rating": "desc" }]
+}
+
+// --- 3. Conteo por grupo ---
+// SQL:
+//   SELECT pais, COUNT(*) FROM peliculas GROUP BY pais
+// ES:
+GET peliculas/_search
+{
+  "size": 0,
+  "aggs": { "por_pais": { "terms": { "field": "pais" } } }
+}
+
+// --- 4. Promedio con filtro ---
+// SQL:
+//   SELECT AVG(rating) FROM peliculas WHERE pais = 'Mexico'
+// ES:
+GET peliculas/_search
+{
+  "size": 0,
+  "query": { "term": { "pais": "Mexico" } },
+  "aggs": { "rating_promedio": { "avg": { "field": "rating" } } }
+}

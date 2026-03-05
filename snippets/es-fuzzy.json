@@ -1,0 +1,20 @@
+// Fuzzy search: tolerancia a errores tipográficos
+// SQL: imposible sin funciones custom
+
+// Intenta con un typo: "peliula" en vez de "pelicula"
+GET peliculas/_search
+{
+  "query": {
+    "match": {
+      "sinopsis": {
+        "query": "peliula familar mexicana",
+        "fuzziness": "AUTO"
+      }
+    }
+  }
+}
+
+// fuzziness: "AUTO" = 0 edits para 1-2 chars, 1 para 3-5, 2 para 6+
+// "peliula" → encuentra "pelicula" (1 edit de distancia)
+// "familar" → encuentra "familiar" (1 edit de distancia)
+// SQL con LIKE '%peliula%' devuelve 0 resultados.

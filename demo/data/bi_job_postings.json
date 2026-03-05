@@ -1,0 +1,362 @@
+[
+  {
+    "title": "Data Analyst - Business Intelligence",
+    "company": "Deloitte",
+    "location": "Ciudad de Mexico",
+    "skills": ["SQL", "Python", "Tableau", "Power BI", "Excel"],
+    "description": "Buscamos analista de datos para el equipo de consulting. Responsable de crear dashboards, analizar tendencias de negocio y presentar insights a clientes corporativos. Se requiere experiencia con bases de datos relacionales y herramientas de visualizacion.",
+    "salary_range": "$25,000 - $38,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "BI Developer",
+    "company": "FEMSA",
+    "location": "Monterrey",
+    "skills": ["SQL Server", "Power BI", "Python", "Azure", "ETL"],
+    "description": "Desarrollador de Business Intelligence para disenar y mantener pipelines de datos. Crear reportes ejecutivos y modelos de datos dimensionales. Trabajar con equipos de negocio para entender requerimientos de informacion.",
+    "salary_range": "$30,000 - $45,000 MXN",
+    "experience": "2-4 years"
+  },
+  {
+    "title": "Data Scientist Jr",
+    "company": "Mercado Libre",
+    "location": "Ciudad de Mexico (Remoto)",
+    "skills": ["Python", "SQL", "Machine Learning", "Pandas", "scikit-learn"],
+    "description": "Cientfico de datos junior para el equipo de recomendaciones. Desarrollar modelos predictivos para mejorar la experiencia de compra. Analizar grandes volumenes de datos de comportamiento de usuarios.",
+    "salary_range": "$35,000 - $50,000 MXN",
+    "experience": "0-2 years"
+  },
+  {
+    "title": "Analista de Datos",
+    "company": "Banorte",
+    "location": "Monterrey",
+    "skills": ["SQL", "SAS", "Excel", "Power BI", "Estadistica"],
+    "description": "Analista para el area de riesgo crediticio. Generar reportes regulatorios, analizar portafolios de credito y desarrollar modelos de scoring. Conocimiento de regulacion bancaria es un plus.",
+    "salary_range": "$22,000 - $35,000 MXN",
+    "experience": "1-2 years"
+  },
+  {
+    "title": "Data Engineer",
+    "company": "Amazon",
+    "location": "Ciudad de Mexico",
+    "skills": ["Python", "SQL", "AWS", "Spark", "Elasticsearch", "Kafka"],
+    "description": "Ingeniero de datos para disenar pipelines de datos escalables. Trabajar con Elasticsearch para busqueda de productos, Kafka para streaming en tiempo real, y AWS para infraestructura cloud. Requiere experiencia con bases de datos NoSQL.",
+    "salary_range": "$55,000 - $85,000 MXN",
+    "experience": "3-5 years"
+  },
+  {
+    "title": "Analista BI",
+    "company": "Bimbo",
+    "location": "Ciudad de Mexico",
+    "skills": ["SQL", "SAP BW", "Power BI", "Excel", "Python"],
+    "description": "Analista de inteligencia de negocios para el area de supply chain. Crear dashboards de KPIs operativos, analizar eficiencia de rutas de distribucion y generar reportes para la direccion de operaciones.",
+    "salary_range": "$28,000 - $42,000 MXN",
+    "experience": "2-3 years"
+  },
+  {
+    "title": "Data Analyst",
+    "company": "Rappi",
+    "location": "Ciudad de Mexico (Hibrido)",
+    "skills": ["SQL", "Python", "Looker", "BigQuery", "Estadistica"],
+    "description": "Analista de datos para el equipo de growth. Disenar experimentos A/B, analizar metricas de retencion de usuarios y crear reportes automatizados. Ambiente startup con alto impacto.",
+    "salary_range": "$30,000 - $45,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "ML Engineer",
+    "company": "Kavak",
+    "location": "Ciudad de Mexico",
+    "skills": ["Python", "TensorFlow", "SQL", "Docker", "ChromaDB", "RAG"],
+    "description": "Ingeniero de machine learning para el equipo de pricing. Desarrollar modelos de valuacion de vehiculos, implementar pipelines de RAG para busqueda semantica de inventario, y desplegar modelos en produccion.",
+    "salary_range": "$50,000 - $75,000 MXN",
+    "experience": "2-4 years"
+  },
+  {
+    "title": "Consultor de Analytics",
+    "company": "Accenture",
+    "location": "Monterrey",
+    "skills": ["SQL", "Python", "Tableau", "Power BI", "Presentaciones"],
+    "description": "Consultor junior para proyectos de analytics en clientes de retail y manufactura. Realizar analisis exploratorio de datos, crear visualizaciones y presentar recomendaciones a stakeholders de negocio.",
+    "salary_range": "$25,000 - $40,000 MXN",
+    "experience": "0-2 years"
+  },
+  {
+    "title": "Data Analyst - Ecommerce",
+    "company": "Liverpool",
+    "location": "Ciudad de Mexico",
+    "skills": ["SQL", "Google Analytics", "Python", "Tableau", "Excel"],
+    "description": "Analista de datos para el equipo de ecommerce. Analizar comportamiento de compra online, optimizar funnel de conversion y crear reportes de performance de campanas digitales.",
+    "salary_range": "$26,000 - $38,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "BI Architect",
+    "company": "KPMG",
+    "location": "Ciudad de Mexico",
+    "skills": ["SQL Server", "Azure Data Factory", "Power BI", "Python", "Data Modeling"],
+    "description": "Arquitecto de BI para disenar soluciones de datos empresariales. Definir modelos de datos, pipelines ETL y estrategias de gobierno de datos para clientes corporativos.",
+    "salary_range": "$45,000 - $70,000 MXN",
+    "experience": "4-6 years"
+  },
+  {
+    "title": "Analista de Datos Jr",
+    "company": "Coppel",
+    "location": "Culiacan",
+    "skills": ["SQL", "Excel", "Power BI", "Estadistica basica"],
+    "description": "Analista junior para el area de marketing. Analizar efectividad de promociones, segmentar clientes y generar reportes semanales de ventas. Capacitacion incluida en herramientas de BI.",
+    "salary_range": "$18,000 - $25,000 MXN",
+    "experience": "0-1 years"
+  },
+  {
+    "title": "Data Scientist",
+    "company": "BBVA Mexico",
+    "location": "Ciudad de Mexico",
+    "skills": ["Python", "R", "SQL", "Machine Learning", "Deep Learning", "NLP"],
+    "description": "Cientifico de datos senior para el area de innovacion. Desarrollar modelos de NLP para analisis de sentimiento de clientes, sistemas de deteccion de fraude y chatbots inteligentes con RAG.",
+    "salary_range": "$50,000 - $80,000 MXN",
+    "experience": "3-5 years"
+  },
+  {
+    "title": "Analista de Inteligencia de Negocios",
+    "company": "Cemex",
+    "location": "Monterrey",
+    "skills": ["SQL", "Power BI", "SAP", "Python", "Azure"],
+    "description": "Analista BI para el area de finanzas corporativas. Automatizar reportes financieros, crear dashboards de P&L y analizar variaciones presupuestales. Conocimiento de SAP es deseable.",
+    "salary_range": "$30,000 - $45,000 MXN",
+    "experience": "2-4 years"
+  },
+  {
+    "title": "Data Analyst - Product",
+    "company": "Clip",
+    "location": "Ciudad de Mexico (Remoto)",
+    "skills": ["SQL", "Python", "Amplitude", "Mixpanel", "Estadistica"],
+    "description": "Analista de producto para medir adopcion de features, analizar retension de comercios y disenar metricas de producto. Trabajar directamente con product managers y ingenieria.",
+    "salary_range": "$32,000 - $48,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "BI Developer Jr",
+    "company": "Telcel",
+    "location": "Ciudad de Mexico",
+    "skills": ["SQL", "Oracle", "Power BI", "ETL", "Data Warehouse"],
+    "description": "Desarrollador BI junior para mantener y mejorar el data warehouse corporativo. Crear procesos ETL, optimizar queries y desarrollar reportes operativos para areas comerciales.",
+    "salary_range": "$22,000 - $32,000 MXN",
+    "experience": "0-2 years"
+  },
+  {
+    "title": "Data Engineer Jr",
+    "company": "Nubank Mexico",
+    "location": "Ciudad de Mexico (Remoto)",
+    "skills": ["Python", "SQL", "Spark", "AWS", "Airflow"],
+    "description": "Ingeniero de datos junior para construir pipelines de datos en la nube. Automatizar flujos de ETL con Airflow, procesar datos con Spark y mantener la calidad de datos del data lake.",
+    "salary_range": "$35,000 - $50,000 MXN",
+    "experience": "1-2 years"
+  },
+  {
+    "title": "Consultor Data & Analytics",
+    "company": "EY",
+    "location": "Guadalajara",
+    "skills": ["SQL", "Python", "Tableau", "Power BI", "Azure", "Comunicacion"],
+    "description": "Consultor para proyectos de transformacion digital. Levantar requerimientos de datos con clientes, disenar soluciones de analytics y liderar implementaciones de dashboards ejecutivos.",
+    "salary_range": "$28,000 - $42,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "Analista de Datos - Salud",
+    "company": "TecSalud",
+    "location": "Monterrey",
+    "skills": ["SQL", "R", "Excel", "Estadistica", "Epidemiologia"],
+    "description": "Analista de datos clinicos para el sistema hospitalario TecSalud. Analizar indicadores de calidad, eficiencia operativa y outcomes clinicos. Conocimiento de datos de salud es un plus.",
+    "salary_range": "$24,000 - $35,000 MXN",
+    "experience": "1-2 years"
+  },
+  {
+    "title": "Data Analyst - Fintech",
+    "company": "Stori",
+    "location": "Ciudad de Mexico (Hibrido)",
+    "skills": ["SQL", "Python", "Looker", "dbt", "BigQuery"],
+    "description": "Analista de datos para fintech de tarjetas de credito. Analizar riesgo crediticio, optimizar modelos de scoring y crear reportes regulatorios. Stack moderno: dbt + BigQuery + Looker.",
+    "salary_range": "$30,000 - $45,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "Machine Learning Engineer",
+    "company": "Google Mexico",
+    "location": "Ciudad de Mexico",
+    "skills": ["Python", "TensorFlow", "SQL", "Kubernetes", "Vector Databases", "LLM"],
+    "description": "Ingeniero ML para el equipo de busqueda en espanol. Mejorar modelos de ranking, implementar busqueda semantica con vector databases y desarrollar pipelines de embedding a escala.",
+    "salary_range": "$70,000 - $120,000 MXN",
+    "experience": "3-5 years"
+  },
+  {
+    "title": "Analista BI - Supply Chain",
+    "company": "PepsiCo",
+    "location": "Guadalajara",
+    "skills": ["SQL", "Power BI", "SAP", "Excel", "Python"],
+    "description": "Analista de inteligencia de negocios para optimizacion de cadena de suministro. Crear dashboards de inventario, analizar forecast accuracy y automatizar reportes de distribucion.",
+    "salary_range": "$27,000 - $40,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "Data Analyst - Marketing",
+    "company": "Grupo Modelo",
+    "location": "Ciudad de Mexico",
+    "skills": ["SQL", "Python", "Google Analytics", "Tableau", "A/B Testing"],
+    "description": "Analista de datos para el area de marketing digital. Medir efectividad de campanas, optimizar presupuesto publicitario y crear modelos de atribucion multi-canal.",
+    "salary_range": "$28,000 - $42,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "AI Engineer",
+    "company": "Wizeline",
+    "location": "Guadalajara (Remoto)",
+    "skills": ["Python", "LangChain", "ChromaDB", "OpenAI API", "FastAPI", "RAG"],
+    "description": "Ingeniero de IA para desarrollar soluciones de RAG y chatbots empresariales. Implementar pipelines de ingestion de documentos, busqueda semantica con ChromaDB y generacion con LLMs.",
+    "salary_range": "$45,000 - $70,000 MXN",
+    "experience": "2-4 years"
+  },
+  {
+    "title": "Analista de Datos - Recursos Humanos",
+    "company": "OXXO (FEMSA Comercio)",
+    "location": "Monterrey",
+    "skills": ["SQL", "Excel", "Power BI", "Estadistica", "People Analytics"],
+    "description": "Analista de people analytics para la cadena OXXO. Analizar rotacion de personal, predecir desercion y crear dashboards de indicadores de talento para 200,000+ colaboradores.",
+    "salary_range": "$25,000 - $38,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "Senior Data Analyst",
+    "company": "Uber Mexico",
+    "location": "Ciudad de Mexico",
+    "skills": ["SQL", "Python", "R", "Presto", "Tableau", "Experimentacion"],
+    "description": "Analista senior para el equipo de marketplace. Optimizar algoritmos de pricing, analizar oferta/demanda en tiempo real y disenar experimentos para mejorar la experiencia de conductor y pasajero.",
+    "salary_range": "$45,000 - $65,000 MXN",
+    "experience": "3-5 years"
+  },
+  {
+    "title": "BI Analyst",
+    "company": "Arca Continental",
+    "location": "Monterrey",
+    "skills": ["SQL", "Power BI", "Excel", "SAP BW", "Python"],
+    "description": "Analista BI para el area comercial de la embotelladora. Analizar ventas por canal, territorio y SKU. Crear reportes automatizados de performance comercial.",
+    "salary_range": "$26,000 - $38,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "Data Scientist - NLP",
+    "company": "HSBC Mexico",
+    "location": "Ciudad de Mexico (Hibrido)",
+    "skills": ["Python", "NLP", "Transformers", "SQL", "ChromaDB", "Elasticsearch"],
+    "description": "Cientifico de datos especializado en NLP para automatizar analisis de documentos legales y regulatorios. Implementar busqueda semantica con Elasticsearch y ChromaDB para el area de compliance.",
+    "salary_range": "$55,000 - $85,000 MXN",
+    "experience": "3-5 years"
+  },
+  {
+    "title": "Junior Data Analyst",
+    "company": "Softtek",
+    "location": "Monterrey",
+    "skills": ["SQL", "Excel", "Power BI", "Python basico"],
+    "description": "Analista de datos junior para proyectos de outsourcing de analytics. Crear reportes, limpiar datos y apoyar en analisis exploratorio para clientes de multiples industrias. Excelente para recien egresados.",
+    "salary_range": "$18,000 - $28,000 MXN",
+    "experience": "0-1 years"
+  },
+  {
+    "title": "Analytics Engineer",
+    "company": "Konfio",
+    "location": "Ciudad de Mexico (Remoto)",
+    "skills": ["SQL", "dbt", "Python", "BigQuery", "Looker", "Airflow"],
+    "description": "Analytics engineer para construir la capa de datos analiticos de la fintech. Modelar datos con dbt, crear metricas de negocio y asegurar la calidad de datos del data warehouse.",
+    "salary_range": "$40,000 - $60,000 MXN",
+    "experience": "2-4 years"
+  },
+  {
+    "title": "Practicante de Datos",
+    "company": "Procter & Gamble",
+    "location": "Ciudad de Mexico",
+    "skills": ["SQL basico", "Excel", "Power BI", "Curiosidad"],
+    "description": "Programa de practicas en el area de Consumer & Market Knowledge. Aprender a analizar datos de consumidores, crear reportes de market share y apoyar en proyectos de analytics. Ideal para estudiantes.",
+    "salary_range": "$10,000 - $15,000 MXN",
+    "experience": "0 years (estudiante)"
+  },
+  {
+    "title": "Data Analyst - Operations",
+    "company": "DHL Mexico",
+    "location": "Ciudad de Mexico",
+    "skills": ["SQL", "Python", "Power BI", "Excel", "Logistica"],
+    "description": "Analista de datos para optimizacion de operaciones logisticas. Analizar tiempos de entrega, eficiencia de rutas y costos de transporte. Crear dashboards operativos en tiempo real.",
+    "salary_range": "$26,000 - $38,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "Full Stack Data Scientist",
+    "company": "Bitso",
+    "location": "Ciudad de Mexico (Remoto)",
+    "skills": ["Python", "SQL", "Machine Learning", "Airflow", "Docker", "FastAPI"],
+    "description": "Cientifico de datos full stack para el exchange de criptomonedas. Desarrollar modelos de deteccion de fraude, analisis de riesgo y recomendaciones de productos. Desplegar modelos en produccion.",
+    "salary_range": "$50,000 - $80,000 MXN",
+    "experience": "3-5 years"
+  },
+  {
+    "title": "BI Manager",
+    "company": "Grupo Financiero Banorte",
+    "location": "Monterrey",
+    "skills": ["SQL", "Power BI", "Python", "Liderazgo", "Data Governance", "Azure"],
+    "description": "Gerente de BI para liderar equipo de 8 analistas. Definir estrategia de datos, implementar gobierno de datos y crear cultura data-driven en areas de banca retail y seguros.",
+    "salary_range": "$60,000 - $90,000 MXN",
+    "experience": "5-8 years"
+  },
+  {
+    "title": "Data Analyst - Customer Success",
+    "company": "Zendesk Mexico",
+    "location": "Ciudad de Mexico (Remoto)",
+    "skills": ["SQL", "Python", "Salesforce", "Tableau", "Comunicacion"],
+    "description": "Analista de datos para el equipo de customer success LATAM. Analizar metricas de satisfaccion de clientes, predecir churn y crear reportes de health score para la cartera de clientes enterprise.",
+    "salary_range": "$30,000 - $45,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "Ingeniero de Datos",
+    "company": "Cinepolis",
+    "location": "Ciudad de Mexico",
+    "skills": ["Python", "SQL", "Elasticsearch", "AWS", "Spark"],
+    "description": "Ingeniero de datos para la cadena de cines. Implementar busqueda de peliculas con Elasticsearch, construir pipeline de recomendaciones y analizar patrones de consumo de 300M+ boletos anuales.",
+    "salary_range": "$35,000 - $55,000 MXN",
+    "experience": "2-4 years"
+  },
+  {
+    "title": "Analista de Datos - Seguros",
+    "company": "GNP Seguros",
+    "location": "Ciudad de Mexico",
+    "skills": ["SQL", "SAS", "R", "Excel", "Actuaria"],
+    "description": "Analista de datos actuariales para el area de pricing de seguros. Analizar siniestralidad, calcular primas y desarrollar modelos de riesgo. Conocimiento actuarial es deseable.",
+    "salary_range": "$25,000 - $40,000 MXN",
+    "experience": "1-3 years"
+  },
+  {
+    "title": "Data Platform Engineer",
+    "company": "Globant",
+    "location": "Guadalajara (Remoto)",
+    "skills": ["Python", "SQL", "Terraform", "AWS", "Snowflake", "Vector Databases"],
+    "description": "Ingeniero de plataforma de datos para proyectos con clientes Fortune 500. Disenar arquitecturas de datos modernas, implementar vector databases para busqueda semantica y construir data lakehouses.",
+    "salary_range": "$45,000 - $70,000 MXN",
+    "experience": "3-5 years"
+  },
+  {
+    "title": "Analista de Business Intelligence",
+    "company": "Aeroméxico",
+    "location": "Ciudad de Mexico",
+    "skills": ["SQL", "Python", "Tableau", "Revenue Management", "Excel"],
+    "description": "Analista BI para el area de revenue management. Analizar demanda de vuelos, optimizar pricing de asientos y crear modelos de forecast de ingresos por ruta.",
+    "salary_range": "$30,000 - $45,000 MXN",
+    "experience": "2-3 years"
+  },
+  {
+    "title": "Lead Data Analyst",
+    "company": "Spotify Mexico",
+    "location": "Ciudad de Mexico (Remoto)",
+    "skills": ["SQL", "Python", "BigQuery", "Looker", "A/B Testing", "Estadistica avanzada"],
+    "description": "Lider de analytics para LATAM. Disenar estrategia de medicion, mentorear analistas junior y trabajar con product managers en decisiones basadas en datos sobre contenido y engagement.",
+    "salary_range": "$55,000 - $85,000 MXN",
+    "experience": "4-6 years"
+  }
+]

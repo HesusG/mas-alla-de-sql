@@ -1,0 +1,36 @@
+// Crear índice "peliculas" con analizador en español
+PUT peliculas
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "spanish_custom": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["lowercase", "spanish_stop", "spanish_stemmer"]
+        }
+      },
+      "filter": {
+        "spanish_stop": {
+          "type": "stop",
+          "stopwords": "_spanish_"
+        },
+        "spanish_stemmer": {
+          "type": "stemmer",
+          "language": "spanish"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "titulo":    { "type": "text", "analyzer": "spanish_custom" },
+      "sinopsis":  { "type": "text", "analyzer": "spanish_custom" },
+      "director":  { "type": "keyword" },
+      "genero":    { "type": "keyword" },
+      "anio":      { "type": "integer" },
+      "rating":    { "type": "float" },
+      "pais":      { "type": "keyword" }
+    }
+  }
+}

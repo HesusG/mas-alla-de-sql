@@ -1,0 +1,61 @@
+// === Queries para el dataset Sample eCommerce de Kibana ===
+// Cargar en: Kibana Home > "Try sample data" > eCommerce
+
+// 1. Buscar productos por nombre
+GET kibana_sample_data_ecommerce/_search
+{
+  "query": {
+    "match": {
+      "products.product_name": "shoes"
+    }
+  },
+  "size": 3
+}
+
+// 2. Filtrar por rango de precio + categoría
+GET kibana_sample_data_ecommerce/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "match": { "products.category": "Women's Clothing" } }
+      ],
+      "filter": [
+        { "range": { "taxful_total_price": { "gte": 50, "lte": 200 } } }
+      ]
+    }
+  },
+  "size": 5
+}
+
+// 3. Agregación: revenue por categoría (como GROUP BY)
+GET kibana_sample_data_ecommerce/_search
+{
+  "size": 0,
+  "aggs": {
+    "por_categoria": {
+      "terms": { "field": "products.category.keyword", "size": 10 },
+      "aggs": {
+        "revenue_promedio": {
+          "avg": { "field": "taxful_total_price" }
+        }
+      }
+    }
+  }
+}
+
+// 4. Top 5 clientes por gasto total
+GET kibana_sample_data_ecommerce/_search
+{
+  "size": 0,
+  "aggs": {
+    "top_clientes": {
+      "terms": { "field": "customer_full_name.keyword", "size": 5, "order": { "gasto_total": "desc" } },
+      "aggs": {
+        "gasto_total": {
+          "sum": { "field": "taxful_total_price" }
+        }
+      }
+    }
+  }
+}

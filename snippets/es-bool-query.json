@@ -1,0 +1,24 @@
+// Bool query: combina condiciones (como WHERE con AND/OR)
+// SQL: SELECT * FROM peliculas WHERE genero = 'Drama' AND anio >= 2010 AND (sinopsis LIKE '%Mexico%')
+
+GET peliculas/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "match": { "sinopsis": "Mexico sociedad" } }
+      ],
+      "filter": [
+        { "term": { "genero": "Drama" } },
+        { "range": { "anio": { "gte": 2000 } } }
+      ],
+      "should": [
+        { "range": { "rating": { "gte": 8.0 } } }
+      ]
+    }
+  }
+}
+
+// must = DEBE cumplirse (afecta score)
+// filter = DEBE cumplirse (NO afecta score, más rápido)
+// should = BONUS si se cumple (sube el score)

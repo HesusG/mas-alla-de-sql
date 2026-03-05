@@ -1,0 +1,95 @@
+---
+theme: default
+title: "{{WORKSHOP_NAME}}"
+info: "{{WORKSHOP_SUBTITLE}}"
+highlighter: shiki
+drawings:
+  persist: false
+transition: slide-left
+mdc: true
+colorSchema: light
+fonts:
+  sans: Inter
+  serif: Space Grotesk
+  mono: JetBrains Mono
+---
+
+:::: neo-cover
+
+# {{WORKSHOP_NAME}}
+
+## {{WORKSHOP_SUBTITLE}}
+
+<div class="pixel-divider my-6" />
+
+::::
+
+---
+layout: neo-section
+class: bg-grape
+---
+
+<h1 class="text-white text-4xl">Section Title Here</h1>
+
+<div class="mt-6">
+  <TimerBadge time="15 min" />
+</div>
+
+---
+layout: neo-two-cols
+---
+
+::title::
+
+# Two Column Layout
+
+::left::
+
+### Left Column
+
+Content here
+
+::right::
+
+### Right Column
+
+Content here
+
+---
+layout: neo-demo
+---
+
+::title::
+
+<h2 class="text-banana">Demo Title</h2>
+
+::default::
+
+<div class="text-white/90">
+
+```python
+# Your demo code here
+print("Hello, workshop!")
+```
+
+</div>
+
+---
+
+# Regular Slide
+
+<NeoCard>
+
+Content inside a neobrutalist card.
+
+</NeoCard>
+
+<RefFootnote :sources="['Author. (Year). Title. Source.']" />
+
+---
+layout: neo-cover
+---
+
+# Thanks!
+
+<div class="pixel-divider my-4" />
