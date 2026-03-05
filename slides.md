@@ -35,7 +35,7 @@ layout: neo-cover
 </div>
 
 <div class="mt-4 text-sm opacity-70">
-github.com/your-user/mas-alla-de-sql
+github.com/HesusG/mas-alla-de-sql
 </div>
 
 ---
@@ -1534,5 +1534,5 @@ Comparte lo que construiste hoy
 </div>
 
 <div class="flex gap-4 justify-center items-center mt-6">
-  <span class="neo-tag bg-coral text-white">github.com/your-user/mas-alla-de-sql</span>
+  <span class="neo-tag bg-coral text-white">github.com/HesusG/mas-alla-de-sql</span>
 </div>
