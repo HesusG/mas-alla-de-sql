@@ -44,17 +44,25 @@ github.com/HesusG/mas-alla-de-sql
 
 # Sobre mi
 
-<div class="grid grid-cols-[1fr_2fr] gap-8 mt-8 items-center">
-  <div class="border-2 border-black p-6 text-center">
+<div class="pixel-divider my-4" />
+
+<div class="grid grid-cols-[1fr_2fr] gap-8 mt-4 items-center">
+  <div class="border-2 border-black p-6 text-center bg-[#C0C0C0]">
     <div class="text-6xl mb-4">👨‍💻</div>
     <div class="text-lg font-bold">[Tu nombre]</div>
     <div class="text-sm mt-1">[Tu rol / titulo]</div>
   </div>
   <div class="space-y-3">
-    <div class="border-2 border-black bg-white p-3 text-sm">📍 [Ciudad, organizacion]</div>
-    <div class="border-2 border-black bg-white p-3 text-sm">💼 [Experiencia relevante]</div>
-    <div class="border-2 border-black bg-white p-3 text-sm">🔧 [Stack / tecnologias]</div>
-    <div class="border-2 border-black bg-white p-3 text-sm">🎯 [Por que este tema te apasiona]</div>
+
+<v-clicks>
+
+  <div class="border-2 border-black bg-white p-3 text-sm">📍 [Ciudad, organizacion]</div>
+  <div class="border-2 border-black bg-white p-3 text-sm">💼 [Experiencia relevante]</div>
+  <div class="border-2 border-black bg-white p-3 text-sm">🔧 [Stack / tecnologias]</div>
+  <div class="border-2 border-black bg-white p-3 text-sm">🎯 [Por que este tema te apasiona]</div>
+
+</v-clicks>
+
   </div>
 </div>
 
@@ -64,35 +72,47 @@ github.com/HesusG/mas-alla-de-sql
 
 # Hoy vamos a recorrer este camino
 
-<div class="flex items-center justify-center gap-3 mt-10">
-  <div class="border-2 border-black p-4 text-center min-w-28">
+<div class="pixel-divider my-4" />
+
+<div class="flex items-center justify-center gap-3 mt-6">
+
+<v-clicks>
+
+  <div class="border-2 border-black p-4 text-center min-w-28 bg-[#C0C0C0]">
     <div class="text-3xl mb-1">🏛️</div>
     <strong>SQL</strong><br/>
     <span class="text-xs">Lo que conoces</span>
   </div>
   <div class="text-3xl font-bold text-black/30">→</div>
-  <div class="border-2 border-black p-4 text-center min-w-28 bg-[#ff6b6b]/10">
+  <div class="border-2 border-black p-4 text-center min-w-28 bg-[#ff6b6b]/15">
     <div class="text-3xl mb-1">🤔</div>
     <strong>El problema</strong><br/>
     <span class="text-xs">Donde SQL no llega</span>
   </div>
   <div class="text-3xl font-bold text-black/30">→</div>
-  <div class="border-2 border-black p-4 text-center min-w-28 bg-[#ff6b6b]/10">
+  <div class="border-2 border-[#ff6b6b] p-4 text-center min-w-28 bg-[#ff6b6b]/15">
     <div class="text-3xl mb-1">🔍</div>
     <strong>Elasticsearch</strong><br/>
     <span class="text-xs">Busqueda de texto</span>
   </div>
   <div class="text-3xl font-bold text-black/30">→</div>
-  <div class="border-2 border-black p-4 text-center min-w-28 bg-[#6c5ce7]/10">
+  <div class="border-2 border-[#6c5ce7] p-4 text-center min-w-28 bg-[#6c5ce7]/15">
     <div class="text-3xl mb-1">🧠</div>
     <strong>ChromaDB</strong><br/>
     <span class="text-xs">Busqueda por significado</span>
   </div>
+
+</v-clicks>
+
 </div>
 
-<div class="mt-8 text-center text-lg">
+<v-click>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-4 mt-6 text-center text-lg">
 Al terminar, van a tener un <strong>superpoder</strong> que la mayoria de profesionales con experiencia no tienen.
 </div>
+
+</v-click>
 
 ---
 
@@ -146,7 +166,7 @@ SELECT * FROM resenas WHERE texto LIKE '%frustrado%';
 
 <v-click>
 
-<div class="border border-[#ff6b6b] bg-[#ff6b6b]/10 p-4 mt-4">
+<div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4 mt-4">
 <strong>Resultado: 23 reseñas.</strong> Pero... ¿de 10,000? Algo no cuadra.
 </div>
 
@@ -295,21 +315,23 @@ Perfecto. Hoy vamos a entender como funcionan esos buscadores <strong>por dentro
 
 # ¿Que son los datos no estructurados?
 
-<div class="grid grid-cols-2 gap-6 mt-6">
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-2 gap-6 mt-4">
   <div>
-    <h3 class="mb-3">Datos estructurados (SQL)</h3>
+    <h3 class="mb-3 text-[#2DD4BF]">✅ Datos estructurados (SQL)</h3>
     <div class="border-2 border-black bg-white p-3 text-sm">
       <table class="w-full text-xs">
-        <tr class="border-b"><th class="text-left p-1">id</th><th class="text-left p-1">nombre</th><th class="text-left p-1">precio</th><th class="text-left p-1">stock</th></tr>
-        <tr class="border-b"><td class="p-1">1</td><td class="p-1">Laptop</td><td class="p-1">15000</td><td class="p-1">42</td></tr>
+        <tr class="border-b border-black"><th class="text-left p-1 font-bold">id</th><th class="text-left p-1 font-bold">nombre</th><th class="text-left p-1 font-bold">precio</th><th class="text-left p-1 font-bold">stock</th></tr>
+        <tr class="border-b border-black/20"><td class="p-1">1</td><td class="p-1">Laptop</td><td class="p-1">15000</td><td class="p-1">42</td></tr>
         <tr><td class="p-1">2</td><td class="p-1">Mouse</td><td class="p-1">350</td><td class="p-1">200</td></tr>
       </table>
-      <p class="mt-2">Filas, columnas, tipos definidos. Perfecto para SQL.</p>
+      <p class="mt-2 font-bold">Filas, columnas, tipos definidos. Perfecto para SQL.</p>
     </div>
   </div>
   <div>
-    <h3 class="mb-3">Datos no estructurados</h3>
-    <div class="border-2 border-black bg-[#ff6b6b]/5 p-3 text-sm space-y-2">
+    <h3 class="mb-3 text-[#ff6b6b]">❌ Datos no estructurados</h3>
+    <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 text-sm space-y-2">
       <div>📧 <em>"Hola, llevo 2 semanas sin recibir mi pedido..."</em></div>
       <div>📄 Contrato de 45 paginas en PDF</div>
       <div>💬 Conversaciones de chat con soporte</div>
@@ -465,7 +487,7 @@ Intenta responder estas preguntas con SQL:
   <div class="border-2 border-black bg-white p-3">
     <strong>3.</strong> "¿Cuales son las quejas <strong>mas urgentes</strong>?" → SQL no puede rankear por "urgencia" — devuelve todo o nada.
   </div>
-  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-3">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3">
     <strong>4.</strong> "El cliente escribio <strong>'teniz'</strong> en vez de 'tenis'" → <code>LIKE '%teniz%'</code> no encuentra nada. Un simple error tipografico y perdiste resultados.
   </div>
 </div>
@@ -537,7 +559,7 @@ Volvamos a nuestro reto de las reseñas. Con SQL encontramos 23 resultados. ¿Qu
   <div class="border-2 border-black bg-white p-3 text-sm">
     <strong>"Esperaba mucho mas por este precio"</strong> — decepcion, un sinonimo de frustracion
   </div>
-  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-3 text-sm">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 text-sm">
     <strong>"Mi experiencia fue desastrosa desde el primer dia"</strong> — intensidad alta, pero SQL la ignora por completo
   </div>
 </div>
@@ -555,29 +577,35 @@ En BI, los datos que no ves son los mas peligrosos.
 
 # Las empresas de hoy necesitan mas
 
-<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="pixel-divider my-3" />
+
+<v-clicks>
+
+<div class="grid grid-cols-2 gap-4 mt-4">
   <div class="border-2 border-black bg-white p-4">
-    <h3>Busqueda inteligente</h3>
+    <h3 class="text-[#ff6b6b]">🔍 Busqueda inteligente</h3>
     <p class="text-sm mt-1">Los usuarios esperan busquedas tipo Google: rapidas, tolerantes a errores, con resultados rankeados.</p>
   </div>
   <div class="border-2 border-black bg-white p-4">
-    <h3>Analisis de texto a escala</h3>
+    <h3 class="text-[#ff6b6b]">📊 Analisis de texto a escala</h3>
     <p class="text-sm mt-1">Miles de tickets, reseñas, contratos. No puedes leerlos uno por uno — necesitas que la maquina entienda el contenido.</p>
   </div>
   <div class="border-2 border-black bg-white p-4">
-    <h3>Tiempo real</h3>
+    <h3 class="text-[#2DD4BF]">⚡ Tiempo real</h3>
     <p class="text-sm mt-1">Monitoreo de logs, alertas, dashboards que se actualizan al segundo. SQL batch no alcanza.</p>
   </div>
   <div class="border-2 border-black bg-white p-4">
-    <h3>IA sobre tus datos</h3>
+    <h3 class="text-[#6c5ce7]">🧠 IA sobre tus datos</h3>
     <p class="text-sm mt-1">Chatbots que responden preguntas usando la informacion de tu empresa, no alucinaciones.</p>
   </div>
 </div>
 
+</v-clicks>
+
 <v-click>
 
-<div class="text-center mt-4 text-lg">
-Para estas necesidades, existen herramientas especializadas. Hoy vamos a conocer dos.
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-4 text-center text-lg">
+Para estas necesidades, existen herramientas especializadas. <strong>Hoy vamos a conocer dos.</strong>
 </div>
 
 </v-click>
@@ -595,7 +623,7 @@ SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos d
 </div>
 
 <div class="grid grid-cols-3 gap-3">
-  <div class="border-2 border-black bg-[#2DD4BF]/10 p-3 text-center text-sm">
+  <div class="border-2 border-black bg-[#2DD4BF]/15 p-3 text-center text-sm">
     <strong>Relacional (SQL)</strong>
     <p class="text-xs mt-1">Tablas con filas y columnas. Para transacciones y datos estructurados.</p>
     <p class="text-xs italic">MySQL, PostgreSQL, SQL Server</p>
@@ -615,12 +643,12 @@ SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos d
     <p class="text-xs mt-1">Datos como redes: nodos y conexiones. Para relaciones complejas.</p>
     <p class="text-xs italic">Neo4j, Amazon Neptune</p>
   </div>
-  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/10 p-3 text-center text-sm">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 text-center text-sm">
     <strong>Motor de busqueda</strong>
     <p class="text-xs mt-1">Busqueda de texto rapida, con ranking y tolerancia a errores.</p>
     <p class="text-xs italic">Elasticsearch, Apache Solr</p>
   </div>
-  <div class="border border-[#2DD4BF] bg-[#2DD4BF]/10 p-3 text-center text-sm">
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-3 text-center text-sm">
     <strong>Vectorial</strong>
     <p class="text-xs mt-1">Busca por significado usando matematicas. Base de la IA moderna.</p>
     <p class="text-xs italic">ChromaDB, Pinecone</p>
@@ -635,20 +663,22 @@ SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos d
 
 # Hoy nos enfocamos en dos
 
-<div class="grid grid-cols-2 gap-8 mt-8">
-  <div class="border border-[#ff6b6b] p-6 text-center">
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-6 text-center">
     <div class="text-4xl mb-2">🔍</div>
-    <h2>Elasticsearch</h2>
+    <h2 class="text-[#ff6b6b]">Elasticsearch</h2>
     <div class="pixel-divider my-3" />
     <p class="text-sm">Busqueda de texto completo (full-text search). Rapido, con ranking, tolerante a errores.</p>
-    <p class="text-sm mt-2"><strong>Resuelve</strong>: el problema de buscar en texto no estructurado.</p>
+    <p class="text-sm mt-2 font-bold">Resuelve: el problema de buscar en texto no estructurado.</p>
   </div>
-  <div class="border border-[#2DD4BF] p-6 text-center">
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-6 text-center">
     <div class="text-4xl mb-2">🧠</div>
-    <h2>ChromaDB</h2>
+    <h2 class="text-[#6c5ce7]">ChromaDB</h2>
     <div class="pixel-divider my-3" />
     <p class="text-sm">Busqueda semantica con vectores (embeddings). Entiende significado, no solo palabras.</p>
-    <p class="text-sm mt-2"><strong>Resuelve</strong>: buscar por conceptos e ideas, no solo texto exacto.</p>
+    <p class="text-sm mt-2 font-bold">Resuelve: buscar por conceptos e ideas, no solo texto exacto.</p>
   </div>
 </div>
 
@@ -674,7 +704,9 @@ layout: neo-section
 
 # ¿Que es Elasticsearch?
 
-<div class="grid grid-cols-[2fr_1fr] gap-6 mt-6">
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-[2fr_1fr] gap-6 mt-4">
   <div class="space-y-3">
     <div class="border-2 border-black bg-white p-3">
       <strong>Motor de busqueda y analitica</strong> de codigo abierto (open source), creado en 2010 por Shay Banon.
@@ -687,13 +719,13 @@ layout: neo-section
     </div>
   </div>
   <div class="space-y-3">
-    <div class="border-2 border-black p-3 text-center text-sm">
+    <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-sm">
       <strong>Creado</strong><br/>2010
     </div>
-    <div class="border-2 border-black p-3 text-center text-sm">
+    <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-sm">
       <strong>Licencia</strong><br/>Open source (SSPL)
     </div>
-    <div class="border-2 border-black p-3 text-center text-sm">
+    <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-sm">
       <strong>Costo</strong><br/>Gratis local. Cloud desde $0 (trial)
     </div>
   </div>
@@ -716,11 +748,11 @@ En 2021, **Amazon creo OpenSearch**: un fork (copia independiente) de Elasticsea
 </div>
 
 <div class="grid grid-cols-2 gap-4 mt-4">
-  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-4">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4">
     <h3>Elasticsearch (Elastic NV)</h3>
     <p class="text-sm mt-1">Version original. La empresa Elastic la mantiene. Elastic Cloud es su servicio en la nube.</p>
   </div>
-  <div class="border border-[#2DD4BF] bg-[#2DD4BF]/8 p-4">
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-4">
     <h3>OpenSearch (AWS)</h3>
     <p class="text-sm mt-1">Fork mantenido por Amazon. Incluido en AWS. Misma API base, desarrollo independiente.</p>
   </div>
@@ -740,23 +772,25 @@ Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficia
 
 # ¿Quien usa Elasticsearch en el mundo real?
 
-<div class="grid grid-cols-2 gap-4 mt-4">
-  <div class="border-2 border-black bg-white p-4">
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-2 gap-4 mt-3">
+  <div class="border-2 border-[#ff6b6b] bg-white p-4">
     <h3 class="text-[#ff6b6b]">Netflix</h3>
     <p class="text-sm">Busqueda de contenido, monitoreo de servidores y analisis de errores en tiempo real para 200M+ suscriptores.</p>
     <p class="text-xs mt-1 text-gray-400 font-mono">elastic.co/customers/netflix</p>
   </div>
-  <div class="border-2 border-black bg-white p-4">
+  <div class="border-2 border-[#ff6b6b] bg-white p-4">
     <h3 class="text-[#ff6b6b]">Wikipedia</h3>
     <p class="text-sm">Potencia la busqueda en 300+ idiomas. Cada vez que buscas un articulo, Elasticsearch responde.</p>
     <p class="text-xs mt-1 text-gray-400 font-mono">mediawiki.org/wiki/Wikimedia_Search_Platform</p>
   </div>
-  <div class="border-2 border-black bg-white p-4">
+  <div class="border-2 border-[#ff6b6b] bg-white p-4">
     <h3 class="text-[#ff6b6b]">Uber</h3>
     <p class="text-sm">Monitoreo en tiempo real de millones de viajes. Detecta anomalias y problemas al instante.</p>
     <p class="text-xs mt-1 text-gray-400 font-mono">elastic.co/customers/uber</p>
   </div>
-  <div class="border-2 border-black bg-white p-4">
+  <div class="border-2 border-[#ff6b6b] bg-white p-4">
     <h3 class="text-[#ff6b6b]">GitHub</h3>
     <p class="text-sm">Cuando buscas codigo en GitHub, Elasticsearch busca en miles de millones de lineas de codigo.</p>
     <p class="text-xs mt-1 text-gray-400 font-mono">github.blog/engineering</p>
@@ -771,7 +805,9 @@ Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficia
 
 # Si hablas SQL, ya casi hablas Elasticsearch
 
-<div class="mt-4 text-sm mb-4">Los conceptos son similares, solo cambian los nombres:</div>
+<div class="pixel-divider my-3" />
+
+<div class="mt-2 text-sm mb-4">Los conceptos son similares, solo cambian los nombres:</div>
 
 <div class="border-2 border-black bg-white p-0 overflow-hidden">
 
@@ -856,7 +892,7 @@ Piensa en el <strong>indice al final de un libro de texto</strong>:
     <p class="text-xs font-mono">Doc 2: "Comida rapida y economica"</p>
     <p class="text-xs font-mono">Doc 3: "Recetas de comida italiana"</p>
   </div>
-  <div class="border border-[#ff6b6b] p-3 text-sm">
+  <div class="border-2 border-[#ff6b6b] p-3 text-sm">
     <h4 class="text-[#ff6b6b]">2. Tokenizar + normalizar</h4>
     <p class="text-xs mt-1">Separa en palabras, quita acentos, minusculas:</p>
     <p class="text-xs font-mono mt-1">"la" → eliminada (stop word)</p>
@@ -864,7 +900,7 @@ Piensa en el <strong>indice al final de un libro de texto</strong>:
     <p class="text-xs font-mono">"mexicana" → "mexican"</p>
     <p class="text-xs font-mono">"deliciosa" → "delic"</p>
   </div>
-  <div class="border border-[#2DD4BF] p-3 text-sm">
+  <div class="border-2 border-[#2DD4BF] p-3 text-sm">
     <h4 class="text-[#2DD4BF]">3. Indice invertido</h4>
     <div class="text-xs mt-1 font-mono">
       comida → [1, 2, 3]<br/>
@@ -891,7 +927,9 @@ Buscar "comida mexicana" → mapa dice Doc 1 tiene ambas → <strong>resultado e
 
 # Elasticsearch no solo encuentra — RANKEA
 
-<div class="mt-4 text-sm">
+<div class="pixel-divider my-3" />
+
+<div class="mt-2 text-sm">
 
 Cuando buscas "comida mexicana" y hay 500 resultados, ¿cual te muestro primero? Elasticsearch usa un algoritmo llamado <strong>BM25</strong> que asigna un puntaje (_score) a cada resultado:
 
@@ -986,13 +1024,13 @@ layout: neo-demo
 4. Esperar ~2 minutos → **Guardar** las credenciales
 5. Abrir **Kibana** desde el panel
 
-<div class="mt-4 border border-black p-3 text-sm">
+<div class="mt-4 border-2 border-black p-3 text-sm">
 
 **Importante**: Guarden el password del usuario `elastic` que se genera automaticamente. Lo necesitan para todo lo demas.
 
 </div>
 
-<div class="mt-2 border border-black p-3 text-sm">
+<div class="mt-2 border-2 border-black p-3 text-sm">
 
 **Trial gratuito**: 14 dias, sin tarjeta de credito. Suficiente para este workshop y los labs.
 
@@ -1027,7 +1065,7 @@ layout: neo-demo
 4. Clic en **"View data"** → **"Dashboard"**
 5. Observen: mapas, graficas de ventas, top productos...
 
-<div class="mt-3 border border-black p-3 text-sm">
+<div class="mt-3 border-2 border-black p-3 text-sm">
 
 Todo esto se construyo <strong>sin codigo</strong>. Kibana + Elasticsearch generan dashboards interactivos listos para BI.
 
@@ -1141,10 +1179,10 @@ GET kibana_sample_data_ecommerce/_search
 ```
 
 <div class="mt-3 grid grid-cols-2 gap-4">
-  <div class="border border-[#ff6b6b]/50 p-3">
+  <div class="border-2 border-[#ff6b6b]/50 p-3">
     <strong>SQL</strong>: <code>LIKE '%shoees%'</code> → <strong>0 resultados</strong>
   </div>
-  <div class="border border-[#2DD4BF]/50 p-3">
+  <div class="border-2 border-[#2DD4BF]/50 p-3">
     <strong>ES</strong>: "shoees" → corrige a "shoes" → <strong>resultados encontrados</strong>
   </div>
 </div>
@@ -1260,13 +1298,13 @@ Las tecnicas que usa Elasticsearch son el <strong>primer nivel</strong> de NLP. 
     <p class="text-xs mt-1">Probabilidades de palabras. Mejor, pero sin "entender".</p>
   </div>
   <div class="text-xl">→</div>
-  <div class="border border-[#2DD4BF] p-3 text-center text-sm flex-1">
+  <div class="border-2 border-[#2DD4BF] p-3 text-center text-sm flex-1">
     <div class="font-bold text-[#2DD4BF]">2013</div>
     <strong>Word2Vec</strong>
     <p class="text-xs mt-1">Palabras como vectores. Primer "significado" numerico.</p>
   </div>
   <div class="text-xl">→</div>
-  <div class="border border-[#6c5ce7] p-3 text-center text-sm flex-1">
+  <div class="border-2 border-[#6c5ce7] p-3 text-center text-sm flex-1">
     <div class="font-bold text-[#6c5ce7]">2017+</div>
     <strong>Transformers</strong>
     <p class="text-xs mt-1">Atencion. GPT, BERT, Claude. La revolucion actual.</p>
@@ -1288,7 +1326,9 @@ ChromaDB usa exactamente esta tecnologia. Lo que alimenta a ChatGPT, tu lo puede
 
 # Panorama rapido: ¿que mas puede hacer ES?
 
-<div class="grid grid-cols-3 gap-3 mt-4">
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-3 gap-3 mt-3">
   <div class="border-2 border-black bg-white p-3 text-sm">
     <h4 class="text-[#ff6b6b]">Agregaciones</h4>
     <p class="text-xs">Como GROUP BY pero mas poderoso. Conteos, promedios, percentiles — todo en una query.</p>
@@ -1325,18 +1365,20 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 
 # Cuando NO usar Elasticsearch
 
-<div class="grid grid-cols-3 gap-4 mt-6">
-  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-4 text-center">
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-3 gap-4 mt-4">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4 text-center">
     <div class="text-2xl mb-2">🚫</div>
     <strong>Transacciones</strong>
     <p class="text-sm mt-1">No es ACID. Nunca para transferencias bancarias o inventario critico.</p>
   </div>
-  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-4 text-center">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4 text-center">
     <div class="text-2xl mb-2">🚫</div>
     <strong>Base de datos principal</strong>
     <p class="text-sm mt-1">Usalo como complemento de PostgreSQL/MySQL, nunca como reemplazo.</p>
   </div>
-  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-4 text-center">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4 text-center">
     <div class="text-2xl mb-2">🚫</div>
     <strong>JOINs complejos</strong>
     <p class="text-sm mt-1">ES no normaliza datos como SQL. Sus documentos son "aplanados" — cada uno es independiente.</p>
@@ -1390,7 +1432,7 @@ layout: neo-section
 
 <p class="text-[#2DD4BF] mt-6 text-xl font-mono">// estiren las piernas. tomen agua.</p>
 
-<div class="mt-6 border border-[#2DD4BF]/30 p-4 max-w-md mx-auto">
+<div class="mt-6 border-2 border-[#2DD4BF]/30 p-4 max-w-md mx-auto">
 <p class="text-white text-lg text-center">Lo que sigue es la parte que les va a volar la cabeza.</p>
 </div>
 
@@ -1432,7 +1474,7 @@ Elasticsearch es genial para buscar <strong>palabras</strong>. Pero... ¿que pas
       <div class="text-sm"><span class="text-[#2DD4BF] font-bold">Elasticsearch</span>: ❌ busca la palabra "nostalgia" pero "Roma" evoca nostalgia sin decirlo</div>
     </div>
   </div>
-  <div class="border border-[#6c5ce7] bg-[#6c5ce7]/10 p-4 text-center">
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-4 text-center">
     <strong>Necesitamos algo que entienda el SIGNIFICADO detras de las palabras.</strong>
     <br/>Necesitamos que la maquina "lea entre lineas".
   </div>
@@ -1446,30 +1488,36 @@ Elasticsearch es genial para buscar <strong>palabras</strong>. Pero... ¿que pas
 
 # Los embeddings estan en todas partes
 
-<div class="mt-4 text-sm">
+<div class="pixel-divider my-3" />
+
+<div class="mt-2 text-sm">
 
 Los <strong>embeddings</strong> (representaciones vectoriales) son la tecnologia detras de:
 
 </div>
 
-<div class="grid grid-cols-2 gap-4 mt-4">
-  <div class="border-2 border-black bg-white p-4">
-    <h3>ChatGPT, Claude, Gemini</h3>
+<v-clicks>
+
+<div class="grid grid-cols-2 gap-4 mt-3">
+  <div class="border-2 border-[#6c5ce7] bg-white p-4">
+    <h3 class="text-[#6c5ce7]">🤖 ChatGPT, Claude, Gemini</h3>
     <p class="text-sm mt-1">Todos los modelos de IA modernos usan embeddings para entender lenguaje.</p>
   </div>
-  <div class="border-2 border-black bg-white p-4">
-    <h3>Recomendaciones</h3>
+  <div class="border-2 border-[#6c5ce7] bg-white p-4">
+    <h3 class="text-[#6c5ce7]">🎬 Recomendaciones</h3>
     <p class="text-sm mt-1">"Si te gusto esta pelicula, te gustara esta otra" — Netflix, Spotify, Amazon.</p>
   </div>
-  <div class="border-2 border-black bg-white p-4">
-    <h3>Busqueda semantica</h3>
+  <div class="border-2 border-[#2DD4BF] bg-white p-4">
+    <h3 class="text-[#2DD4BF]">🔍 Busqueda semantica</h3>
     <p class="text-sm mt-1">Google entiende que "como curar dolor de cabeza" y "remedios para cefalea" son la misma pregunta.</p>
   </div>
-  <div class="border-2 border-black bg-white p-4">
-    <h3>RAG (IA + tus datos)</h3>
+  <div class="border-2 border-[#2DD4BF] bg-white p-4">
+    <h3 class="text-[#2DD4BF]">📚 RAG (IA + tus datos)</h3>
     <p class="text-sm mt-1">Chatbots que responden usando la informacion de tu empresa, no inventando cosas.</p>
   </div>
 </div>
+
+</v-clicks>
 
 <v-click>
 
@@ -1499,13 +1547,13 @@ Entender embeddings es <strong>entender como funciona la IA moderna</strong>. Es
   <div class="border-2 border-black bg-[#2DD4BF]/15 p-3 text-center text-sm">
     <strong>Esquina 1</strong><br/>Comedias familiares
   </div>
-  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/10 p-3 text-center text-sm">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 text-center text-sm">
     <strong>Esquina 2</strong><br/>Thrillers oscuros
   </div>
-  <div class="border border-[#2DD4BF] bg-[#2DD4BF]/10 p-3 text-center text-sm">
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-3 text-center text-sm">
     <strong>Esquina 3</strong><br/>Dramas sociales
   </div>
-  <div class="border border-[#6c5ce7] bg-[#6c5ce7]/10 p-3 text-center text-sm">
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-3 text-center text-sm">
     <strong>Esquina 4</strong><br/>Ciencia ficcion
   </div>
 </div>
@@ -1537,7 +1585,7 @@ Ahora imagina que la mesa es un plano con coordenadas (x, y). Cada pelicula tien
     <p class="text-sm mt-3">"perro" y "cachorro" tienen numeros <strong>muy parecidos</strong> → estan <strong>cerca</strong> en el espacio. "automovil" tiene numeros muy diferentes → esta <strong>lejos</strong>.</p>
   </div>
   <div class="flex items-center justify-center">
-    <div class="border border-[#6c5ce7] bg-[#6c5ce7]/10 p-6 text-center">
+    <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-6 text-center">
       <div class="text-lg font-bold mb-3">Espacio de significado</div>
       <div class="text-sm text-left font-mono">
         🐕 perro<br/>
@@ -1606,17 +1654,17 @@ Si los embeddings son las "coordenadas de significado" de un texto, necesitamos 
 <v-clicks>
 
 <div class="grid grid-cols-3 gap-4 mt-4">
-  <div class="border border-[#6c5ce7] bg-[#6c5ce7]/10 p-4 text-center">
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-4 text-center">
     <div class="text-3xl mb-2">📐</div>
     <strong>Guarda vectores</strong>
     <p class="text-xs mt-1">Los numeros que representan el significado de cada documento.</p>
   </div>
-  <div class="border border-[#2DD4BF] bg-[#2DD4BF]/10 p-4 text-center">
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-4 text-center">
     <div class="text-3xl mb-2">🔍</div>
     <strong>Busca por cercania</strong>
     <p class="text-xs mt-1">"Dame los 5 documentos cuyo significado sea mas cercano a esta pregunta."</p>
   </div>
-  <div class="border-2 border-black bg-[#2DD4BF]/10 p-4 text-center">
+  <div class="border-2 border-black bg-[#2DD4BF]/15 p-4 text-center">
     <div class="text-3xl mb-2">📄</div>
     <strong>Devuelve el texto original</strong>
     <p class="text-xs mt-1">No solo los numeros — tambien el documento de donde vino, con metadata.</p>
@@ -1639,7 +1687,9 @@ Si los embeddings son las "coordenadas de significado" de un texto, necesitamos 
 
 # ChromaDB: busqueda semantica en 5 lineas de Python
 
-<div class="grid grid-cols-2 gap-6 mt-6">
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-2 gap-6 mt-4">
   <div class="space-y-3">
     <div class="border-2 border-black bg-white p-3 text-sm">
       <strong>Open source</strong> — codigo abierto, licencia Apache 2.0. Gratis.
@@ -1729,24 +1779,24 @@ El gran problema de ChatGPT: a veces **inventa** respuestas (alucina). ¿La solu
 <v-click>
 
 <div class="flex items-center justify-center gap-2 mt-6">
-  <div class="border-2 border-black p-3 text-center text-sm">
+  <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-sm">
     <div class="text-xl">❓</div>
     <strong>Pregunta</strong>
   </div>
-  <div class="text-xl">→</div>
-  <div class="border border-[#2DD4BF] p-3 text-center text-sm">
+  <div class="text-2xl font-bold">→</div>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-3 text-center text-sm">
     <div class="text-xl">🔍</div>
     <strong>ChromaDB busca</strong>
     <p class="text-xs">contexto relevante</p>
   </div>
-  <div class="text-xl">→</div>
-  <div class="border border-[#6c5ce7] p-3 text-center text-sm">
+  <div class="text-2xl font-bold">→</div>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-3 text-center text-sm">
     <div class="text-xl">🧠</div>
     <strong>LLM genera</strong>
     <p class="text-xs">respuesta con contexto</p>
   </div>
-  <div class="text-xl">→</div>
-  <div class="border border-[#2DD4BF] p-3 text-center text-sm">
+  <div class="text-2xl font-bold">→</div>
+  <div class="border-2 border-black bg-[#2DD4BF]/25 p-3 text-center text-sm">
     <div class="text-xl">✅</div>
     <strong>Respuesta</strong>
     <p class="text-xs">fundamentada</p>
@@ -1792,7 +1842,7 @@ Un chatbot que responde preguntas sobre carreras en datos usando **40+ ofertas d
 - *"Se Python, SQL y Tableau — ¿para que puestos califico?"*
 - *"¿Que tecnologias deberia aprender este semestre?"*
 
-<div class="mt-2 border border-black p-2 text-sm">
+<div class="mt-2 border-2 border-black p-2 text-sm">
 Cada respuesta muestra las <strong>fuentes</strong>: las ofertas de trabajo reales en las que se basa. Eso es RAG en accion.
 </div>
 
@@ -1838,40 +1888,42 @@ layout: neo-section
 
 # ¿Que herramienta uso?
 
-<div class="mt-6">
+<div class="pixel-divider my-3" />
+
+<div class="mt-4">
 
 <div class="flex flex-col items-center gap-3">
-  <div class="border-2 border-black bg-[#2DD4BF]/15 p-3 text-center font-bold">
+  <div class="border-2 border-black bg-[#0d1117] text-white p-3 text-center font-bold text-lg">
     ¿Que tipo de datos tienes?
   </div>
   <div class="flex gap-12 mt-2">
     <div class="flex flex-col items-center gap-2">
-      <div class="text-sm">↓ Estructurados</div>
-      <div class="border-2 border-black p-3 text-center text-sm">
+      <div class="text-sm font-bold">↓ Estructurados</div>
+      <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-sm">
         ¿Necesitas transacciones?
       </div>
-      <div class="text-sm">↓ Si</div>
-      <div class="border border-[#2DD4BF] bg-[#2DD4BF]/15 p-3 text-center font-bold text-sm">
+      <div class="text-sm font-bold">↓ Si</div>
+      <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/25 p-3 text-center font-bold text-sm">
         SQL ✅
       </div>
     </div>
     <div class="flex flex-col items-center gap-2">
-      <div class="text-sm">↓ Texto libre</div>
-      <div class="border-2 border-black p-3 text-center text-sm">
+      <div class="text-sm font-bold">↓ Texto libre</div>
+      <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-sm">
         ¿Busqueda por palabras?
       </div>
-      <div class="text-sm">↓ Si</div>
-      <div class="border border-[#ff6b6b] bg-[#ff6b6b]/10 p-3 text-center font-bold text-sm">
+      <div class="text-sm font-bold">↓ Si</div>
+      <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/25 p-3 text-center font-bold text-sm">
         Elasticsearch ✅
       </div>
     </div>
     <div class="flex flex-col items-center gap-2">
-      <div class="text-sm">↓ Significado/conceptos</div>
-      <div class="border-2 border-black p-3 text-center text-sm">
+      <div class="text-sm font-bold">↓ Significado/conceptos</div>
+      <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-sm">
         ¿Busqueda semantica / IA?
       </div>
-      <div class="text-sm">↓ Si</div>
-      <div class="border border-[#2DD4BF] bg-[#2DD4BF]/10 p-3 text-center font-bold text-sm">
+      <div class="text-sm font-bold">↓ Si</div>
+      <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/25 p-3 text-center font-bold text-sm">
         Vector DB ✅
       </div>
     </div>
@@ -1894,6 +1946,8 @@ layout: neo-section
 
 # SQL vs Elasticsearch vs ChromaDB
 
+<div class="pixel-divider my-3" />
+
 <ComparisonTable
   :headers="['', 'SQL', 'Elasticsearch', 'ChromaDB']"
   :rows="[
@@ -1911,9 +1965,11 @@ layout: neo-section
 
 # Tu nuevo superpoder empieza ahora
 
-<div class="mt-6">
+<div class="pixel-divider my-3" />
 
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-6">
+<div class="mt-4">
+
+<div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/20 p-6">
 
 ### Ofertas de empleo reales que ya piden estas habilidades:
 
@@ -1925,7 +1981,7 @@ layout: neo-section
 
 </div>
 
-<div class="mt-4 text-center text-lg">
+<div class="border-2 border-black bg-[#0d1117] text-white p-4 mt-4 text-center text-lg">
 <strong>Ahora saben que es esto. La mayoria de profesionales con experiencia no.</strong>
 </div>
 
@@ -1937,7 +1993,9 @@ layout: neo-section
 
 # Sigue practicando
 
-<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-2 gap-4 mt-4">
   <div class="border-2 border-black bg-white p-4">
     <h3>Labs en este repo</h3>
     <ul class="text-sm mt-2 space-y-1">

@@ -33,12 +33,59 @@
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* Auto-shadow: every 2px-bordered card gets the hard offset shadow */
+.slidev-layout div[class*="border-2"][class*="border-black"],
+.slidev-layout div[class*="border-2"][class*="border-[#ff6b6b]"],
+.slidev-layout div[class*="border-2"][class*="border-[#2DD4BF]"],
+.slidev-layout div[class*="border-2"][class*="border-[#6c5ce7]"] {
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* Headings: stronger contrast */
+.slidev-layout h1 {
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+}
+
+/* Inline code: high contrast pill */
+.slidev-layout :not(pre) > code {
+  background: #0d1117;
+  color: #2DD4BF;
+  padding: 1px 6px;
+  border: 1px solid #000;
+  font-size: 0.85em;
+}
+
 /* Terminal-style code blocks */
 .slidev-layout pre.shiki,
 .slidev-layout pre.slidev-code {
   background: var(--mac-code-bg) !important;
   border: 2px solid #000;
   border-radius: 2px;
+  box-shadow: 3px 3px 0px #000;
+}
+
+/* Strong callout boxes — teal highlight */
+.mac-callout {
+  border: 2px solid #000;
+  background: rgba(45, 212, 191, 0.15);
+  box-shadow: 2px 2px 0px #000;
+  padding: 16px;
+}
+
+/* Warning/danger callout — coral */
+.mac-callout-danger {
+  border: 2px solid #000;
+  background: rgba(255, 107, 107, 0.12);
+  box-shadow: 2px 2px 0px #000;
+  padding: 16px;
+}
+
+/* High-contrast highlight inline span */
+.mac-highlight {
+  background: rgba(45, 212, 191, 0.25);
+  padding: 2px 6px;
+  border-bottom: 2px solid #2DD4BF;
+  font-weight: 600;
 }
 
 /* Mac OS 7 Window */
@@ -157,7 +204,7 @@
     transparent 4px,
     transparent 8px
   );
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 /* Reference footnote */
