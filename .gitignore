@@ -56,6 +56,12 @@ yarn-debug.log*
 components.d.ts
 .slidev/
 
+# Images (downloaded locally, too large for git)
+public/images/*.jpg
+public/images/*.png
+public/images/*.webp
+!public/images/SOURCES.md
+
 # Misc
 *.bak
 *.tmp

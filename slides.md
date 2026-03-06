@@ -34,7 +34,7 @@ layout: neo-cover
   <span class="neo-tag bg-grape text-white">2 horas</span>
 </div>
 
-<div class="mt-4 text-sm opacity-70">
+<div class="mt-4 text-sm opacity-50 font-mono">
 github.com/HesusG/mas-alla-de-sql
 </div>
 
@@ -45,45 +45,45 @@ github.com/HesusG/mas-alla-de-sql
 # Sobre mi
 
 <div class="grid grid-cols-[1fr_2fr] gap-8 mt-8 items-center">
-  <div class="neo-card bg-banana p-6 text-center">
+  <div class="border border-black p-6 text-center">
     <div class="text-6xl mb-4">👨‍💻</div>
     <div class="text-lg font-bold">[Tu nombre]</div>
     <div class="text-sm mt-1">[Tu rol / titulo]</div>
   </div>
   <div class="space-y-3">
-    <div class="neo-card bg-white p-3 text-sm">📍 [Ciudad, organizacion]</div>
-    <div class="neo-card bg-white p-3 text-sm">💼 [Experiencia relevante]</div>
-    <div class="neo-card bg-white p-3 text-sm">🔧 [Stack / tecnologias]</div>
-    <div class="neo-card bg-white p-3 text-sm">🎯 [Por que este tema te apasiona]</div>
+    <div class="border border-black bg-white p-3 text-sm">📍 [Ciudad, organizacion]</div>
+    <div class="border border-black bg-white p-3 text-sm">💼 [Experiencia relevante]</div>
+    <div class="border border-black bg-white p-3 text-sm">🔧 [Stack / tecnologias]</div>
+    <div class="border border-black bg-white p-3 text-sm">🎯 [Por que este tema te apasiona]</div>
   </div>
 </div>
 
 ---
 
-<!-- Slide 3: Roadmap - moved to beginning -->
+<!-- Slide 3: Roadmap -->
 
 # Hoy vamos a recorrer este camino
 
 <div class="flex items-center justify-center gap-3 mt-10">
-  <div class="neo-card bg-banana p-4 text-center min-w-28">
+  <div class="border border-black p-4 text-center min-w-28">
     <div class="text-3xl mb-1">🏛️</div>
     <strong>SQL</strong><br/>
     <span class="text-xs">Lo que conoces</span>
   </div>
-  <div class="text-3xl font-bold text-[#2D3436]">→</div>
-  <div class="neo-card bg-coral text-white p-4 text-center min-w-28">
+  <div class="text-3xl font-bold text-black/30">→</div>
+  <div class="border border-black p-4 text-center min-w-28 bg-[#ff6b6b]/10">
     <div class="text-3xl mb-1">🤔</div>
     <strong>El problema</strong><br/>
     <span class="text-xs">Donde SQL no llega</span>
   </div>
-  <div class="text-3xl font-bold text-[#2D3436]">→</div>
-  <div class="neo-card bg-sky text-white p-4 text-center min-w-28">
+  <div class="text-3xl font-bold text-black/30">→</div>
+  <div class="border border-black p-4 text-center min-w-28 bg-[#ff6b6b]/10">
     <div class="text-3xl mb-1">🔍</div>
     <strong>Elasticsearch</strong><br/>
     <span class="text-xs">Busqueda de texto</span>
   </div>
-  <div class="text-3xl font-bold text-[#2D3436]">→</div>
-  <div class="neo-card bg-grape text-white p-4 text-center min-w-28">
+  <div class="text-3xl font-bold text-black/30">→</div>
+  <div class="border border-black p-4 text-center min-w-28 bg-[#6c5ce7]/10">
     <div class="text-3xl mb-1">🧠</div>
     <strong>ChromaDB</strong><br/>
     <span class="text-xs">Busqueda por significado</span>
@@ -110,7 +110,7 @@ Su jefe les dice:
 
 <v-click>
 
-<div class="neo-card bg-banana p-6 mt-6 text-center text-xl">
+<div class="border border-black bg-[#ffe156]/20 p-6 mt-6 text-center text-xl">
 <em>"Necesito un reporte de todas las reseñas donde los clientes estan <strong>frustrados</strong>.<br/> Tenemos 10,000 reseñas en la base de datos. Para ayer."</em>
 </div>
 
@@ -146,7 +146,7 @@ SELECT * FROM resenas WHERE texto LIKE '%frustrado%';
 
 <v-click>
 
-<div class="neo-card bg-coral text-white p-4 mt-4">
+<div class="border border-[#ff6b6b] bg-[#ff6b6b]/10 p-4 mt-4">
 <strong>Resultado: 23 reseñas.</strong> Pero... ¿de 10,000? Algo no cuadra.
 </div>
 
@@ -186,36 +186,36 @@ WHERE texto LIKE '%frustrado%'
 <v-clicks>
 
 <div class="mt-4 space-y-3">
-  <div class="neo-card bg-white p-3">❌ Hay que <strong>adivinar</strong> todas las palabras posibles — ¿cuantas formas hay de expresar frustracion?</div>
-  <div class="neo-card bg-white p-3">❌ <strong>No entiende contexto</strong>: "no estoy molesto" apareceria como resultado positivo</div>
-  <div class="neo-card bg-white p-3">❌ Es <strong>lento</strong>: cada <code>LIKE</code> con <code>%</code> escanea toda la tabla, fila por fila</div>
-  <div class="neo-card bg-white p-3">❌ <strong>Sin ranking</strong>: no sabes cual resena es "mas frustrada" que otra</div>
+  <div class="border border-black bg-white p-3">❌ Hay que <strong>adivinar</strong> todas las palabras posibles — ¿cuantas formas hay de expresar frustracion?</div>
+  <div class="border border-black bg-white p-3">❌ <strong>No entiende contexto</strong>: "no estoy molesto" apareceria como resultado positivo</div>
+  <div class="border border-black bg-white p-3">❌ Es <strong>lento</strong>: cada <code>LIKE</code> con <code>%</code> escanea toda la tabla, fila por fila</div>
+  <div class="border border-black bg-white p-3">❌ <strong>Sin ranking</strong>: no sabes cual resena es "mas frustrada" que otra</div>
 </div>
 
 </v-clicks>
 
 ---
 
-<!-- Slide 7: The reveal -->
+<!-- Slide 7: The reveal - WHY ES returns more -->
 
 # Ahora miren esto
 
 <div class="grid grid-cols-2 gap-6 mt-6">
   <div class="space-y-4">
     <h3 class="text-coral">SQL</h3>
-    <div class="neo-card bg-white p-4">
+    <div class="border border-black bg-white p-4">
 
 ```sql
 SELECT * FROM resenas
 WHERE texto LIKE '%frustrado%';
 ```
 
-<div class="mt-2 text-coral font-bold">→ 23 resultados. Sin ranking.</div>
+<div class="mt-2 text-[#ff6b6b] font-bold">→ 23 resultados. Sin ranking.</div>
     </div>
   </div>
   <div class="space-y-4">
     <h3 class="text-sky">Elasticsearch</h3>
-    <div class="neo-card bg-white p-4">
+    <div class="border border-black bg-white p-4">
 
 ```json
 GET resenas/_search
@@ -224,14 +224,22 @@ GET resenas/_search
 }}}
 ```
 
-<div class="mt-2 text-sky font-bold">→ 147 resultados. Rankeados por relevancia.</div>
+<div class="mt-2 text-[#4ecdc4] font-bold">→ 147 resultados. Rankeados por relevancia.</div>
     </div>
   </div>
 </div>
 
 <v-click>
 
-<div class="neo-card bg-banana p-4 mt-6 text-center text-lg">
+<div class="border border-black bg-[#ffe156]/20 p-4 mt-4 text-sm">
+<strong>¿Por que 147 vs 23?</strong> Elasticsearch <em>tokeniza</em> el texto: separa "frustrado" en su raiz y busca variaciones. Ademas, su <strong>indice invertido</strong> ya mapeó cada palabra a los documentos donde aparece — no escanea fila por fila como <code>LIKE</code>. SQL busca la cadena exacta; ES entiende la estructura del idioma.
+</div>
+
+</v-click>
+
+<v-click>
+
+<div class="text-center mt-3 text-sm">
 Al final de esta sesion, van a saber como hacer esto. Y mucho mas.
 </div>
 
@@ -239,25 +247,59 @@ Al final de esta sesion, van a saber como hacer esto. Y mucho mas.
 
 ---
 layout: neo-section
-class: bg-grape
+class: bg-[#0d1117]
 ---
 
 <!-- Slide 8: Section - Unstructured data -->
 
-<h1 class="text-white text-4xl">El mundo real no cabe en tablas</h1>
+<h1 class="text-white text-6xl font-bold">El mundo real no cabe en tablas</h1>
 
-<p class="text-white/80 mt-4 text-xl">Entendiendo por que SQL no es suficiente</p>
+<p class="text-[#00ff41] mt-6 text-xl font-mono">// entendiendo por que SQL no es suficiente</p>
 
 ---
 
-<!-- Slide 9: What is unstructured data -->
+<!-- Slide 9: Audience interaction -->
+
+# Antes de seguir... un sondeo rapido
+
+<div class="mt-8 space-y-6">
+
+<v-clicks>
+
+<div class="border border-black p-5 text-lg">
+🙋 <strong>Levanten la mano si...</strong> han usado SQL en algun proyecto o clase
+</div>
+
+<div class="border border-black p-5 text-lg">
+🙋 <strong>Levanten la mano si...</strong> alguna vez intentaron buscar texto libre en una base de datos y les frustro el resultado
+</div>
+
+<div class="border border-black p-5 text-lg">
+🙋 <strong>Levanten la mano si...</strong> han usado un buscador inteligente (Google, Spotify, Netflix) y se preguntaron "¿como sabe lo que quiero?"
+</div>
+
+</v-clicks>
+
+</div>
+
+<v-click>
+
+<div class="mt-6 text-center text-lg">
+Perfecto. Hoy vamos a entender como funcionan esos buscadores <strong>por dentro</strong>.
+</div>
+
+</v-click>
+
+---
+
+<!-- Slide 10: What is unstructured data -->
 
 # ¿Que son los datos no estructurados?
 
 <div class="grid grid-cols-2 gap-6 mt-6">
   <div>
     <h3 class="mb-3">Datos estructurados (SQL)</h3>
-    <div class="neo-card bg-white p-3 text-sm">
+    <div class="border border-black bg-white p-3 text-sm">
       <table class="w-full text-xs">
         <tr class="border-b"><th class="text-left p-1">id</th><th class="text-left p-1">nombre</th><th class="text-left p-1">precio</th><th class="text-left p-1">stock</th></tr>
         <tr class="border-b"><td class="p-1">1</td><td class="p-1">Laptop</td><td class="p-1">15000</td><td class="p-1">42</td></tr>
@@ -268,7 +310,7 @@ class: bg-grape
   </div>
   <div>
     <h3 class="mb-3">Datos no estructurados</h3>
-    <div class="neo-card bg-coral/10 p-3 text-sm space-y-2">
+    <div class="border border-black bg-[#ff6b6b]/5 p-3 text-sm space-y-2">
       <div>📧 <em>"Hola, llevo 2 semanas sin recibir mi pedido..."</em></div>
       <div>📄 Contrato de 45 paginas en PDF</div>
       <div>💬 Conversaciones de chat con soporte</div>
@@ -280,7 +322,7 @@ class: bg-grape
 
 <v-click>
 
-<div class="neo-card bg-banana p-4 mt-4 text-center">
+<div class="border border-black bg-[#ffe156]/20 p-4 mt-4 text-center">
 <strong>Mas del 80% de los datos en las empresas son no estructurados.</strong>
 No caben en una tabla de SQL.
 </div>
@@ -291,51 +333,122 @@ No caben en una tabla de SQL.
 
 ---
 
-<!-- Slide 10: What SQL does well -->
+<!-- Slide 11: What is normalization - for dummies -->
+
+# ¿Que es normalizacion? (Normalization)
+
+<div class="mt-4 text-sm">
+
+Antes de entender el problema, veamos como SQL <strong>organiza</strong> los datos. Normalizacion = separar la informacion en tablas relacionadas para evitar repeticion.
+
+</div>
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+  <div>
+    <h4 class="mb-2 text-[#ff6b6b]">Antes: una tabla desordenada</h4>
+    <div class="border border-black p-3 text-xs font-mono bg-white">
+      <table class="w-full">
+        <tr class="border-b"><th class="p-1">pedido</th><th class="p-1">cliente</th><th class="p-1">email</th><th class="p-1">producto</th><th class="p-1">precio</th></tr>
+        <tr class="border-b"><td class="p-1">001</td><td class="p-1">Ana</td><td class="p-1">ana@mail</td><td class="p-1">Laptop</td><td class="p-1">15000</td></tr>
+        <tr class="border-b"><td class="p-1">002</td><td class="p-1">Ana</td><td class="p-1">ana@mail</td><td class="p-1">Mouse</td><td class="p-1">350</td></tr>
+        <tr><td class="p-1">003</td><td class="p-1">Luis</td><td class="p-1">luis@mail</td><td class="p-1">Laptop</td><td class="p-1">15000</td></tr>
+      </table>
+      <p class="mt-1 text-[#ff6b6b]">↑ "Ana" y "Laptop" repetidos</p>
+    </div>
+  </div>
+  <div>
+    <h4 class="mb-2 text-[#4ecdc4]">Despues: 3 tablas limpias</h4>
+    <div class="border border-black p-3 text-xs font-mono bg-white space-y-2">
+      <div><strong>clientes</strong>: id, nombre, email</div>
+      <div><strong>productos</strong>: id, nombre, precio</div>
+      <div><strong>pedidos</strong>: id, cliente_id, producto_id</div>
+      <p class="mt-1 text-[#4ecdc4]">↑ Sin repeticion, conectados por IDs</p>
+    </div>
+  </div>
+</div>
+
+<v-click>
+
+<div class="border border-black bg-white p-3 mt-4 text-center text-sm">
+Esto es lo que SQL hace mejor que nadie: datos <strong>estructurados, limpios y sin duplicados</strong>.
+</div>
+
+</v-click>
+
+<RefFootnote :sources="['Codd, E. F. (1970). A relational model of data for large shared data banks. Communications of the ACM, 13(6), 377-387.']" />
+
+---
+
+<!-- Slide 12: Downsides of normalization -->
+
+# Las desventajas de normalizar
+
+<div class="mt-4 text-sm">
+
+Normalizar es excelente para datos estructurados. Pero tiene un costo:
+
+</div>
+
+<v-clicks>
+
+<div class="space-y-3 mt-4">
+  <div class="border border-black bg-white p-4">
+    <strong>JOINs son lentos a escala</strong> — Para reconstruir la informacion original necesitas cruzar 3, 4, 5 tablas. Con millones de filas, esto se vuelve costoso.
+  </div>
+  <div class="border border-black bg-white p-4">
+    <strong>Esquema rigido</strong> — Cada columna tiene un tipo definido. ¿Quieres agregar un campo nuevo? ALTER TABLE. ¿Un documento que no tiene ese campo? NULL.
+  </div>
+  <div class="border border-black bg-white p-4">
+    <strong>No puedes buscar "a traves" de los datos</strong> — Si la informacion esta repartida en 5 tablas, buscar texto libre requiere JOINs + LIKE en cada tabla. Impracticable.
+  </div>
+</div>
+
+</v-clicks>
+
+<v-click>
+
+<div class="border border-black bg-[#ffe156]/20 p-4 mt-4 text-center">
+Normalizacion funciona perfecto para datos estructurados. Pero... <strong>¿que pasa con texto libre, emails, PDFs, chats?</strong>
+</div>
+
+</v-click>
+
+---
+
+<!-- Slide 13: SQL is powerful - Codd + ACID -->
 
 # SQL es poderoso — para lo que fue diseñado
 
-<div class="mt-6">
-
-SQL fue creado en los años 70 para manejar datos **estructurados** con reglas claras:
-
-</div>
-
-<div class="grid grid-cols-2 gap-4 mt-4">
-
-<div class="neo-card bg-white p-4">
-
-### Transacciones ACID
-
-Garantiza que tus datos sean **consistentes**. Si transfieres $1,000 de una cuenta a otra, SQL asegura que no se pierda dinero en el camino.
-
-<div class="text-xs mt-2 text-gray-500">
-
-ACID = Atomicidad, Consistencia, Aislamiento, Durabilidad. Concepto fundamental de bases de datos relacionales.
-
-</div>
-
-</div>
-
-<div class="neo-card bg-white p-4">
-
-### JOINs y relaciones
-
-Conecta tablas entre si: clientes con pedidos, pedidos con productos. Modelo relacional, inventado por Edgar F. Codd (1970).
-
-</div>
-
+<div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
+  <div class="border border-black p-4 text-center">
+    <div class="w-32 h-32 mx-auto border border-black flex items-center justify-center bg-gray-100 text-4xl">📐</div>
+    <div class="text-sm font-bold mt-2">Edgar F. Codd</div>
+    <div class="text-xs">IBM, 1970</div>
+    <div class="text-xs mt-1">Inventor del modelo relacional</div>
+  </div>
+  <div>
+    <h3 class="mb-3">Transacciones ACID</h3>
+    <div class="grid grid-cols-2 gap-2">
+      <div class="border border-black p-2 text-sm"><strong class="text-[#ff6b6b]">A</strong>tomicidad — Todo o nada</div>
+      <div class="border border-black p-2 text-sm"><strong class="text-[#ff6b6b]">C</strong>onsistencia — Reglas siempre se cumplen</div>
+      <div class="border border-black p-2 text-sm"><strong class="text-[#ff6b6b]">I</strong>solamiento — Transacciones no se estorban</div>
+      <div class="border border-black p-2 text-sm"><strong class="text-[#ff6b6b]">D</strong>urabilidad — Lo guardado no se pierde</div>
+    </div>
+    <div class="text-sm mt-3">
+    Si transfieres $1,000 de una cuenta a otra, SQL garantiza que el dinero no desaparezca en el camino. Esto es <strong>fundamental</strong> para bancos, inventarios y cualquier sistema critico.
+    </div>
+  </div>
 </div>
 
 <RefFootnote :sources="['Codd, E. F. (1970). A relational model of data for large shared data banks. Communications of the ACM, 13(6), 377-387.']" />
 
 ---
 
-<!-- Slide 11: What SQL can't do - Text -->
+<!-- Slide 14: What SQL can't do - Text -->
 
 # Pero SQL no fue diseñado para buscar texto
 
-<div class="mt-6">
+<div class="mt-4">
 
 Intenta responder estas preguntas con SQL:
 
@@ -344,16 +457,16 @@ Intenta responder estas preguntas con SQL:
 <v-clicks>
 
 <div class="space-y-3 mt-4">
-  <div class="neo-card bg-white p-3">
+  <div class="border border-black bg-white p-3">
     <strong>1.</strong> "Encuentra reseñas de clientes <strong>insatisfechos</strong>" → ¿Con que palabra buscas? Hay cientos de formas de expresar insatisfaccion.
   </div>
-  <div class="neo-card bg-white p-3">
+  <div class="border border-black bg-white p-3">
     <strong>2.</strong> "Busca productos similares a <strong>tenis para correr</strong>" → <code>LIKE '%tenis%'</code> no encuentra "zapatillas deportivas" ni "running shoes".
   </div>
-  <div class="neo-card bg-white p-3">
+  <div class="border border-black bg-white p-3">
     <strong>3.</strong> "¿Cuales son las quejas <strong>mas urgentes</strong>?" → SQL no puede rankear por "urgencia" — devuelve todo o nada.
   </div>
-  <div class="neo-card bg-coral/10 p-3">
+  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-3">
     <strong>4.</strong> "El cliente escribio <strong>'teniz'</strong> en vez de 'tenis'" → <code>LIKE '%teniz%'</code> no encuentra nada. Un simple error tipografico y perdiste resultados.
   </div>
 </div>
@@ -362,38 +475,52 @@ Intenta responder estas preguntas con SQL:
 
 ---
 
-<!-- Slide 12: What SQL can't do - Scale & Speed -->
+<!-- Slide 15: Relevance explained -->
 
-# SQL tampoco fue diseñado para esto
+# ¿Que es "relevancia"? (Relevance)
 
-<div class="grid grid-cols-2 gap-6 mt-6">
-  <div class="neo-card bg-white p-4">
-    <h3 class="text-coral">Velocidad en texto</h3>
-    <p class="text-sm mt-2"><code>LIKE '%palabra%'</code> escanea <strong>cada fila</strong> de la tabla, caracter por caracter. Con 10 millones de documentos, esto puede tardar minutos.</p>
-    <p class="text-sm mt-2">¿Se imaginan que Google tardara minutos en cada busqueda?</p>
+<div class="mt-4 text-sm">
+
+Piensa en como buscas en Google: escribes <strong>"receta pastel de chocolate"</strong> y obtienes resultados ordenados del mas util al menos. Eso es relevancia.
+
+</div>
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+  <div>
+    <h4 class="text-[#ff6b6b] mb-2">SQL: Binario (si/no)</h4>
+    <div class="border border-black p-3 text-sm space-y-2">
+      <div>✅ "Pastel de chocolate con crema"</div>
+      <div>✅ "El chocolate del pastel se quemo"</div>
+      <div>❌ "Torta de cacao con ganache"</div>
+      <div class="text-xs text-gray-500 mt-2">No distingue cual es mejor. Todas las que contienen "pastel" + "chocolate" son iguales.</div>
+    </div>
   </div>
-  <div class="neo-card bg-white p-4">
-    <h3 class="text-coral">Relevancia</h3>
-    <p class="text-sm mt-2">SQL devuelve resultados en modo <strong>binario</strong>: cumple la condicion o no. No hay concepto de "este resultado es mejor que aquel".</p>
-    <p class="text-sm mt-2">Cuando buscas en Google, los primeros resultados son los mas relevantes. SQL no puede hacer eso.</p>
+  <div>
+    <h4 class="text-[#4ecdc4] mb-2">Elasticsearch: Ranking por score</h4>
+    <div class="border border-black p-3 text-sm space-y-2">
+      <div><span class="font-mono text-[#4ecdc4]">_score: 15.7</span> "Receta de pastel de chocolate"</div>
+      <div><span class="font-mono text-[#4ecdc4]">_score: 8.2</span> "Torta de cacao con ganache"</div>
+      <div><span class="font-mono text-[#4ecdc4]">_score: 3.1</span> "El chocolate se uso en el pastel"</div>
+      <div class="text-xs text-gray-500 mt-2">Cada resultado tiene un puntaje. Los mas relevantes primero.</div>
+    </div>
   </div>
 </div>
 
 <v-click>
 
-<div class="neo-card bg-cream p-4 mt-6 text-center">
-Esto no es un defecto de SQL — <strong>fue diseñado para otro proposito</strong>. Es como usar un martillo para poner un tornillo: funciona, pero hay herramientas mejores.
+<div class="border border-black bg-white p-3 mt-4 text-center text-sm">
+<strong>La diferencia entre una lista y un ranking.</strong> En BI, no solo importa encontrar datos — importa saber cuales son los <em>mas importantes</em>.
 </div>
 
 </v-click>
 
 ---
 
-<!-- Slide 13: The frustration expanded -->
+<!-- Slide 16: The frustration expanded -->
 
 # El costo real de estas limitaciones
 
-<div class="mt-6">
+<div class="mt-4 text-sm">
 
 Volvamos a nuestro reto de las reseñas. Con SQL encontramos 23 resultados. ¿Que paso con los otros 124?
 
@@ -402,21 +529,21 @@ Volvamos a nuestro reto de las reseñas. Con SQL encontramos 23 resultados. ¿Qu
 <v-clicks>
 
 <div class="space-y-3 mt-4">
-  <div class="neo-card bg-white p-3 text-sm">
+  <div class="border border-black bg-white p-3 text-sm">
     <strong>"El producto llego roto y nadie me ayudo"</strong> — cliente claramente frustrado, pero no usa esa palabra
   </div>
-  <div class="neo-card bg-white p-3 text-sm">
+  <div class="border border-black bg-white p-3 text-sm">
     <strong>"3 llamadas al soporte y sigo sin solucion"</strong> — frustracion implicita en el contexto
   </div>
-  <div class="neo-card bg-white p-3 text-sm">
+  <div class="border border-black bg-white p-3 text-sm">
     <strong>"Esperaba mucho mas por este precio"</strong> — decepcion, un sinonimo de frustracion
   </div>
-  <div class="neo-card bg-coral/10 p-3 text-sm">
+  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-3 text-sm">
     <strong>"Mi experiencia fue desastrosa desde el primer dia"</strong> — intensidad alta, pero SQL la ignora por completo
   </div>
 </div>
 
-<div class="neo-card bg-banana p-4 mt-4 text-center">
+<div class="border border-black bg-[#ffe156]/20 p-4 mt-4 text-center">
 <strong>Cada resena que SQL no encuentra es un cliente que podrias perder.</strong>
 En BI, los datos que no ves son los mas peligrosos.
 </div>
@@ -425,24 +552,24 @@ En BI, los datos que no ves son los mas peligrosos.
 
 ---
 
-<!-- Slide 14: Modern data needs -->
+<!-- Slide 17: Modern data needs -->
 
 # Las empresas de hoy necesitan mas
 
 <div class="grid grid-cols-2 gap-4 mt-6">
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <h3>Busqueda inteligente</h3>
     <p class="text-sm mt-1">Los usuarios esperan busquedas tipo Google: rapidas, tolerantes a errores, con resultados rankeados.</p>
   </div>
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <h3>Analisis de texto a escala</h3>
     <p class="text-sm mt-1">Miles de tickets, reseñas, contratos. No puedes leerlos uno por uno — necesitas que la maquina entienda el contenido.</p>
   </div>
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <h3>Tiempo real</h3>
     <p class="text-sm mt-1">Monitoreo de logs, alertas, dashboards que se actualizan al segundo. SQL batch no alcanza.</p>
   </div>
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <h3>IA sobre tus datos</h3>
     <p class="text-sm mt-1">Chatbots que responden preguntas usando la informacion de tu empresa, no alucinaciones.</p>
   </div>
@@ -458,7 +585,7 @@ Para estas necesidades, existen herramientas especializadas. Hoy vamos a conocer
 
 ---
 
-<!-- Slide 15: Database types intro -->
+<!-- Slide 18: Database types intro -->
 
 # No solo existen las bases de datos relacionales
 
@@ -469,32 +596,32 @@ SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos d
 </div>
 
 <div class="grid grid-cols-3 gap-3">
-  <div class="neo-card bg-banana p-3 text-center text-sm">
+  <div class="border border-black bg-[#ffe156]/10 p-3 text-center text-sm">
     <strong>Relacional (SQL)</strong>
     <p class="text-xs mt-1">Tablas con filas y columnas. Para transacciones y datos estructurados.</p>
     <p class="text-xs italic">MySQL, PostgreSQL, SQL Server</p>
   </div>
-  <div class="neo-card bg-white p-3 text-center text-sm">
+  <div class="border border-black bg-white p-3 text-center text-sm">
     <strong>Documento</strong>
     <p class="text-xs mt-1">Almacena documentos JSON flexibles. Sin esquema fijo.</p>
     <p class="text-xs italic">MongoDB, CouchDB</p>
   </div>
-  <div class="neo-card bg-white p-3 text-center text-sm">
+  <div class="border border-black bg-white p-3 text-center text-sm">
     <strong>Clave-Valor</strong>
     <p class="text-xs mt-1">Como un diccionario gigante. Ultrarapido para lecturas simples.</p>
     <p class="text-xs italic">Redis, DynamoDB</p>
   </div>
-  <div class="neo-card bg-white p-3 text-center text-sm">
+  <div class="border border-black bg-white p-3 text-center text-sm">
     <strong>Grafo</strong>
     <p class="text-xs mt-1">Datos como redes: nodos y conexiones. Para relaciones complejas.</p>
     <p class="text-xs italic">Neo4j, Amazon Neptune</p>
   </div>
-  <div class="neo-card bg-coral text-white p-3 text-center text-sm">
+  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/10 p-3 text-center text-sm">
     <strong>Motor de busqueda</strong>
     <p class="text-xs mt-1">Busqueda de texto rapida, con ranking y tolerancia a errores.</p>
     <p class="text-xs italic">Elasticsearch, Apache Solr</p>
   </div>
-  <div class="neo-card bg-sky text-white p-3 text-center text-sm">
+  <div class="border border-[#4ecdc4] bg-[#4ecdc4]/10 p-3 text-center text-sm">
     <strong>Vectorial</strong>
     <p class="text-xs mt-1">Busca por significado usando matematicas. Base de la IA moderna.</p>
     <p class="text-xs italic">ChromaDB, Pinecone</p>
@@ -505,19 +632,19 @@ SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos d
 
 ---
 
-<!-- Slide 16: What we'll cover today -->
+<!-- Slide 19: What we'll cover today -->
 
 # Hoy nos enfocamos en dos
 
 <div class="grid grid-cols-2 gap-8 mt-8">
-  <div class="neo-card bg-coral text-white p-6 text-center">
+  <div class="border border-[#ff6b6b] p-6 text-center">
     <div class="text-4xl mb-2">🔍</div>
     <h2>Elasticsearch</h2>
     <div class="pixel-divider my-3" />
     <p class="text-sm">Busqueda de texto completo (full-text search). Rapido, con ranking, tolerante a errores.</p>
     <p class="text-sm mt-2"><strong>Resuelve</strong>: el problema de buscar en texto no estructurado.</p>
   </div>
-  <div class="neo-card bg-sky text-white p-6 text-center">
+  <div class="border border-[#4ecdc4] p-6 text-center">
     <div class="text-4xl mb-2">🧠</div>
     <h2>ChromaDB</h2>
     <div class="pixel-divider my-3" />
@@ -528,18 +655,16 @@ SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos d
 
 ---
 layout: neo-section
-class: bg-coral
+class: bg-[#0d1117]
 ---
 
-<!-- Slide 17: ES Section Divider -->
+<!-- Slide 20: ES Section Divider -->
 
 <div class="text-6xl mb-4">🔍</div>
 
-<h1 class="text-white text-5xl">Elasticsearch</h1>
+<h1 class="text-white text-6xl font-bold">Elasticsearch</h1>
 
-<div class="pixel-divider my-6" />
-
-<p class="text-white/90 text-xl">Busqueda de texto a la velocidad de Google</p>
+<p class="text-[#00ff41] mt-6 text-xl font-mono">// busqueda de texto a la velocidad de Google</p>
 
 <div class="mt-6">
   <TimerBadge time="60 min" />
@@ -547,31 +672,31 @@ class: bg-coral
 
 ---
 
-<!-- Slide 18: What is ES -->
+<!-- Slide 21: What is ES -->
 
 # ¿Que es Elasticsearch?
 
 <div class="grid grid-cols-[2fr_1fr] gap-6 mt-6">
   <div class="space-y-3">
-    <div class="neo-card bg-white p-3">
+    <div class="border border-black bg-white p-3">
       <strong>Motor de busqueda y analitica</strong> de codigo abierto (open source), creado en 2010 por Shay Banon.
     </div>
-    <div class="neo-card bg-white p-3">
+    <div class="border border-black bg-white p-3">
       Nacio como un proyecto para que su esposa pudiera buscar recetas de cocina. Hoy lo usan Netflix, Wikipedia, Uber y miles de empresas.
     </div>
-    <div class="neo-card bg-white p-3">
+    <div class="border border-black bg-white p-3">
       <strong>Elasticsearch ≠ base de datos relacional</strong>. Es un complemento especializado en busqueda de texto y analitica en tiempo real.
     </div>
   </div>
   <div class="space-y-3">
-    <div class="neo-card bg-banana p-3 text-center text-sm">
+    <div class="border border-black p-3 text-center text-sm">
       <strong>Creado</strong><br/>2010
     </div>
-    <div class="neo-card bg-banana p-3 text-center text-sm">
-      <strong>Licencia</strong><br/>Open source (SSPL / Elastic License)
+    <div class="border border-black p-3 text-center text-sm">
+      <strong>Licencia</strong><br/>Open source (SSPL)
     </div>
-    <div class="neo-card bg-banana p-3 text-center text-sm">
-      <strong>Costo</strong><br/>Gratis local. Cloud desde $0 (trial 14 dias)
+    <div class="border border-black p-3 text-center text-sm">
+      <strong>Costo</strong><br/>Gratis local. Cloud desde $0 (trial)
     </div>
   </div>
 </div>
@@ -580,24 +705,24 @@ class: bg-coral
 
 ---
 
-<!-- Slide 19: ES & OpenSearch -->
+<!-- Slide 22: ES & OpenSearch -->
 
 # Elasticsearch y OpenSearch
 
 <div class="mt-6">
 
-<div class="neo-card bg-white p-4">
+<div class="border border-black bg-white p-4">
 
 En 2021, **Amazon creo OpenSearch**: un fork (copia independiente) de Elasticsearch, porque no estaba de acuerdo con el cambio de licencia de Elastic.
 
 </div>
 
 <div class="grid grid-cols-2 gap-4 mt-4">
-  <div class="neo-card bg-coral/10 p-4">
+  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-4">
     <h3>Elasticsearch (Elastic NV)</h3>
     <p class="text-sm mt-1">Version original. La empresa Elastic la mantiene. Elastic Cloud es su servicio en la nube.</p>
   </div>
-  <div class="neo-card bg-sky/10 p-4">
+  <div class="border border-[#4ecdc4] bg-[#4ecdc4]/5 p-4">
     <h3>OpenSearch (AWS)</h3>
     <p class="text-sm mt-1">Fork mantenido por Amazon. Incluido en AWS. Misma API base, desarrollo independiente.</p>
   </div>
@@ -613,30 +738,30 @@ Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficia
 
 ---
 
-<!-- Slide 20: Who uses ES - with links -->
+<!-- Slide 23: Who uses ES -->
 
 # ¿Quien usa Elasticsearch en el mundo real?
 
 <div class="grid grid-cols-2 gap-4 mt-4">
-  <div class="neo-card bg-white p-4">
-    <h3 class="text-coral">Netflix</h3>
+  <div class="border border-black bg-white p-4">
+    <h3 class="text-[#ff6b6b]">Netflix</h3>
     <p class="text-sm">Busqueda de contenido, monitoreo de servidores y analisis de errores en tiempo real para 200M+ suscriptores.</p>
-    <p class="text-xs mt-1 text-gray-500">elastic.co/customers/netflix</p>
+    <p class="text-xs mt-1 text-gray-400 font-mono">elastic.co/customers/netflix</p>
   </div>
-  <div class="neo-card bg-white p-4">
-    <h3 class="text-coral">Wikipedia</h3>
+  <div class="border border-black bg-white p-4">
+    <h3 class="text-[#ff6b6b]">Wikipedia</h3>
     <p class="text-sm">Potencia la busqueda en 300+ idiomas. Cada vez que buscas un articulo, Elasticsearch responde.</p>
-    <p class="text-xs mt-1 text-gray-500">mediawiki.org/wiki/Wikimedia_Search_Platform</p>
+    <p class="text-xs mt-1 text-gray-400 font-mono">mediawiki.org/wiki/Wikimedia_Search_Platform</p>
   </div>
-  <div class="neo-card bg-white p-4">
-    <h3 class="text-coral">Uber</h3>
+  <div class="border border-black bg-white p-4">
+    <h3 class="text-[#ff6b6b]">Uber</h3>
     <p class="text-sm">Monitoreo en tiempo real de millones de viajes. Detecta anomalias y problemas al instante.</p>
-    <p class="text-xs mt-1 text-gray-500">elastic.co/customers/uber</p>
+    <p class="text-xs mt-1 text-gray-400 font-mono">elastic.co/customers/uber</p>
   </div>
-  <div class="neo-card bg-white p-4">
-    <h3 class="text-coral">GitHub</h3>
+  <div class="border border-black bg-white p-4">
+    <h3 class="text-[#ff6b6b]">GitHub</h3>
     <p class="text-sm">Cuando buscas codigo en GitHub, Elasticsearch busca en miles de millones de lineas de codigo.</p>
-    <p class="text-xs mt-1 text-gray-500">github.blog/engineering</p>
+    <p class="text-xs mt-1 text-gray-400 font-mono">github.blog/engineering</p>
   </div>
 </div>
 
@@ -644,46 +769,13 @@ Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficia
 
 ---
 
-<!-- Slide 21: ES strengths overview -->
-
-# Las fortalezas de Elasticsearch
-
-<div class="grid grid-cols-2 gap-4 mt-4">
-  <div class="neo-card bg-white p-3">
-    <h4 class="text-coral">Busqueda de texto completo (Full-text search)</h4>
-    <p class="text-xs mt-1">Busca en documentos de texto largo, entiende idiomas, maneja sinonimos y errores tipograficos.</p>
-  </div>
-  <div class="neo-card bg-white p-3">
-    <h4 class="text-coral">Ranking por relevancia</h4>
-    <p class="text-xs mt-1">No solo encuentra, sino que ordena resultados del mas relevante al menos. Como Google.</p>
-  </div>
-  <div class="neo-card bg-white p-3">
-    <h4 class="text-coral">Velocidad</h4>
-    <p class="text-xs mt-1">Respuestas en milisegundos, incluso con millones de documentos. Usa un "indice invertido" (lo veremos).</p>
-  </div>
-  <div class="neo-card bg-white p-3">
-    <h4 class="text-coral">Escalabilidad (Clusters)</h4>
-    <p class="text-xs mt-1">Distribuye datos en multiples servidores. Si necesitas mas capacidad, agregas mas nodos.</p>
-  </div>
-  <div class="neo-card bg-white p-3">
-    <h4 class="text-coral">Analitica en tiempo real</h4>
-    <p class="text-xs mt-1">Agregaciones, histogramas, metricas — todo actualizado al segundo. Ideal para dashboards.</p>
-  </div>
-  <div class="neo-card bg-white p-3">
-    <h4 class="text-coral">API REST + JSON</h4>
-    <p class="text-xs mt-1">Toda la interaccion es via JSON. Si sabes hacer requests HTTP, ya sabes usar Elasticsearch.</p>
-  </div>
-</div>
-
----
-
-<!-- Slide 22: SQL vs ES terminology -->
+<!-- Slide 24: SQL vs ES terminology -->
 
 # Si hablas SQL, ya casi hablas Elasticsearch
 
 <div class="mt-4 text-sm mb-4">Los conceptos son similares, solo cambian los nombres:</div>
 
-<div class="neo-card bg-white p-0 overflow-hidden">
+<div class="border border-black bg-white p-0 overflow-hidden">
 
 | SQL | Elasticsearch | Explicacion |
 |-----|--------------|-------------|
@@ -697,7 +789,7 @@ Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficia
 
 <v-click>
 
-<div class="neo-card bg-cream p-3 mt-4 text-center text-sm">
+<div class="border border-black bg-white p-3 mt-4 text-center text-sm">
 <strong>La gran diferencia</strong>: en SQL escribes texto plano. En Elasticsearch escribes JSON. Pero la logica es la misma.
 </div>
 
@@ -705,81 +797,131 @@ Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficia
 
 ---
 
-<!-- Slide 23: How ES searches - Inverted Index -->
+<!-- Slide 25: Inverted index - book analogy -->
 
 # ¿Como busca tan rapido? El indice invertido
 
 <div class="mt-2 text-sm">
 
-Piensa en el <strong>indice al final de un libro de texto</strong>. En vez de leer todo el libro para encontrar "Elasticsearch", vas al indice y ves en que paginas aparece. Elasticsearch hace exactamente eso, pero con todos tus datos:
+Piensa en el <strong>indice al final de un libro de texto</strong>:
 
 </div>
 
-<v-clicks>
-
-<div class="grid grid-cols-3 gap-4 mt-4">
-  <div class="neo-card bg-banana p-3 text-sm">
-    <h4>1. Documentos originales</h4>
-    <p class="text-xs mt-1">Doc 1: "La comida mexicana es deliciosa"</p>
-    <p class="text-xs">Doc 2: "Comida rapida y economica"</p>
-    <p class="text-xs">Doc 3: "Recetas de comida italiana"</p>
+<div class="grid grid-cols-2 gap-6 mt-4">
+  <div>
+    <h4 class="mb-2">📖 Indice de un libro</h4>
+    <div class="border border-black bg-white p-3 text-sm font-mono">
+      Elasticsearch ... pag. 12, 45, 89<br/>
+      Indice invertido ... pag. 23, 45<br/>
+      Tokenizacion ... pag. 34, 67<br/>
+      BM25 ... pag. 56
+    </div>
+    <p class="text-xs mt-2">No lees todo el libro — vas directo a las paginas que necesitas.</p>
   </div>
-  <div class="neo-card bg-coral text-white p-3 text-sm">
-    <h4>2. Tokenizar</h4>
-    <p class="text-xs mt-1">Separa en palabras, quita acentos, pasa a minusculas:</p>
-    <p class="text-xs">"comida", "mexicana", "deliciosa", "rapida", "economica"...</p>
-  </div>
-  <div class="neo-card bg-sky text-white p-3 text-sm">
-    <h4>3. Indice invertido</h4>
-    <p class="text-xs mt-1">
-      comida → Doc 1, 2, 3<br/>
-      mexicana → Doc 1<br/>
-      deliciosa → Doc 1<br/>
-      rapida → Doc 2<br/>
-      italiana → Doc 3
-    </p>
+  <div>
+    <h4 class="mb-2">💾 Indice invertido de ES</h4>
+    <div class="border border-black bg-[#0d1117] p-3 text-sm font-mono text-[#00ff41]">
+      "comida" → Doc 1, 2, 3<br/>
+      "mexicana" → Doc 1<br/>
+      "deliciosa" → Doc 1<br/>
+      "rapida" → Doc 2<br/>
+      "italiana" → Doc 3
+    </div>
+    <p class="text-xs mt-2">Buscar "comida" → consulta el indice → resultado instantaneo.</p>
   </div>
 </div>
 
-<div class="neo-card bg-cream p-3 mt-4 text-center text-sm">
-Buscar "comida mexicana" → va al indice → Doc 1 tiene ambas palabras → <strong>resultado instantaneo</strong>. SQL leeria los 3 documentos completos.
+<v-click>
+
+<div class="border border-black bg-[#ffe156]/20 p-3 mt-4 text-center text-sm">
+<strong>SQL lee documento por documento</strong> (como leer el libro entero). <strong>ES consulta su indice</strong> (como ir al indice del libro). Por eso ES es ordenes de magnitud mas rapido para busqueda de texto.
 </div>
 
-</v-clicks>
+</v-click>
 
 <RefFootnote :sources="['Gormley, C. & Tong, Z. (2015). Elasticsearch: The Definitive Guide. OReilly Media.']" />
 
 ---
 
-<!-- Slide 24: Ranking - BM25 -->
+<!-- Slide 26: How inverted index is built -->
+
+# Asi se construye el indice invertido
+
+<div class="mt-4">
+
+<v-clicks>
+
+<div class="grid grid-cols-3 gap-4">
+  <div class="border border-black p-3 text-sm">
+    <h4 class="text-[#ffe156]">1. Documentos originales</h4>
+    <p class="text-xs mt-1 font-mono">Doc 1: "La comida mexicana es deliciosa"</p>
+    <p class="text-xs font-mono">Doc 2: "Comida rapida y economica"</p>
+    <p class="text-xs font-mono">Doc 3: "Recetas de comida italiana"</p>
+  </div>
+  <div class="border border-[#ff6b6b] p-3 text-sm">
+    <h4 class="text-[#ff6b6b]">2. Tokenizar + normalizar</h4>
+    <p class="text-xs mt-1">Separa en palabras, quita acentos, minusculas:</p>
+    <p class="text-xs font-mono mt-1">"la" → eliminada (stop word)</p>
+    <p class="text-xs font-mono">"comida" → "comida"</p>
+    <p class="text-xs font-mono">"mexicana" → "mexican"</p>
+    <p class="text-xs font-mono">"deliciosa" → "delic"</p>
+  </div>
+  <div class="border border-[#4ecdc4] p-3 text-sm">
+    <h4 class="text-[#4ecdc4]">3. Indice invertido</h4>
+    <div class="text-xs mt-1 font-mono">
+      comida → [1, 2, 3]<br/>
+      mexican → [1]<br/>
+      delic → [1]<br/>
+      rapid → [2]<br/>
+      econom → [2]<br/>
+      italian → [3]
+    </div>
+  </div>
+</div>
+
+<div class="border border-black bg-white p-3 mt-4 text-center text-sm">
+Buscar "comida mexicana" → mapa dice Doc 1 tiene ambas → <strong>resultado en milisegundos</strong>. SQL leeria los 3 documentos completos caracter por caracter.
+</div>
+
+</v-clicks>
+
+</div>
+
+---
+
+<!-- Slide 27: Ranking - BM25 -->
 
 # Elasticsearch no solo encuentra — RANKEA
 
 <div class="mt-4 text-sm">
 
-Cuando buscas "comida mexicana" y hay 500 resultados, ¿cual te muestro primero? Elasticsearch usa un algoritmo llamado <strong>BM25</strong> que asigna un puntaje (score) a cada resultado:
+Cuando buscas "comida mexicana" y hay 500 resultados, ¿cual te muestro primero? Elasticsearch usa un algoritmo llamado <strong>BM25</strong> que asigna un puntaje (_score) a cada resultado:
 
 </div>
 
 <v-clicks>
 
 <div class="grid grid-cols-3 gap-3 mt-4">
-  <div class="neo-card bg-white p-3 text-center text-sm">
-    <div class="text-2xl font-bold text-coral">Frecuencia</div>
+  <div class="border border-black bg-white p-3 text-center text-sm">
+    <div class="text-2xl font-bold text-[#ff6b6b]">Frecuencia</div>
     <p class="text-xs mt-1">¿Cuantas veces aparece la palabra en el documento? Mas veces → mas relevante.</p>
   </div>
-  <div class="neo-card bg-white p-3 text-center text-sm">
-    <div class="text-2xl font-bold text-coral">Rareza</div>
+  <div class="border border-black bg-white p-3 text-center text-sm">
+    <div class="text-2xl font-bold text-[#ff6b6b]">Rareza</div>
     <p class="text-xs mt-1">Una palabra rara vale mas. "Elasticsearch" es mas informativa que "el" o "de".</p>
   </div>
-  <div class="neo-card bg-white p-3 text-center text-sm">
-    <div class="text-2xl font-bold text-coral">Longitud</div>
+  <div class="border border-black bg-white p-3 text-center text-sm">
+    <div class="text-2xl font-bold text-[#ff6b6b]">Longitud</div>
     <p class="text-xs mt-1">Documentos cortos donde aparece la palabra son mas relevantes que documentos largos.</p>
   </div>
 </div>
 
-<div class="neo-card bg-cream p-3 mt-4 text-center text-sm">
-<strong>SQL devuelve 0 o 1</strong> (cumple o no cumple). <strong>Elasticsearch devuelve un _score</strong> (0.5, 2.3, 15.7...) que te dice que tan relevante es cada resultado. Es la diferencia entre una lista y un ranking.
+<div class="border border-black bg-[#0d1117] text-[#00ff41] p-3 mt-4 text-sm font-mono">
+  "hits": [<br/>
+  &nbsp;&nbsp;{ "_score": 15.7, "_source": { "texto": "Comida mexicana autentica..." } },<br/>
+  &nbsp;&nbsp;{ "_score": 8.2, "_source": { "texto": "Recetas de comida del mundo..." } },<br/>
+  &nbsp;&nbsp;{ "_score": 3.1, "_source": { "texto": "La comida en general..." } }<br/>
+  ]
 </div>
 
 </v-clicks>
@@ -788,7 +930,7 @@ Cuando buscas "comida mexicana" y hay 500 resultados, ¿cual te muestro primero?
 
 ---
 
-<!-- Slide 25: Clusters concept -->
+<!-- Slide 28: Clusters concept -->
 
 # Clusters: muchos servidores, un solo sistema
 
@@ -801,14 +943,14 @@ Un <strong>cluster</strong> no es exclusivo de Elasticsearch — es un concepto 
 <v-click>
 
 <div class="flex flex-col items-center mt-4 gap-3">
-  <div class="neo-card bg-banana p-3 text-center font-bold">
+  <div class="border border-black bg-[#ffe156]/20 p-3 text-center font-bold">
     Cluster (grupo de servidores)
   </div>
   <div class="text-xl">↓</div>
   <div class="flex gap-4">
-    <div class="neo-card bg-coral text-white p-3 text-center text-sm">Nodo 1<br/><span class="text-xs">Servidor A</span></div>
-    <div class="neo-card bg-coral text-white p-3 text-center text-sm">Nodo 2<br/><span class="text-xs">Servidor B</span></div>
-    <div class="neo-card bg-coral text-white p-3 text-center text-sm">Nodo 3<br/><span class="text-xs">Servidor C</span></div>
+    <div class="border border-black p-3 text-center text-sm">Nodo 1<br/><span class="text-xs font-mono">Servidor A</span></div>
+    <div class="border border-black p-3 text-center text-sm">Nodo 2<br/><span class="text-xs font-mono">Servidor B</span></div>
+    <div class="border border-black p-3 text-center text-sm">Nodo 3<br/><span class="text-xs font-mono">Servidor C</span></div>
   </div>
 </div>
 
@@ -816,7 +958,7 @@ Un <strong>cluster</strong> no es exclusivo de Elasticsearch — es un concepto 
 
 <v-click>
 
-<div class="neo-card bg-cream p-3 mt-4 text-sm">
+<div class="border border-black bg-white p-3 mt-4 text-sm">
 
 **¿Por que importa?** Netflix tiene millones de documentos. Un solo servidor no alcanza. Con clusters, distribuyes los datos en pedazos (shards) y si un servidor falla, otro tiene una copia (replica). Elastic Cloud maneja todo esto automaticamente — tu solo usas la interfaz.
 
@@ -828,15 +970,15 @@ Un <strong>cluster</strong> no es exclusivo de Elasticsearch — es un concepto 
 layout: neo-demo
 ---
 
-<!-- Slide 26: Lab - Elastic Cloud Setup -->
+<!-- Slide 29: Lab - Elastic Cloud Setup -->
 
 ::title::
 
-<h2 class="text-banana">Laboratorio: Registrarnos en Elastic Cloud</h2>
+<h2 class="text-[#00ff41] font-mono">$ lab: Registrarnos en Elastic Cloud</h2>
 
 ::default::
 
-<div class="text-white/90">
+<div class="text-[#e6edf3]">
 
 ### Vamos a hacerlo juntos:
 
@@ -846,13 +988,13 @@ layout: neo-demo
 4. Esperar ~2 minutos → **Guardar** las credenciales
 5. Abrir **Kibana** desde el panel
 
-<div class="mt-4 neo-card bg-white/10 p-3 text-sm">
+<div class="mt-4 border border-[#30363d] p-3 text-sm">
 
 **Importante**: Guarden el password del usuario `elastic` que se genera automaticamente. Lo necesitan para todo lo demas.
 
 </div>
 
-<div class="mt-2 neo-card bg-white/10 p-3 text-sm">
+<div class="mt-2 border border-[#30363d] p-3 text-sm">
 
 **Trial gratuito**: 14 dias, sin tarjeta de credito. Suficiente para este workshop y los labs.
 
@@ -864,15 +1006,15 @@ layout: neo-demo
 layout: neo-demo
 ---
 
-<!-- Slide 27: Lab - Load sample data -->
+<!-- Slide 30: Lab - Load sample data -->
 
 ::title::
 
-<h2 class="text-banana">Laboratorio: Cargar datos de muestra</h2>
+<h2 class="text-[#00ff41] font-mono">$ lab: Cargar datos de muestra</h2>
 
 ::default::
 
-<div class="text-white/90">
+<div class="text-[#e6edf3]">
 
 ### En Kibana:
 
@@ -887,9 +1029,9 @@ layout: neo-demo
 4. Clic en **"View data"** → **"Dashboard"**
 5. Observen: mapas, graficas de ventas, top productos...
 
-<div class="mt-3 neo-card bg-white/10 p-3 text-sm">
+<div class="mt-3 border border-[#30363d] p-3 text-sm">
 
-Todo esto se construyo <strong>sin codigo</strong>. Kibana + Elasticsearch generan dashboards interactivos listos para BI. Comparen esto con cuanto tarda hacer algo similar con SQL + Excel.
+Todo esto se construyo <strong>sin codigo</strong>. Kibana + Elasticsearch generan dashboards interactivos listos para BI.
 
 </div>
 
@@ -899,15 +1041,15 @@ Todo esto se construyo <strong>sin codigo</strong>. Kibana + Elasticsearch gener
 layout: neo-demo
 ---
 
-<!-- Slide 28: Lab - Dev Tools -->
+<!-- Slide 31: Lab - Dev Tools -->
 
 ::title::
 
-<h2 class="text-banana">Laboratorio: Dev Tools — tu consola de Elasticsearch</h2>
+<h2 class="text-[#00ff41] font-mono">$ lab: Dev Tools — tu consola de Elasticsearch</h2>
 
 ::default::
 
-<div class="text-white/90">
+<div class="text-[#e6edf3]">
 
 ### Abrir Dev Tools:
 
@@ -939,32 +1081,32 @@ GET kibana_sample_data_ecommerce/_search
 
 ---
 
-<!-- Slide 29: Things SQL can't do - live -->
+<!-- Slide 32: Things SQL can't do - live -->
 
 # Cosas que SQL no puede hacer — y ES si
 
 <div class="mt-4 text-sm">
 
-Ahora que tenemos datos, veamos lo que hace a Elasticsearch especial. Estas cosas serian muy dificiles (o imposibles) con SQL:
+Ahora que tenemos datos, veamos lo que hace a Elasticsearch especial:
 
 </div>
 
 <v-clicks>
 
 <div class="space-y-3 mt-4">
-  <div class="neo-card bg-white p-3">
+  <div class="border border-black bg-white p-3">
     <strong>1. Busqueda con errores tipograficos (fuzziness)</strong> — buscar "shoees" y encontrar "shoes"
   </div>
-  <div class="neo-card bg-white p-3">
+  <div class="border border-black bg-white p-3">
     <strong>2. Ranking por relevancia</strong> — ¿que producto es MAS relevante para "comfortable running shoes"?
   </div>
-  <div class="neo-card bg-white p-3">
+  <div class="border border-black bg-white p-3">
     <strong>3. Resaltado (highlighting)</strong> — mostrar DONDE en el texto se encontro la coincidencia
   </div>
-  <div class="neo-card bg-white p-3">
+  <div class="border border-black bg-white p-3">
     <strong>4. Busqueda en multiples campos</strong> — buscar en nombre, descripcion y categoria al mismo tiempo
   </div>
-  <div class="neo-card bg-white p-3">
+  <div class="border border-black bg-white p-3">
     <strong>5. Combinaciones complejas</strong> — "DEBE contener esto, NO debe contener aquello, BONUS si tiene esto otro"
   </div>
 </div>
@@ -975,15 +1117,15 @@ Ahora que tenemos datos, veamos lo que hace a Elasticsearch especial. Estas cosa
 layout: neo-demo
 ---
 
-<!-- Slide 30: Fuzziness demo -->
+<!-- Slide 33: Fuzziness demo -->
 
 ::title::
 
-<h2 class="text-banana">Demo: Escribiste mal? No importa</h2>
+<h2 class="text-[#00ff41] font-mono">$ demo: Escribiste mal? No importa</h2>
 
 ::default::
 
-<div class="text-white/90">
+<div class="text-[#e6edf3]">
 
 ```json
 GET kibana_sample_data_ecommerce/_search
@@ -1001,10 +1143,10 @@ GET kibana_sample_data_ecommerce/_search
 ```
 
 <div class="mt-3 grid grid-cols-2 gap-4">
-  <div class="neo-card bg-coral/30 p-3">
+  <div class="border border-[#ff6b6b]/50 p-3">
     <strong>SQL</strong>: <code>LIKE '%shoees%'</code> → <strong>0 resultados</strong>
   </div>
-  <div class="neo-card bg-sky/30 p-3">
+  <div class="border border-[#4ecdc4]/50 p-3">
     <strong>ES</strong>: "shoees" → corrige a "shoes" → <strong>resultados encontrados</strong>
   </div>
 </div>
@@ -1017,7 +1159,7 @@ GET kibana_sample_data_ecommerce/_search
 layout: neo-two-cols
 ---
 
-<!-- Slide 31: SQL vs ES side by side -->
+<!-- Slide 34: SQL vs ES side by side -->
 
 ::title::
 
@@ -1060,9 +1202,9 @@ GET ecommerce/_search
 
 ---
 
-<!-- Slide 32: NLP parenthesis -->
+<!-- Slide 35: NLP parenthesis - intro -->
 
-# Mini parentesis: ¿como "entiende" texto Elasticsearch?
+# ¿Como "entiende" texto Elasticsearch?
 
 <div class="mt-4 text-sm">
 
@@ -1071,58 +1213,107 @@ Elasticsearch usa tecnicas de <strong>NLP</strong> (Procesamiento de Lenguaje Na
 </div>
 
 <div class="grid grid-cols-2 gap-4 mt-4">
-  <div class="neo-card bg-white p-3 text-sm">
+  <div class="border border-black bg-white p-3 text-sm">
     <h4>Tokenizacion</h4>
     <p class="text-xs mt-1">"La comida es deliciosa" → ["la", "comida", "es", "deliciosa"]. Separa texto en palabras individuales.</p>
   </div>
-  <div class="neo-card bg-white p-3 text-sm">
+  <div class="border border-black bg-white p-3 text-sm">
     <h4>Normalizacion</h4>
     <p class="text-xs mt-1">"Deliciosa" → "deliciosa". Convierte a minusculas, quita acentos para uniformar.</p>
   </div>
-  <div class="neo-card bg-white p-3 text-sm">
+  <div class="border border-black bg-white p-3 text-sm">
     <h4>Stemming (raices)</h4>
     <p class="text-xs mt-1">"corriendo", "corrio", "correr" → todos se reducen a "corr". Asi "correr" encuentra "corriendo".</p>
   </div>
-  <div class="neo-card bg-white p-3 text-sm">
+  <div class="border border-black bg-white p-3 text-sm">
     <h4>Stop words</h4>
     <p class="text-xs mt-1">Ignora palabras sin significado propio: "el", "la", "de", "un". Se enfoca en palabras que importan.</p>
   </div>
 </div>
 
-<div class="neo-card bg-cream p-3 mt-4 text-center text-sm">
-Todo esto pasa <strong>automaticamente</strong>. Tu solo escribes la busqueda y Elasticsearch aplica estos pasos. En SQL, tendrias que programar cada uno manualmente.
+<div class="border border-black bg-white p-3 mt-4 text-center text-sm">
+Todo esto pasa <strong>automaticamente</strong>. Tu solo escribes la busqueda y Elasticsearch aplica estos pasos.
 </div>
 
 ---
 
-<!-- Slide 33: ES capabilities panorama -->
+<!-- Slide 36: NLP history → embeddings → LLMs -->
+
+# De NLP a LLMs: una breve historia
+
+<div class="mt-4 text-sm">
+
+Las tecnicas que usa Elasticsearch son el <strong>primer nivel</strong> de NLP. Pero hay mucho mas:
+
+</div>
+
+<v-clicks>
+
+<div class="flex items-center gap-3 mt-6">
+  <div class="border border-black p-3 text-center text-sm flex-1">
+    <div class="font-bold text-[#ff6b6b]">1960s-90s</div>
+    <strong>Reglas</strong>
+    <p class="text-xs mt-1">Diccionarios, gramatica manual. Fragil y limitado.</p>
+  </div>
+  <div class="text-xl">→</div>
+  <div class="border border-black p-3 text-center text-sm flex-1">
+    <div class="font-bold text-[#ff6b6b]">2000s</div>
+    <strong>Estadistico</strong>
+    <p class="text-xs mt-1">Probabilidades de palabras. Mejor, pero sin "entender".</p>
+  </div>
+  <div class="text-xl">→</div>
+  <div class="border border-[#4ecdc4] p-3 text-center text-sm flex-1">
+    <div class="font-bold text-[#4ecdc4]">2013</div>
+    <strong>Word2Vec</strong>
+    <p class="text-xs mt-1">Palabras como vectores. Primer "significado" numerico.</p>
+  </div>
+  <div class="text-xl">→</div>
+  <div class="border border-[#6c5ce7] p-3 text-center text-sm flex-1">
+    <div class="font-bold text-[#6c5ce7]">2017+</div>
+    <strong>Transformers</strong>
+    <p class="text-xs mt-1">Atencion. GPT, BERT, Claude. La revolucion actual.</p>
+  </div>
+</div>
+
+<div class="border border-black bg-[#ffe156]/20 p-4 mt-6 text-center">
+<strong>Los embeddings (Word2Vec → Transformers) son la base de todo.</strong><br/>
+ChromaDB usa exactamente esta tecnologia. Lo que alimenta a ChatGPT, tu lo puedes usar en tu base de datos.
+</div>
+
+</v-clicks>
+
+<RefFootnote :sources="['Vaswani, A., et al. (2017). Attention is all you need. NeurIPS, 30.']" />
+
+---
+
+<!-- Slide 37: ES capabilities panorama -->
 
 # Panorama rapido: ¿que mas puede hacer ES?
 
 <div class="grid grid-cols-3 gap-3 mt-4">
-  <div class="neo-card bg-white p-3 text-sm">
-    <h4 class="text-coral">Agregaciones</h4>
-    <p class="text-xs">Como GROUP BY pero mas poderoso. Conteos, promedios, sumas, percentiles — todo en una sola query.</p>
+  <div class="border border-black bg-white p-3 text-sm">
+    <h4 class="text-[#ff6b6b]">Agregaciones</h4>
+    <p class="text-xs">Como GROUP BY pero mas poderoso. Conteos, promedios, percentiles — todo en una query.</p>
   </div>
-  <div class="neo-card bg-white p-3 text-sm">
-    <h4 class="text-coral">Histogramas</h4>
-    <p class="text-xs">Agrupar datos por rangos automaticamente: ventas por rango de precio, pedidos por hora del dia.</p>
+  <div class="border border-black bg-white p-3 text-sm">
+    <h4 class="text-[#ff6b6b]">Histogramas</h4>
+    <p class="text-xs">Agrupar datos por rangos automaticamente: ventas por precio, pedidos por hora.</p>
   </div>
-  <div class="neo-card bg-white p-3 text-sm">
-    <h4 class="text-coral">Buckets</h4>
-    <p class="text-xs">Agrupar documentos en "cubetas" por cualquier campo: por pais, por categoria, por fecha.</p>
+  <div class="border border-black bg-white p-3 text-sm">
+    <h4 class="text-[#ff6b6b]">Buckets</h4>
+    <p class="text-xs">Agrupar documentos en "cubetas" por cualquier campo: pais, categoria, fecha.</p>
   </div>
-  <div class="neo-card bg-white p-3 text-sm">
-    <h4 class="text-coral">Highlighting</h4>
-    <p class="text-xs">Resalta exactamente donde en el texto se encontro tu busqueda. Como Google en negritas.</p>
+  <div class="border border-black bg-white p-3 text-sm">
+    <h4 class="text-[#ff6b6b]">Highlighting</h4>
+    <p class="text-xs">Resalta exactamente donde en el texto se encontro tu busqueda.</p>
   </div>
-  <div class="neo-card bg-white p-3 text-sm">
-    <h4 class="text-coral">Sugerencias</h4>
+  <div class="border border-black bg-white p-3 text-sm">
+    <h4 class="text-[#ff6b6b]">Sugerencias</h4>
     <p class="text-xs">Auto-completar y "quiso decir..." como los buscadores web.</p>
   </div>
-  <div class="neo-card bg-white p-3 text-sm">
-    <h4 class="text-coral">Geo-busquedas</h4>
-    <p class="text-xs">Buscar por ubicacion: "restaurantes a 5km de aqui". Integrado con mapas en Kibana.</p>
+  <div class="border border-black bg-white p-3 text-sm">
+    <h4 class="text-[#ff6b6b]">Geo-busquedas</h4>
+    <p class="text-xs">Buscar por ubicacion: "restaurantes a 5km de aqui".</p>
   </div>
 </div>
 
@@ -1132,22 +1323,22 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 
 ---
 
-<!-- Slide 34: When NOT to use ES -->
+<!-- Slide 38: When NOT to use ES -->
 
 # Cuando NO usar Elasticsearch
 
 <div class="grid grid-cols-3 gap-4 mt-6">
-  <div class="neo-card bg-coral text-white p-4 text-center">
+  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-4 text-center">
     <div class="text-2xl mb-2">🚫</div>
     <strong>Transacciones</strong>
     <p class="text-sm mt-1">No es ACID. Nunca para transferencias bancarias o inventario critico.</p>
   </div>
-  <div class="neo-card bg-coral text-white p-4 text-center">
+  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-4 text-center">
     <div class="text-2xl mb-2">🚫</div>
     <strong>Base de datos principal</strong>
     <p class="text-sm mt-1">Usalo como complemento de PostgreSQL/MySQL, nunca como reemplazo.</p>
   </div>
-  <div class="neo-card bg-coral text-white p-4 text-center">
+  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/5 p-4 text-center">
     <div class="text-2xl mb-2">🚫</div>
     <strong>JOINs complejos</strong>
     <p class="text-sm mt-1">ES no normaliza datos como SQL. Sus documentos son "aplanados" — cada uno es independiente.</p>
@@ -1156,7 +1347,7 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 
 <v-click>
 
-<div class="neo-card bg-banana p-4 mt-6 text-center">
+<div class="border border-black bg-[#ffe156]/20 p-4 mt-6 text-center">
 <strong>Elasticsearch es un complemento, no un reemplazo de SQL.</strong>
 <br/>En las empresas, se usan juntos: SQL para la operacion, ES para la busqueda y analitica.
 </div>
@@ -1165,11 +1356,11 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 
 ---
 
-<!-- Slide 35: ES References -->
+<!-- Slide 39: ES References -->
 
 # Referencias — Seccion Elasticsearch
 
-<div class="text-xs mt-4 space-y-2">
+<div class="text-xs mt-4 space-y-2 font-mono">
 
 - Codd, E. F. (1970). A relational model of data for large shared data banks. *Communications of the ACM, 13*(6), 377-387. https://doi.org/10.1145/362384.362685
 
@@ -1177,7 +1368,7 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 
 - Elastic NV. (2024). *Similarity module*. https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules-similarity.html
 
-- Gormley, C., & Tong, Z. (2015). *Elasticsearch: The Definitive Guide*. O'Reilly Media. https://www.elastic.co/guide/en/elasticsearch/guide/current/index.html
+- Gormley, C., & Tong, Z. (2015). *Elasticsearch: The Definitive Guide*. O'Reilly Media.
 
 - DB-Engines. (2026). *DB-Engines ranking*. https://db-engines.com/en/ranking
 
@@ -1185,40 +1376,39 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 
 - McKinsey & Company. (2024). *The state of AI in 2024*. McKinsey Global Institute.
 
-</div>
+- Vaswani, A., et al. (2017). Attention is all you need. *NeurIPS, 30*.
 
----
-layout: center
----
-
-<!-- Slide 36: Pause -->
-
-# Pausa: 5 minutos
-
-<div class="text-6xl mt-6">☕</div>
-
-<div class="mt-6 text-xl">
-Estiren las piernas. Tomen agua.
-</div>
-
-<div class="mt-4 neo-card bg-banana p-4 text-center max-w-md mx-auto">
-Lo que sigue es la parte que les va a volar la cabeza.
 </div>
 
 ---
 layout: neo-section
-class: bg-sky
+class: bg-[#0d1117]
 ---
 
-<!-- Slide 37: ChromaDB Section Divider -->
+<!-- Slide 40: Pause -->
+
+<h1 class="text-white text-5xl font-bold">Pausa: 5 minutos</h1>
+
+<div class="text-6xl mt-6">☕</div>
+
+<p class="text-[#00ff41] mt-6 text-xl font-mono">// estiren las piernas. tomen agua.</p>
+
+<div class="mt-6 border border-[#00ff41]/30 p-4 max-w-md mx-auto">
+<p class="text-white text-lg text-center">Lo que sigue es la parte que les va a volar la cabeza.</p>
+</div>
+
+---
+layout: neo-section
+class: bg-[#0d1117]
+---
+
+<!-- Slide 41: ChromaDB Section Divider -->
 
 <div class="text-6xl mb-4">🧠</div>
 
-<h1 class="text-white text-5xl">ChromaDB</h1>
+<h1 class="text-white text-6xl font-bold">ChromaDB</h1>
 
-<div class="pixel-divider my-6" />
-
-<p class="text-white/90 text-xl">Busqueda por significado, no por palabras</p>
+<p class="text-[#00ff41] mt-6 text-xl font-mono">// busqueda por significado, no por palabras</p>
 
 <div class="mt-6">
   <TimerBadge time="30 min" />
@@ -1226,7 +1416,7 @@ class: bg-sky
 
 ---
 
-<!-- Slide 38: The problem ES doesn't solve -->
+<!-- Slide 42: The problem ES doesn't solve -->
 
 # El problema que ni Elasticsearch resuelve
 
@@ -1239,14 +1429,14 @@ Elasticsearch es genial para buscar <strong>palabras</strong>. Pero... ¿que pas
 <v-clicks>
 
 <div class="space-y-3 mt-4">
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <strong>Busqueda:</strong> "peliculas que me hagan sentir nostalgico"
     <div class="mt-2 grid grid-cols-2 gap-2">
-      <div class="text-sm"><span class="text-coral font-bold">SQL</span>: ❌ "nostalgico" no aparece en las sinopsis</div>
-      <div class="text-sm"><span class="text-sky font-bold">Elasticsearch</span>: ❌ busca la palabra "nostalgia" pero la pelicula "Roma" evoca nostalgia sin decirlo</div>
+      <div class="text-sm"><span class="text-[#ff6b6b] font-bold">SQL</span>: ❌ "nostalgico" no aparece en las sinopsis</div>
+      <div class="text-sm"><span class="text-[#4ecdc4] font-bold">Elasticsearch</span>: ❌ busca la palabra "nostalgia" pero "Roma" evoca nostalgia sin decirlo</div>
     </div>
   </div>
-  <div class="neo-card bg-grape text-white p-4 text-center">
+  <div class="border border-[#6c5ce7] bg-[#6c5ce7]/10 p-4 text-center">
     <strong>Necesitamos algo que entienda el SIGNIFICADO detras de las palabras.</strong>
     <br/>Necesitamos que la maquina "lea entre lineas".
   </div>
@@ -1256,30 +1446,30 @@ Elasticsearch es genial para buscar <strong>palabras</strong>. Pero... ¿que pas
 
 ---
 
-<!-- Slide 39: Why embeddings matter -->
+<!-- Slide 43: Why embeddings matter -->
 
-# Antes de la solucion: ¿por que importa esto?
+# Los embeddings estan en todas partes
 
-<div class="mt-6">
+<div class="mt-4 text-sm">
 
 Los <strong>embeddings</strong> (representaciones vectoriales) son la tecnologia detras de:
 
 </div>
 
 <div class="grid grid-cols-2 gap-4 mt-4">
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <h3>ChatGPT, Claude, Gemini</h3>
     <p class="text-sm mt-1">Todos los modelos de IA modernos usan embeddings para entender lenguaje.</p>
   </div>
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <h3>Recomendaciones</h3>
     <p class="text-sm mt-1">"Si te gusto esta pelicula, te gustara esta otra" — Netflix, Spotify, Amazon.</p>
   </div>
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <h3>Busqueda semantica</h3>
     <p class="text-sm mt-1">Google entiende que "como curar dolor de cabeza" y "remedios para cefalea" son la misma pregunta.</p>
   </div>
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <h3>RAG (IA + tus datos)</h3>
     <p class="text-sm mt-1">Chatbots que responden usando la informacion de tu empresa, no inventando cosas.</p>
   </div>
@@ -1287,7 +1477,7 @@ Los <strong>embeddings</strong> (representaciones vectoriales) son la tecnologia
 
 <v-click>
 
-<div class="neo-card bg-banana p-3 mt-4 text-center text-sm">
+<div class="border border-black bg-[#ffe156]/20 p-3 mt-4 text-center text-sm">
 Entender embeddings es <strong>entender como funciona la IA moderna</strong>. Es la habilidad mas relevante que van a aprender hoy.
 </div>
 
@@ -1297,7 +1487,7 @@ Entender embeddings es <strong>entender como funciona la IA moderna</strong>. Es
 
 ---
 
-<!-- Slide 40: Physical analogy -->
+<!-- Slide 44: Physical analogy -->
 
 # Imagina un cuarto lleno de peliculas
 
@@ -1310,21 +1500,21 @@ Entender embeddings es <strong>entender como funciona la IA moderna</strong>. Es
 <v-clicks>
 
 <div class="grid grid-cols-4 gap-3 mt-4">
-  <div class="neo-card bg-banana p-3 text-center text-sm">
+  <div class="border border-black bg-[#ffe156]/20 p-3 text-center text-sm">
     <strong>Esquina 1</strong><br/>Comedias familiares
   </div>
-  <div class="neo-card bg-coral text-white p-3 text-center text-sm">
+  <div class="border border-[#ff6b6b] bg-[#ff6b6b]/10 p-3 text-center text-sm">
     <strong>Esquina 2</strong><br/>Thrillers oscuros
   </div>
-  <div class="neo-card bg-sky text-white p-3 text-center text-sm">
+  <div class="border border-[#4ecdc4] bg-[#4ecdc4]/10 p-3 text-center text-sm">
     <strong>Esquina 3</strong><br/>Dramas sociales
   </div>
-  <div class="neo-card bg-grape text-white p-3 text-center text-sm">
+  <div class="border border-[#6c5ce7] bg-[#6c5ce7]/10 p-3 text-center text-sm">
     <strong>Esquina 4</strong><br/>Ciencia ficcion
   </div>
 </div>
 
-<div class="neo-card bg-cream p-4 mt-4 text-center">
+<div class="border border-black bg-white p-4 mt-4 text-center">
 
 Tu cerebro acaba de hacer lo que hace un **embedding**: tomo cada pelicula, "entendio" de que trata, y le asigno una **posicion en el espacio** segun su significado.
 
@@ -1336,7 +1526,7 @@ Ahora imagina que la mesa es un plano con coordenadas (x, y). Cada pelicula tien
 
 ---
 
-<!-- Slide 41: From analogy to math -->
+<!-- Slide 45: From analogy to math -->
 
 # De la mesa a los numeros
 
@@ -1344,16 +1534,16 @@ Ahora imagina que la mesa es un plano con coordenadas (x, y). Cada pelicula tien
   <div>
     <h3>Texto → Vector (embedding)</h3>
     <div class="text-sm space-y-2 mt-3">
-      <div class="neo-card bg-white p-2">"perro" → [0.2, 0.8, 0.1, ...]</div>
-      <div class="neo-card bg-white p-2">"cachorro" → [0.21, 0.79, 0.12, ...]</div>
-      <div class="neo-card bg-white p-2">"automovil" → [0.9, 0.1, 0.7, ...]</div>
+      <div class="border border-black bg-[#0d1117] text-[#00ff41] p-2 font-mono text-xs">"perro" → [0.2, 0.8, 0.1, ...]</div>
+      <div class="border border-black bg-[#0d1117] text-[#00ff41] p-2 font-mono text-xs">"cachorro" → [0.21, 0.79, 0.12, ...]</div>
+      <div class="border border-black bg-[#0d1117] text-[#00ff41] p-2 font-mono text-xs">"automovil" → [0.9, 0.1, 0.7, ...]</div>
     </div>
     <p class="text-sm mt-3">"perro" y "cachorro" tienen numeros <strong>muy parecidos</strong> → estan <strong>cerca</strong> en el espacio. "automovil" tiene numeros muy diferentes → esta <strong>lejos</strong>.</p>
   </div>
   <div class="flex items-center justify-center">
-    <div class="neo-card bg-grape text-white p-6 text-center">
+    <div class="border border-[#6c5ce7] bg-[#6c5ce7]/10 p-6 text-center">
       <div class="text-lg font-bold mb-3">Espacio de significado</div>
-      <div class="text-sm text-left">
+      <div class="text-sm text-left font-mono">
         🐕 perro<br/>
         &nbsp;&nbsp;&nbsp;↕ <em>cerca</em><br/>
         🐶 cachorro<br/>
@@ -1370,14 +1560,14 @@ Ahora imagina que la mesa es un plano con coordenadas (x, y). Cada pelicula tien
 
 ---
 
-<!-- Slide 42: The classic analogy -->
+<!-- Slide 46: The classic analogy -->
 
 # El ejemplo clasico que demuestra que funciona
 
 <div class="mt-8">
 
-<div class="neo-card bg-banana p-6 text-center text-2xl">
-<strong>"rey" − "hombre" + "mujer" ≈ "reina"</strong>
+<div class="border border-black bg-[#ffe156]/20 p-6 text-center text-2xl font-mono">
+<strong>"rey" - "hombre" + "mujer" ≈ "reina"</strong>
 </div>
 
 <div class="mt-6 text-center">
@@ -1391,11 +1581,11 @@ Si restas las coordenadas de "hombre" a "rey" y sumas las de "mujer", llegas a u
 <v-click>
 
 <div class="grid grid-cols-2 gap-4 mt-6">
-  <div class="neo-card bg-white p-4 text-center text-sm">
+  <div class="border border-black bg-white p-4 text-center text-sm">
     <h4>¿Quien calcula los embeddings?</h4>
     <p class="text-xs mt-1">Modelos de IA entrenados con miles de millones de textos. ChromaDB usa uno por defecto — tu no tienes que hacer nada.</p>
   </div>
-  <div class="neo-card bg-white p-4 text-center text-sm">
+  <div class="border border-black bg-white p-4 text-center text-sm">
     <h4>¿Que es la "distancia"?</h4>
     <p class="text-xs mt-1">Se mide el angulo entre dos vectores (similitud coseno). Angulo chico = similares. ChromaDB calcula esto automaticamente.</p>
   </div>
@@ -1407,7 +1597,7 @@ Si restas las coordenadas de "hombre" a "rey" y sumas las de "mujer", llegas a u
 
 ---
 
-<!-- Slide 43: What is a vector DB -->
+<!-- Slide 47: What is a vector DB -->
 
 # ¿Que es una base de datos vectorial?
 
@@ -1420,17 +1610,17 @@ Si los embeddings son las "coordenadas de significado" de un texto, necesitamos 
 <v-clicks>
 
 <div class="grid grid-cols-3 gap-4 mt-4">
-  <div class="neo-card bg-grape text-white p-4 text-center">
+  <div class="border border-[#6c5ce7] bg-[#6c5ce7]/10 p-4 text-center">
     <div class="text-3xl mb-2">📐</div>
     <strong>Guarda vectores</strong>
     <p class="text-xs mt-1">Los numeros que representan el significado de cada documento.</p>
   </div>
-  <div class="neo-card bg-sky text-white p-4 text-center">
+  <div class="border border-[#4ecdc4] bg-[#4ecdc4]/10 p-4 text-center">
     <div class="text-3xl mb-2">🔍</div>
     <strong>Busca por cercania</strong>
     <p class="text-xs mt-1">"Dame los 5 documentos cuyo significado sea mas cercano a esta pregunta."</p>
   </div>
-  <div class="neo-card bg-banana p-4 text-center">
+  <div class="border border-black bg-[#ffe156]/10 p-4 text-center">
     <div class="text-3xl mb-2">📄</div>
     <strong>Devuelve el texto original</strong>
     <p class="text-xs mt-1">No solo los numeros — tambien el documento de donde vino, con metadata.</p>
@@ -1449,22 +1639,22 @@ Si los embeddings son las "coordenadas de significado" de un texto, necesitamos 
 
 ---
 
-<!-- Slide 44: ChromaDB intro -->
+<!-- Slide 48: ChromaDB intro -->
 
 # ChromaDB: busqueda semantica en 5 lineas de Python
 
 <div class="grid grid-cols-2 gap-6 mt-6">
   <div class="space-y-3">
-    <div class="neo-card bg-white p-3 text-sm">
+    <div class="border border-black bg-white p-3 text-sm">
       <strong>Open source</strong> — codigo abierto, licencia Apache 2.0. Gratis.
     </div>
-    <div class="neo-card bg-white p-3 text-sm">
+    <div class="border border-black bg-white p-3 text-sm">
       <strong>Python-first</strong> — <code>pip install chromadb</code> y listo.
     </div>
-    <div class="neo-card bg-white p-3 text-sm">
+    <div class="border border-black bg-white p-3 text-sm">
       <strong>Auto-embed</strong> — genera los vectores automaticamente, sin configuracion.
     </div>
-    <div class="neo-card bg-white p-3 text-sm">
+    <div class="border border-black bg-white p-3 text-sm">
       <strong>RAG-ready</strong> — diseñado para construir apps de IA con tus datos.
     </div>
   </div>
@@ -1499,7 +1689,7 @@ results = col.query(
 
 ---
 
-<!-- Slide 45: Predict then reveal -->
+<!-- Slide 49: Predict then reveal -->
 
 # Predice: ¿que resultados devolvera?
 
@@ -1508,21 +1698,21 @@ results = col.query(
 <v-clicks>
 
 <div class="space-y-4 mt-4">
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <strong>Query 1:</strong> "tacos"
-    <div class="text-sm text-coral font-bold mt-1">→ "comida mexicana" y "burritos" — palabras diferentes, mismo concepto</div>
+    <div class="text-sm text-[#ff6b6b] font-bold mt-1">→ "comida mexicana" y "burritos" — palabras diferentes, mismo concepto</div>
   </div>
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <strong>Query 2:</strong> "inteligencia artificial"
-    <div class="text-sm text-sky font-bold mt-1">→ "IA en negocios" y "machine learning" — entiende sinonimos y conceptos relacionados</div>
+    <div class="text-sm text-[#4ecdc4] font-bold mt-1">→ "IA en negocios" y "machine learning" — entiende sinonimos y conceptos relacionados</div>
   </div>
-  <div class="neo-card bg-banana p-4">
+  <div class="border border-black bg-[#ffe156]/20 p-4">
     <strong>Query 3:</strong> "analisis de informacion"
-    <div class="text-sm text-grape font-bold mt-1">→ "Python para datos" — la conexion es conceptual, no hay palabras en comun</div>
+    <div class="text-sm text-[#6c5ce7] font-bold mt-1">→ "Python para datos" — la conexion es conceptual, no hay palabras en comun</div>
   </div>
 </div>
 
-<div class="neo-card bg-cream p-3 mt-4 text-center text-sm">
+<div class="border border-black bg-white p-3 mt-4 text-center text-sm">
 <strong>Los embeddings entienden CONCEPTOS, no solo palabras.</strong> Esa es la diferencia entre busqueda de texto (Elasticsearch) y busqueda semantica (ChromaDB).
 </div>
 
@@ -1530,7 +1720,7 @@ results = col.query(
 
 ---
 
-<!-- Slide 46: RAG intro -->
+<!-- Slide 50: RAG intro -->
 
 # RAG: IA que responde desde TUS datos
 
@@ -1543,24 +1733,24 @@ El gran problema de ChatGPT: a veces **inventa** respuestas (alucina). ¿La solu
 <v-click>
 
 <div class="flex items-center justify-center gap-2 mt-6">
-  <div class="neo-card bg-banana p-3 text-center text-sm">
+  <div class="border border-black p-3 text-center text-sm">
     <div class="text-xl">❓</div>
     <strong>Pregunta</strong>
   </div>
   <div class="text-xl">→</div>
-  <div class="neo-card bg-sky text-white p-3 text-center text-sm">
+  <div class="border border-[#4ecdc4] p-3 text-center text-sm">
     <div class="text-xl">🔍</div>
     <strong>ChromaDB busca</strong>
     <p class="text-xs">contexto relevante</p>
   </div>
   <div class="text-xl">→</div>
-  <div class="neo-card bg-grape text-white p-3 text-center text-sm">
+  <div class="border border-[#6c5ce7] p-3 text-center text-sm">
     <div class="text-xl">🧠</div>
     <strong>LLM genera</strong>
     <p class="text-xs">respuesta con contexto</p>
   </div>
   <div class="text-xl">→</div>
-  <div class="neo-card bg-coral text-white p-3 text-center text-sm">
+  <div class="border border-[#00ff41] p-3 text-center text-sm">
     <div class="text-xl">✅</div>
     <strong>Respuesta</strong>
     <p class="text-xs">fundamentada</p>
@@ -1571,7 +1761,7 @@ El gran problema de ChatGPT: a veces **inventa** respuestas (alucina). ¿La solu
 
 <v-click>
 
-<div class="neo-card bg-cream p-4 mt-4 text-center">
+<div class="border border-black bg-white p-4 mt-4 text-center">
 <strong>La IA no hallucina porque responde desde TUS datos</strong>, no desde su entrenamiento general. Es como darle un libro de texto al estudiante antes del examen.
 </div>
 
@@ -1583,15 +1773,15 @@ El gran problema de ChatGPT: a veces **inventa** respuestas (alucina). ¿La solu
 layout: neo-demo
 ---
 
-<!-- Slide 47: Career Coach RAG Demo -->
+<!-- Slide 51: Career Coach RAG Demo -->
 
 ::title::
 
-<h2 class="text-banana">DEMO: Tu coach de carrera con IA</h2>
+<h2 class="text-[#00ff41] font-mono">$ demo: Tu coach de carrera con IA</h2>
 
 ::default::
 
-<div class="text-white/90">
+<div class="text-[#e6edf3]">
 
 ### AI Career Coach para estudiantes de BI
 
@@ -1606,7 +1796,7 @@ Un chatbot que responde preguntas sobre carreras en datos usando **40+ ofertas d
 - *"Se Python, SQL y Tableau — ¿para que puestos califico?"*
 - *"¿Que tecnologias deberia aprender este semestre?"*
 
-<div class="mt-2 neo-card bg-white/10 p-2 text-sm">
+<div class="mt-2 border border-[#30363d] p-2 text-sm">
 Cada respuesta muestra las <strong>fuentes</strong>: las ofertas de trabajo reales en las que se basa. Eso es RAG en accion.
 </div>
 
@@ -1614,11 +1804,11 @@ Cada respuesta muestra las <strong>fuentes</strong>: las ofertas de trabajo real
 
 ---
 
-<!-- Slide 48: Chroma References -->
+<!-- Slide 52: Chroma References -->
 
 # Referencias — Seccion ChromaDB y RAG
 
-<div class="text-xs mt-4 space-y-2">
+<div class="text-xs mt-4 space-y-2 font-mono">
 
 - Chroma. (2024). *Chroma documentation*. https://docs.trychroma.com/
 
@@ -1628,16 +1818,20 @@ Cada respuesta muestra las <strong>fuentes</strong>: las ofertas de trabajo real
 
 - Pan, J. W., et al. (2024). A survey on vector database. *arXiv:2310.11703*. https://arxiv.org/abs/2310.11703
 
+- Vaswani, A., et al. (2017). Attention is all you need. *NeurIPS, 30*. https://arxiv.org/abs/1706.03762
+
 </div>
 
 ---
 layout: neo-section
-class: bg-ink
+class: bg-[#0d1117]
 ---
 
-<!-- Slide 49: Closing section -->
+<!-- Slide 53: Closing section -->
 
-<h1 class="text-banana text-4xl">La herramienta correcta para la pregunta correcta</h1>
+<h1 class="text-[#ffe156] text-4xl font-bold">La herramienta correcta para la pregunta correcta</h1>
+
+<p class="text-[#00ff41] mt-6 font-mono">// decision framework</p>
 
 <div class="mt-6">
   <TimerBadge time="15 min" />
@@ -1645,7 +1839,63 @@ class: bg-ink
 
 ---
 
-<!-- Slide 50: Comparison table -->
+<!-- Slide 54: Decision flowchart -->
+
+# ¿Que herramienta uso?
+
+<div class="mt-6">
+
+<div class="flex flex-col items-center gap-3">
+  <div class="border border-black bg-[#ffe156]/20 p-3 text-center font-bold">
+    ¿Que tipo de datos tienes?
+  </div>
+  <div class="flex gap-12 mt-2">
+    <div class="flex flex-col items-center gap-2">
+      <div class="text-sm">↓ Estructurados</div>
+      <div class="border border-black p-3 text-center text-sm">
+        ¿Necesitas transacciones?
+      </div>
+      <div class="text-sm">↓ Si</div>
+      <div class="border border-[#ffe156] bg-[#ffe156]/20 p-3 text-center font-bold text-sm">
+        SQL ✅
+      </div>
+    </div>
+    <div class="flex flex-col items-center gap-2">
+      <div class="text-sm">↓ Texto libre</div>
+      <div class="border border-black p-3 text-center text-sm">
+        ¿Busqueda por palabras?
+      </div>
+      <div class="text-sm">↓ Si</div>
+      <div class="border border-[#ff6b6b] bg-[#ff6b6b]/10 p-3 text-center font-bold text-sm">
+        Elasticsearch ✅
+      </div>
+    </div>
+    <div class="flex flex-col items-center gap-2">
+      <div class="text-sm">↓ Significado/conceptos</div>
+      <div class="border border-black p-3 text-center text-sm">
+        ¿Busqueda semantica / IA?
+      </div>
+      <div class="text-sm">↓ Si</div>
+      <div class="border border-[#4ecdc4] bg-[#4ecdc4]/10 p-3 text-center font-bold text-sm">
+        Vector DB ✅
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<v-click>
+
+<div class="border border-black bg-white p-3 mt-4 text-center text-sm">
+<strong>En la practica, las empresas usan los tres juntos.</strong> SQL para la operacion, ES para busqueda, Vector DB para IA.
+</div>
+
+</v-click>
+
+---
+
+<!-- Slide 55: Comparison table -->
 
 # SQL vs Elasticsearch vs ChromaDB
 
@@ -1660,48 +1910,40 @@ class: bg-ink
   ]"
 />
 
-<v-click>
-
-<div class="neo-card bg-cream p-4 mt-6 text-center">
-<strong>No son competidores — son complementos.</strong>
-En la practica, las empresas usan SQL + ES + Vector DB juntos, cada uno para lo que hace mejor.
-</div>
-
-</v-click>
-
 ---
 
-<!-- Slide 51: Your new superpower -->
+<!-- Slide 56: Your new superpower -->
 
 # Tu nuevo superpoder empieza ahora
 
 <div class="mt-6">
 
-<div class="neo-card bg-banana p-6">
+<div class="border border-black bg-[#ffe156]/20 p-6">
 
 ### Ofertas de empleo reales que ya piden estas habilidades:
 
-- *"Data Engineer — **Elasticsearch**, Kafka, Python"* — Amazon
-- *"BI Developer — SQL, **vector databases**, LLM integration"* — Deloitte
-- *"AI Engineer — **RAG pipelines**, ChromaDB/Pinecone"* — Wizeline
-- *"Data Scientist — NLP, **Elasticsearch**, ChromaDB"* — HSBC Mexico
+<!-- TODO: Reemplazar con vacantes reales verificadas -->
+- *"Data Engineer — **Elasticsearch**, Kafka, Python"*
+- *"BI Developer — SQL, **vector databases**, LLM integration"*
+- *"AI Engineer — **RAG pipelines**, ChromaDB/Pinecone"*
+- *"Data Scientist — NLP, **embeddings**, search systems"*
 
 </div>
 
 <div class="mt-4 text-center text-lg">
-<strong>Ahora saben que es esto. La mayoria de profesionales con 5 años de experiencia no.</strong>
+<strong>Ahora saben que es esto. La mayoria de profesionales con experiencia no.</strong>
 </div>
 
 </div>
 
 ---
 
-<!-- Slide 52: Keep practicing -->
+<!-- Slide 57: Keep practicing -->
 
 # Sigue practicando
 
 <div class="grid grid-cols-2 gap-4 mt-6">
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <h3>Labs en este repo</h3>
     <ul class="text-sm mt-2 space-y-1">
       <li>Lab 1: Elasticsearch Basics (~30 min)</li>
@@ -1710,7 +1952,7 @@ En la practica, las empresas usan SQL + ES + Vector DB juntos, cada uno para lo 
       <li>Lab 4: Construye un mini RAG (~45 min)</li>
     </ul>
   </div>
-  <div class="neo-card bg-white p-4">
+  <div class="border border-black bg-white p-4">
     <h3>Recursos</h3>
     <ul class="text-sm mt-2 space-y-1">
       <li>Elastic Cloud: 14 dias gratis</li>
@@ -1723,11 +1965,11 @@ En la practica, las empresas usan SQL + ES + Vector DB juntos, cada uno para lo 
 
 ---
 
-<!-- Slide 53: All references -->
+<!-- Slide 58: All references -->
 
 # Referencias completas
 
-<div class="text-xs mt-2 space-y-1">
+<div class="text-xs mt-2 space-y-1 font-mono">
 
 - Chroma. (2024). *Chroma documentation*. https://docs.trychroma.com/
 - Codd, E. F. (1970). A relational model of data for large shared data banks. *Communications of the ACM, 13*(6), 377-387.
@@ -1740,10 +1982,11 @@ En la practica, las empresas usan SQL + ES + Vector DB juntos, cada uno para lo 
 - McKinsey & Company. (2024). *The state of AI in 2024*. McKinsey Global Institute.
 - Mikolov, T., et al. (2013). Efficient estimation of word representations in vector space. *arXiv:1301.3781*.
 - Pan, J. W., et al. (2024). A survey on vector database. *arXiv:2310.11703*.
+- Vaswani, A., et al. (2017). Attention is all you need. *NeurIPS, 30*.
 
 </div>
 
-<div class="mt-2 text-center text-xs">
+<div class="mt-2 text-center text-xs font-mono">
 Lista completa con hyperlinks: <code>references/apa7.md</code> en el repositorio
 </div>
 
@@ -1751,13 +1994,13 @@ Lista completa con hyperlinks: <code>references/apa7.md</code> en el repositorio
 layout: neo-cover
 ---
 
-<!-- Slide 54: Closing -->
+<!-- Slide 59: Closing -->
 
 # Gracias!
 
 <div class="pixel-divider my-4" />
 
-<div class="text-lg mb-4">#MasAlladeSQL</div>
+<div class="text-lg mb-4 font-mono">#MasAlladeSQL</div>
 
 <div class="text-sm">
 Comparte lo que construiste hoy

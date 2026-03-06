@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 :root {
-  --neo-banana: #FFE156;
-  --neo-coral: #FF6B6B;
-  --neo-sky: #4ECDC4;
-  --neo-grape: #6C5CE7;
-  --neo-ink: #2D3436;
-  --neo-paper: #FAFAFA;
-  --neo-cream: #FFF8E7;
+  --term-bg: #FFFFFF;
+  --term-text: #1a1a1a;
+  --term-border: #000000;
+  --term-code-bg: #0d1117;
+  --term-code-text: #00ff41;
+  --term-accent: #ff6b6b;
+  --term-highlight: #ffe156;
+  --term-link: #4ecdc4;
+  --term-purple: #6c5ce7;
 }
 
 .slidev-layout {
   font-family: 'Inter', sans-serif;
   letter-spacing: 0.01em;
-  color: var(--neo-ink);
+  color: var(--term-text);
+  background: var(--term-bg);
 }
 
 .slidev-layout h1,
@@ -29,27 +32,19 @@
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* Neobrutalist dot-grid background */
-.neo-dotgrid {
-  background-image: radial-gradient(circle, var(--neo-ink) 1px, transparent 1px);
-  background-size: 24px 24px;
-  background-position: 0 0;
-  opacity: 0.06;
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+/* Terminal-style code blocks */
+.slidev-layout pre.shiki,
+.slidev-layout pre.slidev-code {
+  background: var(--term-code-bg) !important;
+  border: 1px solid #30363d;
+  border-radius: 2px;
 }
 
-/* Pixel divider */
+/* Pixel divider — simple 1px line */
 .pixel-divider {
-  height: 4px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--neo-ink) 0px,
-    var(--neo-ink) 8px,
-    transparent 8px,
-    transparent 16px
-  );
+  height: 1px;
+  background: var(--term-border);
+  opacity: 0.2;
 }
 
 /* Reference footnote */
@@ -58,9 +53,36 @@
   bottom: 12px;
   left: 40px;
   right: 40px;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   color: #636e72;
-  font-family: 'Inter', sans-serif;
-  border-top: 1px solid #dfe6e9;
+  font-family: 'JetBrains Mono', monospace;
+  border-top: 1px solid #e0e0e0;
   padding-top: 4px;
+}
+
+/* Cursor blink animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: var(--term-code-text);
+  font-weight: bold;
+}
+
+/* Terminal scanline effect (subtle) */
+.term-scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 65, 0.03) 2px,
+    rgba(0, 255, 65, 0.03) 4px
+  );
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
 }
