@@ -1,5 +1,9 @@
 # Referencias — Formato APA 7
 
+## Fundamentos de Bases de Datos
+
+Codd, E. F. (1970). A relational model of data for large shared data banks. *Communications of the ACM, 13*(6), 377-387. https://doi.org/10.1145/362384.362685
+
 ## Elasticsearch
 
 Elastic NV. (2024). *Elasticsearch reference* (v8.x). https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
