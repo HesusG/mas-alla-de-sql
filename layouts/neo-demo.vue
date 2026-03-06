@@ -1,16 +1,22 @@
 <template>
-  <div class="slidev-layout neo-demo h-full flex flex-col bg-[#0d1117] text-[#e6edf3] relative overflow-hidden">
-    <div class="term-scanlines" />
-    <div class="relative z-10 flex-1 flex flex-col px-10 py-6">
-      <div class="mb-4">
-        <slot name="title" />
+  <div class="slidev-layout neo-demo h-full flex flex-col bg-[#C0C0C0] relative overflow-hidden">
+    <!-- Mac Window wrapping terminal -->
+    <div class="flex-1 flex flex-col m-4">
+      <div class="mac-window flex-1 flex flex-col">
+        <div class="mac-titlebar">
+          <div class="mac-close-box" />
+          <span class="mac-titlebar-title">Terminal</span>
+          <span class="absolute right-2 text-[#2DD4BF] text-xs font-mono font-bold px-2 py-0 border border-[#2DD4BF] bg-[#0d1117] rounded-sm" style="font-size:0.6rem;">LIVE</span>
+        </div>
+        <div class="flex-1 flex flex-col bg-[#0d1117] text-[#e6edf3] overflow-hidden">
+          <div class="flex-none px-6 py-3">
+            <slot name="title" />
+          </div>
+          <div class="flex-1 overflow-auto px-6 pb-4">
+            <slot />
+          </div>
+        </div>
       </div>
-      <div class="flex-1 overflow-auto">
-        <slot />
-      </div>
-    </div>
-    <div class="absolute top-4 right-6 text-[#00ff41] text-xs font-mono font-bold px-3 py-1 border border-[#00ff41] rounded-sm">
-      LIVE
     </div>
   </div>
 </template>
