@@ -48,7 +48,7 @@ github.com/HesusG/mas-alla-de-sql
 
 <div class="grid grid-cols-[1fr_2fr] gap-8 mt-4 items-center">
   <div class="border-2 border-black p-6 text-center bg-[#C0C0C0]">
-    <div class="text-6xl mb-4">👨‍💻</div>
+    <div class="i-pixelarticons-user inline-block w-16 h-16 mb-4" />
     <div class="text-lg font-bold">[Tu nombre]</div>
     <div class="text-sm mt-1">[Tu rol / titulo]</div>
   </div>
@@ -56,10 +56,10 @@ github.com/HesusG/mas-alla-de-sql
 
 <v-clicks>
 
-  <div class="border-2 border-black bg-white p-3 text-sm">📍 [Ciudad, organizacion]</div>
-  <div class="border-2 border-black bg-white p-3 text-sm">💼 [Experiencia relevante]</div>
-  <div class="border-2 border-black bg-white p-3 text-sm">🔧 [Stack / tecnologias]</div>
-  <div class="border-2 border-black bg-white p-3 text-sm">🎯 [Por que este tema te apasiona]</div>
+  <div class="border-2 border-black bg-white p-3 text-sm flex items-center gap-2"><div class="i-pixelarticons-map-pin inline-block w-5 h-5 flex-shrink-0" /> [Ciudad, organizacion]</div>
+  <div class="border-2 border-black bg-white p-3 text-sm flex items-center gap-2"><div class="i-pixelarticons-briefcase-search inline-block w-5 h-5 flex-shrink-0" /> [Experiencia relevante]</div>
+  <div class="border-2 border-black bg-white p-3 text-sm flex items-center gap-2"><div class="i-pixelarticons-tool-case inline-block w-5 h-5 flex-shrink-0" /> [Stack / tecnologias]</div>
+  <div class="border-2 border-black bg-white p-3 text-sm flex items-center gap-2"><div class="i-pixelarticons-bullseye-arrow inline-block w-5 h-5 flex-shrink-0" /> [Por que este tema te apasiona]</div>
 
 </v-clicks>
 
@@ -79,26 +79,26 @@ github.com/HesusG/mas-alla-de-sql
 <v-clicks>
 
   <div class="border-2 border-black p-4 text-center min-w-28 bg-[#C0C0C0]">
-    <div class="text-3xl mb-1">🏛️</div>
-    <strong>SQL</strong><br/>
+    <div class="i-pixelarticons-database inline-block w-8 h-8 mb-1" />
+    <br/><strong>SQL</strong><br/>
     <span class="text-xs">Lo que conoces</span>
   </div>
   <div class="text-3xl font-bold text-black/30">→</div>
   <div class="border-2 border-black p-4 text-center min-w-28 bg-[#ff6b6b]/15">
-    <div class="text-3xl mb-1">🤔</div>
-    <strong>El problema</strong><br/>
+    <div class="i-pixelarticons-warning-box inline-block w-8 h-8 mb-1" />
+    <br/><strong>El problema</strong><br/>
     <span class="text-xs">Donde SQL no llega</span>
   </div>
   <div class="text-3xl font-bold text-black/30">→</div>
   <div class="border-2 border-[#ff6b6b] p-4 text-center min-w-28 bg-[#ff6b6b]/15">
-    <div class="text-3xl mb-1">🔍</div>
-    <strong>Elasticsearch</strong><br/>
+    <div class="i-pixelarticons-search inline-block w-8 h-8 mb-1" />
+    <br/><strong>Elasticsearch</strong><br/>
     <span class="text-xs">Busqueda de texto</span>
   </div>
   <div class="text-3xl font-bold text-black/30">→</div>
   <div class="border-2 border-[#6c5ce7] p-4 text-center min-w-28 bg-[#6c5ce7]/15">
-    <div class="text-3xl mb-1">🧠</div>
-    <strong>ChromaDB</strong><br/>
+    <div class="i-pixelarticons-ai-app-mac inline-block w-8 h-8 mb-1" />
+    <br/><strong>ChromaDB</strong><br/>
     <span class="text-xs">Busqueda por significado</span>
   </div>
 
@@ -206,10 +206,10 @@ WHERE texto LIKE '%frustrado%'
 <v-clicks>
 
 <div class="mt-4 space-y-3">
-  <div class="border-2 border-black bg-white p-3">❌ Hay que <strong>adivinar</strong> todas las palabras posibles — ¿cuantas formas hay de expresar frustracion?</div>
-  <div class="border-2 border-black bg-white p-3">❌ <strong>No entiende contexto</strong>: "no estoy molesto" apareceria como resultado positivo</div>
-  <div class="border-2 border-black bg-white p-3">❌ Es <strong>lento</strong>: cada <code>LIKE</code> con <code>%</code> escanea toda la tabla, fila por fila</div>
-  <div class="border-2 border-black bg-white p-3">❌ <strong>Sin ranking</strong>: no sabes cual resena es "mas frustrada" que otra</div>
+  <div class="border-2 border-black bg-white p-3"><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" />Hay que <strong>adivinar</strong> todas las palabras posibles — ¿cuantas formas hay de expresar frustracion?</div>
+  <div class="border-2 border-black bg-white p-3"><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" /><strong>No entiende contexto</strong>: "no estoy molesto" apareceria como resultado positivo</div>
+  <div class="border-2 border-black bg-white p-3"><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" />Es <strong>lento</strong>: cada <code>LIKE</code> con <code>%</code> escanea toda la tabla, fila por fila</div>
+  <div class="border-2 border-black bg-white p-3"><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" /><strong>Sin ranking</strong>: no sabes cual resena es "mas frustrada" que otra</div>
 </div>
 
 </v-clicks>
@@ -286,15 +286,15 @@ layout: neo-section
 <v-clicks>
 
 <div class="border-2 border-black p-5 text-lg">
-🙋 <strong>Levanten la mano si...</strong> han usado SQL en algun proyecto o clase
+<div class="i-pixelarticons-human-handsup inline-block w-5 h-5 align-middle mr-1" /><strong>Levanten la mano si...</strong> han usado SQL en algun proyecto o clase
 </div>
 
 <div class="border-2 border-black p-5 text-lg">
-🙋 <strong>Levanten la mano si...</strong> alguna vez intentaron buscar texto libre en una base de datos y les frustro el resultado
+<div class="i-pixelarticons-human-handsup inline-block w-5 h-5 align-middle mr-1" /><strong>Levanten la mano si...</strong> alguna vez intentaron buscar texto libre en una base de datos y les frustro el resultado
 </div>
 
 <div class="border-2 border-black p-5 text-lg">
-🙋 <strong>Levanten la mano si...</strong> han usado un buscador inteligente (Google, Spotify, Netflix) y se preguntaron "¿como sabe lo que quiero?"
+<div class="i-pixelarticons-human-handsup inline-block w-5 h-5 align-middle mr-1" /><strong>Levanten la mano si...</strong> han usado un buscador inteligente (Google, Spotify, Netflix) y se preguntaron "¿como sabe lo que quiero?"
 </div>
 
 </v-clicks>
@@ -319,7 +319,7 @@ Perfecto. Hoy vamos a entender como funcionan esos buscadores <strong>por dentro
 
 <div class="grid grid-cols-2 gap-6 mt-4">
   <div>
-    <h3 class="mb-3 text-[#2DD4BF]">✅ Datos estructurados (SQL)</h3>
+    <h3 class="mb-3 text-[#2DD4BF]"><div class="i-pixelarticons-check inline-block w-5 h-5 align-middle mr-1" /> Datos estructurados (SQL)</h3>
     <div class="border-2 border-black bg-white p-3 text-sm">
       <table class="w-full text-xs">
         <tr class="border-b border-black"><th class="text-left p-1 font-bold">id</th><th class="text-left p-1 font-bold">nombre</th><th class="text-left p-1 font-bold">precio</th><th class="text-left p-1 font-bold">stock</th></tr>
@@ -330,13 +330,13 @@ Perfecto. Hoy vamos a entender como funcionan esos buscadores <strong>por dentro
     </div>
   </div>
   <div>
-    <h3 class="mb-3 text-[#ff6b6b]">❌ Datos no estructurados</h3>
+    <h3 class="mb-3 text-[#ff6b6b]"><div class="i-pixelarticons-warning-box inline-block w-5 h-5 align-middle mr-1" /> Datos no estructurados</h3>
     <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 text-sm space-y-2">
-      <div>📧 <em>"Hola, llevo 2 semanas sin recibir mi pedido..."</em></div>
-      <div>📄 Contrato de 45 paginas en PDF</div>
-      <div>💬 Conversaciones de chat con soporte</div>
-      <div>📱 Posts de redes sociales</div>
-      <div>📝 Notas de reuniones, minutas</div>
+      <div><div class="i-pixelarticons-mail inline-block w-4 h-4 align-middle mr-1" /><em>"Hola, llevo 2 semanas sin recibir mi pedido..."</em></div>
+      <div><div class="i-pixelarticons-file-text inline-block w-4 h-4 align-middle mr-1" />Contrato de 45 paginas en PDF</div>
+      <div><div class="i-pixelarticons-chat inline-block w-4 h-4 align-middle mr-1" />Conversaciones de chat con soporte</div>
+      <div><div class="i-pixelarticons-device-tablet inline-block w-4 h-4 align-middle mr-1" />Posts de redes sociales</div>
+      <div><div class="i-pixelarticons-note inline-block w-4 h-4 align-middle mr-1" />Notas de reuniones, minutas</div>
     </div>
   </div>
 </div>
@@ -442,7 +442,7 @@ Normalizacion funciona perfecto para datos estructurados. Pero... <strong>¿que 
 
 <div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
   <div class="border-2 border-black p-4 text-center">
-    <div class="w-32 h-32 mx-auto border-2 border-black flex items-center justify-center bg-gray-100 text-4xl">📐</div>
+    <div class="w-32 h-32 mx-auto border-2 border-black flex items-center justify-center bg-gray-100"><div class="i-pixelarticons-user inline-block w-16 h-16" /></div>
     <div class="text-sm font-bold mt-2">Edgar F. Codd</div>
     <div class="text-xs">IBM, 1970</div>
     <div class="text-xs mt-1">Inventor del modelo relacional</div>
@@ -510,9 +510,9 @@ Piensa en como buscas en Google: escribes <strong>"receta pastel de chocolate"</
   <div>
     <h4 class="text-[#ff6b6b] mb-2">SQL: Binario (si/no)</h4>
     <div class="border-2 border-black p-3 text-sm space-y-2">
-      <div>✅ "Pastel de chocolate con crema"</div>
-      <div>✅ "El chocolate del pastel se quemo"</div>
-      <div>❌ "Torta de cacao con ganache"</div>
+      <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> "Pastel de chocolate con crema"</div>
+      <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> "El chocolate del pastel se quemo"</div>
+      <div><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" /> "Torta de cacao con ganache"</div>
       <div class="text-xs text-gray-500 mt-2">No distingue cual es mejor. Todas las que contienen "pastel" + "chocolate" son iguales.</div>
     </div>
   </div>
@@ -583,19 +583,19 @@ En BI, los datos que no ves son los mas peligrosos.
 
 <div class="grid grid-cols-2 gap-4 mt-4">
   <div class="border-2 border-black bg-white p-4">
-    <h3 class="text-[#ff6b6b]">🔍 Busqueda inteligente</h3>
+    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-search inline-block w-5 h-5 align-middle mr-1" /> Busqueda inteligente</h3>
     <p class="text-sm mt-1">Los usuarios esperan busquedas tipo Google: rapidas, tolerantes a errores, con resultados rankeados.</p>
   </div>
   <div class="border-2 border-black bg-white p-4">
-    <h3 class="text-[#ff6b6b]">📊 Analisis de texto a escala</h3>
+    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-chart inline-block w-5 h-5 align-middle mr-1" /> Analisis de texto a escala</h3>
     <p class="text-sm mt-1">Miles de tickets, reseñas, contratos. No puedes leerlos uno por uno — necesitas que la maquina entienda el contenido.</p>
   </div>
   <div class="border-2 border-black bg-white p-4">
-    <h3 class="text-[#2DD4BF]">⚡ Tiempo real</h3>
+    <h3 class="text-[#2DD4BF]"><div class="i-pixelarticons-zap inline-block w-5 h-5 align-middle mr-1" /> Tiempo real</h3>
     <p class="text-sm mt-1">Monitoreo de logs, alertas, dashboards que se actualizan al segundo. SQL batch no alcanza.</p>
   </div>
   <div class="border-2 border-black bg-white p-4">
-    <h3 class="text-[#6c5ce7]">🧠 IA sobre tus datos</h3>
+    <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-ai-app-mac inline-block w-5 h-5 align-middle mr-1" /> IA sobre tus datos</h3>
     <p class="text-sm mt-1">Chatbots que responden preguntas usando la informacion de tu empresa, no alucinaciones.</p>
   </div>
 </div>
@@ -667,14 +667,14 @@ SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos d
 
 <div class="grid grid-cols-2 gap-8 mt-6">
   <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-6 text-center">
-    <div class="text-4xl mb-2">🔍</div>
+    <div class="i-pixelarticons-search inline-block w-10 h-10 mb-2" />
     <h2 class="text-[#ff6b6b]">Elasticsearch</h2>
     <div class="pixel-divider my-3" />
     <p class="text-sm">Busqueda de texto completo (full-text search). Rapido, con ranking, tolerante a errores.</p>
     <p class="text-sm mt-2 font-bold">Resuelve: el problema de buscar en texto no estructurado.</p>
   </div>
   <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-6 text-center">
-    <div class="text-4xl mb-2">🧠</div>
+    <div class="i-pixelarticons-ai-app-mac inline-block w-10 h-10 mb-2" />
     <h2 class="text-[#6c5ce7]">ChromaDB</h2>
     <div class="pixel-divider my-3" />
     <p class="text-sm">Busqueda semantica con vectores (embeddings). Entiende significado, no solo palabras.</p>
@@ -688,7 +688,7 @@ layout: neo-section
 
 <!-- Slide 20: ES Section Divider -->
 
-<div class="text-6xl mb-4">🔍</div>
+<div class="i-pixelarticons-search inline-block w-16 h-16 mb-4 text-[#ff6b6b]" />
 
 <h1 class="text-white text-6xl font-bold">Elasticsearch</h1>
 
@@ -843,7 +843,7 @@ Piensa en el <strong>indice al final de un libro de texto</strong>:
 
 <div class="grid grid-cols-2 gap-6 mt-4">
   <div>
-    <h4 class="mb-2">📖 Indice de un libro</h4>
+    <h4 class="mb-2"><div class="i-pixelarticons-book-open inline-block w-5 h-5 align-middle mr-1" /> Indice de un libro</h4>
     <div class="border-2 border-black bg-white p-3 text-sm font-mono">
       Elasticsearch ... pag. 12, 45, 89<br/>
       Indice invertido ... pag. 23, 45<br/>
@@ -853,7 +853,7 @@ Piensa en el <strong>indice al final de un libro de texto</strong>:
     <p class="text-xs mt-2">No lees todo el libro — vas directo a las paginas que necesitas.</p>
   </div>
   <div>
-    <h4 class="mb-2">💾 Indice invertido de ES</h4>
+    <h4 class="mb-2"><div class="i-pixelarticons-server inline-block w-5 h-5 align-middle mr-1" /> Indice invertido de ES</h4>
     <div class="border-2 border-black bg-[#0d1117] p-3 text-sm font-mono text-[#2DD4BF]">
       "comida" → Doc 1, 2, 3<br/>
       "mexicana" → Doc 1<br/>
@@ -1369,17 +1369,17 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 
 <div class="grid grid-cols-3 gap-4 mt-4">
   <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4 text-center">
-    <div class="text-2xl mb-2">🚫</div>
+    <div class="i-pixelarticons-close-box inline-block w-8 h-8 mb-2 text-[#ff6b6b]" />
     <strong>Transacciones</strong>
     <p class="text-sm mt-1">No es ACID. Nunca para transferencias bancarias o inventario critico.</p>
   </div>
   <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4 text-center">
-    <div class="text-2xl mb-2">🚫</div>
+    <div class="i-pixelarticons-close-box inline-block w-8 h-8 mb-2 text-[#ff6b6b]" />
     <strong>Base de datos principal</strong>
     <p class="text-sm mt-1">Usalo como complemento de PostgreSQL/MySQL, nunca como reemplazo.</p>
   </div>
   <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4 text-center">
-    <div class="text-2xl mb-2">🚫</div>
+    <div class="i-pixelarticons-close-box inline-block w-8 h-8 mb-2 text-[#ff6b6b]" />
     <strong>JOINs complejos</strong>
     <p class="text-sm mt-1">ES no normaliza datos como SQL. Sus documentos son "aplanados" — cada uno es independiente.</p>
   </div>
@@ -1428,7 +1428,7 @@ layout: neo-section
 
 <h1 class="text-white text-5xl font-bold">Pausa: 5 minutos</h1>
 
-<div class="text-6xl mt-6">☕</div>
+<div class="i-pixelarticons-coffee inline-block w-16 h-16 mt-6 text-[#2DD4BF]" />
 
 <p class="text-[#2DD4BF] mt-6 text-xl font-mono">// estiren las piernas. tomen agua.</p>
 
@@ -1442,7 +1442,7 @@ layout: neo-section
 
 <!-- Slide 41: ChromaDB Section Divider -->
 
-<div class="text-6xl mb-4">🧠</div>
+<div class="i-pixelarticons-ai-app-mac inline-block w-16 h-16 mb-4 text-[#6c5ce7]" />
 
 <h1 class="text-white text-6xl font-bold">ChromaDB</h1>
 
@@ -1470,8 +1470,8 @@ Elasticsearch es genial para buscar <strong>palabras</strong>. Pero... ¿que pas
   <div class="border-2 border-black bg-white p-4">
     <strong>Busqueda:</strong> "peliculas que me hagan sentir nostalgico"
     <div class="mt-2 grid grid-cols-2 gap-2">
-      <div class="text-sm"><span class="text-[#ff6b6b] font-bold">SQL</span>: ❌ "nostalgico" no aparece en las sinopsis</div>
-      <div class="text-sm"><span class="text-[#2DD4BF] font-bold">Elasticsearch</span>: ❌ busca la palabra "nostalgia" pero "Roma" evoca nostalgia sin decirlo</div>
+      <div class="text-sm"><span class="text-[#ff6b6b] font-bold">SQL</span>: <div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle" /> "nostalgico" no aparece en las sinopsis</div>
+      <div class="text-sm"><span class="text-[#2DD4BF] font-bold">Elasticsearch</span>: <div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle" /> busca la palabra "nostalgia" pero "Roma" evoca nostalgia sin decirlo</div>
     </div>
   </div>
   <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-4 text-center">
@@ -1500,19 +1500,19 @@ Los <strong>embeddings</strong> (representaciones vectoriales) son la tecnologia
 
 <div class="grid grid-cols-2 gap-4 mt-3">
   <div class="border-2 border-[#6c5ce7] bg-white p-4">
-    <h3 class="text-[#6c5ce7]">🤖 ChatGPT, Claude, Gemini</h3>
+    <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-ai-app-mac inline-block w-5 h-5 align-middle mr-1" /> ChatGPT, Claude, Gemini</h3>
     <p class="text-sm mt-1">Todos los modelos de IA modernos usan embeddings para entender lenguaje.</p>
   </div>
   <div class="border-2 border-[#6c5ce7] bg-white p-4">
-    <h3 class="text-[#6c5ce7]">🎬 Recomendaciones</h3>
+    <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-play inline-block w-5 h-5 align-middle mr-1" /> Recomendaciones</h3>
     <p class="text-sm mt-1">"Si te gusto esta pelicula, te gustara esta otra" — Netflix, Spotify, Amazon.</p>
   </div>
   <div class="border-2 border-[#2DD4BF] bg-white p-4">
-    <h3 class="text-[#2DD4BF]">🔍 Busqueda semantica</h3>
+    <h3 class="text-[#2DD4BF]"><div class="i-pixelarticons-text-search inline-block w-5 h-5 align-middle mr-1" /> Busqueda semantica</h3>
     <p class="text-sm mt-1">Google entiende que "como curar dolor de cabeza" y "remedios para cefalea" son la misma pregunta.</p>
   </div>
   <div class="border-2 border-[#2DD4BF] bg-white p-4">
-    <h3 class="text-[#2DD4BF]">📚 RAG (IA + tus datos)</h3>
+    <h3 class="text-[#2DD4BF]"><div class="i-pixelarticons-book inline-block w-5 h-5 align-middle mr-1" /> RAG (IA + tus datos)</h3>
     <p class="text-sm mt-1">Chatbots que responden usando la informacion de tu empresa, no inventando cosas.</p>
   </div>
 </div>
@@ -1588,13 +1588,13 @@ Ahora imagina que la mesa es un plano con coordenadas (x, y). Cada pelicula tien
     <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-6 text-center">
       <div class="text-lg font-bold mb-3">Espacio de significado</div>
       <div class="text-sm text-left font-mono">
-        🐕 perro<br/>
+        <strong>[A]</strong> perro<br/>
         &nbsp;&nbsp;&nbsp;↕ <em>cerca</em><br/>
-        🐶 cachorro<br/>
+        <strong>[B]</strong> cachorro<br/>
         <br/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↕ <em>lejos</em><br/>
         <br/>
-        🚗 automovil
+        <strong>[C]</strong> automovil
       </div>
     </div>
   </div>
@@ -1655,17 +1655,17 @@ Si los embeddings son las "coordenadas de significado" de un texto, necesitamos 
 
 <div class="grid grid-cols-3 gap-4 mt-4">
   <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-4 text-center">
-    <div class="text-3xl mb-2">📐</div>
+    <div class="i-pixelarticons-database inline-block w-8 h-8 mb-2" />
     <strong>Guarda vectores</strong>
     <p class="text-xs mt-1">Los numeros que representan el significado de cada documento.</p>
   </div>
   <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-4 text-center">
-    <div class="text-3xl mb-2">🔍</div>
+    <div class="i-pixelarticons-search inline-block w-8 h-8 mb-2" />
     <strong>Busca por cercania</strong>
     <p class="text-xs mt-1">"Dame los 5 documentos cuyo significado sea mas cercano a esta pregunta."</p>
   </div>
   <div class="border-2 border-black bg-[#2DD4BF]/15 p-4 text-center">
-    <div class="text-3xl mb-2">📄</div>
+    <div class="i-pixelarticons-file-text inline-block w-8 h-8 mb-2" />
     <strong>Devuelve el texto original</strong>
     <p class="text-xs mt-1">No solo los numeros — tambien el documento de donde vino, con metadata.</p>
   </div>
@@ -1780,24 +1780,24 @@ El gran problema de ChatGPT: a veces **inventa** respuestas (alucina). ¿La solu
 
 <div class="flex items-center justify-center gap-2 mt-6">
   <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-sm">
-    <div class="text-xl">❓</div>
+    <div class="i-pixelarticons-chat inline-block w-6 h-6" />
     <strong>Pregunta</strong>
   </div>
   <div class="text-2xl font-bold">→</div>
   <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-3 text-center text-sm">
-    <div class="text-xl">🔍</div>
+    <div class="i-pixelarticons-search inline-block w-6 h-6" />
     <strong>ChromaDB busca</strong>
     <p class="text-xs">contexto relevante</p>
   </div>
   <div class="text-2xl font-bold">→</div>
   <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-3 text-center text-sm">
-    <div class="text-xl">🧠</div>
+    <div class="i-pixelarticons-ai-app-mac inline-block w-6 h-6" />
     <strong>LLM genera</strong>
     <p class="text-xs">respuesta con contexto</p>
   </div>
   <div class="text-2xl font-bold">→</div>
   <div class="border-2 border-black bg-[#2DD4BF]/25 p-3 text-center text-sm">
-    <div class="text-xl">✅</div>
+    <div class="i-pixelarticons-check inline-block w-6 h-6 text-[#2DD4BF]" />
     <strong>Respuesta</strong>
     <p class="text-xs">fundamentada</p>
   </div>
@@ -1904,7 +1904,7 @@ layout: neo-section
       </div>
       <div class="text-sm font-bold">↓ Si</div>
       <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/25 p-3 text-center font-bold text-sm">
-        SQL ✅
+        SQL <div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle" />
       </div>
     </div>
     <div class="flex flex-col items-center gap-2">
@@ -1914,7 +1914,7 @@ layout: neo-section
       </div>
       <div class="text-sm font-bold">↓ Si</div>
       <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/25 p-3 text-center font-bold text-sm">
-        Elasticsearch ✅
+        Elasticsearch <div class="i-pixelarticons-check inline-block w-4 h-4 text-[#ff6b6b] align-middle" />
       </div>
     </div>
     <div class="flex flex-col items-center gap-2">
@@ -1924,7 +1924,7 @@ layout: neo-section
       </div>
       <div class="text-sm font-bold">↓ Si</div>
       <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/25 p-3 text-center font-bold text-sm">
-        Vector DB ✅
+        Vector DB <div class="i-pixelarticons-check inline-block w-4 h-4 text-[#6c5ce7] align-middle" />
       </div>
     </div>
   </div>
