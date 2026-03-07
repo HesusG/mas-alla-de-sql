@@ -145,7 +145,7 @@ Su jefe les dice:
 
   </div>
   <div class="flex items-center">
-    <img src="/images/slides/slide_04_reto.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+    <img src="/images/slides/slide_04_reto.png" class="w-full" />
   </div>
 </div>
 
@@ -291,15 +291,15 @@ layout: neo-section
 <v-clicks>
 
 <div class="border-2 border-black p-5 text-lg">
-<div class="i-pixelarticons-human-handsup inline-block w-5 h-5 align-middle mr-1" /><strong>Levanten la mano si...</strong> han usado SQL en algun proyecto o clase
+🙋 <strong>Levanten la mano si...</strong> han usado SQL en algun proyecto o clase
 </div>
 
 <div class="border-2 border-black p-5 text-lg">
-<div class="i-pixelarticons-human-handsup inline-block w-5 h-5 align-middle mr-1" /><strong>Levanten la mano si...</strong> alguna vez intentaron buscar texto libre en una base de datos y les frustro el resultado
+🙋 <strong>Levanten la mano si...</strong> alguna vez intentaron buscar texto libre en una base de datos y les frustro el resultado
 </div>
 
 <div class="border-2 border-black p-5 text-lg">
-<div class="i-pixelarticons-human-handsup inline-block w-5 h-5 align-middle mr-1" /><strong>Levanten la mano si...</strong> han usado un buscador inteligente (Google, Spotify, Netflix) y se preguntaron "¿como sabe lo que quiero?"
+🙋 <strong>Levanten la mano si...</strong> han usado un buscador inteligente (Google, Spotify, Netflix) y se preguntaron "¿como sabe lo que quiero?"
 </div>
 
 </v-clicks>
@@ -359,71 +359,79 @@ No caben en una tabla de SQL.
 
 ---
 
-<!-- Slide 11: What is normalization - for dummies -->
+<!-- Slide 11: The data pipeline reality -->
 
-# ¿Que es normalizacion? (Normalization)
+# Antes de que SQL funcione, hay MUCHO trabajo
 
-<div class="mt-4 text-sm">
+<div class="mt-2 text-sm">
 
-Antes de entender el problema, veamos como SQL <strong>organiza</strong> los datos. Normalizacion = separar la informacion en tablas relacionadas para evitar repeticion.
+Ustedes estan acostumbrados a abrir un CSV limpio en Jupyter y empezar a analizar. Pero en la vida real, los datos no llegan asi:
 
 </div>
 
-<div class="grid grid-cols-2 gap-6 mt-4">
-  <div>
-    <h4 class="mb-2 text-[#ff6b6b]">Antes: una tabla desordenada</h4>
-    <div class="border-2 border-black p-3 text-xs font-mono bg-white">
-      <table class="w-full mac-table">
-        <tr><th class="p-1">pedido</th><th class="p-1">cliente</th><th class="p-1">email</th><th class="p-1">producto</th><th class="p-1">precio</th></tr>
-        <tr><td class="p-1">001</td><td class="p-1">Ana</td><td class="p-1">ana@mail</td><td class="p-1">Laptop</td><td class="p-1">15000</td></tr>
-        <tr><td class="p-1">002</td><td class="p-1">Ana</td><td class="p-1">ana@mail</td><td class="p-1">Mouse</td><td class="p-1">350</td></tr>
-        <tr><td class="p-1">003</td><td class="p-1">Luis</td><td class="p-1">luis@mail</td><td class="p-1">Laptop</td><td class="p-1">15000</td></tr>
-      </table>
-      <p class="mt-1 text-[#ff6b6b]">↑ "Ana" y "Laptop" repetidos</p>
-    </div>
+<v-clicks>
+
+<div class="flex items-center justify-center gap-2 mt-4">
+  <div class="border-2 border-black bg-[#ff6b6b]/15 p-3 text-center text-xs min-w-24">
+    <div class="i-pixelarticons-warning-box inline-block w-6 h-6 mb-1 text-[#ff6b6b]" />
+    <br/><strong>Datos crudos</strong>
+    <p class="text-xs mt-1">Excel rotos, CSVs con acentos, APIs, PDFs</p>
   </div>
-  <div>
-    <h4 class="mb-2 text-[#2DD4BF]">Despues: 3 tablas limpias</h4>
-    <div class="border-2 border-black p-3 text-xs font-mono bg-white space-y-2">
-      <div><strong>clientes</strong>: id, nombre, email</div>
-      <div><strong>productos</strong>: id, nombre, precio</div>
-      <div><strong>pedidos</strong>: id, cliente_id, producto_id</div>
-      <p class="mt-1 text-[#2DD4BF]">↑ Sin repeticion, conectados por IDs</p>
-    </div>
+  <div class="text-xl font-bold text-black/30">→</div>
+  <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-xs min-w-24">
+    <div class="i-pixelarticons-sliders inline-block w-6 h-6 mb-1" />
+    <br/><strong>Limpieza</strong>
+    <p class="text-xs mt-1">Quitar duplicados, arreglar formatos, llenar NULLs</p>
+  </div>
+  <div class="text-xl font-bold text-black/30">→</div>
+  <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-xs min-w-24">
+    <div class="i-pixelarticons-database inline-block w-6 h-6 mb-1" />
+    <br/><strong>Normalizar</strong>
+    <p class="text-xs mt-1">Separar en tablas, definir relaciones, tipos</p>
+  </div>
+  <div class="text-xl font-bold text-black/30">→</div>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-3 text-center text-xs min-w-24">
+    <div class="i-pixelarticons-check inline-block w-6 h-6 mb-1 text-[#2DD4BF]" />
+    <br/><strong>Listo para SQL</strong>
+    <p class="text-xs mt-1">El CSV limpio que conocen</p>
   </div>
 </div>
 
-<v-click>
-
-<div class="border-2 border-black bg-white p-3 mt-4 text-center text-sm">
-Esto es lo que SQL hace mejor que nadie: datos <strong>estructurados, limpios y sin duplicados</strong>.
+<div class="border-2 border-black bg-white p-3 mt-4 text-sm">
+<strong>Ejemplo real</strong>: Una tienda online recibe pedidos de su app, de Mercado Libre, de WhatsApp y de la tienda fisica. Cada fuente tiene formato diferente. Antes de poder hacer un <code>SELECT</code>, alguien tuvo que diseñar tablas, limpiar datos y cargarlos. Ese proceso se llama <strong>ETL</strong> (Extract, Transform, Load) y puede tomar semanas.
 </div>
 
-</v-click>
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
+SQL funciona increible — <strong>pero solo despues de todo este trabajo</strong>. Y si tus datos son texto libre (emails, chats, reseñas)... ese pipeline no alcanza.
+</div>
+
+</v-clicks>
 
 <RefFootnote :sources="['Codd, E. F. (1970). A relational model of data for large shared data banks. Communications of the ACM, 13(6), 377-387.']" />
 
 ---
 
-<!-- Slide 12: Downsides of normalization -->
+<!-- Slide 12: Business cost of structured-only world -->
 
-# Las desventajas de normalizar
+# El costo de negocio de este proceso
 
 <div class="grid grid-cols-[2fr_1fr] gap-6 mt-4">
   <div>
-    <div class="text-sm">Normalizar es excelente para datos estructurados. Pero tiene un costo:</div>
 
 <v-clicks>
 
-<div class="space-y-3 mt-3">
+<div class="space-y-3">
   <div class="border-2 border-black bg-white p-3 text-sm">
-    <strong>JOINs son lentos a escala</strong> — Para reconstruir la informacion original necesitas cruzar 3, 4, 5 tablas. Con millones de filas, esto se vuelve costoso.
+    <div class="i-pixelarticons-coin inline-block w-5 h-5 align-middle mr-1 text-[#ff6b6b]" /><strong>Caro y lento</strong> — Diseñar esquemas, limpiar datos y mantener pipelines ETL requiere ingenieros especializados. Un proyecto de datos puede tomar meses antes de dar su primer resultado.
   </div>
   <div class="border-2 border-black bg-white p-3 text-sm">
-    <strong>Esquema rigido</strong> — Cada columna tiene un tipo definido. ¿Quieres agregar un campo nuevo? ALTER TABLE. ¿Un documento que no tiene ese campo? NULL.
+    <div class="i-pixelarticons-lock inline-block w-5 h-5 align-middle mr-1 text-[#ff6b6b]" /><strong>Rigido ante el cambio</strong> — El negocio cambia rapido: nuevo producto, nueva fuente de datos, nueva metrica. Pero modificar el esquema SQL es complejo y riesgoso.
   </div>
   <div class="border-2 border-black bg-white p-3 text-sm">
-    <strong>No puedes buscar "a traves" de los datos</strong> — Si la informacion esta repartida en 5 tablas, buscar texto libre requiere JOINs + LIKE en cada tabla. Impracticable.
+    <div class="i-pixelarticons-close-box inline-block w-5 h-5 align-middle mr-1 text-[#ff6b6b]" /><strong>Ignora lo no estructurado</strong> — Emails de clientes, chats de soporte, reseñas... el 80% de los datos del negocio simplemente no entran en este pipeline.
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 text-sm">
+    <div class="i-pixelarticons-speed-slow inline-block w-5 h-5 align-middle mr-1 text-[#ff6b6b]" /><strong>Decisiones tardias</strong> — Mientras esperas que los datos esten "listos", el negocio pierde oportunidades. La competencia ya esta usando herramientas mas agiles.
   </div>
 </div>
 
@@ -432,14 +440,14 @@ Esto es lo que SQL hace mejor que nadie: datos <strong>estructurados, limpios y 
 <v-click>
 
 <div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
-Normalizacion funciona perfecto para datos estructurados. Pero... <strong>¿que pasa con texto libre, emails, PDFs, chats?</strong>
+SQL sigue siendo esencial. Pero <strong>no puede ser la unica herramienta</strong> en tu caja.
 </div>
 
 </v-click>
 
   </div>
   <div class="flex items-center">
-    <img src="/images/slides/slide_12_normalizar.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+    <img src="/images/slides/slide_12_normalizar.png" class="w-full rounded-sm" style="box-shadow: none;" />
   </div>
 </div>
 
@@ -451,7 +459,7 @@ Normalizacion funciona perfecto para datos estructurados. Pero... <strong>¿que 
 
 <div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
   <div class="border-2 border-black p-4 text-center">
-    <div class="w-32 h-32 mx-auto border-2 border-black flex items-center justify-center bg-gray-100"><div class="i-pixelarticons-user inline-block w-16 h-16" /></div>
+    <img src="/images/slides/slide_13_codd.png" class="w-32 h-32 mx-auto border-2 border-black object-cover bg-gray-100" />
     <div class="text-sm font-bold mt-2">Edgar F. Codd</div>
     <div class="text-xs">IBM, 1970</div>
     <div class="text-xs mt-1">Inventor del modelo relacional</div>
@@ -474,34 +482,46 @@ Normalizacion funciona perfecto para datos estructurados. Pero... <strong>¿que 
 
 ---
 
-<!-- Slide 14: What SQL can't do - Text -->
+<!-- Slide 14: SQL limitations → what ES solves -->
 
-# Pero SQL no fue diseñado para buscar texto
+# SQL no fue diseñado para esto — pero hay herramientas que si
 
 <div class="mt-4">
 
-Intenta responder estas preguntas con SQL:
-
-</div>
+<div class="grid grid-cols-2 gap-4">
 
 <v-clicks>
 
-<div class="space-y-3 mt-4">
-  <div class="border-2 border-black bg-white p-3">
-    <strong>1.</strong> "Encuentra reseñas de clientes <strong>insatisfechos</strong>" → ¿Con que palabra buscas? Hay cientos de formas de expresar insatisfaccion.
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-close-box inline-block w-5 h-5 align-middle mr-1" /> SQL no puede</h4>
+    <p class="text-sm mt-2">Buscar clientes "frustrados" sin saber la palabra exacta. <code>LIKE</code> solo encuentra coincidencias literales.</p>
   </div>
-  <div class="border-2 border-black bg-white p-3">
-    <strong>2.</strong> "Busca productos similares a <strong>tenis para correr</strong>" → <code>LIKE '%tenis%'</code> no encuentra "zapatillas deportivas" ni "running shoes".
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-4">
+    <h4 class="text-[#2DD4BF]"><div class="i-pixelarticons-check inline-block w-5 h-5 align-middle mr-1" /> Elasticsearch si</h4>
+    <p class="text-sm mt-2">Tokeniza, analiza raices y encuentra "frustrado", "decepcionado", "furioso" con una sola busqueda.</p>
   </div>
-  <div class="border-2 border-black bg-white p-3">
-    <strong>3.</strong> "¿Cuales son las quejas <strong>mas urgentes</strong>?" → SQL no puede rankear por "urgencia" — devuelve todo o nada.
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-close-box inline-block w-5 h-5 align-middle mr-1" /> SQL no puede</h4>
+    <p class="text-sm mt-2">Tolerar errores. <code>LIKE '%teniz%'</code> no encuentra "tenis". Un typo = 0 resultados.</p>
   </div>
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3">
-    <strong>4.</strong> "El cliente escribio <strong>'teniz'</strong> en vez de 'tenis'" → <code>LIKE '%teniz%'</code> no encuentra nada. Un simple error tipografico y perdiste resultados.
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-4">
+    <h4 class="text-[#2DD4BF]"><div class="i-pixelarticons-check inline-block w-5 h-5 align-middle mr-1" /> Elasticsearch si</h4>
+    <p class="text-sm mt-2">Con <code>fuzziness: AUTO</code>, corrige errores automaticamente. "teniz" → encuentra "tenis".</p>
   </div>
-</div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-close-box inline-block w-5 h-5 align-middle mr-1" /> SQL no puede</h4>
+    <p class="text-sm mt-2">Rankear resultados. Devuelve todo lo que cumple el filtro, sin saber que es mas importante.</p>
+  </div>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-4">
+    <h4 class="text-[#2DD4BF]"><div class="i-pixelarticons-check inline-block w-5 h-5 align-middle mr-1" /> Elasticsearch si</h4>
+    <p class="text-sm mt-2">Cada resultado tiene un <code>_score</code>. Los mas relevantes primero, como Google.</p>
+  </div>
 
 </v-clicks>
+
+</div>
+
+</div>
 
 ---
 
@@ -552,7 +572,7 @@ Piensa en como buscas en Google: escribes <strong>"receta pastel de chocolate"</
 
 <div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
   <div class="flex items-center">
-    <img src="/images/slides/slide_16_costo.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+    <img src="/images/slides/slide_16_costo.png" class="w-full" />
   </div>
   <div>
     <div class="text-sm">Volvamos a nuestro reto de las reseñas. Con SQL encontramos 23 resultados. ¿Que paso con los otros 124?</div>
@@ -637,32 +657,38 @@ SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos d
 
 <div class="grid grid-cols-3 gap-3">
   <div class="border-2 border-black bg-[#2DD4BF]/15 p-3 text-center text-sm">
-    <strong>Relacional (SQL)</strong>
+    <div class="i-pixelarticons-database inline-block w-8 h-8 mb-1" />
+    <br/><strong>Relacional (SQL)</strong>
     <p class="text-xs mt-1">Tablas con filas y columnas. Para transacciones y datos estructurados.</p>
     <p class="text-xs italic">MySQL, PostgreSQL, SQL Server</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-center text-sm">
-    <strong>Documento</strong>
+    <div class="i-pixelarticons-file-text inline-block w-8 h-8 mb-1" />
+    <br/><strong>Documento</strong>
     <p class="text-xs mt-1">Almacena documentos JSON flexibles. Sin esquema fijo.</p>
     <p class="text-xs italic">MongoDB, CouchDB</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-center text-sm">
-    <strong>Clave-Valor</strong>
+    <div class="i-pixelarticons-label inline-block w-8 h-8 mb-1" />
+    <br/><strong>Clave-Valor</strong>
     <p class="text-xs mt-1">Como un diccionario gigante. Ultrarapido para lecturas simples.</p>
     <p class="text-xs italic">Redis, DynamoDB</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-center text-sm">
-    <strong>Grafo</strong>
+    <div class="i-pixelarticons-git-merge inline-block w-8 h-8 mb-1" />
+    <br/><strong>Grafo</strong>
     <p class="text-xs mt-1">Datos como redes: nodos y conexiones. Para relaciones complejas.</p>
     <p class="text-xs italic">Neo4j, Amazon Neptune</p>
   </div>
   <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 text-center text-sm">
-    <strong>Motor de busqueda</strong>
+    <div class="i-pixelarticons-search inline-block w-8 h-8 mb-1 text-[#ff6b6b]" />
+    <br/><strong>Motor de busqueda</strong>
     <p class="text-xs mt-1">Busqueda de texto rapida, con ranking y tolerancia a errores.</p>
     <p class="text-xs italic">Elasticsearch, Apache Solr</p>
   </div>
   <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-3 text-center text-sm">
-    <strong>Vectorial</strong>
+    <div class="i-pixelarticons-ai-app-mac inline-block w-8 h-8 mb-1 text-[#6c5ce7]" />
+    <br/><strong>Vectorial</strong>
     <p class="text-xs mt-1">Busca por significado usando matematicas. Base de la IA moderna.</p>
     <p class="text-xs italic">ChromaDB, Pinecone</p>
   </div>
@@ -701,16 +727,20 @@ layout: neo-section
 
 <!-- Slide 20: ES Section Divider -->
 
-<div class="relative">
-  <img src="/images/logos/elasticsearch.png" class="w-28 h-28 mx-auto -mt-24 relative z-20 drop-shadow-[3px_3px_0px_rgba(0,0,0,0.5)]" />
+<div class="font-mono text-xs text-white/20 mb-4 leading-relaxed">
+<span class="text-[#ff6b6b]/30">GET</span> resenas/_search <span class="text-[#2DD4BF]/30">{ "query": { "match": { "texto": "frustrado" } } }</span>
 </div>
 
-<h1 class="text-white text-6xl font-bold">Elasticsearch</h1>
+<div class="relative">
+  <img src="/images/logos/elasticsearch.png" class="w-28 h-28 mx-auto -mt-20 relative z-20 drop-shadow-[3px_3px_0px_rgba(0,0,0,0.5)]" />
+</div>
 
-<p class="text-[#2DD4BF] mt-6 text-xl font-mono">// busqueda de texto a la velocidad de Google</p>
+<h1 class="text-white text-5xl font-bold mt-2">Elasticsearch</h1>
 
-<div class="mt-6">
-  <TimerBadge time="60 min" />
+<p class="text-[#2DD4BF] mt-4 text-xl font-mono">// busqueda de texto a la velocidad de Google</p>
+
+<div class="font-mono text-xs text-white/20 mt-6 leading-relaxed">
+<span class="text-[#ff6b6b]/30">"hits"</span>: [ { <span class="text-[#2DD4BF]/30">"_score"</span>: 15.7, "_source": { ... } } ]
 </div>
 
 ---
@@ -1036,18 +1066,13 @@ layout: neo-demo
 1. Abrir **elastic.co/cloud** → "Start free trial"
 2. Registrarse con email y password
 3. **Create deployment** → Seleccionar region
-4. Esperar ~2 minutos → **Guardar** las credenciales
+4. Esperar ~2 min → **Guardar** las credenciales
 5. Abrir **Kibana** desde el panel
 
-<div class="mt-4 border-2 border-black p-3 text-sm">
+<div class="mt-3 border-2 border-black p-2 text-sm">
 
-**Importante**: Guarden el password del usuario `elastic` que se genera automaticamente. Lo necesitan para todo lo demas.
-
-</div>
-
-<div class="mt-2 border-2 border-black p-3 text-sm">
-
-**Trial gratuito**: 14 dias, sin tarjeta de credito. Suficiente para este workshop y los labs.
+**Importante**: Guarden el password del usuario `elastic`. Lo necesitan para todo lo demas.
+**Trial gratuito**: 14 dias, sin tarjeta de credito.
 
 </div>
 
@@ -1457,16 +1482,20 @@ layout: neo-section
 
 <!-- Slide 41: ChromaDB Section Divider -->
 
-<div class="relative">
-  <img src="/images/logos/chroma.png" class="w-28 h-28 mx-auto -mt-24 relative z-20 drop-shadow-[3px_3px_0px_rgba(0,0,0,0.5)]" />
+<div class="font-mono text-xs text-white/20 mb-4 leading-relaxed">
+<span class="text-[#6c5ce7]/30">col.query</span>(query_texts=[<span class="text-[#2DD4BF]/30">"gastronomia"</span>], n_results=5)
 </div>
 
-<h1 class="text-white text-6xl font-bold">ChromaDB</h1>
+<div class="relative">
+  <img src="/images/logos/chroma.png" class="w-28 h-28 mx-auto -mt-20 relative z-20 drop-shadow-[3px_3px_0px_rgba(0,0,0,0.5)]" />
+</div>
 
-<p class="text-[#2DD4BF] mt-6 text-xl font-mono">// busqueda por significado, no por palabras</p>
+<h1 class="text-white text-5xl font-bold mt-2">ChromaDB</h1>
 
-<div class="mt-6">
-  <TimerBadge time="30 min" />
+<p class="text-[#2DD4BF] mt-4 text-xl font-mono">// busqueda por significado, no por palabras</p>
+
+<div class="font-mono text-xs text-white/20 mt-6 leading-relaxed">
+<span class="text-[#6c5ce7]/30">"distances"</span>: [[0.12, 0.34, 0.56]] <span class="text-[#2DD4BF]/30">// similitud coseno</span>
 </div>
 
 ---
@@ -1500,7 +1529,7 @@ Elasticsearch es genial para buscar <strong>palabras</strong>. Pero... ¿que pas
 
   </div>
   <div class="flex items-center">
-    <img src="/images/slides/slide_42_semantica.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+    <img src="/images/slides/slide_42_semantica.png" class="w-full" />
   </div>
 </div>
 
@@ -1559,7 +1588,7 @@ Entender embeddings es <strong>entender como funciona la IA moderna</strong>. Es
 
 <div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
   <div class="flex items-center">
-    <img src="/images/slides/slide_44_peliculas.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+    <img src="/images/slides/slide_44_peliculas.png" class="w-full" />
   </div>
   <div>
 
@@ -1665,7 +1694,7 @@ Si restas las coordenadas de "hombre" a "rey" y sumas las de "mujer", llegas a u
 
   </div>
   <div class="flex items-center">
-    <img src="/images/slides/slide_46_rey_reina.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+    <img src="/images/slides/slide_46_rey_reina.png" class="w-full" />
   </div>
 </div>
 

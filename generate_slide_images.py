@@ -1,7 +1,7 @@
 """
 Genera imagenes decorativas para slides text-heavy del workshop "Mas alla de SQL".
-Estilo: Retro Mac OS 7 / terminal hacker / CRT monitor aesthetic.
-Usa Gemini 3 Pro Image para crear imagenes con aspecto retro.
+Estilo: Pixel art con fondo blanco, retro Mac OS 7 / terminal aesthetic.
+Usa Gemini 3 Pro Image.
 
 Uso:
     python generate_slide_images.py                  # Genera todas
@@ -32,70 +32,70 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 MODEL = "gemini-3-pro-image-preview"
 
-# Retro Mac OS 7 / terminal / CRT aesthetic suffix
-RETRO_SUFFIX = (
-    " The image MUST have a retro 1990s Macintosh / early computing aesthetic: "
-    "CRT monitor glow, pixel-art inspired elements, monochrome or limited color palette "
-    "(teal #2DD4BF, coral #FF6B6B, purple #6C5CE7 as accents on dark or platinum gray backgrounds), "
-    "visible scanlines, bitmap-style icons, chunky window chrome borders, "
-    "old-school terminal green-on-black text where applicable. "
-    "Think classic Mac OS 7 System folder meets hacker terminal meets vaporwave. "
-    "Clean composition, NO text or watermarks, suitable as a slide illustration. "
-    "High resolution, sharp pixel edges, digital art style."
+# Pixel art style on WHITE background — blends with slide bg
+PIXEL_SUFFIX = (
+    " STYLE: Clean pixel art illustration on a PURE WHITE (#FFFFFF) background. "
+    "16-bit / 32-bit pixel art aesthetic with visible pixel edges and limited color palette. "
+    "Use only these accent colors: teal (#2DD4BF), coral (#FF6B6B), purple (#6C5CE7), "
+    "black (#000000), and gray (#C0C0C0). NO gradients, NO photorealism — flat pixel art only. "
+    "The subject should float on the white background with NO border, NO frame, NO shadow. "
+    "Think retro Mac OS 7 icon art or classic pixel game sprites scaled up. "
+    "Crisp, sharp pixel edges. NO text, NO watermarks. High resolution."
 )
 
 PROMPTS = {
     "slide_04_reto": (
-        "A retro CRT monitor on a desk displaying a database search query with red 'NO RESULTS FOUND' "
-        "blinking on screen. Around the monitor, scattered printed customer review papers with angry "
-        "red marks and question marks. The scene conveys frustration with limited search capabilities. "
-        "A coffee cup sits beside the keyboard. The monitor has classic Mac OS 7 window chrome. "
-        "Moody teal ambient lighting from the screen illuminates the dark desk."
+        "A pixel art retro CRT monitor showing a red X error icon on its screen. "
+        "A small keyboard in front of it. A coffee mug next to it. "
+        "Two small paper documents with red question marks scattered nearby. "
+        "Simple, iconic, minimal objects floating on white background."
     ),
     "slide_12_normalizar": (
-        "A top-down view of a retro Mac OS 7 desktop showing multiple overlapping database table "
-        "windows connected by tangled colored lines (representing JOINs). Each window shows a tiny "
-        "spreadsheet grid. The lines between them form an increasingly complex web, some lines are "
-        "broken or showing error symbols. The desktop background is classic platinum gray with the "
-        "old Mac OS diamond pattern. A 'System Error' dialog box floats in the corner."
+        "Pixel art illustration of a data pipeline: on the left, a messy pile of colorful "
+        "document icons (CSV files, spreadsheets, emails) in disarray. An arrow points right "
+        "to a set of gears/cogs processing the data. Another arrow points to neat, organized "
+        "database table icons on the right, perfectly stacked. The gears are teal colored. "
+        "Simple flat pixel art on white background."
+    ),
+    "slide_13_codd": (
+        "Pixel art portrait of a middle-aged man in a suit and tie from the 1970s era, "
+        "resembling a classic computer scientist. He has short hair, glasses, and a friendly "
+        "expression. The portrait is in a pixel art style like a retro video game character "
+        "portrait — 32-bit quality with visible pixels. Muted professional colors. "
+        "Floating on pure white background, no frame."
     ),
     "slide_16_costo": (
-        "A split-screen retro terminal display. Left side shows a green-on-black terminal with a "
-        "SQL query running, outputting '23 results found' in dim text. Right side shows a glowing "
-        "radar/sonar screen with many bright dots (representing missed results) pulsing in teal, "
-        "with the number '124 MISSED' in coral red. The aesthetic is military-grade retro computing "
-        "meets Mac OS 7 — chunky bezels, phosphor glow, scan lines visible."
+        "Pixel art split illustration: on the left, a small magnifying glass finding only "
+        "3 tiny dots (few results). On the right, a large radar/sonar circle with many "
+        "bright teal and coral dots scattered across it (many missed results). "
+        "A dashed line divides the two halves. Simple flat pixel art on white background."
     ),
     "slide_42_semantica": (
-        "A retro computer screen showing two search bars side by side in Mac OS 7 style windows. "
-        "The left window labeled 'WORDS' shows a simple text search with few gray dots scattered below. "
-        "The right window labeled 'MEANING' shows a glowing neural network visualization with "
-        "interconnected purple and teal nodes, bright connections pulsing between related concepts. "
-        "The contrast between the dull keyword search and the vibrant semantic search is clear. "
-        "CRT phosphor glow, scanlines, retro Mac window chrome."
+        "Pixel art of two side-by-side browser windows. Left window has a simple search bar "
+        "with a few scattered gray dots below (keyword search). Right window has a glowing "
+        "network of interconnected nodes in purple and teal (semantic search), with lines "
+        "connecting related concepts. The right side is vibrant, the left side is dull. "
+        "Flat pixel art on white background."
     ),
     "slide_44_peliculas": (
-        "A bird's-eye view of a retro wooden desk with movie cards/index cards scattered across it, "
-        "being organized into clusters by invisible hands. Each card has a tiny pixel-art movie icon. "
-        "Cards are grouped by color-coded zones: teal cluster (comedies), coral cluster (thrillers), "
-        "purple cluster (sci-fi), gray cluster (dramas). Faint dotted lines connect similar cards. "
-        "A classic Mac OS 7 Finder window floats above showing 'Organizing by: MEANING'. "
-        "The scene has warm CRT amber lighting and visible pixel texture."
+        "Pixel art bird's-eye view of index cards being sorted into four colored groups on "
+        "a surface: teal group, coral group, purple group, and gray group. Each card is a "
+        "tiny rectangle with a small icon. Dotted lines connect cards within groups. "
+        "A pixel art hand or cursor is moving one card. "
+        "Flat pixel art on white background."
     ),
     "slide_46_rey_reina": (
-        "Four pixel-art chess pieces on a retro grid/coordinate plane displayed on a CRT monitor. "
-        "A king and queen piece on opposite sides, connected by glowing vector arrows in teal. "
-        "Mathematical symbols (+, -, =) float between them in a retro bitmap font. "
-        "The coordinate grid has a dark background with teal gridlines, resembling an old-school "
-        "oscilloscope or vector graphics display. The chess pieces cast pixel shadows. "
-        "Classic Mac OS 7 window frame surrounds the display."
+        "Pixel art chess pieces on a coordinate grid: a king piece, a queen piece, a pawn, "
+        "and a knight. Teal vector arrows connect them showing mathematical relationships. "
+        "Plus, minus, and equals signs float between pieces in pixel font. "
+        "The grid is subtle gray lines. Flat pixel art on white background."
     ),
 }
 
 
 def generate_image(name: str, prompt: str) -> Path:
     """Genera una imagen con Gemini 3 Pro Image."""
-    full_prompt = prompt + RETRO_SUFFIX
+    full_prompt = prompt + PIXEL_SUFFIX
     print(f"  Generando: {name}...")
 
     try:
@@ -105,7 +105,7 @@ def generate_image(name: str, prompt: str) -> Path:
             config=types.GenerateContentConfig(
                 response_modalities=["IMAGE"],
                 image_config=types.ImageConfig(
-                    aspect_ratio="3:4",
+                    aspect_ratio="1:1",
                 ),
             ),
         )
@@ -126,7 +126,6 @@ def generate_image(name: str, prompt: str) -> Path:
             from PIL import Image as PILImage
             import io
             pil_img = PILImage.open(io.BytesIO(raw_bytes))
-            # Keep RGBA for transparency support
             if pil_img.mode == "P":
                 pil_img = pil_img.convert("RGBA")
             pil_img.save(str(out_path), format="PNG", optimize=True)
@@ -139,7 +138,7 @@ def generate_image(name: str, prompt: str) -> Path:
 
 def main():
     print("=" * 60)
-    print("Generador de imagenes retro -- Mas alla de SQL")
+    print("Generador de imagenes pixel art -- Mas alla de SQL")
     print(f"Modelo: {MODEL}")
     print("=" * 60)
     print(f"Salida: {OUTPUT_DIR}\n")
