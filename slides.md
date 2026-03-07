@@ -649,46 +649,46 @@ Para estas necesidades, existen herramientas especializadas. <strong>Hoy vamos a
 
 # No solo existen las bases de datos relacionales
 
-<div class="mt-4 text-sm mb-4">
+<div class="mt-2 text-sm mb-2">
 
 SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos de bases de datos. Cada tipo resuelve un problema distinto:
 
 </div>
 
-<div class="grid grid-cols-3 gap-3">
-  <div class="border-2 border-black bg-[#2DD4BF]/15 p-3 text-center text-sm">
-    <div class="i-pixelarticons-database inline-block w-8 h-8 mb-1" />
-    <br/><strong>Relacional (SQL)</strong>
+<div class="grid grid-cols-3 gap-2">
+  <div class="border-2 border-black bg-[#2DD4BF]/15 p-2 text-center text-sm">
+    <div class="i-pixelarticons-database inline-block w-6 h-6" />
+    <strong>Relacional (SQL)</strong>
     <p class="text-xs mt-1">Tablas con filas y columnas. Para transacciones y datos estructurados.</p>
     <p class="text-xs italic">MySQL, PostgreSQL, SQL Server</p>
   </div>
-  <div class="border-2 border-black bg-white p-3 text-center text-sm">
-    <div class="i-pixelarticons-file-text inline-block w-8 h-8 mb-1" />
-    <br/><strong>Documento</strong>
+  <div class="border-2 border-black bg-white p-2 text-center text-sm">
+    <div class="i-pixelarticons-file-text inline-block w-6 h-6" />
+    <strong>Documento</strong>
     <p class="text-xs mt-1">Almacena documentos JSON flexibles. Sin esquema fijo.</p>
     <p class="text-xs italic">MongoDB, CouchDB</p>
   </div>
-  <div class="border-2 border-black bg-white p-3 text-center text-sm">
-    <div class="i-pixelarticons-label inline-block w-8 h-8 mb-1" />
-    <br/><strong>Clave-Valor</strong>
+  <div class="border-2 border-black bg-white p-2 text-center text-sm">
+    <div class="i-pixelarticons-label inline-block w-6 h-6" />
+    <strong>Clave-Valor</strong>
     <p class="text-xs mt-1">Como un diccionario gigante. Ultrarapido para lecturas simples.</p>
     <p class="text-xs italic">Redis, DynamoDB</p>
   </div>
-  <div class="border-2 border-black bg-white p-3 text-center text-sm">
-    <div class="i-pixelarticons-git-merge inline-block w-8 h-8 mb-1" />
-    <br/><strong>Grafo</strong>
+  <div class="border-2 border-black bg-white p-2 text-center text-sm">
+    <div class="i-pixelarticons-git-merge inline-block w-6 h-6" />
+    <strong>Grafo</strong>
     <p class="text-xs mt-1">Datos como redes: nodos y conexiones. Para relaciones complejas.</p>
     <p class="text-xs italic">Neo4j, Amazon Neptune</p>
   </div>
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 text-center text-sm">
-    <div class="i-pixelarticons-search inline-block w-8 h-8 mb-1 text-[#ff6b6b]" />
-    <br/><strong>Motor de busqueda</strong>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-2 text-center text-sm">
+    <div class="i-pixelarticons-search inline-block w-6 h-6 text-[#ff6b6b]" />
+    <strong>Motor de busqueda</strong>
     <p class="text-xs mt-1">Busqueda de texto rapida, con ranking y tolerancia a errores.</p>
     <p class="text-xs italic">Elasticsearch, Apache Solr</p>
   </div>
-  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-3 text-center text-sm">
-    <div class="i-pixelarticons-ai-app-mac inline-block w-8 h-8 mb-1 text-[#6c5ce7]" />
-    <br/><strong>Vectorial</strong>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-2 text-center text-sm">
+    <div class="i-pixelarticons-ai-app-mac inline-block w-6 h-6 text-[#6c5ce7]" />
+    <strong>Vectorial</strong>
     <p class="text-xs mt-1">Busca por significado usando matematicas. Base de la IA moderna.</p>
     <p class="text-xs italic">ChromaDB, Pinecone</p>
   </div>
@@ -819,26 +819,22 @@ Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficia
 
 <div class="pixel-divider my-3" />
 
-<div class="grid grid-cols-2 gap-4 mt-3">
-  <div class="border-2 border-[#ff6b6b] bg-white p-4">
+<div class="grid grid-cols-2 gap-3 mt-3">
+  <div class="border-2 border-[#ff6b6b] bg-white p-3">
     <h3 class="text-[#ff6b6b]">Netflix</h3>
     <p class="text-sm">Busqueda de contenido, monitoreo de servidores y analisis de errores en tiempo real para 200M+ suscriptores.</p>
-    <p class="text-xs mt-1 text-gray-400 font-mono">elastic.co/customers/netflix</p>
   </div>
-  <div class="border-2 border-[#ff6b6b] bg-white p-4">
+  <div class="border-2 border-[#ff6b6b] bg-white p-3">
     <h3 class="text-[#ff6b6b]">Wikipedia</h3>
     <p class="text-sm">Potencia la busqueda en 300+ idiomas. Cada vez que buscas un articulo, Elasticsearch responde.</p>
-    <p class="text-xs mt-1 text-gray-400 font-mono">mediawiki.org/wiki/Wikimedia_Search_Platform</p>
   </div>
-  <div class="border-2 border-[#ff6b6b] bg-white p-4">
+  <div class="border-2 border-[#ff6b6b] bg-white p-3">
     <h3 class="text-[#ff6b6b]">Uber</h3>
     <p class="text-sm">Monitoreo en tiempo real de millones de viajes. Detecta anomalias y problemas al instante.</p>
-    <p class="text-xs mt-1 text-gray-400 font-mono">elastic.co/customers/uber</p>
   </div>
-  <div class="border-2 border-[#ff6b6b] bg-white p-4">
+  <div class="border-2 border-[#ff6b6b] bg-white p-3">
     <h3 class="text-[#ff6b6b]">GitHub</h3>
     <p class="text-sm">Cuando buscas codigo en GitHub, Elasticsearch busca en miles de millones de lineas de codigo.</p>
-    <p class="text-xs mt-1 text-gray-400 font-mono">github.blog/engineering</p>
   </div>
 </div>
 
@@ -1549,20 +1545,20 @@ Los <strong>embeddings</strong> (representaciones vectoriales) son la tecnologia
 
 <v-clicks>
 
-<div class="grid grid-cols-2 gap-4 mt-3">
-  <div class="border-2 border-[#6c5ce7] bg-white p-4">
+<div class="grid grid-cols-2 gap-3 mt-3">
+  <div class="border-2 border-[#6c5ce7] bg-white p-3">
     <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-ai-app-mac inline-block w-5 h-5 align-middle mr-1" /> ChatGPT, Claude, Gemini</h3>
     <p class="text-sm mt-1">Todos los modelos de IA modernos usan embeddings para entender lenguaje.</p>
   </div>
-  <div class="border-2 border-[#6c5ce7] bg-white p-4">
+  <div class="border-2 border-[#6c5ce7] bg-white p-3">
     <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-play inline-block w-5 h-5 align-middle mr-1" /> Recomendaciones</h3>
     <p class="text-sm mt-1">"Si te gusto esta pelicula, te gustara esta otra" — Netflix, Spotify, Amazon.</p>
   </div>
-  <div class="border-2 border-[#2DD4BF] bg-white p-4">
+  <div class="border-2 border-[#2DD4BF] bg-white p-3">
     <h3 class="text-[#2DD4BF]"><div class="i-pixelarticons-text-search inline-block w-5 h-5 align-middle mr-1" /> Busqueda semantica</h3>
     <p class="text-sm mt-1">Google entiende que "como curar dolor de cabeza" y "remedios para cefalea" son la misma pregunta.</p>
   </div>
-  <div class="border-2 border-[#2DD4BF] bg-white p-4">
+  <div class="border-2 border-[#2DD4BF] bg-white p-3">
     <h3 class="text-[#2DD4BF]"><div class="i-pixelarticons-book inline-block w-5 h-5 align-middle mr-1" /> RAG (IA + tus datos)</h3>
     <p class="text-sm mt-1">Chatbots que responden usando la informacion de tu empresa, no inventando cosas.</p>
   </div>
@@ -1572,7 +1568,7 @@ Los <strong>embeddings</strong> (representaciones vectoriales) son la tecnologia
 
 <v-click>
 
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-4 text-center text-sm">
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
 Entender embeddings es <strong>entender como funciona la IA moderna</strong>. Es la habilidad mas relevante que van a aprender hoy.
 </div>
 
