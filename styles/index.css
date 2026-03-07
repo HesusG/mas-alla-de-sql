@@ -193,18 +193,14 @@
   gap: 16px;
 }
 
-/* Pixel Divider — dashed pattern */
+/* Mac OS 7 Etched Groove Divider */
 .pixel-divider,
 .mac-pixel-divider {
   height: 2px;
-  background: repeating-linear-gradient(
-    90deg,
-    #000 0px,
-    #000 4px,
-    transparent 4px,
-    transparent 8px
-  );
-  opacity: 0.5;
+  border: none;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #FFFFFF;
+  background: none;
 }
 
 /* Reference footnote */
