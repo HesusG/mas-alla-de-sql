@@ -6,9 +6,9 @@
         <div class="mac-titlebar">
           <div class="mac-close-box" />
           <span class="mac-titlebar-title">Terminal</span>
-          <span class="absolute right-2 text-[#2DD4BF] text-xs font-mono font-bold px-2 py-0 border border-[#2DD4BF] bg-[#0d1117] rounded-sm" style="font-size:0.6rem;">LIVE</span>
+          <span class="absolute right-2 text-[#2DD4BF] text-xs font-mono font-bold px-2 py-0 border border-[#2DD4BF] bg-[#282A36] rounded-sm" style="font-size:0.6rem;">LIVE</span>
         </div>
-        <div class="flex-1 flex flex-col bg-[#0d1117] text-[#e6edf3] overflow-hidden">
+        <div class="flex-1 flex flex-col bg-[#282A36] text-[#F8F8F2] overflow-hidden">
           <div class="flex-none px-6 py-3">
             <slot name="title" />
           </div>

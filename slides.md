@@ -321,9 +321,9 @@ Perfecto. Hoy vamos a entender como funcionan esos buscadores <strong>por dentro
   <div>
     <h3 class="mb-3 text-[#2DD4BF]"><div class="i-pixelarticons-check inline-block w-5 h-5 align-middle mr-1" /> Datos estructurados (SQL)</h3>
     <div class="border-2 border-black bg-white p-3 text-sm">
-      <table class="w-full text-xs">
-        <tr class="border-b border-black"><th class="text-left p-1 font-bold">id</th><th class="text-left p-1 font-bold">nombre</th><th class="text-left p-1 font-bold">precio</th><th class="text-left p-1 font-bold">stock</th></tr>
-        <tr class="border-b border-black/20"><td class="p-1">1</td><td class="p-1">Laptop</td><td class="p-1">15000</td><td class="p-1">42</td></tr>
+      <table class="w-full text-xs mac-table">
+        <tr><th class="text-left p-1 font-bold">id</th><th class="text-left p-1 font-bold">nombre</th><th class="text-left p-1 font-bold">precio</th><th class="text-left p-1 font-bold">stock</th></tr>
+        <tr><td class="p-1">1</td><td class="p-1">Laptop</td><td class="p-1">15000</td><td class="p-1">42</td></tr>
         <tr><td class="p-1">2</td><td class="p-1">Mouse</td><td class="p-1">350</td><td class="p-1">200</td></tr>
       </table>
       <p class="mt-2 font-bold">Filas, columnas, tipos definidos. Perfecto para SQL.</p>
@@ -368,10 +368,10 @@ Antes de entender el problema, veamos como SQL <strong>organiza</strong> los dat
   <div>
     <h4 class="mb-2 text-[#ff6b6b]">Antes: una tabla desordenada</h4>
     <div class="border-2 border-black p-3 text-xs font-mono bg-white">
-      <table class="w-full">
-        <tr class="border-b"><th class="p-1">pedido</th><th class="p-1">cliente</th><th class="p-1">email</th><th class="p-1">producto</th><th class="p-1">precio</th></tr>
-        <tr class="border-b"><td class="p-1">001</td><td class="p-1">Ana</td><td class="p-1">ana@mail</td><td class="p-1">Laptop</td><td class="p-1">15000</td></tr>
-        <tr class="border-b"><td class="p-1">002</td><td class="p-1">Ana</td><td class="p-1">ana@mail</td><td class="p-1">Mouse</td><td class="p-1">350</td></tr>
+      <table class="w-full mac-table">
+        <tr><th class="p-1">pedido</th><th class="p-1">cliente</th><th class="p-1">email</th><th class="p-1">producto</th><th class="p-1">precio</th></tr>
+        <tr><td class="p-1">001</td><td class="p-1">Ana</td><td class="p-1">ana@mail</td><td class="p-1">Laptop</td><td class="p-1">15000</td></tr>
+        <tr><td class="p-1">002</td><td class="p-1">Ana</td><td class="p-1">ana@mail</td><td class="p-1">Mouse</td><td class="p-1">350</td></tr>
         <tr><td class="p-1">003</td><td class="p-1">Luis</td><td class="p-1">luis@mail</td><td class="p-1">Laptop</td><td class="p-1">15000</td></tr>
       </table>
       <p class="mt-1 text-[#ff6b6b]">↑ "Ana" y "Laptop" repetidos</p>
@@ -854,7 +854,7 @@ Piensa en el <strong>indice al final de un libro de texto</strong>:
   </div>
   <div>
     <h4 class="mb-2"><div class="i-pixelarticons-server inline-block w-5 h-5 align-middle mr-1" /> Indice invertido de ES</h4>
-    <div class="border-2 border-black bg-[#0d1117] p-3 text-sm font-mono text-[#2DD4BF]">
+    <div class="border-2 border-black bg-[#282A36] p-3 text-sm font-mono text-[#2DD4BF]">
       "comida" → Doc 1, 2, 3<br/>
       "mexicana" → Doc 1<br/>
       "deliciosa" → Doc 1<br/>
@@ -952,7 +952,7 @@ Cuando buscas "comida mexicana" y hay 500 resultados, ¿cual te muestro primero?
   </div>
 </div>
 
-<div class="border-2 border-black bg-[#0d1117] text-[#2DD4BF] p-3 mt-4 text-sm font-mono">
+<div class="border-2 border-black bg-[#282A36] text-[#2DD4BF] p-3 mt-4 text-sm font-mono">
   "hits": [<br/>
   &nbsp;&nbsp;{ "_score": 15.7, "_source": { "texto": "Comida mexicana autentica..." } },<br/>
   &nbsp;&nbsp;{ "_score": 8.2, "_source": { "texto": "Recetas de comida del mundo..." } },<br/>
@@ -1014,7 +1014,7 @@ layout: neo-demo
 
 ::default::
 
-<div class="text-[#e6edf3]">
+<div class="text-[#F8F8F2]">
 
 ### Vamos a hacerlo juntos:
 
@@ -1050,7 +1050,7 @@ layout: neo-demo
 
 ::default::
 
-<div class="text-[#e6edf3]">
+<div class="text-[#F8F8F2]">
 
 ### En Kibana:
 
@@ -1085,7 +1085,7 @@ layout: neo-demo
 
 ::default::
 
-<div class="text-[#e6edf3]">
+<div class="text-[#F8F8F2]">
 
 ### Abrir Dev Tools:
 
@@ -1161,7 +1161,7 @@ layout: neo-demo
 
 ::default::
 
-<div class="text-[#e6edf3]">
+<div class="text-[#F8F8F2]">
 
 ```json
 GET kibana_sample_data_ecommerce/_search
@@ -1578,9 +1578,9 @@ Ahora imagina que la mesa es un plano con coordenadas (x, y). Cada pelicula tien
   <div>
     <h3>Texto → Vector (embedding)</h3>
     <div class="text-sm space-y-2 mt-3">
-      <div class="border-2 border-black bg-[#0d1117] text-[#2DD4BF] p-2 font-mono text-xs">"perro" → [0.2, 0.8, 0.1, ...]</div>
-      <div class="border-2 border-black bg-[#0d1117] text-[#2DD4BF] p-2 font-mono text-xs">"cachorro" → [0.21, 0.79, 0.12, ...]</div>
-      <div class="border-2 border-black bg-[#0d1117] text-[#2DD4BF] p-2 font-mono text-xs">"automovil" → [0.9, 0.1, 0.7, ...]</div>
+      <div class="border-2 border-black bg-[#282A36] text-[#2DD4BF] p-2 font-mono text-xs">"perro" → [0.2, 0.8, 0.1, ...]</div>
+      <div class="border-2 border-black bg-[#282A36] text-[#2DD4BF] p-2 font-mono text-xs">"cachorro" → [0.21, 0.79, 0.12, ...]</div>
+      <div class="border-2 border-black bg-[#282A36] text-[#2DD4BF] p-2 font-mono text-xs">"automovil" → [0.9, 0.1, 0.7, ...]</div>
     </div>
     <p class="text-sm mt-3">"perro" y "cachorro" tienen numeros <strong>muy parecidos</strong> → estan <strong>cerca</strong> en el espacio. "automovil" tiene numeros muy diferentes → esta <strong>lejos</strong>.</p>
   </div>
@@ -1827,7 +1827,7 @@ layout: neo-demo
 
 ::default::
 
-<div class="text-[#e6edf3]">
+<div class="text-[#F8F8F2]">
 
 ### AI Career Coach para estudiantes de BI
 
@@ -1893,7 +1893,7 @@ layout: neo-section
 <div class="mt-4">
 
 <div class="flex flex-col items-center gap-3">
-  <div class="border-2 border-black bg-[#0d1117] text-white p-3 text-center font-bold text-lg">
+  <div class="border-2 border-black bg-[#282A36] text-white p-3 text-center font-bold text-lg">
     ¿Que tipo de datos tienes?
   </div>
   <div class="flex gap-12 mt-2">
@@ -1981,7 +1981,7 @@ layout: neo-section
 
 </div>
 
-<div class="border-2 border-black bg-[#0d1117] text-white p-4 mt-4 text-center text-lg">
+<div class="border-2 border-black bg-[#282A36] text-white p-4 mt-4 text-center text-lg">
 <strong>Ahora saben que es esto. La mayoria de profesionales con experiencia no.</strong>
 </div>
 

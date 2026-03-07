@@ -10,7 +10,7 @@
   --mac-coral: #FF6B6B;
   --mac-purple: #6C5CE7;
   --mac-bezel: #D4D0C8;
-  --mac-code-bg: #0d1117;
+  --mac-code-bg: #282A36;
 }
 
 .slidev-layout {
@@ -48,8 +48,8 @@
 
 /* Inline code: high contrast pill */
 .slidev-layout :not(pre) > code {
-  background: #0d1117;
-  color: #2DD4BF;
+  background: #282A36;
+  color: #8BE9FD;
   padding: 1px 6px;
   border: 1px solid #000;
   font-size: 0.85em;
@@ -228,6 +228,29 @@
   color: var(--mac-teal);
   font-weight: bold;
 }
+
+/* Mac OS 7 Table */
+.mac-table {
+  border-collapse: collapse;
+}
+.mac-table th {
+  background: repeating-linear-gradient(0deg, #C0C0C0 0px, #C0C0C0 2px, #FFF 2px, #FFF 4px);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  padding: 6px 8px;
+  text-align: left;
+  border-right: 1px solid #808080;
+  border-bottom: 2px solid #000;
+}
+.mac-table th:last-child { border-right: none; }
+.mac-table td {
+  padding: 4px 8px;
+  border-right: 1px solid #C0C0C0;
+  border-bottom: 1px solid #C0C0C0;
+}
+.mac-table td:last-child { border-right: none; }
+.mac-table tr:nth-child(even) { background: #F0F0F0; }
+.mac-table tr:nth-child(odd) { background: #FFFFFF; }
 
 /* Legacy scanlines class (for compat) */
 .term-scanlines {

@@ -23,7 +23,7 @@ A 2-hour workshop for ITESM Business Intelligence students covering Elasticsearc
 3. **Windows**: Mac window chrome — striped title bar, close box, centered title
 4. **Bevels**: Raised (`border-color: #FFF #000 #000 #FFF`) and sunken (inverse)
 5. **Typography**: Space Grotesk bold headings, Inter body, JetBrains Mono code
-6. **Code blocks**: Dark terminal bg (#0d1117), teal text (#2DD4BF)
+6. **Code blocks**: Dracula bg (#282A36), configured via `setup/shiki.ts`
 7. **Backgrounds**: White content, #C0C0C0 platinum desktop, #A0A0A0 CRT surround
 8. **Section slides**: CRT bezel frame (thick #D4D0C8 border, rounded) with dark screen + scanlines
 9. **Cover slide**: Platinum desktop with Mac menu bar + centered window
@@ -37,7 +37,7 @@ A 2-hour workshop for ITESM Business Intelligence students covering Elasticsearc
 | Purple    | `#6C5CE7` | ChromaDB, vector DB             |
 | Platinum  | `#C0C0C0` | Desktop bg, title bars          |
 | Bezel     | `#D4D0C8` | CRT bezel frame                 |
-| Dark      | `#0d1117` | Code/terminal backgrounds       |
+| Dark      | `#282A36` | Code/terminal backgrounds (Dracula) |
 | White     | `#FFFFFF` | Window content backgrounds      |
 
 ### Code Theme
