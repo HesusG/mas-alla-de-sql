@@ -120,17 +120,16 @@ Al terminar, van a tener un <strong>superpoder</strong> que la mayoria de profes
 
 # Empecemos con un reto
 
-<div class="mt-8">
+<div class="grid grid-cols-[2fr_1fr] gap-6 mt-4">
+  <div>
 
 Imaginen que trabajan en el area de **servicio al cliente** de una tienda online.
 
 Su jefe les dice:
 
-</div>
-
 <v-click>
 
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-6 mt-6 text-center text-xl">
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-5 mt-4 text-center text-lg">
 <em>"Necesito un reporte de todas las reseñas donde los clientes estan <strong>frustrados</strong>.<br/> Tenemos 10,000 reseñas en la base de datos. Para ayer."</em>
 </div>
 
@@ -138,11 +137,17 @@ Su jefe les dice:
 
 <v-click>
 
-<div class="mt-6 text-center text-lg">
+<div class="mt-4 text-center text-lg">
 ¿Como lo harian con las herramientas que conocen?
 </div>
 
 </v-click>
+
+  </div>
+  <div class="flex items-center">
+    <img src="/images/slides/slide_04_reto.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+  </div>
+</div>
 
 ---
 
@@ -404,22 +409,20 @@ Esto es lo que SQL hace mejor que nadie: datos <strong>estructurados, limpios y 
 
 # Las desventajas de normalizar
 
-<div class="mt-4 text-sm">
-
-Normalizar es excelente para datos estructurados. Pero tiene un costo:
-
-</div>
+<div class="grid grid-cols-[2fr_1fr] gap-6 mt-4">
+  <div>
+    <div class="text-sm">Normalizar es excelente para datos estructurados. Pero tiene un costo:</div>
 
 <v-clicks>
 
-<div class="space-y-3 mt-4">
-  <div class="border-2 border-black bg-white p-4">
+<div class="space-y-3 mt-3">
+  <div class="border-2 border-black bg-white p-3 text-sm">
     <strong>JOINs son lentos a escala</strong> — Para reconstruir la informacion original necesitas cruzar 3, 4, 5 tablas. Con millones de filas, esto se vuelve costoso.
   </div>
-  <div class="border-2 border-black bg-white p-4">
+  <div class="border-2 border-black bg-white p-3 text-sm">
     <strong>Esquema rigido</strong> — Cada columna tiene un tipo definido. ¿Quieres agregar un campo nuevo? ALTER TABLE. ¿Un documento que no tiene ese campo? NULL.
   </div>
-  <div class="border-2 border-black bg-white p-4">
+  <div class="border-2 border-black bg-white p-3 text-sm">
     <strong>No puedes buscar "a traves" de los datos</strong> — Si la informacion esta repartida en 5 tablas, buscar texto libre requiere JOINs + LIKE en cada tabla. Impracticable.
   </div>
 </div>
@@ -428,11 +431,17 @@ Normalizar es excelente para datos estructurados. Pero tiene un costo:
 
 <v-click>
 
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-4 mt-4 text-center">
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
 Normalizacion funciona perfecto para datos estructurados. Pero... <strong>¿que pasa con texto libre, emails, PDFs, chats?</strong>
 </div>
 
 </v-click>
+
+  </div>
+  <div class="flex items-center">
+    <img src="/images/slides/slide_12_normalizar.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+  </div>
+</div>
 
 ---
 
@@ -541,35 +550,39 @@ Piensa en como buscas en Google: escribes <strong>"receta pastel de chocolate"</
 
 # El costo real de estas limitaciones
 
-<div class="mt-4 text-sm">
-
-Volvamos a nuestro reto de las reseñas. Con SQL encontramos 23 resultados. ¿Que paso con los otros 124?
-
-</div>
+<div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
+  <div class="flex items-center">
+    <img src="/images/slides/slide_16_costo.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+  </div>
+  <div>
+    <div class="text-sm">Volvamos a nuestro reto de las reseñas. Con SQL encontramos 23 resultados. ¿Que paso con los otros 124?</div>
 
 <v-clicks>
 
-<div class="space-y-3 mt-4">
-  <div class="border-2 border-black bg-white p-3 text-sm">
+<div class="space-y-2 mt-3">
+  <div class="border-2 border-black bg-white p-2 text-sm">
     <strong>"El producto llego roto y nadie me ayudo"</strong> — cliente claramente frustrado, pero no usa esa palabra
   </div>
-  <div class="border-2 border-black bg-white p-3 text-sm">
+  <div class="border-2 border-black bg-white p-2 text-sm">
     <strong>"3 llamadas al soporte y sigo sin solucion"</strong> — frustracion implicita en el contexto
   </div>
-  <div class="border-2 border-black bg-white p-3 text-sm">
+  <div class="border-2 border-black bg-white p-2 text-sm">
     <strong>"Esperaba mucho mas por este precio"</strong> — decepcion, un sinonimo de frustracion
   </div>
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 text-sm">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-2 text-sm">
     <strong>"Mi experiencia fue desastrosa desde el primer dia"</strong> — intensidad alta, pero SQL la ignora por completo
   </div>
 </div>
 
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-4 mt-4 text-center">
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
 <strong>Cada resena que SQL no encuentra es un cliente que podrias perder.</strong>
 En BI, los datos que no ves son los mas peligrosos.
 </div>
 
 </v-clicks>
+
+  </div>
+</div>
 
 ---
 
@@ -688,7 +701,9 @@ layout: neo-section
 
 <!-- Slide 20: ES Section Divider -->
 
-<div class="i-pixelarticons-search inline-block w-16 h-16 mb-4 text-[#ff6b6b]" />
+<div class="relative">
+  <img src="/images/logos/elasticsearch.png" class="w-28 h-28 mx-auto -mt-24 relative z-20 drop-shadow-[3px_3px_0px_rgba(0,0,0,0.5)]" />
+</div>
 
 <h1 class="text-white text-6xl font-bold">Elasticsearch</h1>
 
@@ -1442,7 +1457,9 @@ layout: neo-section
 
 <!-- Slide 41: ChromaDB Section Divider -->
 
-<div class="i-pixelarticons-ai-app-mac inline-block w-16 h-16 mb-4 text-[#6c5ce7]" />
+<div class="relative">
+  <img src="/images/logos/chroma.png" class="w-28 h-28 mx-auto -mt-24 relative z-20 drop-shadow-[3px_3px_0px_rgba(0,0,0,0.5)]" />
+</div>
 
 <h1 class="text-white text-6xl font-bold">ChromaDB</h1>
 
@@ -1458,20 +1475,19 @@ layout: neo-section
 
 # El problema que ni Elasticsearch resuelve
 
-<div class="mt-4">
+<div class="grid grid-cols-[2fr_1fr] gap-6 mt-4">
+  <div>
 
 Elasticsearch es genial para buscar <strong>palabras</strong>. Pero... ¿que pasa cuando la respuesta no comparte palabras con la pregunta?
-
-</div>
 
 <v-clicks>
 
 <div class="space-y-3 mt-4">
-  <div class="border-2 border-black bg-white p-4">
+  <div class="border-2 border-black bg-white p-3 text-sm">
     <strong>Busqueda:</strong> "peliculas que me hagan sentir nostalgico"
     <div class="mt-2 grid grid-cols-2 gap-2">
-      <div class="text-sm"><span class="text-[#ff6b6b] font-bold">SQL</span>: <div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle" /> "nostalgico" no aparece en las sinopsis</div>
-      <div class="text-sm"><span class="text-[#2DD4BF] font-bold">Elasticsearch</span>: <div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle" /> busca la palabra "nostalgia" pero "Roma" evoca nostalgia sin decirlo</div>
+      <div class="text-xs"><span class="text-[#ff6b6b] font-bold">SQL</span>: <div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle" /> "nostalgico" no aparece en las sinopsis</div>
+      <div class="text-xs"><span class="text-[#2DD4BF] font-bold">Elasticsearch</span>: <div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle" /> busca la palabra "nostalgia" pero "Roma" evoca nostalgia sin decirlo</div>
     </div>
   </div>
   <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-4 text-center">
@@ -1481,6 +1497,12 @@ Elasticsearch es genial para buscar <strong>palabras</strong>. Pero... ¿que pas
 </div>
 
 </v-clicks>
+
+  </div>
+  <div class="flex items-center">
+    <img src="/images/slides/slide_42_semantica.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+  </div>
+</div>
 
 ---
 
@@ -1535,30 +1557,32 @@ Entender embeddings es <strong>entender como funciona la IA moderna</strong>. Es
 
 # Imagina un cuarto lleno de peliculas
 
-<div class="mt-4">
+<div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
+  <div class="flex items-center">
+    <img src="/images/slides/slide_44_peliculas.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+  </div>
+  <div>
 
 **Ejercicio mental**: Te doy 100 peliculas escritas en tarjetas. Tienes una mesa grande. ¿Como las organizarias para que peliculas **similares** queden **cerca** entre si?
 
-</div>
-
 <v-clicks>
 
-<div class="grid grid-cols-4 gap-3 mt-4">
-  <div class="border-2 border-black bg-[#2DD4BF]/15 p-3 text-center text-sm">
+<div class="grid grid-cols-4 gap-2 mt-3">
+  <div class="border-2 border-black bg-[#2DD4BF]/15 p-2 text-center text-xs">
     <strong>Esquina 1</strong><br/>Comedias familiares
   </div>
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 text-center text-sm">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-2 text-center text-xs">
     <strong>Esquina 2</strong><br/>Thrillers oscuros
   </div>
-  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-3 text-center text-sm">
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-2 text-center text-xs">
     <strong>Esquina 3</strong><br/>Dramas sociales
   </div>
-  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-3 text-center text-sm">
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-2 text-center text-xs">
     <strong>Esquina 4</strong><br/>Ciencia ficcion
   </div>
 </div>
 
-<div class="border-2 border-black bg-white p-4 mt-4 text-center">
+<div class="border-2 border-black bg-white p-3 mt-3 text-center text-sm">
 
 Tu cerebro acaba de hacer lo que hace un **embedding**: tomo cada pelicula, "entendio" de que trata, y le asigno una **posicion en el espacio** segun su significado.
 
@@ -1567,6 +1591,9 @@ Ahora imagina que la mesa es un plano con coordenadas (x, y). Cada pelicula tien
 </div>
 
 </v-clicks>
+
+  </div>
+</div>
 
 ---
 
@@ -1608,34 +1635,39 @@ Ahora imagina que la mesa es un plano con coordenadas (x, y). Cada pelicula tien
 
 # El ejemplo clasico que demuestra que funciona
 
-<div class="mt-8">
+<div class="grid grid-cols-[2fr_1fr] gap-6 mt-4">
+  <div>
 
 <div class="border-2 border-black bg-[#2DD4BF]/15 p-6 text-center text-2xl font-mono">
 <strong>"rey" - "hombre" + "mujer" ≈ "reina"</strong>
 </div>
 
-<div class="mt-6 text-center">
+<div class="mt-4 text-center text-sm">
 
 Si restas las coordenadas de "hombre" a "rey" y sumas las de "mujer", llegas a un punto en el espacio que esta muy cerca de "reina". Los embeddings capturan **relaciones y analogias** — no solo similitud de palabras.
 
 </div>
 
-</div>
-
 <v-click>
 
-<div class="grid grid-cols-2 gap-4 mt-6">
-  <div class="border-2 border-black bg-white p-4 text-center text-sm">
+<div class="grid grid-cols-2 gap-3 mt-4">
+  <div class="border-2 border-black bg-white p-3 text-center text-sm">
     <h4>¿Quien calcula los embeddings?</h4>
     <p class="text-xs mt-1">Modelos de IA entrenados con miles de millones de textos. ChromaDB usa uno por defecto — tu no tienes que hacer nada.</p>
   </div>
-  <div class="border-2 border-black bg-white p-4 text-center text-sm">
+  <div class="border-2 border-black bg-white p-3 text-center text-sm">
     <h4>¿Que es la "distancia"?</h4>
     <p class="text-xs mt-1">Se mide el angulo entre dos vectores (similitud coseno). Angulo chico = similares. ChromaDB calcula esto automaticamente.</p>
   </div>
 </div>
 
 </v-click>
+
+  </div>
+  <div class="flex items-center">
+    <img src="/images/slides/slide_46_rey_reina.png" class="w-full border-2 border-black shadow-[2px_2px_0px_#000]" />
+  </div>
+</div>
 
 <RefFootnote :sources="['Mikolov, T., et al. (2013). Efficient estimation of word representations in vector space. arXiv:1301.3781.']" />
 
