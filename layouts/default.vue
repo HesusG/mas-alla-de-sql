@@ -6,7 +6,7 @@
       <span>View</span>
       <span>Special</span>
     </div>
-    <div class="flex-1 flex flex-col mx-2 mb-1 mt-0 bg-white border-2 border-black px-5 py-3 overflow-hidden">
+    <div class="flex-1 flex flex-col mx-1 mb-1 mt-0 bg-white border-2 border-black px-4 py-2 overflow-hidden">
       <slot />
     </div>
   </div>
