@@ -1,11 +1,12 @@
 """
-Genera imagenes decorativas para slides text-heavy del workshop "Mas alla de SQL".
-Estilo: Pixel art con fondo blanco, retro Mac OS 7 / terminal aesthetic.
-Usa Gemini 3 Pro Image.
+Genera imagenes decorativas para slides del workshop "Mas alla de SQL".
+Usa Imagen 4.0 para breathers (16:9) y Gemini 3 Pro para content slides (1:1).
 
 Uso:
     python generate_slide_images.py                  # Genera todas
     python generate_slide_images.py slide_04_reto    # Genera una especifica
+    python generate_slide_images.py --breathers      # Solo breathers (16:9)
+    python generate_slide_images.py --content        # Solo content slides (1:1)
 """
 
 import os
@@ -30,9 +31,23 @@ client = genai.Client(api_key=api_key)
 OUTPUT_DIR = Path(__file__).parent / "public" / "images" / "slides"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-MODEL = "gemini-3-pro-image-preview"
+# ── Models ──────────────────────────────────────────────────
+IMAGEN_MODEL = "imagen-4.0-generate-001"
+GEMINI_MODEL = "gemini-3-pro-image-preview"
 
-# Pixel art style on WHITE background — blends with slide bg
+# ── Style suffixes ──────────────────────────────────────────
+
+# For breather slides: dark background, 16:9, used inside neo-image layout
+BREATHER_STYLE = (
+    " STYLE: Clean pixel art illustration on a DARK background (#1a1a2e). "
+    "16-bit / 32-bit pixel art aesthetic with visible pixel edges. "
+    "Use accent colors: teal (#2DD4BF), coral (#FF6B6B), purple (#6C5CE7), "
+    "platinum gray (#C0C0C0). Subtle grid pattern in background. "
+    "Think retro Mac OS 7 aesthetic meets sci-fi. "
+    "NO text, NO letters, NO watermarks, NO words. High resolution."
+)
+
+# For content slides: white background, 1:1, float inside slide content
 PIXEL_SUFFIX = (
     " STYLE: Clean pixel art illustration on a PURE WHITE (#FFFFFF) background. "
     "16-bit / 32-bit pixel art aesthetic with visible pixel edges and limited color palette. "
@@ -43,7 +58,52 @@ PIXEL_SUFFIX = (
     "Crisp, sharp pixel edges. NO text, NO watermarks. High resolution."
 )
 
-PROMPTS = {
+# ── Breather slide prompts (16:9, dark bg, used in neo-image layout) ──
+
+BREATHER_PROMPTS = {
+    "slide_17b_breather": (
+        "A pixel-art door frame opening from a small SQL table/spreadsheet box on the left "
+        "into a vast cosmic landscape on the right with multiple glowing paths leading to "
+        "different destinations. Teal glowing horizon line. "
+        "Stars and colored dots in the sky. Sense of wonder and possibility beyond the door."
+    ),
+    "slide_23b_breather": (
+        "A large pixel-art magnifying glass hovering over several JSON document cards arranged in rows. "
+        "The documents underneath glow teal where search terms match. "
+        "Some documents are bright with teal edges (matched), others fade to dark gray (unmatched). "
+        "Coral score badges on matched docs. Search and discovery theme."
+    ),
+    "slide_31c_breather": (
+        "A retro computer terminal screen showing a completed search query with a large "
+        "pixel-art teal checkmark in the center. Small sparkle particles and stars around it. "
+        "The terminal has a classic Mac OS 7 style window chrome with striped title bar. "
+        "Celebration and achievement moment. Teal and coral sparkle effects."
+    ),
+    "slide_36b_breather": (
+        "Left side: gray text lines and paragraphs. Center: a retro pixel-art computer processor "
+        "with gears turning inside. Right side: colorful vector dots (purple, teal, coral) forming "
+        "a constellation network in space with connecting lines. "
+        "Transformation theme: raw text becomes mathematical vectors. "
+        "The processor has Mac OS 7 window styling."
+    ),
+    "slide_46b_breather": (
+        "Words represented as glowing dots floating in a starfield like planets in space. "
+        "Similar concepts cluster together: a teal cluster of food-related dots close together, "
+        "a purple cluster of technology dots, a coral cluster of emotion dots. "
+        "Faint lines connect nearby dots within each cluster. "
+        "A subtle coordinate grid in the background. Semantic space visualization."
+    ),
+    "slide_50b_breather": (
+        "A friendly pixel-art platinum/silver robot on the left reading open coral-colored books. "
+        "A thought bubble above the robot shows connected document icons with teal lines between them. "
+        "An arrow leads to a purple chat bubble on the right where a user avatar receives an answer. "
+        "RAG concept: robot reads documents, connects knowledge, generates answers for the user."
+    ),
+}
+
+# ── Content slide prompts (1:1, white bg, used inline in slides) ──
+
+CONTENT_PROMPTS = {
     "slide_04_reto": (
         "A pixel art retro CRT monitor showing a red X error icon on its screen. "
         "A small keyboard in front of it. A coffee mug next to it. "
@@ -84,23 +144,48 @@ PROMPTS = {
         "A pixel art hand or cursor is moving one card. "
         "Flat pixel art on white background."
     ),
-    "slide_46_rey_reina": (
-        "Pixel art chess pieces on a coordinate grid: a king piece, a queen piece, a pawn, "
-        "and a knight. Teal vector arrows connect them showing mathematical relationships. "
-        "Plus, minus, and equals signs float between pieces in pixel font. "
-        "The grid is subtle gray lines. Flat pixel art on white background."
-    ),
 }
 
 
-def generate_image(name: str, prompt: str) -> Path:
-    """Genera una imagen con Gemini 3 Pro Image."""
+def generate_breather(name: str, prompt: str) -> Path:
+    """Generate a 16:9 breather image using Imagen 4.0."""
+    full_prompt = prompt + BREATHER_STYLE
+    print(f"  [Imagen 4.0] Generating: {name}...")
+
+    try:
+        response = client.models.generate_images(
+            model=IMAGEN_MODEL,
+            prompt=full_prompt,
+            config=types.GenerateImagesConfig(
+                number_of_images=1,
+                aspect_ratio="16:9",
+                output_mime_type="image/png",
+            ),
+        )
+    except Exception as e:
+        print(f"  ERROR in {name}: {e}")
+        return None
+
+    if response.generated_images:
+        img = response.generated_images[0]
+        out_path = OUTPUT_DIR / f"{name}.png"
+        img.image.save(str(out_path))
+        size_kb = out_path.stat().st_size // 1024
+        print(f"  OK: {out_path} ({size_kb} KB)")
+        return out_path
+    else:
+        print(f"  WARNING: No image returned for {name}")
+        return None
+
+
+def generate_content(name: str, prompt: str) -> Path:
+    """Generate a 1:1 content image using Gemini 3 Pro Image."""
     full_prompt = prompt + PIXEL_SUFFIX
-    print(f"  Generando: {name}...")
+    print(f"  [Gemini 3 Pro] Generating: {name}...")
 
     try:
         response = client.models.generate_content(
-            model=MODEL,
+            model=GEMINI_MODEL,
             contents=full_prompt,
             config=types.GenerateContentConfig(
                 response_modalities=["IMAGE"],
@@ -110,11 +195,11 @@ def generate_image(name: str, prompt: str) -> Path:
             ),
         )
     except Exception as e:
-        print(f"  ERROR en {name}: {e}")
+        print(f"  ERROR in {name}: {e}")
         return None
 
     if not response.candidates or not response.candidates[0].content.parts:
-        print(f"  FILTRADA: {name} -- No se genero imagen")
+        print(f"  FILTERED: {name} -- No image generated")
         return None
 
     for part in response.candidates[0].content.parts:
@@ -129,44 +214,59 @@ def generate_image(name: str, prompt: str) -> Path:
             if pil_img.mode == "P":
                 pil_img = pil_img.convert("RGBA")
             pil_img.save(str(out_path), format="PNG", optimize=True)
-            print(f"  OK: {out_path}")
+            size_kb = out_path.stat().st_size // 1024
+            print(f"  OK: {out_path} ({size_kb} KB)")
             return out_path
 
-    print(f"  ERROR: {name} -- Respuesta sin imagen")
+    print(f"  ERROR: {name} -- Response had no image")
     return None
 
 
 def main():
     print("=" * 60)
-    print("Generador de imagenes pixel art -- Mas alla de SQL")
-    print(f"Modelo: {MODEL}")
+    print("Image Generator — Mas alla de SQL")
+    print(f"Imagen 4.0 (breathers) + Gemini 3 Pro (content)")
     print("=" * 60)
-    print(f"Salida: {OUTPUT_DIR}\n")
+    print(f"Output: {OUTPUT_DIR}\n")
 
-    if len(sys.argv) > 1:
-        targets = sys.argv[1:]
-        prompts = {k: v for k, v in PROMPTS.items() if k in targets}
-        if not prompts:
-            print(f"No se encontraron prompts para: {targets}")
-            print(f"Disponibles: {list(PROMPTS.keys())}")
-            sys.exit(1)
-    else:
-        prompts = PROMPTS
+    # Parse arguments
+    args = sys.argv[1:]
+    do_breathers = "--breathers" in args or not any(a.startswith("--") or a.startswith("slide_") for a in args)
+    do_content = "--content" in args or not any(a.startswith("--") or a.startswith("slide_") for a in args)
+    specific = [a for a in args if a.startswith("slide_")]
 
     results = {"ok": [], "error": []}
 
-    for name, prompt in prompts.items():
-        path = generate_image(name, prompt)
-        if path:
-            results["ok"].append(name)
-        else:
-            results["error"].append(name)
+    # Generate breather images (16:9)
+    if specific:
+        breathers = {k: v for k, v in BREATHER_PROMPTS.items() if k in specific}
+        contents = {k: v for k, v in CONTENT_PROMPTS.items() if k in specific}
+    else:
+        breathers = BREATHER_PROMPTS if do_breathers else {}
+        contents = CONTENT_PROMPTS if do_content else {}
 
+    if breathers:
+        print(f"\n--- Breather images (16:9, Imagen 4.0) ---\n")
+        for name, prompt in breathers.items():
+            path = generate_breather(name, prompt)
+            results["ok" if path else "error"].append(name)
+
+    if contents:
+        print(f"\n--- Content images (1:1, Gemini 3 Pro) ---\n")
+        for name, prompt in contents.items():
+            path = generate_content(name, prompt)
+            results["ok" if path else "error"].append(name)
+
+    total = len(breathers) + len(contents)
     print("\n" + "=" * 60)
-    print(f"Generadas: {len(results['ok'])}/{len(prompts)}")
+    print(f"Generated: {len(results['ok'])}/{total}")
     if results["error"]:
-        print(f"Errores: {results['error']}")
+        print(f"Errors: {results['error']}")
     print("=" * 60)
+
+    if breathers and results["ok"]:
+        print("\nREMINDER: Update slides.md image paths from .svg to .png:")
+        print("  image: /images/slides/slide_XXX.svg  →  .png")
 
 
 if __name__ == "__main__":
