@@ -365,7 +365,7 @@ No caben en una tabla de SQL.
 
 <div class="mt-2 text-sm">
 
-Ustedes estan acostumbrados a abrir un CSV limpio en Jupyter y empezar a analizar. Pero en la vida real, los datos no llegan asi:
+En muchos cursos, los datos ya vienen limpios en un CSV listo para analizar. Pero en la vida real, los datos no llegan asi:
 
 </div>
 
@@ -453,24 +453,58 @@ SQL sigue siendo esencial. Pero <strong>no puede ser la unica herramienta</stron
 
 ---
 
-<!-- Slide 13-14 merged: SQL strengths + what ES solves -->
+<!-- Slide 13: Codd — The father of SQL -->
 
-# SQL es poderoso — pero no para todo
+# El padre de SQL: Edgar F. Codd
 
-<div class="grid grid-cols-[1fr_2fr] gap-4 mt-2">
-  <div>
-    <div class="border-2 border-black p-3 text-sm">
-      <strong>Edgar F. Codd</strong> (IBM, 1970) diseño el modelo relacional. SQL garantiza transacciones <strong>ACID</strong>: si transfieres $1,000, el dinero no desaparece. Fundamental para bancos e inventarios.
-    </div>
-    <div class="border-2 border-black bg-[#2DD4BF]/15 p-2 mt-2 text-center text-xs">
-      SQL sigue siendo esencial. Pero tiene limites con texto libre.
-    </div>
+<div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
+  <div class="border-2 border-black p-4 text-center">
+    <img src="/images/slides/slide_13_codd.png" class="w-32 h-32 mx-auto border-2 border-black object-cover bg-gray-100" />
+    <div class="text-sm font-bold mt-2">Edgar F. Codd</div>
+    <div class="text-xs">IBM, 1970</div>
+    <div class="text-xs mt-1">Inventor del modelo relacional</div>
   </div>
   <div>
 
 <v-clicks>
 
-<div class="grid grid-cols-2 gap-2">
+<div class="space-y-3">
+  <div class="border-2 border-black bg-white p-3 text-sm">
+    En 1970, Codd publico un paper que cambio la computacion para siempre: propuso organizar datos en <strong>tablas con filas y columnas</strong>, relacionadas entre si con claves.
+  </div>
+  <div class="border-2 border-black bg-white p-3 text-sm">
+    De ahi nacio <strong>SQL</strong> y las bases de datos relacionales que se usan en todo: bancos, hospitales, tiendas, gobiernos, universidades.
+  </div>
+  <div class="border-2 border-black bg-white p-3 text-sm">
+    SQL garantiza transacciones <strong>ACID</strong>: si transfieres $1,000 de una cuenta a otra, el dinero no desaparece en el camino. Eso es fundamental.
+  </div>
+</div>
+
+</v-clicks>
+
+<v-click>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-2 mt-3 text-center text-sm">
+SQL sigue siendo esencial. Pero tiene limites con texto libre.
+</div>
+
+</v-click>
+
+  </div>
+</div>
+
+<RefFootnote :sources="['Codd, E. F. (1970). A relational model of data for large shared data banks. Communications of the ACM, 13(6), 377-387.']" />
+
+---
+
+<!-- Slide 14: SQL limitations → what ES solves -->
+
+# Pero SQL no fue diseñado para todo
+
+<div class="grid grid-cols-2 gap-2 mt-2">
+
+<v-clicks>
+
   <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-2">
     <h4 class="text-[#ff6b6b] text-xs"><div class="i-pixelarticons-close-box inline-block w-4 h-4 align-middle mr-1" /> SQL no puede</h4>
     <p class="text-xs mt-1">Buscar "frustrados" sin la palabra exacta. <code>LIKE</code> = coincidencias literales.</p>
@@ -495,20 +529,16 @@ SQL sigue siendo esencial. Pero <strong>no puede ser la unica herramienta</stron
     <h4 class="text-[#2DD4BF] text-xs"><div class="i-pixelarticons-check inline-block w-4 h-4 align-middle mr-1" /> Elasticsearch si</h4>
     <p class="text-xs mt-1">Cada resultado tiene <code>_score</code>. Los mas relevantes primero.</p>
   </div>
-</div>
 
 </v-clicks>
 
-  </div>
 </div>
 
-<RefFootnote :sources="['Codd, E. F. (1970). A relational model of data for large shared data banks. Communications of the ACM, 13(6), 377-387.']" />
-
+---
+layout: neo-two-cols
 ---
 
 <!-- Slide 15-16 merged: Ranking + missed reviews -->
-layout: neo-two-cols
----
 
 ::title::
 
@@ -720,6 +750,9 @@ layout: neo-section
 
 <div class="grid grid-cols-[2fr_1fr] gap-6 mt-4">
   <div class="space-y-3">
+
+<v-clicks>
+
     <div class="border-2 border-black bg-white p-3">
       <strong>Motor de busqueda y analitica</strong> de codigo abierto (open source), creado en 2010 por Shay Banon.
     </div>
@@ -729,6 +762,9 @@ layout: neo-section
     <div class="border-2 border-black bg-white p-3">
       <strong>Elasticsearch ≠ base de datos relacional</strong>. Es un complemento especializado en busqueda de texto y analitica en tiempo real.
     </div>
+
+</v-clicks>
+
   </div>
   <div class="space-y-3">
     <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-sm">
@@ -1934,34 +1970,88 @@ results = col.query(
 
 ---
 
-<!-- Slide 49: Predict then reveal -->
+<!-- Slide 49a: Predict then reveal — part 1 -->
 
-# Predice: ¿que resultados devolvera?
+# Predice: ¿que resultados devolvera ChromaDB?
 
-<div class="mt-2 text-sm">Coleccion con 5 documentos: comida mexicana, IA en negocios, Python para datos, burritos deliciosos, machine learning.</div>
+<div class="mt-2 text-sm">Coleccion con 5 documentos:</div>
+
+<div class="grid grid-cols-5 gap-2 mt-2">
+  <div class="border-2 border-black bg-white p-2 text-center text-xs">comida mexicana</div>
+  <div class="border-2 border-black bg-white p-2 text-center text-xs">IA en negocios</div>
+  <div class="border-2 border-black bg-white p-2 text-center text-xs">Python para datos</div>
+  <div class="border-2 border-black bg-white p-2 text-center text-xs">burritos deliciosos</div>
+  <div class="border-2 border-black bg-white p-2 text-center text-xs">machine learning</div>
+</div>
 
 <v-clicks>
 
-<div class="space-y-4 mt-4">
-  <div class="border-2 border-black bg-white p-4">
+<div class="space-y-3 mt-4">
+  <div class="border-2 border-black bg-white p-3">
     <strong>Query 1:</strong> "tacos"
     <div class="text-sm text-[#ff6b6b] font-bold mt-1">→ "comida mexicana" y "burritos" — palabras diferentes, mismo concepto</div>
   </div>
-  <div class="border-2 border-black bg-white p-4">
+  <div class="border-2 border-black bg-white p-3">
     <strong>Query 2:</strong> "inteligencia artificial"
     <div class="text-sm text-[#2DD4BF] font-bold mt-1">→ "IA en negocios" y "machine learning" — entiende sinonimos y conceptos relacionados</div>
   </div>
-  <div class="border-2 border-black bg-[#2DD4BF]/15 p-4">
+  <div class="border-2 border-black bg-[#2DD4BF]/15 p-3">
     <strong>Query 3:</strong> "analisis de informacion"
     <div class="text-sm text-[#6c5ce7] font-bold mt-1">→ "Python para datos" — la conexion es conceptual, no hay palabras en comun</div>
   </div>
 </div>
 
-<div class="border-2 border-black bg-white p-3 mt-4 text-center text-sm">
-<strong>Los embeddings entienden CONCEPTOS, no solo palabras.</strong> Esa es la diferencia entre busqueda de texto (Elasticsearch) y busqueda semantica (ChromaDB).
+</v-clicks>
+
+---
+
+<!-- Slide 49b: Why this matters — AI revolution connection -->
+
+# Esto es lo que impulsa la revolucion de IA
+
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-2 gap-4 mt-4">
+  <div>
+    <div class="border-2 border-black bg-white p-3 text-sm">
+      <strong>Los embeddings entienden CONCEPTOS, no solo palabras.</strong> Esa es la diferencia entre busqueda de texto (Elasticsearch) y busqueda semantica (ChromaDB).
+    </div>
+
+<v-clicks>
+
+<div class="space-y-2 mt-3">
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-2 text-sm">
+    <strong>ChatGPT</strong> usa embeddings para entender tu pregunta
+  </div>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-2 text-sm">
+    <strong>Google</strong> abandono busqueda por keywords pura en 2019
+  </div>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-2 text-sm">
+    <strong>Netflix/Spotify</strong> recomiendan con vectores, no reglas
+  </div>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-2 text-sm">
+    <strong>RAG</strong> (lo que vamos a hacer) conecta IA + tus datos
+  </div>
 </div>
 
 </v-clicks>
+
+  </div>
+  <div class="flex items-center justify-center">
+    <div class="border-2 border-black bg-[#282A36] p-4 text-center">
+      <div class="text-[#2DD4BF] font-mono text-sm mb-3">Evolucion de busqueda</div>
+      <div class="text-white text-xs space-y-2">
+        <div>1. <span class="text-[#C0C0C0]">SQL</span>: texto exacto</div>
+        <div>2. <span class="text-[#ff6b6b]">ES</span>: palabras + ranking</div>
+        <div>3. <span class="text-[#6c5ce7]">Vectores</span>: significado</div>
+        <div>4. <span class="text-[#2DD4BF]">RAG</span>: IA + datos propios</div>
+      </div>
+      <div class="border-t border-[#2DD4BF]/30 mt-3 pt-2 text-[#2DD4BF] text-xs">
+        Cada paso entiende MAS
+      </div>
+    </div>
+  </div>
+</div>
 
 ---
 
@@ -2077,7 +2167,7 @@ Cada respuesta muestra las <strong>fuentes</strong>: las ofertas de trabajo real
 
 ---
 
-<!-- Recap: ChromaDB key concepts -->
+<!-- Recap: ChromaDB key concepts — Part 1 -->
 
 # Lo que aprendiste de ChromaDB
 
@@ -2108,10 +2198,42 @@ Cada respuesta muestra las <strong>fuentes</strong>: las ofertas de trabajo real
 
 </div>
 
+---
+
+<!-- Recap: ChromaDB — Part 2: The bigger picture -->
+
+# ChromaDB en el ecosistema de IA
+
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-[1fr_1fr] gap-4 mt-4">
+  <div>
+    <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-4">
+      <h3 class="text-[#6c5ce7]">Antes de vector DBs</h3>
+      <div class="text-sm mt-2 space-y-2">
+        <div><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" /> La IA solo usaba su entrenamiento general</div>
+        <div><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" /> No podia acceder a datos privados</div>
+        <div><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" /> Alucinaba con frecuencia</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-4">
+      <h3 class="text-[#2DD4BF]">Con ChromaDB + RAG</h3>
+      <div class="text-sm mt-2 space-y-2">
+        <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> Responde desde TUS documentos</div>
+        <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> Cita fuentes verificables</div>
+        <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> 5 lineas de Python, sin servidor</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <v-click>
 
 <div class="border-2 border-black bg-[#6c5ce7]/15 p-4 mt-4 text-center">
-<strong>ChromaDB + LLM = chatbot experto sobre TUS datos en 5 lineas de Python.</strong>
+<strong>ChromaDB + LLM = chatbot experto sobre TUS datos en 5 lineas de Python.</strong><br/>
+<span class="text-sm">Esto es lo que empresas como Notion, Cursor y Replit ya estan construyendo.</span>
 </div>
 
 </v-click>
