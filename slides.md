@@ -486,40 +486,36 @@ SQL sigue siendo esencial. Pero <strong>no puede ser la unica herramienta</stron
 
 # SQL no fue diseñado para esto — pero hay herramientas que si
 
-<div class="mt-4">
-
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-2 gap-2 mt-2">
 
 <v-clicks>
 
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
-    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-close-box inline-block w-5 h-5 align-middle mr-1" /> SQL no puede</h4>
-    <p class="text-sm mt-2">Buscar clientes "frustrados" sin saber la palabra exacta. <code>LIKE</code> solo encuentra coincidencias literales.</p>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-2">
+    <h4 class="text-[#ff6b6b] text-sm"><div class="i-pixelarticons-close-box inline-block w-4 h-4 align-middle mr-1" /> SQL no puede</h4>
+    <p class="text-xs mt-1">Buscar clientes "frustrados" sin la palabra exacta. <code>LIKE</code> solo encuentra coincidencias literales.</p>
   </div>
-  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-4">
-    <h4 class="text-[#2DD4BF]"><div class="i-pixelarticons-check inline-block w-5 h-5 align-middle mr-1" /> Elasticsearch si</h4>
-    <p class="text-sm mt-2">Tokeniza, analiza raices y encuentra "frustrado", "decepcionado", "furioso" con una sola busqueda.</p>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-2">
+    <h4 class="text-[#2DD4BF] text-sm"><div class="i-pixelarticons-check inline-block w-4 h-4 align-middle mr-1" /> Elasticsearch si</h4>
+    <p class="text-xs mt-1">Tokeniza, analiza raices y encuentra "frustrado", "decepcionado", "furioso" con una sola busqueda.</p>
   </div>
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
-    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-close-box inline-block w-5 h-5 align-middle mr-1" /> SQL no puede</h4>
-    <p class="text-sm mt-2">Tolerar errores. <code>LIKE '%teniz%'</code> no encuentra "tenis". Un typo = 0 resultados.</p>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-2">
+    <h4 class="text-[#ff6b6b] text-sm"><div class="i-pixelarticons-close-box inline-block w-4 h-4 align-middle mr-1" /> SQL no puede</h4>
+    <p class="text-xs mt-1">Tolerar errores. <code>LIKE '%teniz%'</code> no encuentra "tenis". Un typo = 0 resultados.</p>
   </div>
-  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-4">
-    <h4 class="text-[#2DD4BF]"><div class="i-pixelarticons-check inline-block w-5 h-5 align-middle mr-1" /> Elasticsearch si</h4>
-    <p class="text-sm mt-2">Con <code>fuzziness: AUTO</code>, corrige errores automaticamente. "teniz" → encuentra "tenis".</p>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-2">
+    <h4 class="text-[#2DD4BF] text-sm"><div class="i-pixelarticons-check inline-block w-4 h-4 align-middle mr-1" /> Elasticsearch si</h4>
+    <p class="text-xs mt-1">Con <code>fuzziness: AUTO</code>, corrige errores. "teniz" → encuentra "tenis".</p>
   </div>
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
-    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-close-box inline-block w-5 h-5 align-middle mr-1" /> SQL no puede</h4>
-    <p class="text-sm mt-2">Rankear resultados. Devuelve todo lo que cumple el filtro, sin saber que es mas importante.</p>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-2">
+    <h4 class="text-[#ff6b6b] text-sm"><div class="i-pixelarticons-close-box inline-block w-4 h-4 align-middle mr-1" /> SQL no puede</h4>
+    <p class="text-xs mt-1">Rankear resultados. Devuelve todo lo que cumple el filtro, sin saber que es mas importante.</p>
   </div>
-  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-4">
-    <h4 class="text-[#2DD4BF]"><div class="i-pixelarticons-check inline-block w-5 h-5 align-middle mr-1" /> Elasticsearch si</h4>
-    <p class="text-sm mt-2">Cada resultado tiene un <code>_score</code>. Los mas relevantes primero, como Google.</p>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-2">
+    <h4 class="text-[#2DD4BF] text-sm"><div class="i-pixelarticons-check inline-block w-4 h-4 align-middle mr-1" /> Elasticsearch si</h4>
+    <p class="text-xs mt-1">Cada resultado tiene un <code>_score</code>. Los mas relevantes primero, como Google.</p>
   </div>
 
 </v-clicks>
-
-</div>
 
 </div>
 
@@ -1113,11 +1109,49 @@ Todo esto se construyo <strong>sin codigo</strong>. Kibana + Elasticsearch gener
 layout: neo-demo
 ---
 
-<!-- Slide 31: Lab - Dev Tools -->
+<!-- Slide 31a: Lab - Explore Dashboard -->
 
 ::title::
 
-<h2 class="text-[#2DD4BF] font-mono">$ lab: Dev Tools — tu consola de Elasticsearch</h2>
+<h2 class="text-[#2DD4BF] font-mono">$ lab: Explorar el dashboard de eCommerce</h2>
+
+::default::
+
+<div class="text-[#F8F8F2]">
+
+### Navegar al dashboard:
+
+1. En Kibana, abran el menu lateral → **Dashboard**
+2. Seleccionen **"[eCommerce] Revenue Dashboard"**
+
+### Observen los componentes:
+
+<v-clicks>
+
+- **Mapa** — ventas por region geografica
+- **Graficas de linea** — revenue over time
+- **Top productos** — que articulos se venden mas
+- **Filtros interactivos** — clic en cualquier elemento para filtrar todo el dashboard
+
+</v-clicks>
+
+<div class="mt-3 border border-[#2DD4BF] p-3 text-sm">
+
+Todo esto se construyo <strong>sin escribir codigo</strong>. Kibana + Elasticsearch = dashboards interactivos listos para BI.
+
+</div>
+
+</div>
+
+---
+layout: neo-demo
+---
+
+<!-- Slide 31b: Lab - Dev Tools First Query -->
+
+::title::
+
+<h2 class="text-[#2DD4BF] font-mono">$ lab: Dev Tools — tu primera query</h2>
 
 ::default::
 
@@ -1129,15 +1163,7 @@ Kibana → Menu lateral → **Management** → **Dev Tools**
 
 Izquierda = tu query. Derecha = la respuesta. **Ctrl+Enter** para ejecutar.
 
-### Tu primera query:
-
-```
-GET _cluster/health
-```
-
-Si ves `"status": "green"` o `"yellow"` → **todo funciona.**
-
-### Ahora busquemos en los datos de eCommerce:
+### Busquemos en los datos de eCommerce:
 
 ```json
 GET kibana_sample_data_ecommerce/_search
@@ -1147,7 +1173,11 @@ GET kibana_sample_data_ecommerce/_search
 }
 ```
 
-**Observen el `_score`** en cada resultado — eso es BM25 en accion.
+<v-click>
+
+**Observen el `_score`** en cada resultado — eso es **BM25** en accion, el algoritmo de relevancia que SQL no tiene.
+
+</v-click>
 
 </div>
 
@@ -1457,6 +1487,20 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 </div>
 
 ---
+
+<!-- Hero: ES culmination -->
+
+<div class="h-full flex items-center justify-center">
+<div class="text-center max-w-3xl">
+
+<p class="text-4xl font-bold leading-relaxed">SQL te dice <span class="text-[#ff6b6b]">que hay</span>.</p>
+
+<p class="text-4xl font-bold leading-relaxed mt-4">Elasticsearch te dice <span class="text-[#2DD4BF]">que importa</span>.</p>
+
+</div>
+</div>
+
+---
 layout: neo-section
 ---
 
@@ -1660,39 +1704,30 @@ Ahora imagina que la mesa es un plano con coordenadas (x, y). Cada pelicula tien
 
 # El ejemplo clasico que demuestra que funciona
 
-<div class="grid grid-cols-[2fr_1fr] gap-6 mt-4">
-  <div>
-
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-6 text-center text-2xl font-mono">
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-6 text-center text-3xl font-mono mt-4">
 <strong>"rey" - "hombre" + "mujer" ≈ "reina"</strong>
 </div>
 
-<div class="mt-4 text-center text-sm">
+<div class="mt-4 text-center text-sm max-w-2xl mx-auto">
 
-Si restas las coordenadas de "hombre" a "rey" y sumas las de "mujer", llegas a un punto en el espacio que esta muy cerca de "reina". Los embeddings capturan **relaciones y analogias** — no solo similitud de palabras.
+Si restas las coordenadas de "hombre" a "rey" y sumas las de "mujer", llegas a un punto en el espacio muy cerca de "reina". Los embeddings capturan **relaciones y analogias** — no solo similitud de palabras.
 
 </div>
 
 <v-click>
 
-<div class="grid grid-cols-2 gap-3 mt-4">
+<div class="grid grid-cols-2 gap-4 mt-4 max-w-2xl mx-auto">
   <div class="border-2 border-black bg-white p-3 text-center text-sm">
     <h4>¿Quien calcula los embeddings?</h4>
     <p class="text-xs mt-1">Modelos de IA entrenados con miles de millones de textos. ChromaDB usa uno por defecto — tu no tienes que hacer nada.</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-center text-sm">
     <h4>¿Que es la "distancia"?</h4>
-    <p class="text-xs mt-1">Se mide el angulo entre dos vectores (similitud coseno). Angulo chico = similares. ChromaDB calcula esto automaticamente.</p>
+    <p class="text-xs mt-1">Similitud coseno: angulo chico = similares. ChromaDB lo calcula automaticamente.</p>
   </div>
 </div>
 
 </v-click>
-
-  </div>
-  <div class="flex items-center">
-    <img src="/images/slides/slide_46_rey_reina.png" class="w-full" />
-  </div>
-</div>
 
 <RefFootnote :sources="['Mikolov, T., et al. (2013). Efficient estimation of word representations in vector space. arXiv:1301.3781.']" />
 
@@ -2071,6 +2106,20 @@ layout: neo-section
       <li>Kaggle: datasets para practicar</li>
     </ul>
   </div>
+</div>
+
+---
+
+<!-- Hero: Closing statement -->
+
+<div class="h-full flex items-center justify-center">
+<div class="text-center max-w-3xl">
+
+<p class="text-4xl font-bold leading-relaxed">La herramienta correcta no <span class="text-[#ff6b6b]">reemplaza</span> a SQL.</p>
+
+<p class="text-4xl font-bold leading-relaxed mt-4">La <span class="text-[#2DD4BF]">complementa</span>.</p>
+
+</div>
 </div>
 
 ---
