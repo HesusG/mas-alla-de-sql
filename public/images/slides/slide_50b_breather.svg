@@ -1,33 +1,94 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
   <defs>
-    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2DD4BF" stroke-width="0.5" opacity="0.3"/>
+    <pattern id="grid50" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2DD4BF" stroke-width="0.5" opacity="0.2"/>
     </pattern>
   </defs>
   <rect width="960" height="540" fill="#1a1a2e"/>
-  <rect width="960" height="540" fill="url(#grid)"/>
-  <!-- Robot body -->
-  <g transform="translate(380,100)" fill="#C0C0C0">
-    <rect x="20" y="0" width="120" height="20"/>
-    <rect x="0" y="20" width="160" height="100"/>
+  <rect width="960" height="540" fill="url(#grid50)"/>
+  <!-- Pixel-art Robot (left) -->
+  <g transform="translate(140,100)">
+    <!-- Antenna -->
+    <rect x="70" y="0" width="10" height="20" fill="#C0C0C0"/>
+    <rect x="65" y="0" width="20" height="8" fill="#2DD4BF"/>
+    <!-- Head -->
+    <rect x="30" y="20" width="90" height="70" fill="#C0C0C0" stroke="#808080" stroke-width="2"/>
     <!-- Eyes -->
-    <rect x="30" y="40" width="30" height="30" fill="#2DD4BF"/>
-    <rect x="100" y="40" width="30" height="30" fill="#2DD4BF"/>
+    <rect x="50" y="40" width="20" height="20" fill="#2DD4BF"/>
+    <rect x="80" y="40" width="20" height="20" fill="#2DD4BF"/>
+    <!-- Eye pupils -->
+    <rect x="58" y="48" width="8" height="8" fill="#1a1a2e"/>
+    <rect x="88" y="48" width="8" height="8" fill="#1a1a2e"/>
     <!-- Mouth -->
-    <rect x="40" y="90" width="80" height="10" fill="#282A36"/>
+    <rect x="55" y="70" width="40" height="8" fill="#282A36"/>
+    <!-- Body -->
+    <rect x="20" y="95" width="110" height="100" fill="#C0C0C0" stroke="#808080" stroke-width="2"/>
+    <!-- Chest panel -->
+    <rect x="40" y="110" width="70" height="60" fill="#282A36" rx="2"/>
+    <rect x="50" y="120" width="50" height="6" fill="#2DD4BF" opacity="0.6"/>
+    <rect x="50" y="132" width="35" height="6" fill="#2DD4BF" opacity="0.4"/>
+    <rect x="50" y="144" width="45" height="6" fill="#6C5CE7" opacity="0.5"/>
+    <!-- Arms -->
+    <rect x="0" y="100" width="20" height="60" fill="#C0C0C0" stroke="#808080" stroke-width="1"/>
+    <rect x="130" y="100" width="20" height="60" fill="#C0C0C0" stroke="#808080" stroke-width="1"/>
+    <!-- Hand holding book -->
+    <rect x="130" y="155" width="25" height="15" fill="#C0C0C0"/>
   </g>
-  <!-- Book -->
-  <g transform="translate(340,260)" fill="#FF6B6B" opacity="0.7">
-    <rect x="0" y="0" width="100" height="120" rx="2"/>
-    <rect x="110" y="0" width="100" height="120" rx="2"/>
-    <rect x="95" y="0" width="20" height="120" fill="#282A36" opacity="0.3"/>
+  <!-- Open books (center, being read by robot) -->
+  <g transform="translate(300,200)">
+    <!-- Book 1 (open, coral) -->
+    <rect x="0" y="0" width="80" height="100" fill="#FF6B6B" opacity="0.8" rx="2"/>
+    <rect x="80" y="0" width="80" height="100" fill="#FF6B6B" opacity="0.7" rx="2"/>
+    <rect x="75" y="0" width="10" height="100" fill="#282A36" opacity="0.3"/>
+    <!-- Text lines on pages -->
+    <rect x="10" y="15" width="55" height="5" fill="#fff" opacity="0.4"/>
+    <rect x="10" y="28" width="50" height="5" fill="#fff" opacity="0.3"/>
+    <rect x="10" y="41" width="58" height="5" fill="#fff" opacity="0.3"/>
+    <rect x="90" y="15" width="55" height="5" fill="#fff" opacity="0.4"/>
+    <rect x="90" y="28" width="50" height="5" fill="#fff" opacity="0.3"/>
+    <rect x="90" y="41" width="58" height="5" fill="#fff" opacity="0.3"/>
+    <!-- Book 2 (stacked) -->
+    <rect x="20" y="110" width="70" height="20" fill="#FF6B6B" opacity="0.4" rx="1"/>
+    <rect x="10" y="135" width="80" height="20" fill="#FF6B6B" opacity="0.3" rx="1"/>
   </g>
-  <!-- Lightbulb -->
-  <g transform="translate(560,120)" fill="#FFE156">
-    <rect x="20" y="0" width="40" height="20"/>
-    <rect x="10" y="20" width="60" height="40"/>
-    <rect x="20" y="60" width="40" height="20"/>
-    <rect x="25" y="80" width="30" height="10"/>
+  <!-- Thought bubble with connected docs (top center-right) -->
+  <g transform="translate(500,60)">
+    <!-- Bubble -->
+    <ellipse cx="120" cy="80" rx="140" ry="90" fill="#282A36" stroke="#C0C0C0" stroke-width="2" opacity="0.8"/>
+    <!-- Small bubbles leading from robot -->
+    <circle cx="-20" cy="120" r="10" fill="#282A36" stroke="#C0C0C0" stroke-width="1" opacity="0.5"/>
+    <circle cx="10" cy="110" r="15" fill="#282A36" stroke="#C0C0C0" stroke-width="1" opacity="0.6"/>
+    <!-- Doc icons inside thought bubble -->
+    <rect x="50" y="40" width="30" height="40" fill="#6C5CE7" opacity="0.6" rx="2"/>
+    <rect x="100" y="50" width="30" height="40" fill="#2DD4BF" opacity="0.6" rx="2"/>
+    <rect x="150" y="35" width="30" height="40" fill="#6C5CE7" opacity="0.5" rx="2"/>
+    <rect x="80" y="95" width="30" height="40" fill="#2DD4BF" opacity="0.5" rx="2"/>
+    <rect x="140" y="85" width="30" height="40" fill="#FF6B6B" opacity="0.5" rx="2"/>
+    <!-- Connecting lines between docs -->
+    <line x1="80" y1="60" x2="100" y2="70" stroke="#2DD4BF" stroke-width="2" opacity="0.4"/>
+    <line x1="130" y1="70" x2="150" y2="55" stroke="#2DD4BF" stroke-width="2" opacity="0.3"/>
+    <line x1="115" y1="90" x2="95" y2="115" stroke="#6C5CE7" stroke-width="2" opacity="0.3"/>
+    <line x1="130" y1="90" x2="155" y2="105" stroke="#FF6B6B" stroke-width="2" opacity="0.3"/>
   </g>
-  <text x="480" y="500" text-anchor="middle" fill="#666" font-family="monospace" font-size="14">slide_50b_breather — replace with pixel art</text>
+  <!-- Arrow flowing to user chat bubble (right) -->
+  <g fill="#2DD4BF" opacity="0.5">
+    <rect x="680" y="250" width="40" height="4"/>
+    <rect x="712" y="244" width="4" height="16"/>
+    <rect x="716" y="248" width="4" height="8"/>
+  </g>
+  <!-- User chat bubble (right) -->
+  <g transform="translate(740,200)">
+    <rect x="0" y="0" width="160" height="120" fill="#6C5CE7" opacity="0.2" stroke="#6C5CE7" stroke-width="2" rx="8"/>
+    <!-- Chat lines -->
+    <rect x="15" y="20" width="100" height="8" fill="#6C5CE7" opacity="0.5" rx="2"/>
+    <rect x="15" y="38" width="120" height="8" fill="#6C5CE7" opacity="0.4" rx="2"/>
+    <rect x="15" y="56" width="80" height="8" fill="#6C5CE7" opacity="0.3" rx="2"/>
+    <!-- User icon -->
+    <circle cx="130" cy="95" r="12" fill="#C0C0C0" opacity="0.5"/>
+    <rect x="123" y="87" width="14" height="10" fill="#1a1a2e" rx="7"/>
+    <!-- Chat tail -->
+    <polygon points="0,100 -15,120 20,100" fill="#6C5CE7" opacity="0.2"/>
+  </g>
+  <!-- Bottom label -->
+  <text x="480" y="480" text-anchor="middle" fill="#C0C0C0" font-family="monospace" font-size="12" opacity="0.4">retrieval-augmented generation</text>
 </svg>

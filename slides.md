@@ -453,28 +453,52 @@ SQL sigue siendo esencial. Pero <strong>no puede ser la unica herramienta</stron
 
 ---
 
-<!-- Slide 13: SQL is powerful - Codd + ACID -->
+<!-- Slide 13-14 merged: SQL strengths + what ES solves -->
 
-# SQL es poderoso — para lo que fue diseñado
+# SQL es poderoso — pero no para todo
 
-<div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
-  <div class="border-2 border-black p-4 text-center">
-    <img src="/images/slides/slide_13_codd.png" class="w-32 h-32 mx-auto border-2 border-black object-cover bg-gray-100" />
-    <div class="text-sm font-bold mt-2">Edgar F. Codd</div>
-    <div class="text-xs">IBM, 1970</div>
-    <div class="text-xs mt-1">Inventor del modelo relacional</div>
+<div class="grid grid-cols-[1fr_2fr] gap-4 mt-2">
+  <div>
+    <div class="border-2 border-black p-3 text-sm">
+      <strong>Edgar F. Codd</strong> (IBM, 1970) diseño el modelo relacional. SQL garantiza transacciones <strong>ACID</strong>: si transfieres $1,000, el dinero no desaparece. Fundamental para bancos e inventarios.
+    </div>
+    <div class="border-2 border-black bg-[#2DD4BF]/15 p-2 mt-2 text-center text-xs">
+      SQL sigue siendo esencial. Pero tiene limites con texto libre.
+    </div>
   </div>
   <div>
-    <h3 class="mb-3">Transacciones ACID</h3>
-    <div class="grid grid-cols-2 gap-2">
-      <div class="border-2 border-black p-2 text-sm"><strong class="text-[#ff6b6b]">A</strong>tomicidad — Todo o nada</div>
-      <div class="border-2 border-black p-2 text-sm"><strong class="text-[#ff6b6b]">C</strong>onsistencia — Reglas siempre se cumplen</div>
-      <div class="border-2 border-black p-2 text-sm"><strong class="text-[#ff6b6b]">I</strong>solamiento — Transacciones no se estorban</div>
-      <div class="border-2 border-black p-2 text-sm"><strong class="text-[#ff6b6b]">D</strong>urabilidad — Lo guardado no se pierde</div>
-    </div>
-    <div class="text-sm mt-3">
-    Si transfieres $1,000 de una cuenta a otra, SQL garantiza que el dinero no desaparezca en el camino. Esto es <strong>fundamental</strong> para bancos, inventarios y cualquier sistema critico.
-    </div>
+
+<v-clicks>
+
+<div class="grid grid-cols-2 gap-2">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-2">
+    <h4 class="text-[#ff6b6b] text-xs"><div class="i-pixelarticons-close-box inline-block w-4 h-4 align-middle mr-1" /> SQL no puede</h4>
+    <p class="text-xs mt-1">Buscar "frustrados" sin la palabra exacta. <code>LIKE</code> = coincidencias literales.</p>
+  </div>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-2">
+    <h4 class="text-[#2DD4BF] text-xs"><div class="i-pixelarticons-check inline-block w-4 h-4 align-middle mr-1" /> Elasticsearch si</h4>
+    <p class="text-xs mt-1">Tokeniza y analiza raices. Una busqueda encuentra variaciones.</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-2">
+    <h4 class="text-[#ff6b6b] text-xs"><div class="i-pixelarticons-close-box inline-block w-4 h-4 align-middle mr-1" /> SQL no puede</h4>
+    <p class="text-xs mt-1">Tolerar errores. "teniz" = 0 resultados.</p>
+  </div>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-2">
+    <h4 class="text-[#2DD4BF] text-xs"><div class="i-pixelarticons-check inline-block w-4 h-4 align-middle mr-1" /> Elasticsearch si</h4>
+    <p class="text-xs mt-1"><code>fuzziness: AUTO</code> corrige errores automaticamente.</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-2">
+    <h4 class="text-[#ff6b6b] text-xs"><div class="i-pixelarticons-close-box inline-block w-4 h-4 align-middle mr-1" /> SQL no puede</h4>
+    <p class="text-xs mt-1">Rankear resultados. Devuelve todo sin prioridad.</p>
+  </div>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-2">
+    <h4 class="text-[#2DD4BF] text-xs"><div class="i-pixelarticons-check inline-block w-4 h-4 align-middle mr-1" /> Elasticsearch si</h4>
+    <p class="text-xs mt-1">Cada resultado tiene <code>_score</code>. Los mas relevantes primero.</p>
+  </div>
+</div>
+
+</v-clicks>
+
   </div>
 </div>
 
@@ -482,123 +506,56 @@ SQL sigue siendo esencial. Pero <strong>no puede ser la unica herramienta</stron
 
 ---
 
-<!-- Slide 14: SQL limitations → what ES solves -->
+<!-- Slide 15-16 merged: Ranking + missed reviews -->
+layout: neo-two-cols
+---
 
-# SQL no fue diseñado para esto — pero hay herramientas que si
+::title::
 
-<div class="grid grid-cols-2 gap-2 mt-2">
+# Relevancia vs busqueda exacta — lo que SQL pierde
+
+::left::
+
+### SQL: Binario (si/no)
+
+<div class="border-2 border-black p-2 text-sm space-y-2">
+  <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> "Pastel de chocolate con crema"</div>
+  <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> "El chocolate del pastel se quemo"</div>
+  <div><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" /> "Torta de cacao con ganache"</div>
+  <div class="text-xs text-gray-500">Todas iguales. No distingue cual es mejor.</div>
+</div>
+
+### ES: Ranking por score
+
+<div class="border-2 border-black p-2 text-sm space-y-1 mt-2">
+  <div><span class="font-mono text-[#2DD4BF]">_score: 15.7</span> "Receta de pastel de chocolate"</div>
+  <div><span class="font-mono text-[#2DD4BF]">_score: 8.2</span> "Torta de cacao con ganache"</div>
+  <div><span class="font-mono text-[#2DD4BF]">_score: 3.1</span> "El chocolate se uso en el pastel"</div>
+</div>
+
+::right::
+
+### Reseñas que SQL pierde (23 de 147)
 
 <v-clicks>
 
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-2">
-    <h4 class="text-[#ff6b6b] text-sm"><div class="i-pixelarticons-close-box inline-block w-4 h-4 align-middle mr-1" /> SQL no puede</h4>
-    <p class="text-xs mt-1">Buscar clientes "frustrados" sin la palabra exacta. <code>LIKE</code> solo encuentra coincidencias literales.</p>
+<div class="space-y-2 mt-2">
+  <div class="border-2 border-black bg-white p-2 text-xs">
+    <strong>"El producto llego roto y nadie me ayudo"</strong> — frustrado, pero no usa esa palabra
   </div>
-  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-2">
-    <h4 class="text-[#2DD4BF] text-sm"><div class="i-pixelarticons-check inline-block w-4 h-4 align-middle mr-1" /> Elasticsearch si</h4>
-    <p class="text-xs mt-1">Tokeniza, analiza raices y encuentra "frustrado", "decepcionado", "furioso" con una sola busqueda.</p>
+  <div class="border-2 border-black bg-white p-2 text-xs">
+    <strong>"3 llamadas al soporte y sigo sin solucion"</strong> — frustracion implicita
   </div>
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-2">
-    <h4 class="text-[#ff6b6b] text-sm"><div class="i-pixelarticons-close-box inline-block w-4 h-4 align-middle mr-1" /> SQL no puede</h4>
-    <p class="text-xs mt-1">Tolerar errores. <code>LIKE '%teniz%'</code> no encuentra "tenis". Un typo = 0 resultados.</p>
-  </div>
-  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-2">
-    <h4 class="text-[#2DD4BF] text-sm"><div class="i-pixelarticons-check inline-block w-4 h-4 align-middle mr-1" /> Elasticsearch si</h4>
-    <p class="text-xs mt-1">Con <code>fuzziness: AUTO</code>, corrige errores. "teniz" → encuentra "tenis".</p>
-  </div>
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-2">
-    <h4 class="text-[#ff6b6b] text-sm"><div class="i-pixelarticons-close-box inline-block w-4 h-4 align-middle mr-1" /> SQL no puede</h4>
-    <p class="text-xs mt-1">Rankear resultados. Devuelve todo lo que cumple el filtro, sin saber que es mas importante.</p>
-  </div>
-  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-2">
-    <h4 class="text-[#2DD4BF] text-sm"><div class="i-pixelarticons-check inline-block w-4 h-4 align-middle mr-1" /> Elasticsearch si</h4>
-    <p class="text-xs mt-1">Cada resultado tiene un <code>_score</code>. Los mas relevantes primero, como Google.</p>
-  </div>
-
-</v-clicks>
-
-</div>
-
----
-
-<!-- Slide 15: Relevance explained -->
-
-# ¿Que es "relevancia"? (Relevance)
-
-<div class="mt-4 text-sm">
-
-Piensa en como buscas en Google: escribes <strong>"receta pastel de chocolate"</strong> y obtienes resultados ordenados del mas util al menos. Eso es relevancia.
-
-</div>
-
-<div class="grid grid-cols-2 gap-6 mt-4">
-  <div>
-    <h4 class="text-[#ff6b6b] mb-2">SQL: Binario (si/no)</h4>
-    <div class="border-2 border-black p-3 text-sm space-y-2">
-      <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> "Pastel de chocolate con crema"</div>
-      <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> "El chocolate del pastel se quemo"</div>
-      <div><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" /> "Torta de cacao con ganache"</div>
-      <div class="text-xs text-gray-500 mt-2">No distingue cual es mejor. Todas las que contienen "pastel" + "chocolate" son iguales.</div>
-    </div>
-  </div>
-  <div>
-    <h4 class="text-[#2DD4BF] mb-2">Elasticsearch: Ranking por score</h4>
-    <div class="border-2 border-black p-3 text-sm space-y-2">
-      <div><span class="font-mono text-[#2DD4BF]">_score: 15.7</span> "Receta de pastel de chocolate"</div>
-      <div><span class="font-mono text-[#2DD4BF]">_score: 8.2</span> "Torta de cacao con ganache"</div>
-      <div><span class="font-mono text-[#2DD4BF]">_score: 3.1</span> "El chocolate se uso en el pastel"</div>
-      <div class="text-xs text-gray-500 mt-2">Cada resultado tiene un puntaje. Los mas relevantes primero.</div>
-    </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-2 text-xs">
+    <strong>"Mi experiencia fue desastrosa"</strong> — intensidad alta, SQL la ignora
   </div>
 </div>
 
-<v-click>
-
-<div class="border-2 border-black bg-white p-3 mt-4 text-center text-sm">
-<strong>La diferencia entre una lista y un ranking.</strong> En BI, no solo importa encontrar datos — importa saber cuales son los <em>mas importantes</em>.
-</div>
-
-</v-click>
-
----
-
-<!-- Slide 16: The frustration expanded -->
-
-# El costo real de estas limitaciones
-
-<div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
-  <div class="flex items-center">
-    <img src="/images/slides/slide_16_costo.png" class="w-full" />
-  </div>
-  <div>
-    <div class="text-sm">Volvamos a nuestro reto de las reseñas. Con SQL encontramos 23 resultados. ¿Que paso con los otros 124?</div>
-
-<v-clicks>
-
-<div class="space-y-2 mt-3">
-  <div class="border-2 border-black bg-white p-2 text-sm">
-    <strong>"El producto llego roto y nadie me ayudo"</strong> — cliente claramente frustrado, pero no usa esa palabra
-  </div>
-  <div class="border-2 border-black bg-white p-2 text-sm">
-    <strong>"3 llamadas al soporte y sigo sin solucion"</strong> — frustracion implicita en el contexto
-  </div>
-  <div class="border-2 border-black bg-white p-2 text-sm">
-    <strong>"Esperaba mucho mas por este precio"</strong> — decepcion, un sinonimo de frustracion
-  </div>
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-2 text-sm">
-    <strong>"Mi experiencia fue desastrosa desde el primer dia"</strong> — intensidad alta, pero SQL la ignora por completo
-  </div>
-</div>
-
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-2 mt-3 text-center text-xs">
 <strong>Cada resena que SQL no encuentra es un cliente que podrias perder.</strong>
-En BI, los datos que no ves son los mas peligrosos.
 </div>
 
 </v-clicks>
-
-  </div>
-</div>
 
 ---
 
@@ -640,6 +597,14 @@ Para estas necesidades, existen herramientas especializadas. <strong>Hoy vamos a
 </v-click>
 
 ---
+layout: neo-image
+title: horizonte.png
+image: /images/slides/slide_17b_breather.svg
+---
+
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Hay un mundo entero mas alla de las tablas</h2>
+
+---
 
 <!-- Slide 18: Database types intro -->
 
@@ -652,6 +617,9 @@ SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos d
 </div>
 
 <div class="grid grid-cols-3 gap-2">
+
+<v-clicks>
+
   <div class="border-2 border-black bg-[#2DD4BF]/15 p-2 text-center text-sm">
     <div class="i-pixelarticons-database inline-block w-6 h-6" />
     <strong>Relacional (SQL)</strong>
@@ -688,6 +656,9 @@ SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos d
     <p class="text-xs mt-1">Busca por significado usando matematicas. Base de la IA moderna.</p>
     <p class="text-xs italic">ChromaDB, Pinecone</p>
   </div>
+
+</v-clicks>
+
 </div>
 
 <RefFootnote :sources="['DB-Engines. (2026). DB-Engines ranking. https://db-engines.com/en/ranking']" />
@@ -1190,6 +1161,14 @@ GET kibana_sample_data_ecommerce/_search
 </div>
 
 ---
+layout: neo-image
+title: checkpoint.png
+image: /images/slides/slide_31c_breather.svg
+---
+
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Ya hiciste tu primera busqueda inteligente. Ahora vamos por mas.</h2>
+
+---
 
 <!-- Slide 32: Things SQL can't do - live -->
 
@@ -1504,14 +1483,59 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 
 ---
 
+<!-- Recap: ES key concepts -->
+
+# Lo que aprendiste de Elasticsearch
+
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-2 gap-4 mt-4">
+
+<v-clicks>
+
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
+    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-book-open inline-block w-5 h-5 align-middle mr-1" /> Indice invertido</h3>
+    <p class="text-sm mt-1">Como el indice de un libro: mapea cada palabra a los documentos donde aparece. Busqueda instantanea.</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
+    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-chart inline-block w-5 h-5 align-middle mr-1" /> Ranking BM25</h3>
+    <p class="text-sm mt-1">Cada resultado tiene un _score. Frecuencia + rareza + longitud = los mas relevantes primero.</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
+    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-edit inline-block w-5 h-5 align-middle mr-1" /> Fuzziness</h3>
+    <p class="text-sm mt-1">Tolera errores tipograficos. "shoees" → encuentra "shoes". Como el autocorrect de tu celular.</p>
+  </div>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-4">
+    <h3 class="text-[#2DD4BF]"><div class="i-pixelarticons-check inline-block w-5 h-5 align-middle mr-1" /> Complemento, no reemplazo</h3>
+    <p class="text-sm mt-1">SQL para transacciones. ES para busqueda y analitica. Se usan juntos en las empresas.</p>
+  </div>
+
+</v-clicks>
+
+</div>
+
+<v-click>
+
+<div class="border-2 border-black bg-[#ff6b6b]/15 p-4 mt-4 text-center">
+<strong>ES busca PALABRAS. Pero ¿que pasa cuando necesitas buscar SIGNIFICADO?</strong>
+</div>
+
+</v-click>
+
+---
+class: 'bg-[#1a1a2e]'
+---
+
 <!-- Hero: ES culmination -->
 
 <div class="h-full flex items-center justify-center">
 <div class="text-center max-w-3xl">
 
-<p class="text-4xl font-bold leading-relaxed">SQL te dice <span class="text-[#ff6b6b]">que hay</span>.</p>
+<p class="text-5xl font-bold leading-relaxed text-white">SQL te dice <span class="text-[#ff6b6b]">que hay</span>.</p>
 
-<p class="text-4xl font-bold leading-relaxed mt-4">Elasticsearch te dice <span class="text-[#2DD4BF]">que importa</span>.</p>
+<div class="pixel-divider my-8 opacity-30" />
+
+<p class="text-5xl font-bold leading-relaxed text-white">Elasticsearch te dice <span class="text-[#2DD4BF]">que importa</span>.</p>
 
 </div>
 </div>
@@ -1682,6 +1706,65 @@ Ahora imagina que la mesa es un plano con coordenadas (x, y). Cada pelicula tien
 
 ---
 
+<!-- Slide 44b: Predict-and-reveal — movie embeddings -->
+
+# Predice: ¿cuales peliculas estan "cerca"?
+
+<div class="mt-2 text-sm">Si tuvieras que agrupar estas 5 peliculas por similitud, ¿cuales pondrias juntas?</div>
+
+<div class="grid grid-cols-5 gap-3 mt-4">
+  <div class="border-2 border-black bg-[#ff6b6b]/15 p-3 text-center text-sm">
+    <div class="text-2xl mb-1">🎬</div>
+    <strong>Coco</strong>
+    <p class="text-xs mt-1">Familia, Mexico, musica, muerte</p>
+  </div>
+  <div class="border-2 border-black bg-[#C0C0C0] p-3 text-center text-sm">
+    <div class="text-2xl mb-1">🎬</div>
+    <strong>Roma</strong>
+    <p class="text-xs mt-1">Mexico, familia, nostalgia, drama</p>
+  </div>
+  <div class="border-2 border-black bg-[#6c5ce7]/15 p-3 text-center text-sm">
+    <div class="text-2xl mb-1">🎬</div>
+    <strong>Inception</strong>
+    <p class="text-xs mt-1">Sueños, ciencia ficcion, mente</p>
+  </div>
+  <div class="border-2 border-black bg-[#6c5ce7]/15 p-3 text-center text-sm">
+    <div class="text-2xl mb-1">🎬</div>
+    <strong>Matrix</strong>
+    <p class="text-xs mt-1">Realidad virtual, ciencia ficcion</p>
+  </div>
+  <div class="border-2 border-black bg-[#ff6b6b]/15 p-3 text-center text-sm">
+    <div class="text-2xl mb-1">🎬</div>
+    <strong>Encanto</strong>
+    <p class="text-xs mt-1">Familia, Latinoamerica, magia</p>
+  </div>
+</div>
+
+<v-click>
+
+<div class="grid grid-cols-2 gap-4 mt-4">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-3 text-center text-sm">
+    <strong class="text-[#ff6b6b]">Grupo A: Familia + Latinoamerica</strong>
+    <p class="text-xs mt-1">Coco ↔ Roma ↔ Encanto — cultura, familia, emociones</p>
+  </div>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-3 text-center text-sm">
+    <strong class="text-[#6c5ce7]">Grupo B: Ciencia ficcion + mente</strong>
+    <p class="text-xs mt-1">Inception ↔ Matrix — realidad alterada, tecnologia</p>
+  </div>
+</div>
+
+</v-click>
+
+<v-click>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
+<strong>Tu cerebro acaba de calcular embeddings.</strong> Tomaste cada pelicula, "entendiste" de que trata, y la posicionaste segun su significado. Exactamente lo que hace un modelo de IA.
+</div>
+
+</v-click>
+
+---
+
 <!-- Slide 45: From analogy to math -->
 
 # De la mesa a los numeros
@@ -1746,6 +1829,14 @@ Si restas las coordenadas de "hombre" a "rey" y sumas las de "mujer", llegas a u
 </v-click>
 
 <RefFootnote :sources="['Mikolov, T., et al. (2013). Efficient estimation of word representations in vector space. arXiv:1301.3781.']" />
+
+---
+layout: neo-image
+title: espacio_semantico.png
+image: /images/slides/slide_46b_breather.svg
+---
+
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Las palabras tienen coordenadas. La distancia es significado.</h2>
 
 ---
 
@@ -1985,6 +2076,47 @@ Cada respuesta muestra las <strong>fuentes</strong>: las ofertas de trabajo real
 </div>
 
 ---
+
+<!-- Recap: ChromaDB key concepts -->
+
+# Lo que aprendiste de ChromaDB
+
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-2 gap-4 mt-4">
+
+<v-clicks>
+
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-4">
+    <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-ai-app-mac inline-block w-5 h-5 align-middle mr-1" /> Embeddings</h3>
+    <p class="text-sm mt-1">Representaciones numericas del significado. Palabras similares → vectores cercanos.</p>
+  </div>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-4">
+    <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-search inline-block w-5 h-5 align-middle mr-1" /> Busqueda semantica</h3>
+    <p class="text-sm mt-1">Buscar por significado, no por palabras exactas. "gastronomia" encuentra "tacos".</p>
+  </div>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-4">
+    <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-sliders inline-block w-5 h-5 align-middle mr-1" /> Distancia coseno</h3>
+    <p class="text-sm mt-1">Mide que tan "cercanos" son dos conceptos. Angulo chico = significado similar.</p>
+  </div>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-4">
+    <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-book inline-block w-5 h-5 align-middle mr-1" /> RAG</h3>
+    <p class="text-sm mt-1">IA + tus datos = respuestas fundamentadas. ChromaDB busca contexto, el LLM genera la respuesta.</p>
+  </div>
+
+</v-clicks>
+
+</div>
+
+<v-click>
+
+<div class="border-2 border-black bg-[#6c5ce7]/15 p-4 mt-4 text-center">
+<strong>ChromaDB + LLM = chatbot experto sobre TUS datos en 5 lineas de Python.</strong>
+</div>
+
+</v-click>
+
+---
 layout: neo-section
 ---
 
@@ -2058,7 +2190,48 @@ layout: neo-section
 
 ---
 
-<!-- Slide 55: Comparison table -->
+<!-- Slide 55a: Visual comparison - 3 tools at a glance -->
+
+# Tres herramientas, tres tipos de busqueda
+
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-3 gap-4 mt-4">
+  <div class="border-2 border-black bg-[#C0C0C0] p-4">
+    <h3 class="text-center mb-3"><div class="i-pixelarticons-database inline-block w-6 h-6 align-middle mr-1" /> SQL</h3>
+    <div class="border-2 border-black bg-[#282A36] text-[#2DD4BF] p-3 text-xs font-mono">
+      SELECT * FROM productos<br/>WHERE precio > 500;
+    </div>
+    <div class="mt-3 text-center">
+      <span class="text-sm font-bold">Busqueda exacta</span>
+      <p class="text-xs mt-1">Filtros binarios: cumple o no cumple. Sin ranking.</p>
+    </div>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
+    <h3 class="text-center text-[#ff6b6b] mb-3"><div class="i-pixelarticons-search inline-block w-6 h-6 align-middle mr-1" /> Elasticsearch</h3>
+    <div class="border-2 border-black bg-[#282A36] text-[#2DD4BF] p-3 text-xs font-mono">
+      GET productos/_search<br/>{ "match": "tenis comodos" }
+    </div>
+    <div class="mt-3 text-center">
+      <span class="text-sm font-bold text-[#ff6b6b]">Busqueda de texto</span>
+      <p class="text-xs mt-1">Encuentra palabras similares, typos, y rankea por relevancia.</p>
+    </div>
+  </div>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-4">
+    <h3 class="text-center text-[#6c5ce7] mb-3"><div class="i-pixelarticons-ai-app-mac inline-block w-6 h-6 align-middle mr-1" /> ChromaDB</h3>
+    <div class="border-2 border-black bg-[#282A36] text-[#2DD4BF] p-3 text-xs font-mono">
+      col.query(query_texts=<br/>["calzado para correr"])
+    </div>
+    <div class="mt-3 text-center">
+      <span class="text-sm font-bold text-[#6c5ce7]">Busqueda semantica</span>
+      <p class="text-xs mt-1">Entiende significado. Encuentra conceptos sin palabras en comun.</p>
+    </div>
+  </div>
+</div>
+
+---
+
+<!-- Slide 55b: Comparison table -->
 
 # SQL vs Elasticsearch vs ChromaDB
 
@@ -2133,15 +2306,19 @@ layout: neo-section
 </div>
 
 ---
+class: 'bg-[#1a1a2e]'
+---
 
 <!-- Hero: Closing statement -->
 
 <div class="h-full flex items-center justify-center">
 <div class="text-center max-w-3xl">
 
-<p class="text-4xl font-bold leading-relaxed">La herramienta correcta no <span class="text-[#ff6b6b]">reemplaza</span> a SQL.</p>
+<p class="text-5xl font-bold leading-relaxed text-white">La herramienta correcta no <span class="text-[#ff6b6b]">reemplaza</span> a SQL.</p>
 
-<p class="text-4xl font-bold leading-relaxed mt-4">La <span class="text-[#2DD4BF]">complementa</span>.</p>
+<div class="pixel-divider my-8 opacity-30" />
+
+<p class="text-5xl font-bold leading-relaxed text-white">La <span class="text-[#2DD4BF]">complementa</span>.</p>
 
 </div>
 </div>

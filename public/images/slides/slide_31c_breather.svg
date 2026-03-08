@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <pattern id="grid31" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2DD4BF" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="540" fill="#1a1a2e"/>
+  <rect width="960" height="540" fill="url(#grid31)"/>
+  <!-- Terminal window -->
+  <g transform="translate(280,80)">
+    <!-- Window frame -->
+    <rect x="0" y="0" width="400" height="320" fill="#282A36" stroke="#C0C0C0" stroke-width="3" rx="2"/>
+    <!-- Title bar -->
+    <rect x="0" y="0" width="400" height="24" fill="#C0C0C0" stroke="#808080" stroke-width="1" rx="2"/>
+    <rect x="8" y="6" width="12" height="12" fill="#fff" stroke="#000" stroke-width="2"/>
+    <text x="200" y="17" text-anchor="middle" fill="#000" font-family="monospace" font-size="11" font-weight="bold">terminal</text>
+    <!-- Terminal text -->
+    <text x="20" y="60" fill="#2DD4BF" font-family="monospace" font-size="13">$ elasticsearch query --search "shoes"</text>
+    <text x="20" y="85" fill="#C0C0C0" font-family="monospace" font-size="12" opacity="0.7">Searching index...</text>
+    <text x="20" y="110" fill="#C0C0C0" font-family="monospace" font-size="12" opacity="0.7">Found 47 results (0.023s)</text>
+    <text x="20" y="140" fill="#2DD4BF" font-family="monospace" font-size="13">_score: 15.7  "Running shoes..."</text>
+    <text x="20" y="165" fill="#2DD4BF" font-family="monospace" font-size="13" opacity="0.7">_score:  8.2  "Casual shoes..."</text>
+    <text x="20" y="195" fill="#2DD4BF" font-family="monospace" font-size="14" font-weight="bold">&#10003; Query completed successfully</text>
+  </g>
+  <!-- Large pixel-art checkmark -->
+  <g transform="translate(370,260)" fill="#2DD4BF">
+    <rect x="120" y="0" width="20" height="20"/>
+    <rect x="100" y="20" width="20" height="20"/>
+    <rect x="80" y="40" width="20" height="20"/>
+    <rect x="60" y="60" width="20" height="20"/>
+    <rect x="40" y="80" width="20" height="20"/>
+    <rect x="20" y="60" width="20" height="20"/>
+    <rect x="0" y="40" width="20" height="20"/>
+  </g>
+  <!-- Sparkles around checkmark -->
+  <g fill="#2DD4BF">
+    <rect x="340" y="260" width="6" height="6" opacity="0.8"/>
+    <rect x="530" y="280" width="8" height="8" opacity="0.6"/>
+    <rect x="350" y="400" width="6" height="6" opacity="0.5"/>
+    <rect x="540" y="370" width="6" height="6" opacity="0.7"/>
+    <rect x="320" y="340" width="4" height="4" opacity="0.4"/>
+    <rect x="560" y="320" width="4" height="4" opacity="0.5"/>
+  </g>
+  <g fill="#FF6B6B" opacity="0.5">
+    <rect x="360" y="390" width="4" height="4"/>
+    <rect x="520" y="260" width="4" height="4"/>
+  </g>
+  <g fill="#6C5CE7" opacity="0.5">
+    <rect x="550" y="400" width="5" height="5"/>
+    <rect x="330" y="280" width="5" height="5"/>
+  </g>
+</svg>

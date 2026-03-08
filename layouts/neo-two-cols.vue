@@ -16,10 +16,10 @@
             <slot name="title" />
           </div>
           <div class="flex-1 grid grid-cols-2 gap-0">
-            <div class="border-r-2 border-black pr-6">
+            <div class="border-r-2 border-black pr-4">
               <slot name="left" />
             </div>
-            <div class="pl-6">
+            <div class="pl-4">
               <slot name="right" />
             </div>
           </div>

@@ -7,7 +7,7 @@ defineProps({
 </script>
 
 <template>
-  <div v-if="noChrome" class="border-2 border-black p-6 shadow-[2px_2px_0px_#000]" :class="`bg-${color}`">
+  <div v-if="noChrome" class="border-2 border-black p-5 shadow-[2px_2px_0px_#000]" :class="`bg-${color}`">
     <slot />
   </div>
   <div v-else class="mac-window">

@@ -208,8 +208,8 @@
 .ref-footnote {
   position: absolute;
   bottom: 12px;
-  left: 40px;
-  right: 40px;
+  left: 20px;
+  right: 20px;
   font-size: 0.6rem;
   color: #636e72;
   font-family: 'JetBrains Mono', monospace;
