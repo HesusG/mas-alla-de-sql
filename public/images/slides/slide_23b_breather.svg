@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2DD4BF" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="540" fill="#1a1a2e"/>
+  <rect width="960" height="540" fill="url(#grid)"/>
+  <!-- Magnifying glass pixel art -->
+  <g transform="translate(400,160)" fill="#2DD4BF">
+    <rect x="40" y="0" width="80" height="20"/>
+    <rect x="20" y="20" width="20" height="20"/>
+    <rect x="120" y="20" width="20" height="20"/>
+    <rect x="0" y="40" width="20" height="80"/>
+    <rect x="140" y="40" width="20" height="80"/>
+    <rect x="0" y="120" width="20" height="20"/>
+    <rect x="140" y="120" width="20" height="20"/>
+    <rect x="20" y="140" width="20" height="20"/>
+    <rect x="120" y="140" width="20" height="20"/>
+    <rect x="40" y="160" width="80" height="20"/>
+    <rect x="120" y="160" width="20" height="20"/>
+    <rect x="140" y="180" width="20" height="20"/>
+    <rect x="160" y="200" width="20" height="20"/>
+    <rect x="180" y="220" width="20" height="20"/>
+  </g>
+  <!-- Documents -->
+  <g transform="translate(200,350)" fill="#C0C0C0" opacity="0.5">
+    <rect x="0" y="0" width="80" height="100" rx="2"/>
+    <rect x="100" y="0" width="80" height="100" rx="2"/>
+    <rect x="480" y="0" width="80" height="100" rx="2"/>
+    <rect x="580" y="0" width="80" height="100" rx="2"/>
+  </g>
+  <text x="480" y="500" text-anchor="middle" fill="#666" font-family="monospace" font-size="14">slide_23b_breather — replace with pixel art</text>
+</svg>

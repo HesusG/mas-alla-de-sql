@@ -837,8 +837,16 @@ Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficia
 <RefFootnote :sources="['Elastic. (2023). Customer stories. https://www.elastic.co/customers']" />
 
 ---
+layout: neo-image
+title: search.png
+image: /images/slides/slide_23b_breather.svg
+---
 
-<!-- Slide 24: SQL vs ES terminology -->
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Ahora que sabes QUE es... veamos COMO funciona</h2>
+
+---
+
+<!-- Slide 25: SQL vs ES terminology -->
 
 # Si hablas SQL, ya casi hablas Elasticsearch
 
@@ -1387,8 +1395,16 @@ ChromaDB usa exactamente esta tecnologia. Lo que alimenta a ChatGPT, tu lo puede
 <RefFootnote :sources="['Vaswani, A., et al. (2017). Attention is all you need. NeurIPS, 30.']" />
 
 ---
+layout: neo-image
+title: transform.png
+image: /images/slides/slide_36b_breather.svg
+---
 
-<!-- Slide 37: ES capabilities panorama -->
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Las maquinas leen texto de maneras que no imaginas</h2>
+
+---
+
+<!-- Slide 38: ES capabilities panorama -->
 
 # Panorama rapido: ¿que mas puede hacer ES?
 
@@ -1908,10 +1924,18 @@ El gran problema de ChatGPT: a veces **inventa** respuestas (alucina). ¿La solu
 <RefFootnote :sources="['Lewis, P., et al. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. NeurIPS, 33, 9459-9474.']" />
 
 ---
+layout: neo-image
+title: rag_demo.png
+image: /images/slides/slide_50b_breather.svg
+---
+
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Hora de verlo en accion</h2>
+
+---
 layout: neo-demo
 ---
 
-<!-- Slide 51: Career Coach RAG Demo -->
+<!-- Slide 52: Career Coach RAG Demo -->
 
 ::title::
 
