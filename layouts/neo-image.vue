@@ -17,11 +17,10 @@ const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
           <div class="mac-close-box" />
           <span class="mac-titlebar-title">{{ $slidev.frontmatter.title || 'image.png' }}</span>
         </div>
-        <div class="mac-window-content flex-1 relative !p-0 overflow-hidden">
-          <img
-            :src="base + ($slidev.frontmatter.image || '')"
-            class="absolute inset-0 w-full h-full object-cover"
-          />
+        <div
+          class="mac-window-content flex-1 relative !p-0 overflow-hidden bg-cover bg-center"
+          :style="{ backgroundImage: `url(${base}${$slidev.frontmatter.image || ''})` }"
+        >
           <div class="absolute bottom-0 left-0 right-0 bg-black/70 px-6 py-4 text-white">
             <slot />
           </div>
