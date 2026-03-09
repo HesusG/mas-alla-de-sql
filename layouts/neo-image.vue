@@ -1,3 +1,7 @@
+<script setup>
+const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
+</script>
+
 <template>
   <div class="slidev-layout neo-image h-full flex flex-col bg-[#C0C0C0] relative overflow-hidden">
     <div class="mac-menu-bar">
@@ -15,7 +19,7 @@
         </div>
         <div class="mac-window-content flex-1 relative p-0 overflow-hidden">
           <img
-            :src="$slidev.frontmatter.image"
+            :src="base + ($slidev.frontmatter.image || '')"
             class="w-full h-full object-cover"
           />
           <div class="absolute bottom-0 left-0 right-0 bg-black/70 px-6 py-4 text-white">
