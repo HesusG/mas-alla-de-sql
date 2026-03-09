@@ -61,7 +61,8 @@ public/images/*.jpg
 public/images/*.png
 public/images/*.webp
 public/images/slides/*.png
-public/images/slides/*.jpg
+public/images/slides/*.svg
+!public/images/slides/*.jpg
 !public/images/SOURCES.md
 
 # Misc
