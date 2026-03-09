@@ -63,6 +63,7 @@ public/images/*.webp
 public/images/slides/*.png
 public/images/slides/*.svg
 !public/images/slides/*.jpg
+!public/images/slides/hesus_profile_8bit.png
 !public/images/SOURCES.md
 
 # Misc

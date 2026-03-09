@@ -48,14 +48,14 @@ github.com/HesusG/mas-alla-de-sql
 
 <div class="grid grid-cols-[1fr_2fr] gap-8 mt-4 items-center">
   <div class="border-2 border-black p-6 text-center bg-[#C0C0C0]">
-    <div class="i-pixelarticons-user inline-block w-16 h-16 mb-4" />
+    <img src="/images/slides/hesus_profile_8bit.png" class="w-32 h-32 border-2 border-black mx-auto mb-4" style="image-rendering: pixelated" />
     <div class="text-lg font-bold">Hesus Garcia</div>
     <div class="text-sm mt-1">Especialista en IA, NLP y Ciencia de Datos</div>
   </div>
   <div class="space-y-3">
 <v-clicks>
   <div class="border-2 border-black bg-white p-3 text-sm flex items-center gap-2"><div class="i-pixelarticons-graduation-cap inline-block w-5 h-5 flex-shrink-0" /> Tec de Monterrey, Campus Puebla (2016) · Formacion internacional en Toronto y China (Huawei)</div>
-  <div class="border-2 border-black bg-white p-3 text-sm flex items-center gap-2"><div class="i-pixelarticons-briefcase-search inline-block w-5 h-5 flex-shrink-0" /> DeepLearning.AI · Oracle · Kueski — Staff academico en Coursera</div>
+  <div class="border-2 border-black bg-white p-3 text-sm flex items-center gap-2"><div class="i-pixelarticons-briefcase-search inline-block w-5 h-5 flex-shrink-0" /> Converge Technology (Observability Analyst · Elastic) · DeepLearning.AI · Oracle · Kueski — Staff academico en Coursera</div>
   <div class="border-2 border-black bg-white p-3 text-sm flex items-center gap-2"><div class="i-pixelarticons-tool-case inline-block w-5 h-5 flex-shrink-0" /> Python, NLP, IA, Elasticsearch, ChromaDB</div>
   <div class="border-2 border-black bg-white p-3 text-sm flex items-center gap-2"><div class="i-pixelarticons-link inline-block w-5 h-5 flex-shrink-0" /> <a href="https://github.com/HesusG" target="_blank" class="underline">GitHub</a> · <a href="https://linkedin.com/in/hesusg" target="_blank" class="underline">LinkedIn</a></div>
 </v-clicks>
