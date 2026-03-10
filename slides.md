@@ -796,6 +796,49 @@ Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficia
 <RefFootnote :sources="['Elastic. (2023). Customer stories. https://www.elastic.co/customers']" />
 
 ---
+
+<!-- Kibana: dashboards para tomar decisiones -->
+
+# Kibana: dashboards para tomar decisiones
+
+<div class="pixel-divider my-3" />
+
+<div class="mt-2 text-sm mb-3">
+
+Kibana es la interfaz visual de Elasticsearch. Permite crear dashboards interactivos **sin escribir codigo** — ideal para analistas y gerentes que necesitan respuestas rapidas.
+
+</div>
+
+<div class="grid grid-cols-2 gap-3 mt-3">
+<v-clicks>
+  <div class="border-2 border-black bg-white p-3">
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-chart inline-block w-5 h-5 align-middle mr-1" /> Dashboards sin codigo</h4>
+    <p class="text-xs mt-1">Arrastra y suelta para crear graficas, tablas y mapas. No necesitas saber programar.</p>
+  </div>
+  <div class="border-2 border-black bg-white p-3">
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-sliders inline-block w-5 h-5 align-middle mr-1" /> Filtros interactivos</h4>
+    <p class="text-xs mt-1">Haz clic en cualquier elemento del dashboard para filtrar todo en tiempo real.</p>
+  </div>
+  <div class="border-2 border-black bg-white p-3">
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-zap inline-block w-5 h-5 align-middle mr-1" /> Mapas y graficas en tiempo real</h4>
+    <p class="text-xs mt-1">Los datos se actualizan al segundo. Perfecto para monitoreo y operaciones.</p>
+  </div>
+  <div class="border-2 border-black bg-white p-3">
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-link inline-block w-5 h-5 align-middle mr-1" /> Conectado directo a Elasticsearch</h4>
+    <p class="text-xs mt-1">No necesitas ETL ni copiar datos. Kibana consulta ES directamente.</p>
+  </div>
+</v-clicks>
+</div>
+
+<v-click>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
+Es como <strong>Tableau o Power BI</strong>, pero conectado directamente a tu motor de busqueda. Los gerentes y analistas lo usan para tomar decisiones sin escribir queries.
+</div>
+
+</v-click>
+
+---
 layout: neo-demo
 ---
 
@@ -1062,31 +1105,27 @@ layout: neo-demo
 
 <div class="text-[#F8F8F2]">
 
+<div class="border-2 border-[#2DD4BF]/50 p-3 mb-4 text-sm">
+Imagina que un cliente escribe <strong>"teniz"</strong> en tu tienda online. SQL devuelve <strong>0 resultados</strong>. El cliente se va. Con Elasticsearch, corrige automaticamente y encuentra <strong>"tenis"</strong>.
+</div>
+
 ```json
-GET kibana_sample_data_ecommerce/_search
-{
-  "query": {
-    "match": {
-      "products.product_name": {
-        "query": "shoees",
-        "fuzziness": "AUTO"
-      }
-    }
-  },
-  "size": 3
-}
+GET ecommerce/_search
+{ "query": { "match": {
+    "product_name": { "query": "shoees", "fuzziness": "AUTO" }
+}}, "size": 3 }
 ```
 
 <div class="mt-3 grid grid-cols-2 gap-4">
   <div class="border-2 border-[#ff6b6b]/50 p-3">
-    <strong>SQL</strong>: <code>LIKE '%shoees%'</code> → <strong>0 resultados</strong>
+    <strong>SQL</strong>: <code>LIKE '%shoees%'</code> → <strong>0 resultados</strong>. Cliente perdido.
   </div>
   <div class="border-2 border-[#2DD4BF]/50 p-3">
-    <strong>ES</strong>: "shoees" → corrige a "shoes" → <strong>resultados encontrados</strong>
+    <strong>ES</strong>: "shoees" → corrige a "shoes" → <strong>venta salvada</strong>.
   </div>
 </div>
 
-**fuzziness: AUTO** = tolera 1-2 errores dependiendo de la longitud de la palabra. Es como el autocompletado de tu celular.
+**fuzziness: AUTO** = tolera 1-2 errores. Cada typo corregido es una venta que no pierdes.
 
 </div>
 
@@ -1102,38 +1141,38 @@ layout: neo-two-cols
 
 ::left::
 
-### SQL
+<div class="text-sm mb-3">
+Pregunta de negocio: <em>"¿Que zapatos entre $50 y $200 son mas relevantes para el cliente?"</em>
+</div>
 
-```sql
-SELECT * FROM orders
-WHERE product_name LIKE '%shoes%'
-  AND price BETWEEN 50 AND 200;
--- 0 o 1: cumple o no cumple
--- Sin ranking
-```
+<div class="border-2 border-black bg-white p-0 overflow-hidden text-xs">
+
+| Capacidad | SQL | Elasticsearch |
+|-----------|-----|---------------|
+| Busqueda | Texto exacto | Texto + variaciones |
+| Ranking | No (si/no) | Si (_score) |
+| Typos | Falla | Corrige (fuzziness) |
+| Filtros | WHERE | filter (sin afectar score) |
+| Velocidad en texto | Lento (LIKE %) | Rapido (indice invertido) |
+
+</div>
 
 ::right::
 
-### Elasticsearch
-
 ```json
 GET ecommerce/_search
-{
-  "query": {
-    "bool": {
-      "must": [
-        { "match": {
-            "product_name": "shoes" } }
-      ],
-      "filter": [
-        { "range": {
-            "price": { "gte": 50,
-                       "lte": 200 }}}
-      ]
-    }
-  }
-}
+{ "query": { "bool": {
+    "must": [{ "match": {
+      "product_name": "shoes" }}],
+    "filter": [{ "range": {
+      "price": { "gte": 50,
+                 "lte": 200 }}}]
+}}}
 ```
+
+<div class="border-2 border-[#2DD4BF]/50 bg-[#2DD4BF]/10 p-2 mt-3 text-xs">
+<strong>must</strong> = busca y rankea. <strong>filter</strong> = filtra sin afectar el score. Es como WHERE pero inteligente.
+</div>
 
 ---
 
@@ -1172,95 +1211,40 @@ Todo esto pasa <strong>automaticamente</strong>. Tu solo escribes la busqueda y 
 
 ---
 
-<!-- Slide 36: NLP history → embeddings → LLMs -->
+<!-- Slide 38: ES capabilities panorama — business questions -->
 
-# De NLP a LLMs: una breve historia
-
-<div class="mt-4 text-sm">
-
-Las tecnicas que usa Elasticsearch son el <strong>primer nivel</strong> de NLP. Pero hay mucho mas:
-
-</div>
-<v-clicks>
-<div class="flex items-center gap-3 mt-6">
-  <div class="border-2 border-black p-3 text-center text-sm flex-1">
-    <div class="font-bold text-[#ff6b6b]">1960s-90s</div>
-    <strong>Reglas</strong>
-    <p class="text-xs mt-1">Diccionarios, gramatica manual. Fragil y limitado.</p>
-  </div>
-  <div class="text-xl">→</div>
-  <div class="border-2 border-black p-3 text-center text-sm flex-1">
-    <div class="font-bold text-[#ff6b6b]">2000s</div>
-    <strong>Estadistico</strong>
-    <p class="text-xs mt-1">Probabilidades de palabras. Mejor, pero sin "entender".</p>
-  </div>
-  <div class="text-xl">→</div>
-  <div class="border-2 border-[#2DD4BF] p-3 text-center text-sm flex-1">
-    <div class="font-bold text-[#2DD4BF]">2013</div>
-    <strong>Word2Vec</strong>
-    <p class="text-xs mt-1">Palabras como vectores. Primer "significado" numerico.</p>
-  </div>
-  <div class="text-xl">→</div>
-  <div class="border-2 border-[#6c5ce7] p-3 text-center text-sm flex-1">
-    <div class="font-bold text-[#6c5ce7]">2017+</div>
-    <strong>Transformers</strong>
-    <p class="text-xs mt-1">Atencion. GPT, BERT, Claude. La revolucion actual.</p>
-  </div>
-</div>
-
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-4 mt-6 text-center">
-<strong>Los embeddings (Word2Vec → Transformers) son la base de todo.</strong><br/>
-ChromaDB usa exactamente esta tecnologia. Lo que alimenta a ChatGPT, tu lo puedes usar en tu base de datos.
-</div>
-</v-clicks>
-<RefFootnote :sources="['Vaswani, A., et al. (2017). Attention is all you need. NeurIPS, 30.']" />
-
----
-layout: neo-image
-title: transform.exe
-image: /images/slides/slide_36b_breather.jpg
----
-
-<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Mas de lo que tus ojos ven — el texto se transforma.</h2>
-
----
-
-<!-- Slide 38: ES capabilities panorama -->
-
-# Panorama rapido: ¿que mas puede hacer ES?
+# ¿Que preguntas de negocio responde ES?
 
 <div class="pixel-divider my-3" />
 
-<div class="grid grid-cols-3 gap-3 mt-3">
+<div class="grid grid-cols-2 gap-3 mt-3">
+<v-clicks>
   <div class="border-2 border-black bg-white p-3 text-sm">
-    <h4 class="text-[#ff6b6b]">Agregaciones</h4>
-    <p class="text-xs">Como GROUP BY pero mas poderoso. Conteos, promedios, percentiles — todo en una query.</p>
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-coin inline-block w-4 h-4 align-middle mr-1" /> ¿Cuanto vendimos este mes por categoria?</h4>
+    <p class="text-xs mt-1"><strong>Agregaciones</strong> — como GROUP BY pero mas poderoso. Conteos, promedios, percentiles en una query.</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-sm">
-    <h4 class="text-[#ff6b6b]">Histogramas</h4>
-    <p class="text-xs">Agrupar datos por rangos automaticamente: ventas por precio, pedidos por hora.</p>
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-chart inline-block w-4 h-4 align-middle mr-1" /> ¿A que hora compran mas nuestros clientes?</h4>
+    <p class="text-xs mt-1"><strong>Histogramas</strong> — agrupar datos por rangos de tiempo, precio o cualquier metrica automaticamente.</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-sm">
-    <h4 class="text-[#ff6b6b]">Buckets</h4>
-    <p class="text-xs">Agrupar documentos en "cubetas" por cualquier campo: pais, categoria, fecha.</p>
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-text-search inline-block w-4 h-4 align-middle mr-1" /> ¿Que parte del contrato menciona la clausula que busco?</h4>
+    <p class="text-xs mt-1"><strong>Highlighting</strong> — resalta exactamente donde en el texto se encontro la coincidencia.</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-sm">
-    <h4 class="text-[#ff6b6b]">Highlighting</h4>
-    <p class="text-xs">Resalta exactamente donde en el texto se encontro tu busqueda.</p>
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-map inline-block w-4 h-4 align-middle mr-1" /> ¿Donde estan nuestros clientes mas activos?</h4>
+    <p class="text-xs mt-1"><strong>Geo-busquedas</strong> — buscar por ubicacion, distancia y regiones geograficas.</p>
   </div>
-  <div class="border-2 border-black bg-white p-3 text-sm">
-    <h4 class="text-[#ff6b6b]">Sugerencias</h4>
-    <p class="text-xs">Auto-completar y "quiso decir..." como los buscadores web.</p>
-  </div>
-  <div class="border-2 border-black bg-white p-3 text-sm">
-    <h4 class="text-[#ff6b6b]">Geo-busquedas</h4>
-    <p class="text-xs">Buscar por ubicacion: "restaurantes a 5km de aqui".</p>
-  </div>
+</v-clicks>
 </div>
 
-<div class="text-center mt-4 text-sm">
-Todo esto lo pueden explorar en los labs despues del workshop.
+<v-click>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
+Cada una de estas preguntas se responde con <strong>una sola query de ES</strong> — y se visualiza en Kibana sin codigo.
 </div>
+
+</v-click>
 
 ---
 
@@ -1318,8 +1302,6 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 - Elastic. (2023). *Customer stories*. https://www.elastic.co/customers
 
 - McKinsey & Company. (2024). *The state of AI in 2024*. McKinsey Global Institute.
-
-- Vaswani, A., et al. (2017). Attention is all you need. *NeurIPS, 30*.
 
 </div>
 
@@ -1443,6 +1425,59 @@ layout: neo-section
 <div class="font-mono text-xs text-white/20 mt-6 leading-relaxed">
 <span class="text-[#6c5ce7]/30">"distances"</span>: [[0.12, 0.34, 0.56]] <span class="text-[#2DD4BF]/30">// similitud coseno</span>
 </div>
+
+---
+
+<!-- NLP history → embeddings → LLMs (moved from ES section) -->
+
+# De NLP a LLMs: una breve historia
+
+<div class="mt-4 text-sm">
+
+Las tecnicas que usa Elasticsearch son el <strong>primer nivel</strong> de NLP. Pero hay mucho mas:
+
+</div>
+<v-clicks>
+<div class="flex items-center gap-3 mt-6">
+  <div class="border-2 border-black p-3 text-center text-sm flex-1">
+    <div class="font-bold text-[#ff6b6b]">1960s-90s</div>
+    <strong>Reglas</strong>
+    <p class="text-xs mt-1">Diccionarios, gramatica manual. Fragil y limitado.</p>
+  </div>
+  <div class="text-xl">→</div>
+  <div class="border-2 border-black p-3 text-center text-sm flex-1">
+    <div class="font-bold text-[#ff6b6b]">2000s</div>
+    <strong>Estadistico</strong>
+    <p class="text-xs mt-1">Probabilidades de palabras. Mejor, pero sin "entender".</p>
+  </div>
+  <div class="text-xl">→</div>
+  <div class="border-2 border-[#2DD4BF] p-3 text-center text-sm flex-1">
+    <div class="font-bold text-[#2DD4BF]">2013</div>
+    <strong>Word2Vec</strong>
+    <p class="text-xs mt-1">Palabras como vectores. Primer "significado" numerico.</p>
+  </div>
+  <div class="text-xl">→</div>
+  <div class="border-2 border-[#6c5ce7] p-3 text-center text-sm flex-1">
+    <div class="font-bold text-[#6c5ce7]">2017+</div>
+    <strong>Transformers</strong>
+    <p class="text-xs mt-1">Atencion. GPT, BERT, Claude. La revolucion actual.</p>
+  </div>
+</div>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-4 mt-6 text-center">
+<strong>Los embeddings (Word2Vec → Transformers) son la base de todo.</strong><br/>
+ChromaDB usa exactamente esta tecnologia. Lo que alimenta a ChatGPT, tu lo puedes usar en tu base de datos.
+</div>
+</v-clicks>
+<RefFootnote :sources="['Vaswani, A., et al. (2017). Attention is all you need. NeurIPS, 30.']" />
+
+---
+layout: neo-image
+title: transform.exe
+image: /images/slides/slide_36b_breather.jpg
+---
+
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Mas de lo que tus ojos ven — el texto se transforma.</h2>
 
 ---
 

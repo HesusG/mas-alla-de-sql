@@ -62,42 +62,39 @@ PIXEL_SUFFIX = (
 
 BREATHER_PROMPTS = {
     "slide_17b_breather": (
-        "A pixel-art door frame opening from a small SQL table/spreadsheet box on the left "
-        "into a vast cosmic landscape on the right with multiple glowing paths leading to "
-        "different destinations. Teal glowing horizon line. "
-        "Stars and colored dots in the sky. Sense of wonder and possibility beyond the door."
+        "Pixel art scene: a character in a long black trench coat and dark sunglasses "
+        "standing in a dark room. One hand holds a glowing teal pill, the other a glowing "
+        "coral pill. Green falling code streams in background. Dramatic choice moment."
     ),
     "slide_23b_breather": (
-        "A large pixel-art magnifying glass hovering over several JSON document cards arranged in rows. "
-        "The documents underneath glow teal where search terms match. "
-        "Some documents are bright with teal edges (matched), others fade to dark gray (unmatched). "
-        "Coral score badges on matched docs. Search and discovery theme."
+        "Pixel art scene: two agents (man in suit, woman with red hair) shining flashlights "
+        "into a dark office full of filing cabinets and scattered documents. A teal-glowing "
+        "magnifying glass hovers over highlighted files. A purple UFO silhouette visible "
+        "through the window. Mysterious moody atmosphere."
     ),
     "slide_31c_breather": (
-        "A retro computer terminal screen showing a completed search query with a large "
-        "pixel-art teal checkmark in the center. Small sparkle particles and stars around it. "
-        "The terminal has a classic Mac OS 7 style window chrome with striped title bar. "
-        "Celebration and achievement moment. Teal and coral sparkle effects."
+        "Pixel art scene: a character in a red cap and overalls jumping upward to hit a "
+        "glowing teal question-mark block. Coral mushroom power-ups and purple star items "
+        "float around. Brick platforms, green pipes, gold coins. Classic platformer game "
+        "level with celebration energy."
     ),
     "slide_36b_breather": (
-        "Left side: gray text lines and paragraphs. Center: a retro pixel-art computer processor "
-        "with gears turning inside. Right side: colorful vector dots (purple, teal, coral) forming "
-        "a constellation network in space with connecting lines. "
-        "Transformation theme: raw text becomes mathematical vectors. "
-        "The processor has Mac OS 7 window styling."
+        "Pixel art scene: a large robot mid-transformation — the left half is a flat gray "
+        "document/text page, the right half is a glowing teal-and-purple mechanical robot "
+        "form. Purple energy sparks surround the transformation seam. Coral accents on "
+        "robot joints. Text becoming something powerful."
     ),
     "slide_46b_breather": (
-        "Words represented as glowing dots floating in a starfield like planets in space. "
-        "Similar concepts cluster together: a teal cluster of food-related dots close together, "
-        "a purple cluster of technology dots, a coral cluster of emotion dots. "
-        "Faint lines connect nearby dots within each cluster. "
-        "A subtle coordinate grid in the background. Semantic space visualization."
+        "Pixel art scene: a spaceship bridge with a large viewport showing deep space. "
+        "On the viewport, clusters of glowing dots — teal, coral, and purple groups "
+        "connected by thin white lines, resembling a semantic embedding map. A pixel art "
+        "captain in a uniform pointing at the star map. Final frontier exploration feel."
     ),
     "slide_50b_breather": (
-        "A friendly pixel-art platinum/silver robot on the left reading open coral-colored books. "
-        "A thought bubble above the robot shows connected document icons with teal lines between them. "
-        "An arrow leads to a purple chat bubble on the right where a user avatar receives an answer. "
-        "RAG concept: robot reads documents, connects knowledge, generates answers for the user."
+        "Pixel art scene: a student in a white gi performing the iconic crane kick pose "
+        "on a beach pier at sunset. A wise sensei in a dark robe watches nearby. Teal and "
+        "coral sunset gradient sky. Purple ocean waves. The student glows with teal energy "
+        "aura. Dramatic training-complete moment."
     ),
 }
 
@@ -172,6 +169,15 @@ def generate_breather(name: str, prompt: str) -> Path:
         img.image.save(str(out_path))
         size_kb = out_path.stat().st_size // 1024
         print(f"  OK: {out_path} ({size_kb} KB)")
+
+        # Also save as JPG for slide references
+        from PIL import Image as PILImage
+        pil_img = PILImage.open(str(out_path))
+        jpg_path = out_path.with_suffix(".jpg")
+        pil_img.convert("RGB").save(str(jpg_path), format="JPEG", quality=90)
+        jpg_kb = jpg_path.stat().st_size // 1024
+        print(f"  JPG: {jpg_path} ({jpg_kb} KB)")
+
         return out_path
     else:
         print(f"  WARNING: No image returned for {name}")
