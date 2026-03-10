@@ -588,11 +588,11 @@ Para estas necesidades, existen herramientas especializadas. <strong>Hoy vamos a
 
 ---
 layout: neo-image
-title: horizonte.png
+title: the_matrix.exe
 image: /images/slides/slide_17b_breather.jpg
 ---
 
-<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Hay un mundo entero mas alla de las tablas</h2>
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Tomas la pastilla azul, sigues en SQL. Tomas la roja... te enseño que tan profundo llega.</h2>
 
 ---
 
@@ -797,11 +797,11 @@ Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficia
 
 ---
 layout: neo-image
-title: search.png
+title: x-files_search.exe
 image: /images/slides/slide_23b_breather.jpg
 ---
 
-<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Ahora que sabes QUE es... veamos COMO funciona</h2>
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">La verdad esta alla afuera... en tus datos.</h2>
 
 ---
 
@@ -1138,11 +1138,11 @@ GET kibana_sample_data_ecommerce/_search
 
 ---
 layout: neo-image
-title: checkpoint.png
+title: level_02.exe
 image: /images/slides/slide_31c_breather.jpg
 ---
 
-<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Ya hiciste tu primera busqueda inteligente. Ahora vamos por mas.</h2>
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">1-UP. Primera query completada, ahora vienen los power-ups.</h2>
 
 ---
 
@@ -1343,11 +1343,11 @@ ChromaDB usa exactamente esta tecnologia. Lo que alimenta a ChatGPT, tu lo puede
 
 ---
 layout: neo-image
-title: transform.png
+title: transform.exe
 image: /images/slides/slide_36b_breather.jpg
 ---
 
-<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Las maquinas leen texto de maneras que no imaginas</h2>
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Mas de lo que tus ojos ven — el texto se transforma.</h2>
 
 ---
 
@@ -1812,11 +1812,11 @@ Si restas las coordenadas de "hombre" a "rey" y sumas las de "mujer", llegas a u
 
 ---
 layout: neo-image
-title: espacio_semantico.png
+title: star_map.exe
 image: /images/slides/slide_46b_breather.jpg
 ---
 
-<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Las palabras tienen coordenadas. La distancia es significado.</h2>
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">El espacio semantico: la frontera final. Las palabras tienen coordenadas.</h2>
 
 ---
 
@@ -2038,11 +2038,11 @@ El gran problema de ChatGPT: a veces **inventa** respuestas (alucina). ¿La solu
 
 ---
 layout: neo-image
-title: rag_demo.png
+title: demo_live.exe
 image: /images/slides/slide_50b_breather.jpg
 ---
 
-<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Hora de verlo en accion</h2>
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Dar cera, pulir cera... ahora a pelear. Hora del demo.</h2>
 
 ---
 layout: neo-demo
