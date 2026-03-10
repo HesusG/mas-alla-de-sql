@@ -1487,6 +1487,34 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 </v-click>
 
 ---
+
+<!-- Quiz 1: Elasticsearch inverted index -->
+
+<QuizCard
+  question="Un usuario busca 'zapatos rojos' en una tienda online. Con un indice invertido, Elasticsearch..."
+  :options="[
+    { letter: 'A', text: 'Busca fila por fila en toda la base de datos' },
+    { letter: 'B', text: 'Consulta un mapa que ya sabe en que documentos aparece cada palabra' },
+    { letter: 'C', text: 'Usa machine learning para entender el significado' },
+    { letter: 'D', text: 'Convierte las palabras en vectores numericos' },
+  ]"
+>
+
+<v-click>
+
+<div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4 mt-5 flex items-start gap-3">
+  <div class="i-pixelarticons-check inline-block w-6 h-6 flex-shrink-0 text-[#ff6b6b]" />
+  <div>
+    <p class="font-bold text-[#ff6b6b]">Respuesta: B</p>
+    <p class="text-sm mt-1">El indice invertido es como el indice de un libro: mapea cada palabra a la lista de documentos donde aparece. No necesita escanear fila por fila.</p>
+  </div>
+</div>
+
+</v-click>
+
+</QuizCard>
+
+---
 class: 'bg-[#1a1a2e]'
 ---
 
@@ -2097,6 +2125,34 @@ Cada respuesta muestra las <strong>fuentes</strong>: las ofertas de trabajo real
   </div>
 </v-clicks>
 </div>
+
+---
+
+<!-- Quiz 2: Semantic search -->
+
+<QuizCard
+  question="Quieres buscar peliculas que te hagan llorar. Cual herramienta es mejor?"
+  :options="[
+    { letter: 'A', text: 'SQL con LIKE' },
+    { letter: 'B', text: 'Elasticsearch con match' },
+    { letter: 'C', text: 'ChromaDB con embeddings' },
+    { letter: 'D', text: 'Las tres funcionan igual' },
+  ]"
+>
+
+<v-click>
+
+<div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-4 mt-5 flex items-start gap-3">
+  <div class="i-pixelarticons-check inline-block w-6 h-6 flex-shrink-0 text-[#6c5ce7]" />
+  <div>
+    <p class="font-bold text-[#6c5ce7]">Respuesta: C</p>
+    <p class="text-sm mt-1">Solo los embeddings capturan el significado de "llorar" — tristeza, drama, emocion. SQL busca texto exacto y ES busca palabras, pero ninguno entiende el concepto detras.</p>
+  </div>
+</div>
+
+</v-click>
+
+</QuizCard>
 
 ---
 

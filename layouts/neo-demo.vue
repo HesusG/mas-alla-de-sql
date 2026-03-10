@@ -1,11 +1,6 @@
 <template>
   <div class="slidev-layout neo-demo h-full flex flex-col bg-[#C0C0C0] relative overflow-hidden">
-    <div class="mac-menu-bar">
-      <span>&#9632; File</span>
-      <span>Edit</span>
-      <span>View</span>
-      <span>Special</span>
-    </div>
+    <MacMenuBar />
     <!-- Mac Window wrapping terminal -->
     <div class="flex-1 flex flex-col mx-1 mb-1 mt-0">
       <div class="mac-window flex-1 flex flex-col">
