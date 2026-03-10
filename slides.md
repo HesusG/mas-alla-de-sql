@@ -87,7 +87,7 @@ github.com/HesusG/mas-alla-de-sql
   <div class="border-2 border-[#ff6b6b] p-4 text-center min-w-28 bg-[#ff6b6b]/15">
     <div class="i-pixelarticons-search inline-block w-8 h-8 mb-1" />
     <br/><strong>Elasticsearch</strong><br/>
-    <span class="text-xs">Busqueda de texto</span>
+    <span class="text-xs">Kibana + busqueda</span>
   </div>
   <div class="text-3xl font-bold text-black/30">→</div>
   <div class="border-2 border-[#6c5ce7] p-4 text-center min-w-28 bg-[#6c5ce7]/15">
@@ -796,209 +796,6 @@ Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficia
 <RefFootnote :sources="['Elastic. (2023). Customer stories. https://www.elastic.co/customers']" />
 
 ---
-layout: neo-image
-title: x-files_search.exe
-image: /images/slides/slide_23b_breather.jpg
----
-
-<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">La verdad esta alla afuera... en tus datos.</h2>
-
----
-
-<!-- Slide 25: SQL vs ES terminology -->
-
-# Si hablas SQL, ya casi hablas Elasticsearch
-
-<div class="pixel-divider my-3" />
-
-<div class="mt-2 text-sm mb-4">Los conceptos son similares, solo cambian los nombres:</div>
-
-<div class="border-2 border-black bg-white p-0 overflow-hidden">
-
-| SQL | Elasticsearch | Explicacion |
-|-----|--------------|-------------|
-| Base de datos (Database) | Indice (Index) | El contenedor de tus datos |
-| Tabla (Table) | Tipo de mapeo (Mapping) | La estructura/esquema |
-| Fila (Row) | Documento (Document) | Un registro individual, en JSON |
-| Columna (Column) | Campo (Field) | Una propiedad del documento |
-| `SELECT ... WHERE` | `GET index/_search { "query": ... }` | Buscar datos |
-
-</div>
-
-<v-click>
-
-<div class="border-2 border-black bg-white p-3 mt-4 text-center text-sm">
-<strong>La gran diferencia</strong>: en SQL escribes texto plano. En Elasticsearch escribes JSON. Pero la logica es la misma.
-</div>
-
-</v-click>
-
----
-
-<!-- Slide 25: Inverted index - book analogy -->
-
-# ¿Como busca tan rapido? El indice invertido
-
-<div class="mt-2 text-sm">
-
-Piensa en el <strong>indice al final de un libro de texto</strong>:
-
-</div>
-
-<div class="grid grid-cols-2 gap-6 mt-4">
-  <div>
-    <h4 class="mb-2"><div class="i-pixelarticons-book-open inline-block w-5 h-5 align-middle mr-1" /> Indice de un libro</h4>
-    <div class="border-2 border-black bg-white p-3 text-sm font-mono">
-      Elasticsearch ... pag. 12, 45, 89<br/>
-      Indice invertido ... pag. 23, 45<br/>
-      Tokenizacion ... pag. 34, 67<br/>
-      BM25 ... pag. 56
-    </div>
-    <p class="text-xs mt-2">No lees todo el libro — vas directo a las paginas que necesitas.</p>
-  </div>
-  <div>
-    <h4 class="mb-2"><div class="i-pixelarticons-server inline-block w-5 h-5 align-middle mr-1" /> Indice invertido de ES</h4>
-    <div class="border-2 border-black bg-[#282A36] p-3 text-sm font-mono text-[#2DD4BF]">
-      "comida" → Doc 1, 2, 3<br/>
-      "mexicana" → Doc 1<br/>
-      "deliciosa" → Doc 1<br/>
-      "rapida" → Doc 2<br/>
-      "italiana" → Doc 3
-    </div>
-    <p class="text-xs mt-2">Buscar "comida" → consulta el indice → resultado instantaneo.</p>
-  </div>
-</div>
-
-<v-click>
-
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-4 text-center text-sm">
-<strong>SQL lee documento por documento</strong> (como leer el libro entero). <strong>ES consulta su indice</strong> (como ir al indice del libro). Por eso ES es ordenes de magnitud mas rapido para busqueda de texto.
-</div>
-
-</v-click>
-
-<RefFootnote :sources="['Gormley, C. & Tong, Z. (2015). Elasticsearch: The Definitive Guide. OReilly Media.']" />
-
----
-
-<!-- Slide 26: How inverted index is built -->
-
-# Asi se construye el indice invertido
-
-<div class="mt-4">
-<v-clicks>
-<div class="grid grid-cols-3 gap-4">
-  <div class="border-2 border-black p-3 text-sm">
-    <h4 class="text-[#2DD4BF]">1. Documentos originales</h4>
-    <p class="text-xs mt-1 font-mono">Doc 1: "La comida mexicana es deliciosa"</p>
-    <p class="text-xs font-mono">Doc 2: "Comida rapida y economica"</p>
-    <p class="text-xs font-mono">Doc 3: "Recetas de comida italiana"</p>
-  </div>
-  <div class="border-2 border-[#ff6b6b] p-3 text-sm">
-    <h4 class="text-[#ff6b6b]">2. Tokenizar + normalizar</h4>
-    <p class="text-xs mt-1">Separa en palabras, quita acentos, minusculas:</p>
-    <p class="text-xs font-mono mt-1">"la" → eliminada (stop word)</p>
-    <p class="text-xs font-mono">"comida" → "comida"</p>
-    <p class="text-xs font-mono">"mexicana" → "mexican"</p>
-    <p class="text-xs font-mono">"deliciosa" → "delic"</p>
-  </div>
-  <div class="border-2 border-[#2DD4BF] p-3 text-sm">
-    <h4 class="text-[#2DD4BF]">3. Indice invertido</h4>
-    <div class="text-xs mt-1 font-mono">
-      comida → [1, 2, 3]<br/>
-      mexican → [1]<br/>
-      delic → [1]<br/>
-      rapid → [2]<br/>
-      econom → [2]<br/>
-      italian → [3]
-    </div>
-  </div>
-</div>
-
-<div class="border-2 border-black bg-white p-3 mt-4 text-center text-sm">
-Buscar "comida mexicana" → mapa dice Doc 1 tiene ambas → <strong>resultado en milisegundos</strong>. SQL leeria los 3 documentos completos caracter por caracter.
-</div>
-</v-clicks>
-</div>
-
----
-
-<!-- Slide 27: Ranking - BM25 -->
-
-# Elasticsearch no solo encuentra — RANKEA
-
-<div class="pixel-divider my-3" />
-
-<div class="mt-2 text-sm">
-
-Cuando buscas "comida mexicana" y hay 500 resultados, ¿cual te muestro primero? Elasticsearch usa un algoritmo llamado <strong>BM25</strong> que asigna un puntaje (_score) a cada resultado:
-
-</div>
-<v-clicks>
-<div class="grid grid-cols-3 gap-3 mt-4">
-  <div class="border-2 border-black bg-white p-3 text-center text-sm">
-    <div class="text-2xl font-bold text-[#ff6b6b]">Frecuencia</div>
-    <p class="text-xs mt-1">¿Cuantas veces aparece la palabra en el documento? Mas veces → mas relevante.</p>
-  </div>
-  <div class="border-2 border-black bg-white p-3 text-center text-sm">
-    <div class="text-2xl font-bold text-[#ff6b6b]">Rareza</div>
-    <p class="text-xs mt-1">Una palabra rara vale mas. "Elasticsearch" es mas informativa que "el" o "de".</p>
-  </div>
-  <div class="border-2 border-black bg-white p-3 text-center text-sm">
-    <div class="text-2xl font-bold text-[#ff6b6b]">Longitud</div>
-    <p class="text-xs mt-1">Documentos cortos donde aparece la palabra son mas relevantes que documentos largos.</p>
-  </div>
-</div>
-
-<div class="border-2 border-black bg-[#282A36] text-[#2DD4BF] p-3 mt-4 text-sm font-mono">
-  "hits": [<br/>
-  &nbsp;&nbsp;{ "_score": 15.7, "_source": { "texto": "Comida mexicana autentica..." } },<br/>
-  &nbsp;&nbsp;{ "_score": 8.2, "_source": { "texto": "Recetas de comida del mundo..." } },<br/>
-  &nbsp;&nbsp;{ "_score": 3.1, "_source": { "texto": "La comida en general..." } }<br/>
-  ]
-</div>
-</v-clicks>
-<RefFootnote :sources="['Elastic NV. (2024). Similarity module. https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules-similarity.html']" />
-
----
-
-<!-- Slide 28: Clusters concept -->
-
-# Clusters: muchos servidores, un solo sistema
-
-<div class="mt-4 text-sm">
-
-Un <strong>cluster</strong> no es exclusivo de Elasticsearch — es un concepto general en computacion: multiples computadoras trabajando juntas como si fueran una sola.
-
-</div>
-
-<v-click>
-
-<div class="flex flex-col items-center mt-4 gap-3">
-  <div class="border-2 border-black bg-[#2DD4BF]/15 p-3 text-center font-bold">
-    Cluster (grupo de servidores)
-  </div>
-  <div class="text-xl">↓</div>
-  <div class="flex gap-4">
-    <div class="border-2 border-black p-3 text-center text-sm">Nodo 1<br/><span class="text-xs font-mono">Servidor A</span></div>
-    <div class="border-2 border-black p-3 text-center text-sm">Nodo 2<br/><span class="text-xs font-mono">Servidor B</span></div>
-    <div class="border-2 border-black p-3 text-center text-sm">Nodo 3<br/><span class="text-xs font-mono">Servidor C</span></div>
-  </div>
-</div>
-
-</v-click>
-
-<v-click>
-
-<div class="border-2 border-black bg-white p-3 mt-4 text-sm">
-
-**¿Por que importa?** Netflix tiene millones de documentos. Un solo servidor no alcanza. Con clusters, distribuyes los datos en pedazos (shards) y si un servidor falla, otro tiene una copia (replica). Elastic Cloud maneja todo esto automaticamente — tu solo usas la interfaz.
-
-</div>
-
-</v-click>
-
----
 layout: neo-demo
 ---
 
@@ -1099,10 +896,87 @@ Todo esto se construyo <strong>sin escribir codigo</strong>. Kibana + Elasticsea
 </div>
 
 ---
+layout: neo-image
+title: x-files_search.exe
+image: /images/slides/slide_23b_breather.jpg
+---
+
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">La verdad esta alla afuera... en tus datos.</h2>
+
+---
+
+<!-- SQL vs ES terminology -->
+
+# Si hablas SQL, ya casi hablas Elasticsearch
+
+<div class="pixel-divider my-3" />
+
+<div class="mt-2 text-sm mb-4">Los conceptos son similares, solo cambian los nombres:</div>
+
+<div class="border-2 border-black bg-white p-0 overflow-hidden">
+
+| SQL | Elasticsearch | Explicacion |
+|-----|--------------|-------------|
+| Base de datos (Database) | Indice (Index) | El contenedor de tus datos |
+| Tabla (Table) | Tipo de mapeo (Mapping) | La estructura/esquema |
+| Fila (Row) | Documento (Document) | Un registro individual, en JSON |
+| Columna (Column) | Campo (Field) | Una propiedad del documento |
+| `SELECT ... WHERE` | `GET index/_search { "query": ... }` | Buscar datos |
+
+</div>
+
+<v-click>
+
+<div class="border-2 border-black bg-white p-3 mt-4 text-center text-sm">
+<strong>La gran diferencia</strong>: en SQL escribes texto plano. En Elasticsearch escribes JSON. Pero la logica es la misma.
+</div>
+
+</v-click>
+
+---
+
+<!-- Ranking - BM25 -->
+
+# Elasticsearch no solo encuentra — RANKEA
+
+<div class="pixel-divider my-3" />
+
+<div class="mt-2 text-sm">
+
+Cuando buscas "comida mexicana" y hay 500 resultados, ¿cual te muestro primero? Elasticsearch usa un algoritmo llamado <strong>BM25</strong> que asigna un puntaje (_score) a cada resultado:
+
+</div>
+<v-clicks>
+<div class="grid grid-cols-3 gap-3 mt-4">
+  <div class="border-2 border-black bg-white p-3 text-center text-sm">
+    <div class="text-2xl font-bold text-[#ff6b6b]">Frecuencia</div>
+    <p class="text-xs mt-1">¿Cuantas veces aparece la palabra en el documento? Mas veces → mas relevante.</p>
+  </div>
+  <div class="border-2 border-black bg-white p-3 text-center text-sm">
+    <div class="text-2xl font-bold text-[#ff6b6b]">Rareza</div>
+    <p class="text-xs mt-1">Una palabra rara vale mas. "Elasticsearch" es mas informativa que "el" o "de".</p>
+  </div>
+  <div class="border-2 border-black bg-white p-3 text-center text-sm">
+    <div class="text-2xl font-bold text-[#ff6b6b]">Longitud</div>
+    <p class="text-xs mt-1">Documentos cortos donde aparece la palabra son mas relevantes que documentos largos.</p>
+  </div>
+</div>
+
+<div class="border-2 border-black bg-[#282A36] text-[#2DD4BF] p-3 mt-4 text-sm font-mono">
+  "hits": [<br/>
+  &nbsp;&nbsp;{ "_score": 15.7, "_source": { "texto": "Comida mexicana autentica..." } },<br/>
+  &nbsp;&nbsp;{ "_score": 8.2, "_source": { "texto": "Recetas de comida del mundo..." } },<br/>
+  &nbsp;&nbsp;{ "_score": 3.1, "_source": { "texto": "La comida en general..." } }<br/>
+  ]
+</div>
+</v-clicks>
+<RefFootnote :sources="['Elastic NV. (2024). Similarity module. https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules-similarity.html']" />
+
+---
 layout: neo-demo
 ---
 
-<!-- Slide 31b: Lab - Dev Tools First Query -->
+<!-- Lab - Dev Tools First Query -->
 
 ::title::
 
@@ -1460,8 +1334,8 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 <div class="grid grid-cols-2 gap-4 mt-4">
 <v-clicks>
   <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
-    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-book-open inline-block w-5 h-5 align-middle mr-1" /> Indice invertido</h3>
-    <p class="text-sm mt-1">Como el indice de un libro: mapea cada palabra a los documentos donde aparece. Busqueda instantanea.</p>
+    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-chart inline-block w-5 h-5 align-middle mr-1" /> Kibana + Dashboards</h3>
+    <p class="text-sm mt-1">Kibana crea dashboards interactivos sin codigo. Mapas, graficas, filtros — todo conectado a tus datos en ES.</p>
   </div>
   <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
     <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-chart inline-block w-5 h-5 align-middle mr-1" /> Ranking BM25</h3>
@@ -1491,12 +1365,12 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 <!-- Quiz 1: Elasticsearch inverted index -->
 
 <QuizCard
-  question="Un usuario busca 'zapatos rojos' en una tienda online. Con un indice invertido, Elasticsearch..."
+  question="Un usuario busca 'zapatos rojos'. Elasticsearch devuelve 500 resultados. ¿Como decide cual mostrar primero?"
   :options="[
-    { letter: 'A', text: 'Busca fila por fila en toda la base de datos' },
-    { letter: 'B', text: 'Consulta un mapa que ya sabe en que documentos aparece cada palabra' },
-    { letter: 'C', text: 'Usa machine learning para entender el significado' },
-    { letter: 'D', text: 'Convierte las palabras en vectores numericos' },
+    { letter: 'A', text: 'Orden alfabetico' },
+    { letter: 'B', text: 'El mas reciente' },
+    { letter: 'C', text: 'BM25: frecuencia + rareza + longitud' },
+    { letter: 'D', text: 'Aleatorio' },
   ]"
 >
 
@@ -1505,8 +1379,8 @@ Todo esto lo pueden explorar en los labs despues del workshop.
 <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4 mt-5 flex items-start gap-3">
   <div class="i-pixelarticons-check inline-block w-6 h-6 flex-shrink-0 text-[#ff6b6b]" />
   <div>
-    <p class="font-bold text-[#ff6b6b]">Respuesta: B</p>
-    <p class="text-sm mt-1">El indice invertido es como el indice de un libro: mapea cada palabra a la lista de documentos donde aparece. No necesita escanear fila por fila.</p>
+    <p class="font-bold text-[#ff6b6b]">Respuesta: C</p>
+    <p class="text-sm mt-1">BM25 asigna un _score a cada resultado basado en frecuencia de la palabra, rareza (palabras unicas valen mas) y longitud del documento. Los mas relevantes van primero.</p>
   </div>
 </div>
 
@@ -2048,31 +1922,32 @@ image: /images/slides/slide_50b_breather.jpg
 layout: neo-demo
 ---
 
-<!-- Slide 52: Career Coach RAG Demo -->
+<!-- Lab: ChromaDB + RAG en Jupyter -->
 
 ::title::
 
-<h2 class="text-[#2DD4BF] font-mono">$ demo: Tu coach de carrera con IA</h2>
+<h2 class="text-[#2DD4BF] font-mono">$ lab: ChromaDB + RAG en Jupyter</h2>
 
 ::default::
 
 <div class="text-[#F8F8F2]">
 
-### AI Career Coach para estudiantes de BI
+### Abran el notebook en Google Colab:
 
-Un chatbot que responde preguntas sobre carreras en datos usando **40+ ofertas de trabajo reales** de empresas en Mexico.
+1. Ir a **github.com/HesusG/mas-alla-de-sql** → carpeta `labs/`
+2. Abrir **`lab-chroma-rag.ipynb`** → boton "Open in Colab"
+3. Ejecutar las celdas en orden
 
-**Stack**: ChromaDB (busqueda) + together.ai (LLM) + Gradio (interfaz)
-
-### Prueben estas preguntas:
-
-- *"¿Que habilidades necesito para Data Analyst en consulting?"*
-- *"¿Que empresas en Monterrey buscan egresados de BI?"*
-- *"Se Python, SQL y Tableau — ¿para que puestos califico?"*
-- *"¿Que tecnologias deberia aprender este semestre?"*
+### Lo que van a hacer:
+<v-clicks>
+- **Busqueda semantica** — encontrar documentos por significado, no por palabras exactas
+- **Embeddings visuales** — ver en un grafico 2D como los documentos se agrupan por tema
+- **Consulta visual** — ver donde cae tu pregunta en el espacio de embeddings
+- **RAG** — conectar ChromaDB con un LLM para respuestas fundamentadas
+</v-clicks>
 
 <div class="mt-2 border-2 border-black p-2 text-sm">
-Cada respuesta muestra las <strong>fuentes</strong>: las ofertas de trabajo reales en las que se basa. Eso es RAG en accion.
+<strong>Bonus del instructor</strong>: AI Career Coach (demo/) — un chatbot RAG con ofertas de trabajo reales de Mexico.
 </div>
 
 </div>
@@ -2366,11 +2241,13 @@ layout: neo-section
   <div class="border-2 border-black bg-white p-4">
     <h3>Labs en este repo</h3>
     <ul class="text-sm mt-2 space-y-1">
+      <li><strong>Notebook Colab</strong>: ChromaDB + RAG + embeddings visuales</li>
       <li>Lab 1: Elasticsearch Basics (~30 min)</li>
       <li>Lab 2: ES Search avanzado (~45 min)</li>
       <li>Lab 3: ChromaDB y embeddings (~30 min)</li>
       <li>Lab 4: Construye un mini RAG (~45 min)</li>
     </ul>
+    <p class="text-xs mt-2 text-gray-500">Labs 1-4 son material de referencia para despues del taller.</p>
   </div>
   <div class="border-2 border-black bg-white p-4">
     <h3>Recursos</h3>
