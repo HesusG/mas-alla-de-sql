@@ -145,6 +145,16 @@ CONTENT_PROMPTS = {
         "A pixel art hand or cursor is moving one card. "
         "Flat pixel art on white background."
     ),
+    "sql_intro_oracle": (
+        "Pixel art of a man in a business suit resembling a tech billionaire CEO, standing "
+        "next to a large stack of gold coins and dollar bills. Behind him, a tall corporate "
+        "office building. Bright teal accents. Power and wealth corporate energy."
+    ),
+    "sql_intro_business": (
+        "Pixel art of a laptop showing colorful bar charts and pie charts on its screen, "
+        "with a coffee mug, a calculator, and printed reports scattered on a desk. "
+        "Business analytics dashboard scene."
+    ),
 }
 
 

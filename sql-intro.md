@@ -75,10 +75,20 @@ Una base de datos es un sistema para **almacenar, organizar y consultar** inform
 </div>
 </v-clicks>
 
+<v-click>
 <div class="text-xs mt-2 text-gray-500">Oracle creo la primera base de datos relacional comercial en 1979. Hoy estan en todos lados: bancos, hospitales, tiendas, tu celular.</div>
+</v-click>
 
   </div>
 </div>
+
+---
+layout: neo-image
+title: oracle_money.exe
+image: /images/slides/sql_intro_oracle.jpg
+---
+
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Las bases de datos han hecho de Oracle una de las empresas mas valiosas del mundo.</h2>
 
 ---
 
@@ -90,8 +100,8 @@ Una base de datos es un sistema para **almacenar, organizar y consultar** inform
 
 <div class="grid grid-cols-3 gap-4 mt-6">
 <v-clicks>
-  <div class="border-2 border-black bg-[#C0C0C0] p-4 text-center">
-    <div class="i-pixelarticons-file-text inline-block w-8 h-8 mb-2" />
+  <div class="border-2 border-black bg-[#FFB347]/15 p-4 text-center">
+    <div class="i-pixelarticons-file-text inline-block w-8 h-8 mb-2 text-[#FFB347]" />
     <h3>CSV</h3>
     <div class="pixel-divider my-2" />
     <div class="text-sm text-left space-y-1 mt-2">
@@ -101,8 +111,8 @@ Una base de datos es un sistema para **almacenar, organizar y consultar** inform
       <div><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" /> Un usuario a la vez</div>
     </div>
   </div>
-  <div class="border-2 border-black bg-[#C0C0C0] p-4 text-center">
-    <div class="i-pixelarticons-chart inline-block w-8 h-8 mb-2" />
+  <div class="border-2 border-black bg-[#4ECDC4]/15 p-4 text-center">
+    <div class="i-pixelarticons-chart inline-block w-8 h-8 mb-2 text-[#4ECDC4]" />
     <h3>Excel</h3>
     <div class="pixel-divider my-2" />
     <div class="text-sm text-left space-y-1 mt-2">
@@ -137,27 +147,27 @@ Una base de datos es un sistema para **almacenar, organizar y consultar** inform
 <div class="grid grid-cols-5 gap-3 mt-6">
 <v-clicks>
   <div class="border-2 border-black bg-white p-3 text-center">
-    <div class="text-2xl mb-1">🐬</div>
+    <img src="https://cdn.simpleicons.org/mysql/4479A1" class="w-8 h-8 mx-auto mb-1" />
     <strong class="text-sm">MySQL</strong>
     <p class="text-xs mt-1">La mas popular del mundo. Gratis.</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-center">
-    <div class="text-2xl mb-1">🐘</div>
+    <img src="https://cdn.simpleicons.org/postgresql/4169E1" class="w-8 h-8 mx-auto mb-1" />
     <strong class="text-sm">PostgreSQL</strong>
     <p class="text-xs mt-1">La favorita de los desarrolladores.</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-center">
-    <div class="text-2xl mb-1">🏢</div>
+    <img src="https://cdn.simpleicons.org/microsoftsqlserver/CC2927" class="w-8 h-8 mx-auto mb-1" />
     <strong class="text-sm">SQL Server</strong>
     <p class="text-xs mt-1">Microsoft. Comun en empresas grandes.</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-center">
-    <div class="text-2xl mb-1">🏛️</div>
+    <img src="https://cdn.simpleicons.org/oracle/F80000" class="w-8 h-8 mx-auto mb-1" />
     <strong class="text-sm">Oracle</strong>
     <p class="text-xs mt-1">Bancos, gobiernos, corporativos.</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-center">
-    <div class="text-2xl mb-1">📱</div>
+    <img src="https://cdn.simpleicons.org/sqlite/003B57" class="w-8 h-8 mx-auto mb-1" />
     <strong class="text-sm">SQLite</strong>
     <p class="text-xs mt-1">Dentro de tu celular y apps.</p>
   </div>
@@ -559,6 +569,51 @@ ORDER BY precio DESC;
 
   </div>
 </div>
+
+---
+layout: neo-image
+title: business_data.exe
+image: /images/slides/sql_intro_business.jpg
+---
+
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Ya sabes consultar datos. Ahora veamos para que sirve en el mundo real.</h2>
+
+---
+
+<!-- Slide 10b: Business SQL uses -->
+
+# ¿Para que sirve SQL en los negocios?
+
+<div class="pixel-divider my-4" />
+
+<div class="grid grid-cols-2 gap-4 mt-4">
+<v-clicks>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-4">
+    <h3 class="text-[#2DD4BF]"><div class="i-pixelarticons-coin inline-block w-5 h-5 align-middle mr-1" /> Reportes financieros</h3>
+    <p class="text-sm mt-1">"¿Cuanto vendimos este trimestre por region?"</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
+    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-users inline-block w-5 h-5 align-middle mr-1" /> Analisis de clientes</h3>
+    <p class="text-sm mt-1">"¿Cuales son nuestros 10 mejores clientes?"</p>
+  </div>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-4">
+    <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-archive inline-block w-5 h-5 align-middle mr-1" /> Inventario</h3>
+    <p class="text-sm mt-1">"¿Que productos se estan agotando?"</p>
+  </div>
+  <div class="border-2 border-black bg-[#282A36] text-white p-4">
+    <h3><div class="i-pixelarticons-trending-up inline-block w-5 h-5 align-middle mr-1 text-[#2DD4BF]" /> Decision making</h3>
+    <p class="text-sm mt-1">"Toda decision basada en datos empieza con una consulta."</p>
+  </div>
+</v-clicks>
+</div>
+
+<v-click>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-4 text-center">
+<strong>SQL no es solo para ingenieros</strong> — es la herramienta de cualquier persona que trabaje con datos en una empresa.
+</div>
+
+</v-click>
 
 ---
 
