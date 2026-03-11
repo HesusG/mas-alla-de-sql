@@ -734,115 +734,10 @@ layout: neo-section
 <RefFootnote :sources="['Elastic NV. (2024). Elasticsearch reference (v8.x). https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html']" />
 
 ---
-
-<!-- Slide 22: ES & OpenSearch -->
-
-# Elasticsearch y OpenSearch
-
-<div class="mt-6">
-
-<div class="border-2 border-black bg-white p-4">
-
-En 2021, **Amazon creo OpenSearch**: un fork (copia independiente) de Elasticsearch, porque no estaba de acuerdo con el cambio de licencia de Elastic.
-
-</div>
-
-<div class="grid grid-cols-2 gap-4 mt-4">
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4">
-    <h3>Elasticsearch (Elastic NV)</h3>
-    <p class="text-sm mt-1">Version original. La empresa Elastic la mantiene. Elastic Cloud es su servicio en la nube.</p>
-  </div>
-  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-4">
-    <h3>OpenSearch (AWS)</h3>
-    <p class="text-sm mt-1">Fork mantenido por Amazon. Incluido en AWS. Misma API base, desarrollo independiente.</p>
-  </div>
-</div>
-
-<div class="mt-4 text-center text-sm">
-
-Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficial), pero lo que aprendan aplica a ambos.
-
-</div>
-
-</div>
-
----
-
-<!-- Slide 23: Who uses ES -->
-
-# ¿Quien usa Elasticsearch en el mundo real?
-
-<div class="pixel-divider my-3" />
-
-<div class="grid grid-cols-2 gap-3 mt-3">
-  <div class="border-2 border-[#ff6b6b] bg-white p-3">
-    <h3 class="text-[#ff6b6b]">Netflix</h3>
-    <p class="text-sm">Busqueda de contenido, monitoreo de servidores y analisis de errores en tiempo real para 200M+ suscriptores.</p>
-  </div>
-  <div class="border-2 border-[#ff6b6b] bg-white p-3">
-    <h3 class="text-[#ff6b6b]">Wikipedia</h3>
-    <p class="text-sm">Potencia la busqueda en 300+ idiomas. Cada vez que buscas un articulo, Elasticsearch responde.</p>
-  </div>
-  <div class="border-2 border-[#ff6b6b] bg-white p-3">
-    <h3 class="text-[#ff6b6b]">Uber</h3>
-    <p class="text-sm">Monitoreo en tiempo real de millones de viajes. Detecta anomalias y problemas al instante.</p>
-  </div>
-  <div class="border-2 border-[#ff6b6b] bg-white p-3">
-    <h3 class="text-[#ff6b6b]">GitHub</h3>
-    <p class="text-sm">Cuando buscas codigo en GitHub, Elasticsearch busca en miles de millones de lineas de codigo.</p>
-  </div>
-</div>
-
-<RefFootnote :sources="['Elastic. (2023). Customer stories. https://www.elastic.co/customers']" />
-
----
-
-<!-- Kibana: dashboards para tomar decisiones -->
-
-# Kibana: dashboards para tomar decisiones
-
-<div class="pixel-divider my-3" />
-
-<div class="mt-2 text-sm mb-3">
-
-Kibana es la interfaz visual de Elasticsearch. Permite crear dashboards interactivos **sin escribir codigo** — ideal para analistas y gerentes que necesitan respuestas rapidas.
-
-</div>
-
-<div class="grid grid-cols-2 gap-3 mt-3">
-<v-clicks>
-  <div class="border-2 border-black bg-white p-3">
-    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-chart inline-block w-5 h-5 align-middle mr-1" /> Dashboards sin codigo</h4>
-    <p class="text-xs mt-1">Arrastra y suelta para crear graficas, tablas y mapas. No necesitas saber programar.</p>
-  </div>
-  <div class="border-2 border-black bg-white p-3">
-    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-sliders inline-block w-5 h-5 align-middle mr-1" /> Filtros interactivos</h4>
-    <p class="text-xs mt-1">Haz clic en cualquier elemento del dashboard para filtrar todo en tiempo real.</p>
-  </div>
-  <div class="border-2 border-black bg-white p-3">
-    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-zap inline-block w-5 h-5 align-middle mr-1" /> Mapas y graficas en tiempo real</h4>
-    <p class="text-xs mt-1">Los datos se actualizan al segundo. Perfecto para monitoreo y operaciones.</p>
-  </div>
-  <div class="border-2 border-black bg-white p-3">
-    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-link inline-block w-5 h-5 align-middle mr-1" /> Conectado directo a Elasticsearch</h4>
-    <p class="text-xs mt-1">No necesitas ETL ni copiar datos. Kibana consulta ES directamente.</p>
-  </div>
-</v-clicks>
-</div>
-
-<v-click>
-
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
-Es como <strong>Tableau o Power BI</strong>, pero conectado directamente a tu motor de busqueda. Los gerentes y analistas lo usan para tomar decisiones sin escribir queries.
-</div>
-
-</v-click>
-
----
 layout: neo-demo
 ---
 
-<!-- Slide 29: Lab - Elastic Cloud Setup -->
+<!-- Lab - Elastic Cloud Setup -->
 
 ::title::
 
@@ -939,12 +834,159 @@ Todo esto se construyo <strong>sin escribir codigo</strong>. Kibana + Elasticsea
 </div>
 
 ---
+
+<!-- Kibana: ¿Que acaban de ver? -->
+
+# ¿Que acaban de ver?
+
+<div class="pixel-divider my-3" />
+
+<div class="mt-2 text-sm mb-3">
+
+Ese dashboard que exploraron se llama **Kibana** — la interfaz visual de Elasticsearch.
+
+</div>
+
+<div class="grid grid-cols-3 gap-3 mt-3">
+<v-clicks>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4 text-center">
+    <div class="i-pixelarticons-chart inline-block w-8 h-8 mb-2 text-[#ff6b6b]" />
+    <strong>Dashboards sin codigo</strong>
+    <p class="text-xs mt-2">Arrastra y suelta para crear graficas, tablas y mapas. No necesitas programar.</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4 text-center">
+    <div class="i-pixelarticons-sliders inline-block w-8 h-8 mb-2 text-[#ff6b6b]" />
+    <strong>Filtros interactivos</strong>
+    <p class="text-xs mt-2">Clic en cualquier elemento para filtrar todo el dashboard al instante.</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4 text-center">
+    <div class="i-pixelarticons-zap inline-block w-8 h-8 mb-2 text-[#ff6b6b]" />
+    <strong>Tiempo real</strong>
+    <p class="text-xs mt-2">Los datos se actualizan al segundo. Perfecto para monitoreo y operaciones.</p>
+  </div>
+</v-clicks>
+</div>
+
+<v-click>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-4 text-center text-sm">
+Es como <strong>Tableau o Power BI</strong>, pero conectado directamente a tu motor de busqueda. Sin ETL, sin copiar datos.
+</div>
+
+</v-click>
+
+---
+
+<!-- Kibana: Valor de negocio -->
+
+# ¿Que preguntas de negocio responde Kibana?
+
+<div class="pixel-divider my-3" />
+
+<div class="mt-2 text-sm mb-3">
+
+Lo que vieron en el dashboard no es solo "bonito" — cada grafica responde una pregunta real de negocio:
+
+</div>
+
+<div class="grid grid-cols-2 gap-3 mt-3">
+<v-clicks>
+  <div class="border-2 border-black bg-white p-3">
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-map inline-block w-5 h-5 align-middle mr-1" /> Mapa de ventas</h4>
+    <p class="text-xs mt-1">"¿En que paises vendemos mas? ¿Donde deberiamos expandirnos?"</p>
+  </div>
+  <div class="border-2 border-black bg-white p-3">
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-chart inline-block w-5 h-5 align-middle mr-1" /> Revenue over time</h4>
+    <p class="text-xs mt-1">"¿Estamos vendiendo mas o menos que el mes pasado? ¿Hay estacionalidad?"</p>
+  </div>
+  <div class="border-2 border-black bg-white p-3">
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-coin inline-block w-5 h-5 align-middle mr-1" /> Top productos</h4>
+    <p class="text-xs mt-1">"¿Que productos generan mas revenue? ¿Cuales deberiamos promover?"</p>
+  </div>
+  <div class="border-2 border-black bg-white p-3">
+    <h4 class="text-[#ff6b6b]"><div class="i-pixelarticons-sliders inline-block w-5 h-5 align-middle mr-1" /> Filtros cruzados</h4>
+    <p class="text-xs mt-1">"Si filtro por Europa, ¿cambian los top productos? ¿Que pasa con los precios?"</p>
+  </div>
+</v-clicks>
+</div>
+
+<v-click>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
+<strong>Un gerente puede tomar decisiones en minutos</strong> sin pedirle un reporte al equipo de datos. Eso es el poder de Kibana + ES.
+</div>
+
+</v-click>
+
+---
 layout: neo-image
 title: x-files_search.exe
 image: /images/slides/slide_23b_breather.jpg
 ---
 
 <h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">La verdad esta alla afuera... en tus datos.</h2>
+
+---
+
+<!-- Who uses ES (moved after Kibana labs) -->
+
+# ¿Quien usa Elasticsearch en el mundo real?
+
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-2 gap-3 mt-3">
+  <div class="border-2 border-[#ff6b6b] bg-white p-3">
+    <h3 class="text-[#ff6b6b]">Netflix</h3>
+    <p class="text-sm">Busqueda de contenido, monitoreo de servidores y analisis de errores en tiempo real para 200M+ suscriptores.</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-white p-3">
+    <h3 class="text-[#ff6b6b]">Wikipedia</h3>
+    <p class="text-sm">Potencia la busqueda en 300+ idiomas. Cada vez que buscas un articulo, Elasticsearch responde.</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-white p-3">
+    <h3 class="text-[#ff6b6b]">Uber</h3>
+    <p class="text-sm">Monitoreo en tiempo real de millones de viajes. Detecta anomalias y problemas al instante.</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-white p-3">
+    <h3 class="text-[#ff6b6b]">GitHub</h3>
+    <p class="text-sm">Cuando buscas codigo en GitHub, Elasticsearch busca en miles de millones de lineas de codigo.</p>
+  </div>
+</div>
+
+<RefFootnote :sources="['Elastic. (2023). Customer stories. https://www.elastic.co/customers']" />
+
+---
+
+<!-- ES & OpenSearch -->
+
+# Elasticsearch y OpenSearch
+
+<div class="mt-6">
+
+<div class="border-2 border-black bg-white p-4">
+
+En 2021, **Amazon creo OpenSearch**: un fork (copia independiente) de Elasticsearch, porque no estaba de acuerdo con el cambio de licencia de Elastic.
+
+</div>
+
+<div class="grid grid-cols-2 gap-4 mt-4">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4">
+    <h3>Elasticsearch (Elastic NV)</h3>
+    <p class="text-sm mt-1">Version original. La empresa Elastic la mantiene. Elastic Cloud es su servicio en la nube.</p>
+  </div>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-4">
+    <h3>OpenSearch (AWS)</h3>
+    <p class="text-sm mt-1">Fork mantenido por Amazon. Incluido en AWS. Misma API base, desarrollo independiente.</p>
+  </div>
+</div>
+
+<div class="mt-4 text-center text-sm">
+
+Para nuestro workshop usaremos <strong>Elastic Cloud</strong> (la version oficial), pero lo que aprendan aplica a ambos.
+
+</div>
+
+</div>
 
 ---
 

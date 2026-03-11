@@ -44,33 +44,38 @@ github.com/HesusG/mas-alla-de-sql
 
 # ¿Que es una base de datos?
 
-<div class="pixel-divider my-4" />
+<div class="pixel-divider my-3" />
 
-<div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
-  <div class="border-2 border-black bg-[#2DD4BF]/15 p-6 text-center">
-    <div class="i-pixelarticons-database inline-block w-12 h-12 mb-2" />
-    <div class="text-lg font-bold">Excel con superpoderes</div>
+<div class="grid grid-cols-[1fr_2fr] gap-6 mt-3">
+  <div>
+    <img src="/images/slides/sql_intro_excel.jpg" class="w-full border-2 border-black" />
+    <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-3 text-center mt-3">
+      <div class="i-pixelarticons-database inline-block w-8 h-8 mb-1" />
+      <div class="text-sm font-bold">Excel con superpoderes</div>
+    </div>
   </div>
   <div>
 
 Una base de datos es un sistema para **almacenar, organizar y consultar** informacion de forma eficiente.
 
 <v-clicks>
-<div class="space-y-3 mt-4">
-  <div class="border-2 border-black bg-white p-3 text-sm">
+<div class="space-y-2 mt-3">
+  <div class="border-2 border-black bg-white p-2 text-sm">
     <div class="i-pixelarticons-list-box inline-block w-5 h-5 align-middle mr-1" /> Organiza datos en <strong>tablas</strong> (como hojas de calculo)
   </div>
-  <div class="border-2 border-black bg-white p-3 text-sm">
+  <div class="border-2 border-black bg-white p-2 text-sm">
     <div class="i-pixelarticons-users inline-block w-5 h-5 align-middle mr-1" /> Permite que <strong>muchas personas</strong> accedan al mismo tiempo
   </div>
-  <div class="border-2 border-black bg-white p-3 text-sm">
+  <div class="border-2 border-black bg-white p-2 text-sm">
     <div class="i-pixelarticons-speed-fast inline-block w-5 h-5 align-middle mr-1" /> Maneja <strong>millones de filas</strong> sin sudar
   </div>
-  <div class="border-2 border-black bg-white p-3 text-sm">
+  <div class="border-2 border-black bg-white p-2 text-sm">
     <div class="i-pixelarticons-lock inline-block w-5 h-5 align-middle mr-1" /> Protege tus datos con <strong>permisos y respaldos</strong>
   </div>
 </div>
 </v-clicks>
+
+<div class="text-xs mt-2 text-gray-500">Oracle creo la primera base de datos relacional comercial en 1979. Hoy estan en todos lados: bancos, hospitales, tiendas, tu celular.</div>
 
   </div>
 </div>
