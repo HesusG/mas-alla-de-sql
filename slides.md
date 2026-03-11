@@ -1402,12 +1402,9 @@ Cada una de estas preguntas se responde con <strong>una sola query de ES</strong
 
 <v-click>
 
-<div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 mt-3 flex items-start gap-2">
-  <div class="i-pixelarticons-check inline-block w-5 h-5 flex-shrink-0 text-[#ff6b6b]" />
-  <div>
-    <p class="font-bold text-[#ff6b6b] text-sm">Respuesta: C</p>
-    <p class="text-xs mt-1">ES encuentra variaciones ("enojado", "furioso", "harto") sin que las listes todas, y rankea las mas relevantes primero. Excel y SQL solo buscan texto exacto.</p>
-  </div>
+<div class="border border-[#ff6b6b] bg-[#ff6b6b]/15 p-2 mt-2 flex items-start gap-1.5 text-xs">
+  <div class="i-pixelarticons-check inline-block w-4 h-4 flex-shrink-0 text-[#ff6b6b]" />
+  <span><strong class="text-[#ff6b6b]">C</strong> — ES encuentra variaciones (enojado, furioso, harto) sin listarlas, y rankea las mas urgentes primero.</span>
 </div>
 
 </v-click>
@@ -2137,12 +2134,9 @@ layout: neo-demo
 
 <v-click>
 
-<div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-3 mt-3 flex items-start gap-2">
-  <div class="i-pixelarticons-check inline-block w-5 h-5 flex-shrink-0 text-[#6c5ce7]" />
-  <div>
-    <p class="font-bold text-[#6c5ce7] text-sm">Respuesta: C</p>
-    <p class="text-xs mt-1">Los embeddings entienden significado: "pesimo servicio" esta cerca de "cliente insatisfecho" en el espacio vectorial, aunque no compartan ninguna palabra. ES encontraria "pesimo" pero no conectaria el concepto.</p>
-  </div>
+<div class="border border-[#6c5ce7] bg-[#6c5ce7]/15 p-2 mt-2 flex items-start gap-1.5 text-xs">
+  <div class="i-pixelarticons-check inline-block w-4 h-4 flex-shrink-0 text-[#6c5ce7]" />
+  <span><strong class="text-[#6c5ce7]">C</strong> — Los embeddings entienden que "pesimo" y "insatisfecho" significan lo mismo, aunque no compartan palabras. ES busca palabras, no conceptos.</span>
 </div>
 
 </v-click>
@@ -2359,8 +2353,8 @@ layout: neo-section
 
 <div class="grid grid-cols-2 gap-4 mt-4">
   <div class="border-2 border-black bg-white p-4">
-    <h3>Labs en este repo</h3>
-    <ul class="text-sm mt-2 space-y-1">
+    <h3 class="text-[#2DD4BF] mb-2"><div class="i-pixelarticons-book inline-block w-5 h-5 align-middle mr-1" /> Labs en este repo</h3>
+    <ul class="text-sm space-y-1 list-disc list-inside">
       <li><strong>Notebook Colab</strong>: ChromaDB + RAG + embeddings visuales</li>
       <li>Lab 1: Elasticsearch Basics (~30 min)</li>
       <li>Lab 2: ES Search avanzado (~45 min)</li>
@@ -2370,8 +2364,8 @@ layout: neo-section
     <p class="text-xs mt-2 text-gray-500">Labs 1-4 son material de referencia para despues del taller.</p>
   </div>
   <div class="border-2 border-black bg-white p-4">
-    <h3>Recursos</h3>
-    <ul class="text-sm mt-2 space-y-1">
+    <h3 class="text-[#6c5ce7] mb-2"><div class="i-pixelarticons-link inline-block w-5 h-5 align-middle mr-1" /> Recursos</h3>
+    <ul class="text-sm space-y-1 list-disc list-inside">
       <li>Elastic Cloud: 14 dias gratis</li>
       <li>ChromaDB: docs.trychroma.com</li>
       <li>together.ai: creditos gratis</li>
