@@ -29,6 +29,8 @@ jobs:
 
       - run: npx slidev build --base /mas-alla-de-sql/
 
+      - run: npx slidev build sql-intro.md --base /mas-alla-de-sql/sql-intro/ --out dist/sql-intro
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
