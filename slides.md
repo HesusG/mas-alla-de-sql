@@ -300,6 +300,31 @@ Perfecto. Hoy vamos a entender como funcionan esos buscadores <strong>por dentro
 
 ---
 
+<!-- Slide 19: What we'll cover today -->
+
+# Hoy nos enfocamos en dos
+
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-6 text-center">
+    <div class="i-pixelarticons-search inline-block w-10 h-10 mb-2" />
+    <h2 class="text-[#ff6b6b]">Elasticsearch</h2>
+    <div class="pixel-divider my-3" />
+    <p class="text-sm">Busqueda de texto completo (full-text search). Rapido, con ranking, tolerante a errores.</p>
+    <p class="text-sm mt-2 font-bold">Resuelve: el problema de buscar en texto no estructurado.</p>
+  </div>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-6 text-center">
+    <div class="i-pixelarticons-ai-app-mac inline-block w-10 h-10 mb-2" />
+    <h2 class="text-[#6c5ce7]">ChromaDB</h2>
+    <div class="pixel-divider my-3" />
+    <p class="text-sm">Busqueda semantica con vectores (embeddings). Entiende significado, no solo palabras.</p>
+    <p class="text-sm mt-2 font-bold">Resuelve: buscar por conceptos e ideas, no solo texto exacto.</p>
+  </div>
+</div>
+
+---
+
 <!-- Slide 10: What is unstructured data -->
 
 # ¿Que son los datos no estructurados?
@@ -349,7 +374,7 @@ No caben en una tabla de SQL.
 
 <div class="mt-2 text-sm">
 
-En muchos cursos, los datos ya vienen limpios en un CSV listo para analizar. Pero en la vida real, los datos no llegan asi:
+Desde que Edgar F. Codd invento el modelo relacional en 1970, SQL ha sido el estandar para datos estructurados. En muchos cursos, los datos ya vienen limpios en un CSV listo para analizar. Pero en la vida real, los datos no llegan asi:
 
 </div>
 <v-clicks>
@@ -429,46 +454,6 @@ SQL sigue siendo esencial. Pero <strong>no puede ser la unica herramienta</stron
 
 ---
 
-<!-- Slide 13: Codd — The father of SQL -->
-
-# El padre de SQL: Edgar F. Codd
-
-<div class="grid grid-cols-[1fr_2fr] gap-6 mt-4">
-  <div class="border-2 border-black p-4 text-center">
-    <img src="/images/slides/slide_13_codd.jpg" class="w-32 h-32 mx-auto border-2 border-black object-cover bg-gray-100" />
-    <div class="text-sm font-bold mt-2">Edgar F. Codd</div>
-    <div class="text-xs">IBM, 1970</div>
-    <div class="text-xs mt-1">Inventor del modelo relacional</div>
-  </div>
-  <div>
-<v-clicks>
-<div class="space-y-3">
-  <div class="border-2 border-black bg-white p-3 text-sm">
-    En 1970, Codd publico un paper que cambio la computacion para siempre: propuso organizar datos en <strong>tablas con filas y columnas</strong>, relacionadas entre si con claves.
-  </div>
-  <div class="border-2 border-black bg-white p-3 text-sm">
-    De ahi nacio <strong>SQL</strong> y las bases de datos relacionales que se usan en todo: bancos, hospitales, tiendas, gobiernos, universidades.
-  </div>
-  <div class="border-2 border-black bg-white p-3 text-sm">
-    SQL garantiza transacciones <strong>ACID</strong>: si transfieres $1,000 de una cuenta a otra, el dinero no desaparece en el camino. Eso es fundamental.
-  </div>
-</div>
-</v-clicks>
-<v-click>
-
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-2 mt-3 text-center text-sm">
-SQL sigue siendo esencial. Pero tiene limites con texto libre.
-</div>
-
-</v-click>
-
-  </div>
-</div>
-
-<RefFootnote :sources="['Codd, E. F. (1970). A relational model of data for large shared data banks. Communications of the ACM, 13(6), 377-387.']" />
-
----
-
 <!-- Slide 14: SQL limitations → what ES solves -->
 
 # Pero SQL no fue diseñado para todo
@@ -500,178 +485,6 @@ SQL sigue siendo esencial. Pero tiene limites con texto libre.
     <p class="text-xs mt-1">Cada resultado tiene <code>_score</code>. Los mas relevantes primero.</p>
   </div>
 </v-clicks>
-</div>
-
----
-layout: neo-two-cols
----
-
-<!-- Slide 15-16 merged: Ranking + missed reviews -->
-
-::title::
-
-# Relevancia vs busqueda exacta — lo que SQL pierde
-
-::left::
-
-### SQL: Binario (si/no)
-
-<div class="border-2 border-black p-2 text-sm space-y-2">
-  <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> "Pastel de chocolate con crema"</div>
-  <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> "El chocolate del pastel se quemo"</div>
-  <div><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" /> "Torta de cacao con ganache"</div>
-  <div class="text-xs text-gray-500">Todas iguales. No distingue cual es mejor.</div>
-</div>
-
-### ES: Ranking por score
-
-<div class="border-2 border-black p-2 text-sm space-y-1 mt-2">
-  <div><span class="font-mono text-[#2DD4BF]">_score: 15.7</span> "Receta de pastel de chocolate"</div>
-  <div><span class="font-mono text-[#2DD4BF]">_score: 8.2</span> "Torta de cacao con ganache"</div>
-  <div><span class="font-mono text-[#2DD4BF]">_score: 3.1</span> "El chocolate se uso en el pastel"</div>
-</div>
-
-::right::
-
-### Reseñas que SQL pierde (23 de 147)
-<v-clicks>
-<div class="space-y-2 mt-2">
-  <div class="border-2 border-black bg-white p-2 text-xs">
-    <strong>"El producto llego roto y nadie me ayudo"</strong> — frustrado, pero no usa esa palabra
-  </div>
-  <div class="border-2 border-black bg-white p-2 text-xs">
-    <strong>"3 llamadas al soporte y sigo sin solucion"</strong> — frustracion implicita
-  </div>
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-2 text-xs">
-    <strong>"Mi experiencia fue desastrosa"</strong> — intensidad alta, SQL la ignora
-  </div>
-</div>
-
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-2 mt-3 text-center text-xs">
-<strong>Cada resena que SQL no encuentra es un cliente que podrias perder.</strong>
-</div>
-</v-clicks>
----
-
-<!-- Slide 17: Modern data needs -->
-
-# Las empresas de hoy necesitan mas
-
-<div class="pixel-divider my-3" />
-<v-clicks>
-<div class="grid grid-cols-2 gap-4 mt-4">
-  <div class="border-2 border-black bg-white p-4">
-    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-search inline-block w-5 h-5 align-middle mr-1" /> Busqueda inteligente</h3>
-    <p class="text-sm mt-1">Los usuarios esperan busquedas tipo Google: rapidas, tolerantes a errores, con resultados rankeados.</p>
-  </div>
-  <div class="border-2 border-black bg-white p-4">
-    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-chart inline-block w-5 h-5 align-middle mr-1" /> Analisis de texto a escala</h3>
-    <p class="text-sm mt-1">Miles de tickets, reseñas, contratos. No puedes leerlos uno por uno — necesitas que la maquina entienda el contenido.</p>
-  </div>
-  <div class="border-2 border-black bg-white p-4">
-    <h3 class="text-[#2DD4BF]"><div class="i-pixelarticons-zap inline-block w-5 h-5 align-middle mr-1" /> Tiempo real</h3>
-    <p class="text-sm mt-1">Monitoreo de logs, alertas, dashboards que se actualizan al segundo. SQL batch no alcanza.</p>
-  </div>
-  <div class="border-2 border-black bg-white p-4">
-    <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-ai-app-mac inline-block w-5 h-5 align-middle mr-1" /> IA sobre tus datos</h3>
-    <p class="text-sm mt-1">Chatbots que responden preguntas usando la informacion de tu empresa, no alucinaciones.</p>
-  </div>
-</div>
-</v-clicks>
-<v-click>
-
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-4 text-center text-lg">
-Para estas necesidades, existen herramientas especializadas. <strong>Hoy vamos a conocer dos.</strong>
-</div>
-
-</v-click>
-
----
-layout: neo-image
-title: the_matrix.exe
-image: /images/slides/slide_17b_breather.jpg
----
-
-<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Tomas la pastilla azul, sigues en SQL. Tomas la roja... te enseño que tan profundo llega.</h2>
-
----
-
-<!-- Slide 18: Database types intro -->
-
-# No solo existen las bases de datos relacionales
-
-<div class="mt-2 text-sm mb-2">
-
-SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos de bases de datos. Cada tipo resuelve un problema distinto:
-
-</div>
-
-<div class="grid grid-cols-3 gap-2">
-<v-clicks>
-  <div class="border-2 border-black bg-[#2DD4BF]/15 p-2 text-center text-sm">
-    <div class="i-pixelarticons-database inline-block w-6 h-6" />
-    <strong>Relacional (SQL)</strong>
-    <p class="text-xs mt-1">Tablas con filas y columnas. Para transacciones y datos estructurados.</p>
-    <p class="text-xs italic">MySQL, PostgreSQL, SQL Server</p>
-  </div>
-  <div class="border-2 border-black bg-white p-2 text-center text-sm">
-    <div class="i-pixelarticons-file-text inline-block w-6 h-6" />
-    <strong>Documento</strong>
-    <p class="text-xs mt-1">Almacena documentos JSON flexibles. Sin esquema fijo.</p>
-    <p class="text-xs italic">MongoDB, CouchDB</p>
-  </div>
-  <div class="border-2 border-black bg-white p-2 text-center text-sm">
-    <div class="i-pixelarticons-label inline-block w-6 h-6" />
-    <strong>Clave-Valor</strong>
-    <p class="text-xs mt-1">Como un diccionario gigante. Ultrarapido para lecturas simples.</p>
-    <p class="text-xs italic">Redis, DynamoDB</p>
-  </div>
-  <div class="border-2 border-black bg-white p-2 text-center text-sm">
-    <div class="i-pixelarticons-git-merge inline-block w-6 h-6" />
-    <strong>Grafo</strong>
-    <p class="text-xs mt-1">Datos como redes: nodos y conexiones. Para relaciones complejas.</p>
-    <p class="text-xs italic">Neo4j, Amazon Neptune</p>
-  </div>
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-2 text-center text-sm">
-    <div class="i-pixelarticons-search inline-block w-6 h-6 text-[#ff6b6b]" />
-    <strong>Motor de busqueda</strong>
-    <p class="text-xs mt-1">Busqueda de texto rapida, con ranking y tolerancia a errores.</p>
-    <p class="text-xs italic">Elasticsearch, Apache Solr</p>
-  </div>
-  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-2 text-center text-sm">
-    <div class="i-pixelarticons-ai-app-mac inline-block w-6 h-6 text-[#6c5ce7]" />
-    <strong>Vectorial</strong>
-    <p class="text-xs mt-1">Busca por significado usando matematicas. Base de la IA moderna.</p>
-    <p class="text-xs italic">ChromaDB, Pinecone</p>
-  </div>
-</v-clicks>
-</div>
-
-<RefFootnote :sources="['DB-Engines. (2026). DB-Engines ranking. https://db-engines.com/en/ranking']" />
-
----
-
-<!-- Slide 19: What we'll cover today -->
-
-# Hoy nos enfocamos en dos
-
-<div class="pixel-divider my-3" />
-
-<div class="grid grid-cols-2 gap-8 mt-6">
-  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-6 text-center">
-    <div class="i-pixelarticons-search inline-block w-10 h-10 mb-2" />
-    <h2 class="text-[#ff6b6b]">Elasticsearch</h2>
-    <div class="pixel-divider my-3" />
-    <p class="text-sm">Busqueda de texto completo (full-text search). Rapido, con ranking, tolerante a errores.</p>
-    <p class="text-sm mt-2 font-bold">Resuelve: el problema de buscar en texto no estructurado.</p>
-  </div>
-  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-6 text-center">
-    <div class="i-pixelarticons-ai-app-mac inline-block w-10 h-10 mb-2" />
-    <h2 class="text-[#6c5ce7]">ChromaDB</h2>
-    <div class="pixel-divider my-3" />
-    <p class="text-sm">Busqueda semantica con vectores (embeddings). Entiende significado, no solo palabras.</p>
-    <p class="text-sm mt-2 font-bold">Resuelve: buscar por conceptos e ideas, no solo texto exacto.</p>
-  </div>
 </div>
 
 ---
@@ -927,6 +740,154 @@ image: /images/slides/slide_23b_breather.jpg
 <h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">La verdad esta alla afuera... en tus datos.</h2>
 
 ---
+layout: neo-two-cols
+---
+
+<!-- Slide 15-16 merged: Ranking + missed reviews -->
+
+::title::
+
+# Relevancia vs busqueda exacta — lo que SQL pierde
+
+::left::
+
+### SQL: Binario (si/no)
+
+<div class="border-2 border-black p-2 text-sm space-y-2">
+  <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> "Pastel de chocolate con crema"</div>
+  <div><div class="i-pixelarticons-check inline-block w-4 h-4 text-[#2DD4BF] align-middle mr-1" /> "El chocolate del pastel se quemo"</div>
+  <div><div class="i-pixelarticons-close-box inline-block w-4 h-4 text-[#ff6b6b] align-middle mr-1" /> "Torta de cacao con ganache"</div>
+  <div class="text-xs text-gray-500">Todas iguales. No distingue cual es mejor.</div>
+</div>
+
+### ES: Ranking por score
+
+<div class="border-2 border-black p-2 text-sm space-y-1 mt-2">
+  <div><span class="font-mono text-[#2DD4BF]">_score: 15.7</span> "Receta de pastel de chocolate"</div>
+  <div><span class="font-mono text-[#2DD4BF]">_score: 8.2</span> "Torta de cacao con ganache"</div>
+  <div><span class="font-mono text-[#2DD4BF]">_score: 3.1</span> "El chocolate se uso en el pastel"</div>
+</div>
+
+::right::
+
+### Reseñas que SQL pierde (23 de 147)
+<v-clicks>
+<div class="space-y-2 mt-2">
+  <div class="border-2 border-black bg-white p-2 text-xs">
+    <strong>"El producto llego roto y nadie me ayudo"</strong> — frustrado, pero no usa esa palabra
+  </div>
+  <div class="border-2 border-black bg-white p-2 text-xs">
+    <strong>"3 llamadas al soporte y sigo sin solucion"</strong> — frustracion implicita
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-2 text-xs">
+    <strong>"Mi experiencia fue desastrosa"</strong> — intensidad alta, SQL la ignora
+  </div>
+</div>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-2 mt-3 text-center text-xs">
+<strong>Cada resena que SQL no encuentra es un cliente que podrias perder.</strong>
+</div>
+</v-clicks>
+
+---
+
+<!-- Slide 17: Modern data needs -->
+
+# Las empresas de hoy necesitan mas
+
+<div class="pixel-divider my-3" />
+<v-clicks>
+<div class="grid grid-cols-2 gap-4 mt-4">
+  <div class="border-2 border-black bg-white p-4">
+    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-search inline-block w-5 h-5 align-middle mr-1" /> Busqueda inteligente</h3>
+    <p class="text-sm mt-1">Los usuarios esperan busquedas tipo Google: rapidas, tolerantes a errores, con resultados rankeados.</p>
+  </div>
+  <div class="border-2 border-black bg-white p-4">
+    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-chart inline-block w-5 h-5 align-middle mr-1" /> Analisis de texto a escala</h3>
+    <p class="text-sm mt-1">Miles de tickets, reseñas, contratos. No puedes leerlos uno por uno — necesitas que la maquina entienda el contenido.</p>
+  </div>
+  <div class="border-2 border-black bg-white p-4">
+    <h3 class="text-[#2DD4BF]"><div class="i-pixelarticons-zap inline-block w-5 h-5 align-middle mr-1" /> Tiempo real</h3>
+    <p class="text-sm mt-1">Monitoreo de logs, alertas, dashboards que se actualizan al segundo. SQL batch no alcanza.</p>
+  </div>
+  <div class="border-2 border-black bg-white p-4">
+    <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-ai-app-mac inline-block w-5 h-5 align-middle mr-1" /> IA sobre tus datos</h3>
+    <p class="text-sm mt-1">Chatbots que responden preguntas usando la informacion de tu empresa, no alucinaciones.</p>
+  </div>
+</div>
+</v-clicks>
+<v-click>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-4 text-center text-lg">
+Para estas necesidades, existen herramientas especializadas. <strong>Hoy vamos a conocer dos.</strong>
+</div>
+
+</v-click>
+
+---
+layout: neo-image
+title: the_matrix.exe
+image: /images/slides/slide_17b_breather.jpg
+---
+
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Tomas la pastilla azul, sigues en SQL. Tomas la roja... te enseño que tan profundo llega.</h2>
+
+---
+
+<!-- Slide 18: Database types intro -->
+
+# No solo existen las bases de datos relacionales
+
+<div class="mt-2 text-sm mb-2">
+
+SQL (bases de datos relacionales) es solo <strong>uno</strong> de varios tipos de bases de datos. Cada tipo resuelve un problema distinto:
+
+</div>
+
+<div class="grid grid-cols-3 gap-2">
+<v-clicks>
+  <div class="border-2 border-black bg-[#2DD4BF]/15 p-2 text-center text-sm">
+    <div class="i-pixelarticons-database inline-block w-6 h-6" />
+    <strong>Relacional (SQL)</strong>
+    <p class="text-xs mt-1">Tablas con filas y columnas. Para transacciones y datos estructurados.</p>
+    <p class="text-xs italic">MySQL, PostgreSQL, SQL Server</p>
+  </div>
+  <div class="border-2 border-black bg-white p-2 text-center text-sm">
+    <div class="i-pixelarticons-file-text inline-block w-6 h-6" />
+    <strong>Documento</strong>
+    <p class="text-xs mt-1">Almacena documentos JSON flexibles. Sin esquema fijo.</p>
+    <p class="text-xs italic">MongoDB, CouchDB</p>
+  </div>
+  <div class="border-2 border-black bg-white p-2 text-center text-sm">
+    <div class="i-pixelarticons-label inline-block w-6 h-6" />
+    <strong>Clave-Valor</strong>
+    <p class="text-xs mt-1">Como un diccionario gigante. Ultrarapido para lecturas simples.</p>
+    <p class="text-xs italic">Redis, DynamoDB</p>
+  </div>
+  <div class="border-2 border-black bg-white p-2 text-center text-sm">
+    <div class="i-pixelarticons-git-merge inline-block w-6 h-6" />
+    <strong>Grafo</strong>
+    <p class="text-xs mt-1">Datos como redes: nodos y conexiones. Para relaciones complejas.</p>
+    <p class="text-xs italic">Neo4j, Amazon Neptune</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-2 text-center text-sm">
+    <div class="i-pixelarticons-search inline-block w-6 h-6 text-[#ff6b6b]" />
+    <strong>Motor de busqueda</strong>
+    <p class="text-xs mt-1">Busqueda de texto rapida, con ranking y tolerancia a errores.</p>
+    <p class="text-xs italic">Elasticsearch, Apache Solr</p>
+  </div>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/15 p-2 text-center text-sm">
+    <div class="i-pixelarticons-ai-app-mac inline-block w-6 h-6 text-[#6c5ce7]" />
+    <strong>Vectorial</strong>
+    <p class="text-xs mt-1">Busca por significado usando matematicas. Base de la IA moderna.</p>
+    <p class="text-xs italic">ChromaDB, Pinecone</p>
+  </div>
+</v-clicks>
+</div>
+
+<RefFootnote :sources="['DB-Engines. (2026). DB-Engines ranking. https://db-engines.com/en/ranking']" />
+
+---
 
 <!-- Who uses ES (moved after Kibana labs) -->
 
@@ -1134,10 +1095,54 @@ Ahora que tenemos datos, veamos lo que hace a Elasticsearch especial:
 </div>
 </v-clicks>
 ---
+
+<!-- Slide 33: SQL LIKE vs ES match comparison -->
+
+# SQL LIKE vs ES match
+
+<div class="pixel-divider my-3" />
+
+<div class="grid grid-cols-2 gap-4 mt-2">
+  <div>
+    <h3 class="text-[#ff6b6b] font-bold mb-2"><div class="i-pixelarticons-close-box inline-block w-5 h-5 align-middle mr-1" /> SQL: adivinar palabras</h3>
+    <div class="border-2 border-black bg-[#282A36] p-3 font-mono text-sm text-[#F8F8F2]">
+      <span class="text-[#ff79c6]">SELECT</span> * <span class="text-[#ff79c6]">FROM</span> products<br/>
+      <span class="text-[#ff79c6]">WHERE</span> name <span class="text-[#ff79c6]">LIKE</span> <span class="text-[#f1fa8c]">'%shoes%'</span><br/>
+      &nbsp;&nbsp;<span class="text-[#ff79c6]">OR</span> name <span class="text-[#ff79c6]">LIKE</span> <span class="text-[#f1fa8c]">'%sneakers%'</span><br/>
+      &nbsp;&nbsp;<span class="text-[#ff79c6]">OR</span> name <span class="text-[#ff79c6]">LIKE</span> <span class="text-[#f1fa8c]">'%tenis%'</span><br/>
+      &nbsp;&nbsp;<span class="text-[#ff79c6]">OR</span> name <span class="text-[#ff79c6]">LIKE</span> <span class="text-[#f1fa8c]">'%zapatos%'</span>;
+    </div>
+    <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-2 mt-2 text-sm text-center">
+      4 variaciones... y te faltan 20 mas
+    </div>
+  </div>
+  <div>
+    <h3 class="text-[#2DD4BF] font-bold mb-2"><div class="i-pixelarticons-check inline-block w-5 h-5 align-middle mr-1" /> ES: entender texto</h3>
+    <div class="border-2 border-black bg-[#282A36] p-3 font-mono text-sm text-[#F8F8F2]">
+      <span class="text-[#ff79c6]">GET</span> ecommerce/_search<br/>
+      {<br/>
+      &nbsp;&nbsp;<span class="text-[#8be9fd]">"query"</span>: {<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-[#8be9fd]">"match"</span>: {<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-[#8be9fd]">"product_name"</span>: <span class="text-[#f1fa8c]">"shoes"</span><br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+      &nbsp;&nbsp;}<br/>
+      }
+    </div>
+    <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-2 mt-2 text-sm text-center">
+      Encuentra shoes, sneakers, shoees, tenis... automaticamente
+    </div>
+  </div>
+</div>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 text-center mt-3">
+<strong>SQL</strong> = adivinar todas las variaciones posibles | <strong>ES</strong> = entender lo que el usuario quiso decir
+</div>
+
+---
 layout: neo-demo
 ---
 
-<!-- Slide 33: Fuzziness demo -->
+<!-- Slide 34: Fuzziness demo -->
 
 ::title::
 
@@ -1999,7 +2004,7 @@ image: /images/slides/slide_50b_breather.jpg
 layout: neo-demo
 ---
 
-<!-- Lab: ChromaDB + RAG en Jupyter -->
+<!-- Lab: ChromaDB + RAG en Jupyter (setup) -->
 
 ::title::
 
@@ -2009,25 +2014,66 @@ layout: neo-demo
 
 <div class="text-[#F8F8F2]">
 
-### Abran el notebook en Google Colab:
+<div class="space-y-4 mt-2">
 
-1. Ir a **github.com/HesusG/mas-alla-de-sql** → carpeta `labs/`
-2. Abrir **`lab-chroma-rag.ipynb`** → boton "Open in Colab"
-3. Ejecutar las celdas en orden
-
-### Lo que van a hacer:
 <v-clicks>
-- **Busqueda semantica** — encontrar documentos por significado, no por palabras exactas
-- **Embeddings visuales** — ver en un grafico 2D como los documentos se agrupan por tema
-- **Consulta visual** — ver donde cae tu pregunta en el espacio de embeddings
-- **RAG** — conectar ChromaDB con un LLM para respuestas fundamentadas
+
+<div class="border border-[#2DD4BF]/50 bg-[#2DD4BF]/10 p-3 rounded">
+<strong class="text-[#2DD4BF]">1.</strong> Ir a <strong>github.com/HesusG/mas-alla-de-sql</strong> → carpeta <code>labs/</code>
+</div>
+
+<div class="border border-[#2DD4BF]/50 bg-[#2DD4BF]/10 p-3 rounded">
+<strong class="text-[#2DD4BF]">2.</strong> Abrir <strong><code>lab-chroma-rag.ipynb</code></strong> → boton "Open in Colab"
+</div>
+
+<div class="border border-[#2DD4BF]/50 bg-[#2DD4BF]/10 p-3 rounded">
+<strong class="text-[#2DD4BF]">3.</strong> Ejecutar las celdas en orden — sigan las instrucciones del notebook
+</div>
+
 </v-clicks>
 
-<div class="mt-2 border-2 border-black p-2 text-sm">
-<strong>Bonus del instructor</strong>: AI Career Coach (demo/) — un chatbot RAG con ofertas de trabajo reales de Mexico.
 </div>
 
+<TimerBadge time="25 min" class="mt-4" />
+
 </div>
+
+---
+
+<!-- Lab: ChromaDB + RAG objectives -->
+
+# ¿Que van a hacer en el lab?
+
+<div class="pixel-divider my-4" />
+
+<div class="grid grid-cols-2 gap-4 mt-4">
+<v-clicks>
+  <div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/10 p-4">
+    <h3 class="text-[#6c5ce7]"><div class="i-pixelarticons-search inline-block w-5 h-5 align-middle mr-1" /> Busqueda semantica</h3>
+    <p class="text-sm mt-1">Encontrar documentos por <strong>significado</strong>, no por palabras exactas.</p>
+  </div>
+  <div class="border-2 border-[#2DD4BF] bg-[#2DD4BF]/10 p-4">
+    <h3 class="text-[#2DD4BF]"><div class="i-pixelarticons-chart inline-block w-5 h-5 align-middle mr-1" /> Embeddings visuales</h3>
+    <p class="text-sm mt-1">Ver en un grafico 2D como los documentos se <strong>agrupan por tema</strong>.</p>
+  </div>
+  <div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/10 p-4">
+    <h3 class="text-[#ff6b6b]"><div class="i-pixelarticons-target inline-block w-5 h-5 align-middle mr-1" /> Consulta visual</h3>
+    <p class="text-sm mt-1">Ver <strong>donde cae tu pregunta</strong> en el espacio de embeddings.</p>
+  </div>
+  <div class="border-2 border-black bg-[#282A36] text-white p-4">
+    <h3><div class="i-pixelarticons-ai-app-mac inline-block w-5 h-5 align-middle mr-1 text-[#2DD4BF]" /> RAG</h3>
+    <p class="text-sm mt-1">Conectar ChromaDB con un LLM para <strong>respuestas fundamentadas</strong>.</p>
+  </div>
+</v-clicks>
+</div>
+
+<v-click>
+
+<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-4 text-center text-sm">
+<strong>Bonus del instructor</strong>: AI Career Coach (<code>demo/</code>) — un chatbot RAG con ofertas de trabajo reales de Mexico.
+</div>
+
+</v-click>
 
 ---
 
