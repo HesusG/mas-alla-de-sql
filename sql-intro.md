@@ -157,12 +157,12 @@ image: /images/slides/sql_intro_oracle.jpg
     <p class="text-xs mt-1">La favorita de los desarrolladores.</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-center">
-    <img src="https://cdn.simpleicons.org/microsoftsqlserver/CC2927" class="w-8 h-8 mx-auto mb-1" />
+    <img src="/images/logos/sqlserver.svg" class="w-8 h-8 mx-auto mb-1" />
     <strong class="text-sm">SQL Server</strong>
     <p class="text-xs mt-1">Microsoft. Comun en empresas grandes.</p>
   </div>
   <div class="border-2 border-black bg-white p-3 text-center">
-    <img src="https://cdn.simpleicons.org/oracle/F80000" class="w-8 h-8 mx-auto mb-1" />
+    <img src="/images/logos/oracle.svg" class="w-8 h-8 mx-auto mb-1" />
     <strong class="text-sm">Oracle</strong>
     <p class="text-xs mt-1">Bancos, gobiernos, corporativos.</p>
   </div>

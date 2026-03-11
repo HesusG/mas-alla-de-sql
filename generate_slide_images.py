@@ -100,6 +100,16 @@ BREATHER_PROMPTS = {
         "coral sunset gradient sky. Purple ocean waves. The student glows with teal energy "
         "aura. Dramatic training-complete moment."
     ),
+    "sql_intro_oracle": (
+        "Pixel art scene: a tech billionaire CEO in a sharp suit standing on top of "
+        "a massive pile of gold coins and dollar bills. Behind him, a towering corporate "
+        "skyscraper with glowing windows. Teal and gold accents. Power and wealth energy."
+    ),
+    "sql_intro_business": (
+        "Pixel art scene: a laptop on a desk showing colorful bar charts and pie charts "
+        "on its glowing screen. A coffee mug, calculator, and printed reports scattered "
+        "around. Teal glow from the screen illuminates the desk. Business analytics vibe."
+    ),
 }
 
 # ── Content slide prompts (1:1, white bg, used inline in slides) ──
@@ -144,16 +154,6 @@ CONTENT_PROMPTS = {
         "tiny rectangle with a small icon. Dotted lines connect cards within groups. "
         "A pixel art hand or cursor is moving one card. "
         "Flat pixel art on white background."
-    ),
-    "sql_intro_oracle": (
-        "Pixel art of a man in a business suit resembling a tech billionaire CEO, standing "
-        "next to a large stack of gold coins and dollar bills. Behind him, a tall corporate "
-        "office building. Bright teal accents. Power and wealth corporate energy."
-    ),
-    "sql_intro_business": (
-        "Pixel art of a laptop showing colorful bar charts and pie charts on its screen, "
-        "with a coffee mug, a calculator, and printed reports scattered on a desk. "
-        "Business analytics dashboard scene."
     ),
 }
 

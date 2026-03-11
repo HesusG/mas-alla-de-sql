@@ -408,9 +408,6 @@ Desde que Edgar F. Codd invento el modelo relacional en 1970, SQL ha sido el est
 <strong>Ejemplo real</strong>: Una tienda online recibe pedidos de su app, de Mercado Libre, de WhatsApp y de la tienda fisica. Cada fuente tiene formato diferente. Antes de poder hacer un <code>SELECT</code>, alguien tuvo que diseñar tablas, limpiar datos y cargarlos. Ese proceso se llama <strong>ETL</strong> (Extract, Transform, Load) y puede tomar semanas.
 </div>
 
-<div class="border-2 border-black bg-[#2DD4BF]/15 p-3 mt-3 text-center text-sm">
-SQL funciona increible — <strong>pero solo despues de todo este trabajo</strong>. Y si tus datos son texto libre (emails, chats, reseñas)... ese pipeline no alcanza.
-</div>
 </v-clicks>
 <RefFootnote :sources="['Codd, E. F. (1970). A relational model of data for large shared data banks. Communications of the ACM, 13(6), 377-387.']" />
 
