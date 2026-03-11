@@ -39,23 +39,26 @@ GEMINI_MODEL = "gemini-3-pro-image-preview"
 
 # For breather slides: dark background, 16:9, used inside neo-image layout
 BREATHER_STYLE = (
-    " STYLE: Clean pixel art illustration on a DARK background (#1a1a2e). "
+    " STYLE: Clean pixel art illustration on a very dark midnight navy background. "
     "16-bit / 32-bit pixel art aesthetic with visible pixel edges. "
-    "Use accent colors: teal (#2DD4BF), coral (#FF6B6B), purple (#6C5CE7), "
-    "platinum gray (#C0C0C0). Subtle grid pattern in background. "
+    "Use accent colors: bright teal, coral red, vibrant purple, "
+    "and platinum silver-gray. Subtle grid pattern in background. "
     "Think retro Mac OS 7 aesthetic meets sci-fi. "
-    "NO text, NO letters, NO watermarks, NO words. High resolution."
+    "ABSOLUTELY NO text, NO numbers, NO hex codes, NO letters, NO symbols, "
+    "NO labels, NO watermarks, NO words of any kind anywhere in the image. "
+    "High resolution."
 )
 
 # For content slides: white background, 1:1, float inside slide content
 PIXEL_SUFFIX = (
-    " STYLE: Clean pixel art illustration on a PURE WHITE (#FFFFFF) background. "
+    " STYLE: Clean pixel art illustration on a PURE WHITE background. "
     "16-bit / 32-bit pixel art aesthetic with visible pixel edges and limited color palette. "
-    "Use only these accent colors: teal (#2DD4BF), coral (#FF6B6B), purple (#6C5CE7), "
-    "black (#000000), and gray (#C0C0C0). NO gradients, NO photorealism — flat pixel art only. "
+    "Use only these accent colors: bright teal, coral red, vibrant purple, "
+    "black, and platinum silver-gray. NO gradients, NO photorealism — flat pixel art only. "
     "The subject should float on the white background with NO border, NO frame, NO shadow. "
     "Think retro Mac OS 7 icon art or classic pixel game sprites scaled up. "
-    "Crisp, sharp pixel edges. NO text, NO watermarks. High resolution."
+    "Crisp, sharp pixel edges. ABSOLUTELY NO text, NO numbers, NO hex codes, NO letters, "
+    "NO symbols, NO labels, NO watermarks, NO words of any kind. High resolution."
 )
 
 # ── Breather slide prompts (16:9, dark bg, used in neo-image layout) ──
@@ -73,10 +76,11 @@ BREATHER_PROMPTS = {
         "through the window. Mysterious moody atmosphere."
     ),
     "slide_31c_breather": (
-        "Pixel art scene: a character in a red cap and overalls jumping upward to hit a "
-        "glowing teal question-mark block. Coral mushroom power-ups and purple star items "
-        "float around. Brick platforms, green pipes, gold coins. Classic platformer game "
-        "level with celebration energy."
+        "Pixel art scene: a classic beige Macintosh computer from 1984 with a happy "
+        "smiling face on its CRT screen and a bright teal checkmark next to it. "
+        "Floating floppy disks and sparkle particles surround it. A retro keyboard "
+        "and single-button mouse in front. Celebration confetti pixels falling from above. "
+        "Warm nostalgic retro computing atmosphere. Achievement unlocked moment."
     ),
     "slide_36b_breather": (
         "Pixel art scene: a large robot mid-transformation — the left half is a flat gray "

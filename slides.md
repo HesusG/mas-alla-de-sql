@@ -1059,7 +1059,7 @@ title: level_02.exe
 image: /images/slides/slide_31c_breather.jpg
 ---
 
-<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">1-UP. Primera query completada, ahora vienen los power-ups.</h2>
+<h2 class="text-2xl font-bold" style="font-family: 'Space Grotesk'">Primera query completada. Tu Mac sonrie. Ahora vienen los power-ups.</h2>
 
 ---
 
