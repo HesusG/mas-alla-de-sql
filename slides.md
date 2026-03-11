@@ -598,12 +598,12 @@ layout: neo-demo
 
 ### Explorar el dashboard:
 
-4. Clic en **"View data"** → **"Dashboard"**
-5. Observen: mapas, graficas de ventas, top productos...
+1. Clic en **"View data"** → **"Dashboard"**
+2. Observen: mapas, graficas de ventas, top productos...
 
 <div class="mt-3 border-2 border-black p-3 text-sm">
 
-Todo esto se construyo <strong>sin codigo</strong>. Kibana + Elasticsearch generan dashboards interactivos listos para BI.
+Todo esto se construyo **sin codigo**. Kibana + Elasticsearch generan dashboards interactivos listos para BI.
 
 </div>
 
@@ -1391,22 +1391,22 @@ Cada una de estas preguntas se responde con <strong>una sola query de ES</strong
 <!-- Quiz 1: Elasticsearch inverted index -->
 
 <QuizCard
-  question="Un usuario busca 'zapatos rojos'. Elasticsearch devuelve 500 resultados. ¿Como decide cual mostrar primero?"
+  question="Tu jefe te pide analizar 5,000 quejas de clientes para encontrar las mas urgentes. ¿Que herramienta usarias?"
   :options="[
-    { letter: 'A', text: 'Orden alfabetico' },
-    { letter: 'B', text: 'El mas reciente' },
-    { letter: 'C', text: 'BM25: frecuencia + rareza + longitud' },
-    { letter: 'D', text: 'Aleatorio' },
+    { letter: 'A', text: 'Excel con filtros y Ctrl+F' },
+    { letter: 'B', text: 'SQL con muchos LIKE para cada palabra negativa' },
+    { letter: 'C', text: 'Elasticsearch — busca, rankea por urgencia y tolera errores' },
+    { letter: 'D', text: 'Leerlas una por una (es la unica forma confiable)' },
   ]"
 >
 
 <v-click>
 
-<div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-4 mt-5 flex items-start gap-3">
-  <div class="i-pixelarticons-check inline-block w-6 h-6 flex-shrink-0 text-[#ff6b6b]" />
+<div class="border-2 border-[#ff6b6b] bg-[#ff6b6b]/15 p-3 mt-3 flex items-start gap-2">
+  <div class="i-pixelarticons-check inline-block w-5 h-5 flex-shrink-0 text-[#ff6b6b]" />
   <div>
-    <p class="font-bold text-[#ff6b6b]">Respuesta: C</p>
-    <p class="text-sm mt-1">BM25 asigna un _score a cada resultado basado en frecuencia de la palabra, rareza (palabras unicas valen mas) y longitud del documento. Los mas relevantes van primero.</p>
+    <p class="font-bold text-[#ff6b6b] text-sm">Respuesta: C</p>
+    <p class="text-xs mt-1">ES encuentra variaciones ("enojado", "furioso", "harto") sin que las listes todas, y rankea las mas relevantes primero. Excel y SQL solo buscan texto exacto.</p>
   </div>
 </div>
 
@@ -2126,22 +2126,22 @@ layout: neo-demo
 <!-- Quiz 2: Semantic search -->
 
 <QuizCard
-  question="Quieres buscar peliculas que te hagan llorar. Cual herramienta es mejor?"
+  question="Un cliente escribe: 'el servicio fue pesimo, nunca vuelvo'. ¿Cual herramienta encuentra esta queja si buscas 'clientes insatisfechos'?"
   :options="[
-    { letter: 'A', text: 'SQL con LIKE' },
-    { letter: 'B', text: 'Elasticsearch con match' },
-    { letter: 'C', text: 'ChromaDB con embeddings' },
-    { letter: 'D', text: 'Las tres funcionan igual' },
+    { letter: 'A', text: 'SQL — busca las palabras exactas' },
+    { letter: 'B', text: 'Elasticsearch — busca palabras similares como pesimo' },
+    { letter: 'C', text: 'ChromaDB — entiende que pesimo e insatisfecho significan lo mismo' },
+    { letter: 'D', text: 'Ninguna — necesitas leer manualmente' },
   ]"
 >
 
 <v-click>
 
-<div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-4 mt-5 flex items-start gap-3">
-  <div class="i-pixelarticons-check inline-block w-6 h-6 flex-shrink-0 text-[#6c5ce7]" />
+<div class="border-2 border-[#6c5ce7] bg-[#6c5ce7]/15 p-3 mt-3 flex items-start gap-2">
+  <div class="i-pixelarticons-check inline-block w-5 h-5 flex-shrink-0 text-[#6c5ce7]" />
   <div>
-    <p class="font-bold text-[#6c5ce7]">Respuesta: C</p>
-    <p class="text-sm mt-1">Solo los embeddings capturan el significado de "llorar" — tristeza, drama, emocion. SQL busca texto exacto y ES busca palabras, pero ninguno entiende el concepto detras.</p>
+    <p class="font-bold text-[#6c5ce7] text-sm">Respuesta: C</p>
+    <p class="text-xs mt-1">Los embeddings entienden significado: "pesimo servicio" esta cerca de "cliente insatisfecho" en el espacio vectorial, aunque no compartan ninguna palabra. ES encontraria "pesimo" pero no conectaria el concepto.</p>
   </div>
 </div>
 
