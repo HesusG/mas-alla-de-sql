@@ -1412,24 +1412,6 @@ Cada una de estas preguntas se responde con <strong>una sola query de ES</strong
 </QuizCard>
 
 ---
-class: 'bg-[#1a1a2e]'
----
-
-<!-- Hero: ES culmination -->
-
-<div class="h-full flex items-center justify-center">
-<div class="text-center max-w-3xl">
-
-<p class="text-5xl font-bold leading-relaxed text-white">SQL te dice <span class="text-[#ff6b6b]">que hay</span>.</p>
-
-<div class="pixel-divider my-8 opacity-30" />
-
-<p class="text-5xl font-bold leading-relaxed text-white">Elasticsearch te dice <span class="text-[#2DD4BF]">que importa</span>.</p>
-
-</div>
-</div>
-
----
 layout: neo-section
 ---
 
@@ -2341,37 +2323,10 @@ layout: neo-section
 <strong>Ahora saben que es esto. La mayoria de profesionales con experiencia no.</strong>
 </div>
 
+<div class="mt-3 text-center text-sm">
+Sigan practicando: el repo tiene <strong>4 labs extra + un notebook Colab</strong>. Elastic Cloud tiene 14 dias gratis. Todo en <strong class="font-mono">github.com/HesusG/mas-alla-de-sql</strong>
 </div>
 
----
-
-<!-- Slide 57: Keep practicing -->
-
-# Sigue practicando
-
-<div class="pixel-divider my-3" />
-
-<div class="grid grid-cols-2 gap-4 mt-4">
-  <div class="border-2 border-black bg-white p-4">
-    <h3 class="text-[#2DD4BF] mb-2"><div class="i-pixelarticons-book inline-block w-5 h-5 align-middle mr-1" /> Labs en este repo</h3>
-    <ul class="text-sm space-y-1 list-disc list-inside">
-      <li><strong>Notebook Colab</strong>: ChromaDB + RAG + embeddings visuales</li>
-      <li>Lab 1: Elasticsearch Basics (~30 min)</li>
-      <li>Lab 2: ES Search avanzado (~45 min)</li>
-      <li>Lab 3: ChromaDB y embeddings (~30 min)</li>
-      <li>Lab 4: Construye un mini RAG (~45 min)</li>
-    </ul>
-    <p class="text-xs mt-2 text-gray-500">Labs 1-4 son material de referencia para despues del taller.</p>
-  </div>
-  <div class="border-2 border-black bg-white p-4">
-    <h3 class="text-[#6c5ce7] mb-2"><div class="i-pixelarticons-link inline-block w-5 h-5 align-middle mr-1" /> Recursos</h3>
-    <ul class="text-sm space-y-1 list-disc list-inside">
-      <li>Elastic Cloud: 14 dias gratis</li>
-      <li>ChromaDB: docs.trychroma.com</li>
-      <li>together.ai: creditos gratis</li>
-      <li>Kaggle: datasets para practicar</li>
-    </ul>
-  </div>
 </div>
 
 ---
